@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "4.19.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.76.0",
     "jest-expo": "~27.0.0",
     "react-native-scripts": "1.14.0",
@@ -14,8 +19,9 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest",
-    "typecheck": "flow"
+    "test": "npm run lint && yarn typecheck && node node_modules/jest/bin/jest.js",
+    "typecheck": "flow",
+    "lint": "eslint . —max-warnings 0"
   },
   "jest": {
     "preset": "jest-expo"

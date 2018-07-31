@@ -6,6 +6,7 @@
 # dependencies
 /node_modules
 /flow-coverage
+/coverage
 
 # misc
 .env.local

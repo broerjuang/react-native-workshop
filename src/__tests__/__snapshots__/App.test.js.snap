@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginScreen should render LoginScreen corectly 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
   <Text
     accessible={true}
     allowFontScaling={true}

@@ -8,7 +8,7 @@ type Props = {};
 class App extends Component<Props> {
   render() {
     return (
-      <View>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>Test</Text>
       </View>
     );

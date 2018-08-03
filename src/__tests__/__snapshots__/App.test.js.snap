@@ -7,7 +7,7 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-    Test
+    Testasd
   </Text>
 </View>
 `;

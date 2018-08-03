@@ -3,6 +3,7 @@ import {
   createBottomTabNavigator,
   createStackNavigator,
   createMaterialTopTabNavigator,
+  createSwitchNavigator,
 } from 'react-navigation';
 
 import {LoginScreen} from './features/auth/screens';
@@ -27,6 +28,9 @@ let sharedScreens = {
 let Events = createStackNavigator({
   EventsScreen: {
     screen: EventsScreen,
+    navigationOptions: {
+      title: 'events',
+    },
   },
   ...sharedScreens,
 });
@@ -37,15 +41,24 @@ let Setting = createStackNavigator({
   },
 });
 
-let Profile = createStackNavigator({
-  Profile: {
-    screen: ProfileScreen,
+let Profile = createStackNavigator(
+  {
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        title: 'Nah',
+        header: null,
+      },
+    },
+    Setting: {
+      screen: Setting,
+    },
+    ...sharedScreens,
   },
-  Setting: {
-    screen: Setting,
-  },
-  ...sharedScreens,
-});
+  {
+    headerMode: 'none',
+  }
+);
 
 let UnreadNotification = createStackNavigator({
   Unread: {
@@ -118,12 +131,12 @@ let GitClient = createBottomTabNavigator({
   },
 });
 
-let RootNavigation = createStackNavigator({
-  LoginScreen: {
-    screen: LoginScreen,
-  },
+let RootNavigation = createSwitchNavigator({
   GitClient: {
     screen: GitClient,
+  },
+  LoginScreen: {
+    screen: LoginScreen,
   },
 });
 

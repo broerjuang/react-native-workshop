@@ -5,13 +5,16 @@ import {View, Text, StyleSheet, Dimensions, Button} from 'react-native';
 import Swiper from 'react-native-swiper';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import {SafeAreaView} from 'react-navigation';
-import type {NavigationScreenProp} from 'react-navigation';
 
 let styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   swiperContainer: {},
+  viewShared: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   view1: {
     flex: 1,
     backgroundColor: 'aqua',
@@ -34,15 +37,7 @@ let styles = StyleSheet.create({
   },
 });
 
-type Props = {
-  navigation: NavigationScreenProp<*>;
-};
-
-class LoginScreen extends Component<Props, {visible: boolean}> {
-  static navigationOptions = {
-    headerMode: 'none',
-    header: null,
-  };
+class LoginScreen extends Component<{}, {visible: boolean}> {
   state = {
     visible: false,
   };

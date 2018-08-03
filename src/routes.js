@@ -121,6 +121,10 @@ let GitClient = createBottomTabNavigator({
 let RootNavigation = createStackNavigator({
   LoginScreen: {
     screen: LoginScreen,
+    navigationOptions: {
+      headerMode: 'none',
+      header: null,
+    },
   },
   GitClient: {
     screen: GitClient,

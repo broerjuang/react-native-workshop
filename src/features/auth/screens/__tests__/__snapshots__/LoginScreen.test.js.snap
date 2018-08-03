@@ -82,18 +82,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "red",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "red",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              Enjoy ~ ~ ~ !!!
             </Text>
           </View>
         </View>
@@ -112,18 +130,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "aqua",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "#3700b3",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              Welcome
             </Text>
           </View>
         </View>
@@ -142,18 +178,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "green",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "purple",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              This is Testing Program
             </Text>
           </View>
         </View>
@@ -172,18 +226,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "yellow",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "orange",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              So Just Login
             </Text>
           </View>
         </View>
@@ -202,18 +274,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "red",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "red",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              Enjoy ~ ~ ~ !!!
             </Text>
           </View>
         </View>
@@ -232,18 +322,36 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
         >
           <View
             style={
-              Object {
-                "backgroundColor": "aqua",
-                "flex": 1,
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "#3700b3",
+                },
+              ]
             }
           >
             <Text
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 22,
+                  "fontWeight": "bold",
+                }
+              }
             >
-              Test
+              Welcome
             </Text>
           </View>
         </View>
@@ -339,13 +447,9 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
     </View>
   </View>
   <View
-    accessibilityComponentType="button"
+    accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
+    accessibilityTraits={undefined}
     accessible={true}
     collapsable={undefined}
     hasTVPreferredFocus={undefined}
@@ -361,38 +465,197 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
+        "alignItems": "center",
+        "backgroundColor": "grey",
+        "borderRadius": 37,
+        "bottom": 222,
+        "height": 111,
+        "justifyContent": "center",
         "opacity": 1,
+        "position": "absolute",
+        "right": 250,
+        "width": 250,
       }
     }
     testID={undefined}
     tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "color": "white",
+          "fontSize": 22,
+          "fontWeight": "bold",
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={undefined}
-        ellipsizeMode="tail"
-        style={
-          Array [
+      Sign In
+    </Text>
+  </View>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
+    onModalHide={[Function]}
+    onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": 1334,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": 750,
+        }
+      }
+      testID={undefined}
+    />
+    <View
+      collapsable={undefined}
+      hideModalContentWhileAnimating={false}
+      onModalHide={[Function]}
+      pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+          "margin": 37.5,
+          "transform": Array [
             Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "padding": 8,
-              "textAlign": "center",
+              "translateY": 0,
             },
-          ]
+          ],
+        }
+      }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      swipeThreshold={100}
+    >
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="box-none"
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#24292e",
+            "flex": 1,
+            "justifyContent": "space-between",
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 20,
+          }
         }
       >
-        Sign In
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Here is the content inside panel
+        </Text>
+        <View>
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel={undefined}
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {},
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={undefined}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#007AFF",
+                      "fontSize": 18,
+                      "padding": 8,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                Hide
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
-  </View>
+  </Modal>
 </View>
 `;

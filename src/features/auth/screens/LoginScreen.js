@@ -1,10 +1,18 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Dimensions, Button} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 import Swiper from 'react-native-swiper';
-import SlidingUpPanel from 'rn-sliding-up-panel';
 import {SafeAreaView} from 'react-navigation';
+import Modal from 'react-native-modal';
 
 let styles = StyleSheet.create({
   container: {
@@ -14,22 +22,24 @@ let styles = StyleSheet.create({
   viewShared: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   view1: {
-    flex: 1,
-    backgroundColor: 'aqua',
+    backgroundColor: '#3700b3',
   },
   view2: {
-    flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'purple',
   },
   view3: {
-    flex: 1,
-    backgroundColor: 'yellow',
+    backgroundColor: 'orange',
   },
   view4: {
-    flex: 1,
     backgroundColor: 'red',
+  },
+  title: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
   text: {
     color: 'white',
@@ -45,16 +55,20 @@ class LoginScreen extends Component<{}, {visible: boolean}> {
     let {height, width} = Dimensions.get('window');
     return {
       position: 'absolute',
-      backgroundColor: 'black',
+      backgroundColor: 'grey',
       width: Math.floor(width / 3),
       height: Math.floor(height / 12),
       right: Math.floor(width / 3),
       bottom: Math.floor(height / 6),
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: Math.floor(height / 36),
     };
   };
 
   render() {
-    let signInForm = () => {
+    let iconSize = 110;
+    let SignInForm = () => {
       return (
         <SafeAreaView
           style={{
@@ -77,33 +91,43 @@ class LoginScreen extends Component<{}, {visible: boolean}> {
     return (
       <SafeAreaView style={styles.container}>
         <Swiper style={styles.swiperContainer} showsButtons={false}>
-          <View style={styles.view1}>
-            <Text>Test</Text>
+          <View style={[styles.viewShared, styles.view1]}>
+            <Icon name="logo-github" size={iconSize} color="white" />
+            <Text style={styles.title}>Welcome</Text>
           </View>
-          <View style={styles.view2}>
-            <Text>Test</Text>
+          <View style={[styles.viewShared, styles.view2]}>
+            <Icon name="md-checkmark-circle" size={iconSize} color="white" />
+
+            <Text style={styles.title}>This is Testing Program</Text>
           </View>
-          <View style={styles.view3}>
-            <Text>Test</Text>
+          <View style={[styles.viewShared, styles.view3]}>
+            <Icon name="ios-exit-outline" size={iconSize} color="white" />
+            <Text style={styles.title}>So Just Login</Text>
           </View>
-          <View style={styles.view4}>
-            <Text>Test</Text>
+          <View style={[styles.viewShared, styles.view4]}>
+            <Icon name="ios-musical-notes" size={iconSize} color="white" />
+            <Text style={styles.title}>Enjoy ~ ~ ~ !!!</Text>
           </View>
         </Swiper>
-        <Button
-          title="Sign In"
+        <TouchableOpacity
           style={this.signInButtonPosition()}
           onPress={() => {
             this.setState({visible: true});
           }}
-        />
-        <SlidingUpPanel
-          visible={this.state.visible}
-          onRequestClose={() => this.setState({visible: false})}
-          allowDragging={false}
         >
-          <signInForm />
-        </SlidingUpPanel>
+          <Text style={styles.title}>Sign In</Text>
+        </TouchableOpacity>
+        <Modal
+          isVisible={this.state.visible}
+          onBackdropPress={() => {
+            this.setState({visible: false});
+          }}
+          onBackButtonPress={() => {
+            this.setState({visible: false});
+          }}
+        >
+          <SignInForm />
+        </Modal>
       </SafeAreaView>
     );
   }

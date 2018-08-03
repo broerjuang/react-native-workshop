@@ -71,6 +71,7 @@ class SettingScreen extends Component<Props> {
   }
 }
 
+<<<<<<< HEAD
 const styles = StyleSheet.create({
   headerLeft: {
     paddingLeft: 10,
@@ -94,4 +95,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 });
+=======
+//const styles = StyleSheet.create({});
+>>>>>>> Adding profile page
 export default SettingScreen;

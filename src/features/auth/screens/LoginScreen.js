@@ -1,13 +1,17 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-
+import {View} from 'react-native';
+import Button from '../../../general/core-ui/Button';
 class LoginScreen extends Component<{}> {
   render() {
     return (
       <View>
-        <Text>Test</Text>
+        <Button
+          title={'login'}
+          onPress={() => console.log('tes')}
+          styles={{underlayColor: 'black'}}
+        />
       </View>
     );
   }

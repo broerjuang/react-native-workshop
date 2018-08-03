@@ -18,6 +18,7 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
+import tabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
 
 let sharedScreens = {
   EventDetail: {
@@ -60,38 +61,64 @@ let Profile = createStackNavigator(
   }
 );
 
-let UnreadNotification = createStackNavigator({
-  Unread: {
-    screen: UnreadScreen,
+let UnreadNotification = createStackNavigator(
+  {
+    Unread: {
+      screen: UnreadScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  }
+);
 
-let AllNotification = createStackNavigator({
-  AllNotificationsScreen: {
-    screen: AllNotificationsScreen,
+let AllNotification = createStackNavigator(
+  {
+    AllNotificationsScreen: {
+      screen: AllNotificationsScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  }
+);
 
-let ParticipatingNotification = createStackNavigator({
-  Participating: {
-    screen: ParticipatingScreen,
+let ParticipatingNotification = createStackNavigator(
+  {
+    Participating: {
+      screen: ParticipatingScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  }
+);
 
-let Notification = createMaterialTopTabNavigator({
-  UnreadNotification: {
-    screen: UnreadNotification,
+let Notification = createMaterialTopTabNavigator(
+  {
+    Unread: {
+      screen: UnreadNotification,
+    },
+    Participating: {
+      screen: ParticipatingNotification,
+    },
+    All: {
+      screen: AllNotification,
+    },
   },
-  ParticipatingNotification: {
-    screen: ParticipatingNotification,
-  },
-  AllNotification: {
-    screen: AllNotification,
-  },
-});
+  {
+    tabBarComponent: tabBarButtonGroup,
+  }
+);
 
 let SearchRepository = createStackNavigator({
   SearchRepositoryScreen: {
@@ -131,13 +158,18 @@ let GitClient = createBottomTabNavigator({
   },
 });
 
-let RootNavigation = createSwitchNavigator({
-  GitClient: {
-    screen: GitClient,
+let RootNavigation = createSwitchNavigator(
+  {
+    LoginScreen: {
+      screen: LoginScreen,
+    },
+    GitClient: {
+      screen: GitClient,
+    },
   },
-  LoginScreen: {
-    screen: LoginScreen,
-  },
-});
+  {
+    initialRouteName: 'GitClient',
+  }
+);
 
 export default RootNavigation;

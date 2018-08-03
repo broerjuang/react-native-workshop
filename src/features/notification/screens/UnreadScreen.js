@@ -1,3 +1,83 @@
+// // @flow
+
+// import React, { Component } from "react";
+// import { View, Text, StyleSheet } from "react-native";
+// import {
+//   Avatar,
+//   Button,
+//   Icon,
+//   FlatList,
+//   ListItem
+// } from "react-native-elements";
+
+// export default class UnreadScreen extends Component<{}> {
+//   render() {
+//     const {
+//       listDetails,
+//       mainContainer,
+//       mainList,
+//       upperListPart,
+//       bottomListPart,
+//       listText,
+//       bottomDetailsText
+//     } = styles;
+
+//     const list = [
+//       {
+//         title: "deandrasita/backend-react",
+//         avatar: "https://png.icons8.com/color/1600/person-male.png",
+//         subtitle:
+//           "Potential security vulnerability found in the hoek dependency."
+//       },
+//       {
+//         title: "deandrasita/frontend-exam-1",
+//         avatar:
+//           "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+//         subtitle:
+//           "Potential security vulnerability found in the hoek dependency."
+//       }
+//     ];
+
+//     return (
+//       <View style={mainContainer}>
+//         <Button
+//           style={{ marginTop: 10 }}
+//           medium
+//           raised
+//           icon={{ name: "check", type: "material-icons", color: "black" }}
+//           title="MARK ALL AS READ"
+//           backgroundColor="#E7E7E7"
+//           color="black"
+//         />
+//         <View style={mainList}>
+//           {list.map((item, i) => (
+//             <ListItem
+//               roundAvatar
+//               avatar={{ uri: item.avatar }}
+//               key={i}
+//               rightIcon={{ name: "check" }}
+//               subtitle={item.subtitle}
+//               title={
+//                 <View>
+//                   <Text> {item.title} </Text>
+//                 </View>
+//               }
+//               contentContainerStyle={{
+//                 backgroundColor: "#F1F1F1"
+//               }}
+//               // subtitleContainerStyle={{
+//               //   paddingLeft: 10,
+//               //   paddingTop: 5,
+//               //   paddingBottom: 5
+//               // }}
+//             />
+//           ))}
+//         </View>
+//       </View>
+//     );
+//   }
+// }
+
 // @flow
 
 import React, {Component} from 'react';

@@ -1,4 +1,5 @@
 // @flow
+
 import {
   createBottomTabNavigator,
   createStackNavigator,
@@ -18,10 +19,21 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
+import {RepositoryScreen} from './features/repository/screens';
+
+import SearchTab from './assets/SearchTab';
 
 let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
+  },
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+    title: 'Repository',
+  },
+  ProfileScreen: {
+    screen: ProfileScreen,
+    title: 'Profile',
   },
 };
 
@@ -93,27 +105,35 @@ let Notification = createMaterialTopTabNavigator({
   },
 });
 
-let SearchRepository = createStackNavigator({
-  SearchRepositoryScreen: {
-    screen: SearchRepositoryScreen,
+let Search = createMaterialTopTabNavigator(
+  {
+    Repositories: {
+      screen: SearchRepositoryScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Users: {
+      screen: SearchUserScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+  },
+  {
+    tabBarComponent: SearchTab,
+    animationEnabled: false,
+  },
+);
+
+let SearchStack = createStackNavigator({
+  Search: {
+    screen: Search,
+    navigationOptions: {
+      header: null,
+    },
   },
   ...sharedScreens,
-});
-
-let SearchUser = createStackNavigator({
-  SearchUserScreen: {
-    screen: SearchUserScreen,
-  },
-  ...sharedScreens,
-});
-
-let Search = createMaterialTopTabNavigator({
-  SearchRepository: {
-    screen: SearchRepository,
-  },
-  SearchUser: {
-    screen: SearchUser,
-  },
 });
 
 let GitClient = createBottomTabNavigator({
@@ -124,7 +144,7 @@ let GitClient = createBottomTabNavigator({
     screen: Notification,
   },
   Search: {
-    screen: Search,
+    screen: SearchStack,
   },
   Profile: {
     screen: Profile,

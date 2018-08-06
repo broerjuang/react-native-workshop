@@ -18,10 +18,26 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
+import {
+  RepositoryScreen,
+  RepositoryDetailScreen,
+} from './features/repository/screens/index';
+
+let Repository = createStackNavigator({
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+  },
+  RepositoryDetailScreen: {
+    screen: RepositoryDetailScreen,
+  },
+});
 
 let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
+  },
+  Repository: {
+    screen: Repository,
   },
 };
 

@@ -187,7 +187,6 @@ const styleParallax = {
     paddingLeft: 15,
     paddingRight: 15,
   },
-
   txtStickyHeader: {
     color: 'white',
     fontWeight: 'bold',

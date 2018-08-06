@@ -8,6 +8,7 @@ export default class AllNotificationScreen extends Component<{}> {
 
     return (
       <View style={mainContainer}>
+        <Text> All Screen </Text>
         <Text style={noNotifText}>
           {' '}
           You dont have any notifications of this type.{' '}
@@ -33,7 +34,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 1, height: 1},
     shadowColor: 'black',
     shadowOpacity: 0.2,
-    // borderColor: "#B3B3B3"
   },
   upperListPart: {
     flex: 1,

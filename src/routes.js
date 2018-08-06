@@ -58,7 +58,7 @@ let Profile = createStackNavigator(
   },
   {
     headerMode: 'none',
-  }
+  },
 );
 
 let UnreadNotification = createStackNavigator(
@@ -72,7 +72,7 @@ let UnreadNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let AllNotification = createStackNavigator(
@@ -86,7 +86,7 @@ let AllNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let ParticipatingNotification = createStackNavigator(
@@ -100,7 +100,7 @@ let ParticipatingNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let Notification = createMaterialTopTabNavigator(
@@ -117,7 +117,7 @@ let Notification = createMaterialTopTabNavigator(
   },
   {
     tabBarComponent: tabBarButtonGroup,
-  }
+  },
 );
 
 let SearchRepository = createStackNavigator({
@@ -143,20 +143,26 @@ let Search = createMaterialTopTabNavigator({
   },
 });
 
-let GitClient = createBottomTabNavigator({
-  Events: {
-    screen: Events,
+let GitClient = createBottomTabNavigator(
+  {
+    Events: {
+      screen: Events,
+    },
+    Notification: {
+      screen: Notification,
+    },
+    Search: {
+      screen: Search,
+    },
+    Profile: {
+      screen: Profile,
+    },
   },
-  Notification: {
-    screen: Notification,
+  // delete later v
+  {
+    initialRouteName: 'Notification',
   },
-  Search: {
-    screen: Search,
-  },
-  Profile: {
-    screen: Profile,
-  },
-});
+);
 
 let RootNavigation = createSwitchNavigator(
   {
@@ -169,7 +175,7 @@ let RootNavigation = createSwitchNavigator(
   },
   {
     initialRouteName: 'GitClient',
-  }
+  },
 );
 
 export default RootNavigation;

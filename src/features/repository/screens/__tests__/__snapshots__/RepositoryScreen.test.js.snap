@@ -1,11 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Repository screee  should render Repository corectly 1`] = `
-Array [
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#393e42",
+          "borderBottomColor": "#000",
+          "borderBottomWidth": 1,
+          "borderTopColor": "#000",
+          "borderTopWidth": 1,
+        },
+        false,
+        Object {
+          "backgroundColor": "white",
+          "borderBottomWidth": 0.1,
+          "borderTopWidth": 0.5,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      onClearText={[Function]}
+      placeholder="Type Here..."
+      placeholderTextColor="#E1E4EC"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#303337",
+            "borderRadius": 3,
+            "color": "#86939e",
+            "fontSize": 17.5,
+            "height": 30,
+            "margin": 8,
+            "overflow": "hidden",
+            "paddingLeft": 26,
+            "paddingRight": 19,
+          },
+          false,
+          false,
+          false,
+          Object {
+            "backgroundColor": "#E1E4EC",
+          },
+          undefined,
+          false,
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#909AA3",
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "position": "absolute",
+              "top": 15.5,
+            },
+            Object {
+              "left": 16,
+            },
+            Object {
+              "alignContent": "center",
+            },
+          ],
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  ;
   <View>
     <View
       style={
         Object {
+          "backgroundColor": "white",
           "borderWidth": 0.2,
           "flexDirection": "row",
           "padding": 6,
@@ -15,7 +101,6 @@ Array [
       <View
         style={
           Object {
-            "backgroundColor": "#E6E9EE",
             "flex": 5,
             "flexDirection": "column",
           }
@@ -134,11 +219,12 @@ Array [
         />
       </View>
     </View>
-  </View>,
+  </View>
   <View>
     <View
       style={
         Object {
+          "backgroundColor": "white",
           "borderWidth": 0.2,
           "flexDirection": "row",
           "padding": 6,
@@ -148,7 +234,6 @@ Array [
       <View
         style={
           Object {
-            "backgroundColor": "#E6E9EE",
             "flex": 5,
             "flexDirection": "column",
           }
@@ -267,11 +352,12 @@ Array [
         />
       </View>
     </View>
-  </View>,
+  </View>
   <View>
     <View
       style={
         Object {
+          "backgroundColor": "white",
           "borderWidth": 0.2,
           "flexDirection": "row",
           "padding": 6,
@@ -281,7 +367,6 @@ Array [
       <View
         style={
           Object {
-            "backgroundColor": "#E6E9EE",
             "flex": 5,
             "flexDirection": "column",
           }
@@ -400,6 +485,6 @@ Array [
         />
       </View>
     </View>
-  </View>,
-]
+  </View>
+</View>
 `;

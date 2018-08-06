@@ -13,6 +13,7 @@ let datas = {
       star: 2,
       forked: 3,
       language: 'Java Script',
+      repoType: 'repo',
     },
     {
       id: 3,
@@ -21,6 +22,7 @@ let datas = {
       star: 2,
       forked: 3,
       language: 'Java Script',
+      repoType: 'repo',
     },
     {
       id: 4,
@@ -29,6 +31,7 @@ let datas = {
       star: 2,
       forked: 3,
       language: 'Ocaml',
+      repoType: 'forke',
     },
   ],
 };

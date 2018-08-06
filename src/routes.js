@@ -23,12 +23,26 @@ import {
   RepositoryDetailScreen,
 } from './features/repository/screens/index';
 
+// TODO: Put back to inside RepositoryDetailScreen
+import React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
+
 let Repository = createStackNavigator({
   RepositoryScreen: {
     screen: RepositoryScreen,
   },
   RepositoryDetailScreen: {
     screen: RepositoryDetailScreen,
+    navigationOptions: ({navigation}) => ({
+      headerTransparent: true,
+      headerLeft: (
+        <View style={{paddingLeft: 10}}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={{color: 'white'}}>Back</Text>
+          </TouchableOpacity>
+        </View>
+      ),
+    }),
   },
 });
 

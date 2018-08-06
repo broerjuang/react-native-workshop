@@ -9,16 +9,6 @@ type Props = {
   navigation: NavigationScreenProp<*>;
 };
 class RepositoryDetailScreen extends Component<Props> {
-  static navigationOptions = ({navigation}) => ({
-    headerTransparent: true,
-    headerLeft: (
-      <View style={{paddingLeft: 10}}>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-          <Text style={{color: 'white'}}>Back</Text>
-        </TouchableOpacity>
-      </View>
-    ),
-  });
   render() {
     let type = 1;
     let repoType = type ? 'repo-forked' : 'repo';
@@ -34,7 +24,7 @@ class RepositoryDetailScreen extends Component<Props> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}> sstur </Text>
+              <Text style={styleParallax.txtStickyHeader}> Bootcamp </Text>
             </View>
           )}
           renderForeground={() => (

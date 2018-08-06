@@ -14,7 +14,7 @@ type Items = {
   repoType: string;
 };
 
-function listRepo(props: Items) {
+function repoComponent(props: Items) {
   let {id, description, star, forked, language, repoType} = props;
   let repoName = props.repo_name;
   return (
@@ -91,4 +91,4 @@ const styles = {
   statusRepo: {flex: 2, alignItems: 'center', justifyContent: 'center'},
 };
 
-export default listRepo;
+export default repoComponent;

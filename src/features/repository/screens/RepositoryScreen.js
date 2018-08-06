@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import ListRepos from '../../../components/Repos';
+import RepoComponent from '../../../components/Repo';
 import {SearchBar} from 'react-native-elements';
 
 type Props = {
@@ -44,7 +44,7 @@ class RepositoryScreen extends Component<Props, {}> {
         />;{items.map((item, key) => {
           return (
             <View key={key}>
-              <ListRepos {...item} />
+              <RepoComponent {...item} />
             </View>
           );
         })}

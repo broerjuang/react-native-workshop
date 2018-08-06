@@ -1,5 +1,4 @@
 // @flow
-
 import {
   createBottomTabNavigator,
   createStackNavigator,
@@ -22,6 +21,8 @@ import {ProfileScreen, SettingScreen} from './features/profile/screens';
 import {RepositoryScreen} from './features/repository/screens';
 
 import SearchTab from './assets/SearchTab';
+
+import renderIcon from './assets/renderIcon';
 
 let sharedScreens = {
   EventDetail: {
@@ -69,7 +70,7 @@ let Profile = createStackNavigator(
   },
   {
     headerMode: 'none',
-  }
+  },
 );
 
 let UnreadNotification = createStackNavigator({
@@ -136,20 +137,45 @@ let SearchStack = createStackNavigator({
   ...sharedScreens,
 });
 
-let GitClient = createBottomTabNavigator({
-  Events: {
-    screen: Events,
+let GitClient = createBottomTabNavigator(
+  {
+    Events: {
+      screen: Events,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'home', size: 32, tintColor}),
+      },
+    },
+    Notification: {
+      screen: Notification,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'bell', size: 32, tintColor}),
+      },
+    },
+    Search: {
+      screen: SearchStack,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'magnify', size: 32, tintColor}),
+      },
+    },
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'account', size: 32, tintColor}),
+      },
+    },
   },
-  Notification: {
-    screen: Notification,
+  {
+    tabBarOptions: {
+      showLabel: false,
+      activeTintColor: '#000',
+      inactiveTintColor: 'grey',
+    },
   },
-  Search: {
-    screen: SearchStack,
-  },
-  Profile: {
-    screen: Profile,
-  },
-});
+);
 
 let RootNavigation = createSwitchNavigator({
   GitClient: {

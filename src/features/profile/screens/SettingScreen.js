@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import type {NavigationScreenProp} from 'react-navigation';
+import {MaterialIcons} from '@expo/vector-icons';
 
 type Props = {};
 
@@ -31,21 +32,21 @@ class SettingScreen extends Component<Props> {
               <View style={styles.buttonSetting}>
                 <Text style={styles.txtButton}>Language</Text>
 
-                <Text> Go </Text>
+                <MaterialIcons name="chevron-right" size={30} />
               </View>
             </TouchableOpacity>
             <View style={styles.containerBorder}>
               <TouchableOpacity>
                 <View style={styles.buttonSetting}>
                   <Text style={styles.txtButton}>Open in Browser</Text>
-                  <Text> Go </Text>
+                  <MaterialIcons name="chevron-right" size={30} />
                 </View>
               </TouchableOpacity>
             </View>
             <TouchableOpacity>
               <View style={styles.buttonSetting}>
                 <Text style={styles.txtButton}>Privacy Policy</Text>
-                <Text> Go </Text>
+                <MaterialIcons name="chevron-right" size={30} />
               </View>
             </TouchableOpacity>
 
@@ -53,14 +54,14 @@ class SettingScreen extends Component<Props> {
               <TouchableOpacity>
                 <View style={styles.buttonSetting}>
                   <Text style={styles.txtButton}>Make a donation</Text>
-                  <Text> Go </Text>
+                  <MaterialIcons name="chevron-right" size={30} />
                 </View>
               </TouchableOpacity>
             </View>
             <TouchableOpacity>
               <View style={styles.buttonSetting}>
                 <Text style={styles.txtButton}>Sign Out</Text>
-                <Text> Go </Text>
+                <MaterialIcons name="chevron-right" size={30} />
               </View>
             </TouchableOpacity>
           </View>

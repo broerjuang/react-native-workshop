@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import {MaterialIcons} from '@expo/vector-icons';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
@@ -40,7 +41,7 @@ class ProfileScreen extends Component<Props> {
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Setting')}
             >
-              <Text> Settings </Text>
+              <MaterialIcons name="settings" size={30} color="white" />
             </TouchableOpacity>
           </View>
         )}

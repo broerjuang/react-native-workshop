@@ -71,10 +71,6 @@ class SettingScreen extends Component<Props> {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Successful test after ionicons removed
 const styles = StyleSheet.create({
   headerLeft: {
     paddingLeft: 10,
@@ -98,10 +94,4 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 });
-<<<<<<< HEAD
-=======
-//const styles = StyleSheet.create({});
->>>>>>> Adding profile page
-=======
->>>>>>> Successful test after ionicons removed
 export default SettingScreen;

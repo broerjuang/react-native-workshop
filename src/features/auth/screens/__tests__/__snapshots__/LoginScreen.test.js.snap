@@ -98,11 +98,6 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "white",
@@ -194,11 +189,6 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "white",
@@ -242,11 +232,6 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "white",
@@ -286,11 +271,6 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
               ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
             <Text
               accessible={true}
               allowFontScaling={true}

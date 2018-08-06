@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -92,20 +92,24 @@ class LoginScreen extends Component<{}, {visible: boolean}> {
       <SafeAreaView style={styles.container}>
         <Swiper style={styles.swiperContainer} showsButtons={false}>
           <View style={[styles.viewShared, styles.view1]}>
-            <Icon name="logo-github" size={iconSize} color="white" />
+            <Ionicons name="logo-github" size={iconSize} color="white" />
             <Text style={styles.title}>Welcome</Text>
           </View>
           <View style={[styles.viewShared, styles.view2]}>
-            <Icon name="md-checkmark-circle" size={iconSize} color="white" />
+            {/* <Ionicons
+              name="md-checkmark-circle"
+              size={iconSize}
+              color="white"
+            /> */}
 
             <Text style={styles.title}>This is Testing Program</Text>
           </View>
           <View style={[styles.viewShared, styles.view3]}>
-            <Icon name="ios-exit-outline" size={iconSize} color="white" />
+            {/* <Ionicons name="ios-exit-outline" size={iconSize} color="white" /> */}
             <Text style={styles.title}>So Just Login</Text>
           </View>
           <View style={[styles.viewShared, styles.view4]}>
-            <Icon name="ios-musical-notes" size={iconSize} color="white" />
+            {/* <Ionicons name="ios-musical-notes" size={iconSize} color="white" /> */}
             <Text style={styles.title}>Enjoy ~ ~ ~ !!!</Text>
           </View>
         </Swiper>

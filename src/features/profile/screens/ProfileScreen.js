@@ -5,6 +5,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 import type {NavigationScreenProp} from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
@@ -33,14 +34,14 @@ class ProfileScreen extends Component<Props> {
               top: 10,
               height: 30,
               width: 30,
-              backgroundColor: 'yellow',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            {' '}
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Setting')}
             >
-              <Text> asd </Text>
+              <Icon name="ios-settings" size={30} color="white" />
             </TouchableOpacity>
           </View>
         )}

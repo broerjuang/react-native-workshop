@@ -122,7 +122,6 @@ function DetailsContent(props) {
   let {children, ...otherProps} = props;
   return <Text {...otherProps}>{children}</Text>;
 }
-
 const styles = StyleSheet.create({
   containerProfileDetails: {
     flex: 1,

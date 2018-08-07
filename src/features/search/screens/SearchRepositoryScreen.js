@@ -21,11 +21,11 @@ type Repo = {
   fork: boolean,
 };
 
-type Props = {
+type Object = {
   navigation: NavigationScreenProp<[]>,
 };
 
-class SearchRepositoryScreen extends Component<Props> {
+class SearchRepositoryScreen extends Component<Object> {
   render() {
     let repoList: Array<Repo> = [
       {

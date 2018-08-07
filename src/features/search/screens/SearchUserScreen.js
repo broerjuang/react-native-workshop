@@ -18,11 +18,11 @@ type User = {
   profilePicture: string,
 };
 
-type Props = {
+type Object = {
   navigation: NavigationScreenProp<[]>,
 };
 
-class SearchUserScreen extends Component<Props> {
+class SearchUserScreen extends Component<Object> {
   render() {
     const {list, userWrapper, username} = styles;
     let userList: Array<User> = [

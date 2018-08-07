@@ -1,21 +1,13 @@
 // @flow
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import type {NavigationScreenProp} from 'react-navigation';
 
-type Props = {
-  tryingProps: string,
-  navigation: NavigationScreenProp<[]>,
-};
-export default class ParticipatingScreen extends Component<Props> {
+export default class ParticipatingScreen extends Component<{}> {
   render() {
     const {noNotifText, mainContainer} = styles;
 
-    // const {params} = this.state.navigation.state;
-    // console.log(params.tryingProps);
     return (
       <View style={mainContainer}>
-        <Text> Participating Screen </Text>
         <Text style={noNotifText}>
           You dont have any notifications of this type.
         </Text>
@@ -40,7 +32,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 1, height: 1},
     shadowColor: 'black',
     shadowOpacity: 0.2,
-    // borderColor: "#B3B3B3"
   },
   upperListPart: {
     flex: 1,
@@ -48,7 +39,6 @@ const styles = StyleSheet.create({
   },
   listDetails: {
     flexDirection: 'row',
-    // justifyContent: "space-between",
     margin: 10,
   },
   listText: {

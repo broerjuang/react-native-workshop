@@ -5,19 +5,23 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
   ScrollView,
-  TouchableWithoutFeedback,
+  TouchableOpacity,
 } from 'react-native';
+
 import {Avatar, Button, Icon} from 'react-native-elements';
 
 class UnreadScreen extends Component<{}> {
-  _markAllAsRead() {
-    console.log('marked as read');
+  _markAsRead(itemID: number) {
+    // TODO: write function
+    // eslint-disable-next-line no-console
+    console.log(itemID);
   }
 
-  _markAsRead(notificationID: number) {
-    console.log('marked as read', notificationID);
+  _markAllAsRead() {
+    // TODO: write function
+    // eslint-disable-next-line no-console
+    console.log('marked all as read!');
   }
 
   render() {
@@ -29,7 +33,6 @@ class UnreadScreen extends Component<{}> {
       bottomListPart,
       listText,
       bottomDetailsText,
-      checklistMark,
     } = styles;
 
     const list = [
@@ -38,7 +41,7 @@ class UnreadScreen extends Component<{}> {
         title: 'deandrasita/abcd',
         avatar: 'https://png.icons8.com/color/1600/person-male.png',
         subtitle:
-          'Potential security vulnerability dslfjhsdjk ssrsdsd fsfsf 3244fdf  fdfsfsd fdsfsdsfljhdsfjsd dlhfsdlkfjkldsffound in the hoek dependency.',
+          '(testing long lines) Potential security vulnedjfjldsfl sldjflkdsjf kdjs flksdjflkjljflkjsd fjsdlfslfjsdklfkjf lkdsj  lkjkrability found in the hoek dependency.',
       },
       {
         id: 2,
@@ -85,7 +88,7 @@ class UnreadScreen extends Component<{}> {
             title="MARK ALL AS READ"
             backgroundColor="#E7E7E7"
             color="black"
-            onPress={this._markAllAsRead.bind(this)}
+            onPress={this._markAllAsRead}
           />
           {list.map((item, i) => (
             <View style={mainList} key={i}>
@@ -99,16 +102,14 @@ class UnreadScreen extends Component<{}> {
                     }}
                   />
                   <Text style={listText}> {item.title}</Text>
+                  <TouchableOpacity onPress={() => this._markAsRead(item.id)}>
+                    <Icon name="check" />
+                  </TouchableOpacity>
                 </View>
-                <TouchableWithoutFeedback
-                  onPress={() => this._markAsRead(item.id)}
-                >
-                  <Icon name="check" type="material-icons" />
-                </TouchableWithoutFeedback>
               </View>
               <View style={bottomListPart}>
                 <Icon name="error" type="material-icons" />
-                <Text style={bottomDetailsText}>{item.subtitle}</Text>
+                <Text style={bottomDetailsText}>{item.subtitle} </Text>
               </View>
             </View>
           ))}
@@ -126,20 +127,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   mainList: {
+    flex: 1,
     margin: 10,
     shadowOffset: {width: 1, height: 1},
     shadowColor: 'black',
     shadowOpacity: 0.2,
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  checklistMark: {
-    flex: 1,
   },
   upperListPart: {
     flex: 1,
     backgroundColor: '#F1F1F1',
-    flexDirection: 'row',
   },
   listDetails: {
     flexDirection: 'row',
@@ -157,10 +153,11 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   bottomDetailsText: {
-    flex: 1,
+    textAlign: 'left',
     alignSelf: 'center',
     padding: 5,
+    flexWrap: 'wrap',
     fontSize: 12,
-    alignItems: 'flex-start',
+    flex: 1,
   },
 });

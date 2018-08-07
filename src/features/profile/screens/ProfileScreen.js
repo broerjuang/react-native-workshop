@@ -1,6 +1,6 @@
 // @flow
 
-import React, {Component} from 'react';
+import React, {Component, Children} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {MaterialIcons} from '@expo/vector-icons';
@@ -57,73 +57,71 @@ class ProfileScreen extends Component<Props> {
               <Text style={styleParallax.txtUsername}>sstur</Text>
             </View>
             <View style={styleParallax.containerButton}>
-              <TouchableOpacity>
-                <View style={styleParallax.buttonRepositories}>
-                  <Text style={styleParallax.txtButtonValue}> 3 </Text>
-                  <Text style={styleParallax.txtButton}> Repositories </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View style={styleParallax.buttonStars}>
-                  <Text style={styleParallax.txtButtonValue}> 6 </Text>
-                  <Text style={styleParallax.txtButton}> Stars </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View style={styleParallax.buttonFollowers}>
-                  <Text style={styleParallax.txtButtonValue}> 9 </Text>
-                  <Text style={styleParallax.txtButton}> Followers </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View style={styleParallax.buttonFollowing}>
-                  <Text style={styleParallax.txtButtonValue}> 12 </Text>
-                  <Text style={styleParallax.txtButton}> Following </Text>
-                </View>
-              </TouchableOpacity>
+              <ParallaxButtons name="Repositories" value={3} />
+              <ParallaxButtons name="Stars" value={6} />
+              <ParallaxButtons name="Followers" value={9} />
+              <ParallaxButtons name="Following" value={12} />
             </View>
           </View>
         )}
       >
         <View style={styles.containerProfileDetails}>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>BIO</Text>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <Text style={styles.txtProfileDetailsContent}>
-                Short Biography
-              </Text>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>WEBSITE</Text>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <Text style={styles.txtProfileDetailsContent}>URL</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.containerProfileDetailsTitle}>
-          <Text style={styles.txtProfileDetailsTitle}>ORGANIZATIONS</Text>
-        </View>
-        <View style={styles.containerProfileDetailsBody}>
-          <View style={styles.containerProfileDetailsContent}>
-            <Text style={styles.txtProfileDetailsContent}>Org 1</Text>
-          </View>
-          <View style={styles.containerProfileDetailsContent}>
-            <Text style={styles.txtProfileDetailsContent}>Org 2</Text>
-          </View>
-          <View style={styles.containerProfileDetailsContent}>
-            <Text style={styles.txtProfileDetailsContent}>Org 3</Text>
-          </View>
+          <DetailsGroup name="Bio">
+            <DetailsContent>Short Biography</DetailsContent>
+          </DetailsGroup>
+          <DetailsGroup name="Website">
+            <DetailsContent>URL</DetailsContent>
+          </DetailsGroup>
+          <DetailsGroup name="Organizations">
+            <DetailsContent>Org 1</DetailsContent>
+            <DetailsContent>Org 2</DetailsContent>
+          </DetailsGroup>
         </View>
       </ParallaxScrollView>
     );
   }
 }
 
+function ParallaxButtons(props) {
+  let {name, value} = props;
+  return (
+    <TouchableOpacity>
+      <View style={styleParallax.buttonRepositories}>
+        <Text style={styleParallax.txtButtonValue}> {value} </Text>
+        <Text style={styleParallax.txtButton}> {name} </Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+function DetailsGroup(props) {
+  let {name, children, ...otherProps} = props;
+  return (
+    <View>
+      <View {...otherProps} style={styles.containerProfileDetailsTitle}>
+        <Text style={styles.txtProfileDetailsTitle}>{name}</Text>
+      </View>
+      <View style={styles.containerProfileDetailsBody}>
+        {Children.map(children, (child, i) => {
+          return (
+            <View
+              key={i}
+              {...otherProps}
+              style={styles.containerProfileDetailsContent}
+            >
+              <Text style={styles.txtProfileDetailsContent}>{child}</Text>
+            </View>
+          );
+        })}
+      </View>
+    </View>
+  );
+}
+
+function DetailsContent(props) {
+  let {children, ...otherProps} = props;
+  return <Text {...otherProps}>{children}</Text>;
+}
 const styles = StyleSheet.create({
   containerProfileDetails: {
     flex: 1,

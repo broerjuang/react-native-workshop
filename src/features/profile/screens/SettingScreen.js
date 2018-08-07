@@ -28,47 +28,31 @@ class SettingScreen extends Component<Props> {
       <View style={{paddingTop: 40}}>
         <View style={styles.containerSetting}>
           <View style={styles.containerButton}>
-            <TouchableOpacity>
-              <View style={styles.buttonSetting}>
-                <Text style={styles.txtButton}>Language</Text>
-
-                <MaterialIcons name="chevron-right" size={30} />
-              </View>
-            </TouchableOpacity>
+            <SettingButton name="Language" />
             <View style={styles.containerBorder}>
-              <TouchableOpacity>
-                <View style={styles.buttonSetting}>
-                  <Text style={styles.txtButton}>Open in Browser</Text>
-                  <MaterialIcons name="chevron-right" size={30} />
-                </View>
-              </TouchableOpacity>
+              <SettingButton name="Open in Browser" />
             </View>
-            <TouchableOpacity>
-              <View style={styles.buttonSetting}>
-                <Text style={styles.txtButton}>Privacy Policy</Text>
-                <MaterialIcons name="chevron-right" size={30} />
-              </View>
-            </TouchableOpacity>
-
+            <SettingButton name="Privacy Policy" />
             <View style={styles.containerBorder}>
-              <TouchableOpacity>
-                <View style={styles.buttonSetting}>
-                  <Text style={styles.txtButton}>Make a donation</Text>
-                  <MaterialIcons name="chevron-right" size={30} />
-                </View>
-              </TouchableOpacity>
+              <SettingButton name="Make a donation" />
             </View>
-            <TouchableOpacity>
-              <View style={styles.buttonSetting}>
-                <Text style={styles.txtButton}>Sign Out</Text>
-                <MaterialIcons name="chevron-right" size={30} />
-              </View>
-            </TouchableOpacity>
+            <SettingButton name="Sign Out" />
           </View>
         </View>
       </View>
     );
   }
+}
+
+function SettingButton(props) {
+  return (
+    <TouchableOpacity>
+      <View style={styles.buttonSetting}>
+        <Text style={styles.txtButton}>{props.name}</Text>
+        <MaterialIcons name="chevron-right" size={30} />
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({

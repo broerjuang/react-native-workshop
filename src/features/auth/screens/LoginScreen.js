@@ -2,57 +2,19 @@
 
 import React, {Component} from 'react';
 import {Ionicons} from '@expo/vector-icons';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Dimensions, Button, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
-
-let styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  swiperContainer: {},
-  viewShared: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  view1: {
-    backgroundColor: '#3700b3',
-  },
-  view2: {
-    backgroundColor: 'purple',
-  },
-  view3: {
-    backgroundColor: 'orange',
-  },
-  view4: {
-    backgroundColor: 'red',
-  },
-  title: {
-    color: 'white',
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
-  text: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
-});
 
 class LoginScreen extends Component<{}, {visible: boolean}> {
   state = {
     visible: false,
   };
   signInButtonPosition = () => {
-    let {height, width} = Dimensions.get('window');
+    let {height, width}: {height: number; width: number} = Dimensions.get(
+      'window'
+    );
     return {
       position: 'absolute',
       backgroundColor: 'grey',
@@ -96,20 +58,20 @@ class LoginScreen extends Component<{}, {visible: boolean}> {
             <Text style={styles.title}>Welcome</Text>
           </View>
           <View style={[styles.viewShared, styles.view2]}>
-            {/* <Ionicons
+            <Ionicons
               name="md-checkmark-circle"
               size={iconSize}
               color="white"
-            /> */}
+            />
 
             <Text style={styles.title}>This is Testing Program</Text>
           </View>
           <View style={[styles.viewShared, styles.view3]}>
-            {/* <Ionicons name="ios-exit-outline" size={iconSize} color="white" /> */}
+            <Ionicons name="ios-exit-outline" size={iconSize} color="white" />
             <Text style={styles.title}>So Just Login</Text>
           </View>
           <View style={[styles.viewShared, styles.view4]}>
-            {/* <Ionicons name="ios-musical-notes" size={iconSize} color="white" /> */}
+            <Ionicons name="ios-musical-notes" size={iconSize} color="white" />
             <Text style={styles.title}>Enjoy ~ ~ ~ !!!</Text>
           </View>
         </Swiper>
@@ -136,5 +98,38 @@ class LoginScreen extends Component<{}, {visible: boolean}> {
     );
   }
 }
+
+let styles = {
+  container: {
+    flex: 1,
+  },
+  swiperContainer: {},
+  viewShared: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  view1: {
+    backgroundColor: '#3700b3',
+  },
+  view2: {
+    backgroundColor: 'purple',
+  },
+  view3: {
+    backgroundColor: 'orange',
+  },
+  view4: {
+    backgroundColor: 'red',
+  },
+  title: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+};
 
 export default LoginScreen;

@@ -94,4 +94,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 });
+
 export default SettingScreen;

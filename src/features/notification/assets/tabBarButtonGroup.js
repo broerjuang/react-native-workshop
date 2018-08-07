@@ -6,7 +6,7 @@ import {ButtonGroup} from 'react-native-elements';
 import type {NavigationScreenProp} from 'react-navigation';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: NavigationScreenProp<{}>;
 };
 
 type State = {

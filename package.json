@@ -26,7 +26,8 @@
     "jest": "jest --coverage",
     "typecheck": "yarn flow && yarn flow-coverage",
     "ios": "react-native-scripts ios",
-    "test": "npm run lint && yarn typecheck && node node_modules/jest/bin/jest.js",
+    "test":
+      "npm run lint && yarn typecheck && node node_modules/jest/bin/jest.js",
     "lint": "eslint . —max-warnings 0"
   },
   "jest": {
@@ -48,5 +49,11 @@
     "react-native-elements": "^0.19.1",
     "react-native-parallax-scroll-view": "^0.21.3",
     "react-navigation": "^2.8.0"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
   }
 }

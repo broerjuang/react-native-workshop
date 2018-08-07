@@ -18,11 +18,26 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
-import tabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
+
+import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
+
+import {RepositoryScreen} from './features/repository/screens';
+
+import SearchTab from './assets/SearchTab';
+
+import renderIcon from './assets/renderIcon';
 
 let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
+  },
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+    title: 'Repository',
+  },
+  ProfileScreen: {
+    screen: ProfileScreen,
+    title: 'Profile',
   },
 };
 
@@ -58,7 +73,7 @@ let Profile = createStackNavigator(
   },
   {
     headerMode: 'none',
-  }
+  },
 );
 
 let UnreadNotification = createStackNavigator(
@@ -72,7 +87,7 @@ let UnreadNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let AllNotification = createStackNavigator(
@@ -86,7 +101,7 @@ let AllNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let ParticipatingNotification = createStackNavigator(
@@ -100,7 +115,7 @@ let ParticipatingNotification = createStackNavigator(
     navigationOptions: {
       header: null,
     },
-  }
+  },
 );
 
 let Notification = createMaterialTopTabNavigator(
@@ -116,47 +131,80 @@ let Notification = createMaterialTopTabNavigator(
     },
   },
   {
-    tabBarComponent: tabBarButtonGroup,
-  }
+    tabBarComponent: TabBarButtonGroup,
+  },
 );
 
-let SearchRepository = createStackNavigator({
-  SearchRepositoryScreen: {
-    screen: SearchRepositoryScreen,
+let Search = createMaterialTopTabNavigator(
+  {
+    Repositories: {
+      screen: SearchRepositoryScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Users: {
+      screen: SearchUserScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
   },
-  ...sharedScreens,
-});
+  {
+    tabBarComponent: SearchTab,
+    animationEnabled: false,
+  },
+);
 
-let SearchUser = createStackNavigator({
-  SearchUserScreen: {
-    screen: SearchUserScreen,
-  },
-  ...sharedScreens,
-});
-
-let Search = createMaterialTopTabNavigator({
-  SearchRepository: {
-    screen: SearchRepository,
-  },
-  SearchUser: {
-    screen: SearchUser,
-  },
-});
-
-let GitClient = createBottomTabNavigator({
-  Events: {
-    screen: Events,
-  },
-  Notification: {
-    screen: Notification,
-  },
+let SearchStack = createStackNavigator({
   Search: {
     screen: Search,
+    navigationOptions: {
+      header: null,
+    },
   },
-  Profile: {
-    screen: Profile,
-  },
+  ...sharedScreens,
 });
+
+let GitClient = createBottomTabNavigator(
+  {
+    Events: {
+      screen: Events,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'home', size: 32, tintColor}),
+      },
+    },
+    Notification: {
+      screen: Notification,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'bell', size: 32, tintColor}),
+      },
+    },
+    Search: {
+      screen: SearchStack,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'magnify', size: 32, tintColor}),
+      },
+    },
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) =>
+          renderIcon({name: 'account', size: 32, tintColor}),
+      },
+    },
+  },
+  {
+    tabBarOptions: {
+      showLabel: false,
+      activeTintColor: '#000',
+      inactiveTintColor: 'grey',
+    },
+  },
+);
 
 let RootNavigation = createSwitchNavigator(
   {
@@ -169,7 +217,7 @@ let RootNavigation = createSwitchNavigator(
   },
   {
     initialRouteName: 'GitClient',
-  }
+  },
 );
 
 export default RootNavigation;

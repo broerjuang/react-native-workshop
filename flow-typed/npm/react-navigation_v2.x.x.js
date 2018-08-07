@@ -1,5 +1,5 @@
-// flow-typed signature: 13cb3ce8f07e4ec06cca66a918a0b3a1
-// flow-typed version: db07d03d9f/react-navigation_v2.x.x/flow_>=v0.60.x
+// flow-typed signature: 15c46eb6cf1a947bc98c3883621daab1
+// flow-typed version: c5a5cbd1f4/react-navigation_v2.x.x/flow_>=v0.60.x
 
 // @flow
 
@@ -187,7 +187,7 @@ declare module 'react-navigation' {
     | NavigationLeafRoute
     | NavigationStateRoute;
 
-  declare export type NavigationLeafRoute = {
+  declare export type NavigationLeafRoute = {|
     /**
      * React's key used by some navigators. No need to specify these manually,
      * they will be defined by the router.
@@ -207,10 +207,12 @@ declare module 'react-navigation' {
      * e.g. `{ car_id: 123 }` in a route that displays a car.
      */
     params?: NavigationParams,
-  };
+  |};
 
-  declare export type NavigationStateRoute = NavigationLeafRoute &
-    NavigationState;
+  declare export type NavigationStateRoute = {|
+    ...NavigationLeafRoute,
+    ...$Exact<NavigationState>,
+  |};
 
   /**
    * Router
@@ -559,6 +561,21 @@ declare module 'react-navigation' {
     screenProps?: {},
     navigationOptions?: O,
   }>;
+
+  /**
+   * NavigationEvents component
+   */
+
+  declare type _NavigationEventsProps = {
+    navigation?: NavigationScreenProp<NavigationState>,
+    onWillFocus?: NavigationEventCallback,
+    onDidFocus?: NavigationEventCallback,
+    onWillBlur?: NavigationEventCallback,
+    onDidBlur?: NavigationEventCallback,
+  };
+  declare export var NavigationEvents: React$ComponentType<
+    _NavigationEventsProps
+  >;
 
   /**
    * Navigation container
@@ -1159,10 +1176,9 @@ declare module 'react-navigation' {
       }
     >
   >;
-  
-  declare export function withNavigationFocus<Props: {}, Comp: React$ComponentType<Props>>(
-    Component: Comp
-  ): React$ComponentType<$Diff<React$ElementConfig<Comp>, { isFocused: boolean | void }>>;
+  declare export function withNavigationFocus<Props: {}>(
+    Component: React$ComponentType<Props>
+  ): React$ComponentType<$Diff<Props, { isFocused: boolean | void }>>;
 
   declare export function getNavigation<State: NavigationState, Options: {}>(
     router: NavigationRouter<State, Options>,

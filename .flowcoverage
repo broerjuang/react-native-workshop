@@ -6,7 +6,7 @@
     "src/*.js"
   ],
   "outputDir": "flow-coverage",
-  "threshold": 90,
+  "threshold": 70,
   "type": [
     "html",
     "json",

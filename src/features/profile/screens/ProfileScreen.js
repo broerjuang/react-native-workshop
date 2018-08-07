@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component, Children} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {MaterialIcons} from '@expo/vector-icons';
 
@@ -57,10 +57,35 @@ class ProfileScreen extends Component<Props> {
               <Text style={styleParallax.txtUsername}>sstur</Text>
             </View>
             <View style={styleParallax.containerButton}>
-              <ParallaxButtons name="Repositories" value={3} />
-              <ParallaxButtons name="Stars" value={6} />
-              <ParallaxButtons name="Followers" value={9} />
-              <ParallaxButtons name="Following" value={12} />
+              <ParallaxButtons
+                name="Repositories"
+                value={3}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryScreen')
+                }
+              />
+
+              <ParallaxButtons
+                name="Stars"
+                value={6}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryScreen')
+                }
+              />
+              <ParallaxButtons
+                name="Followers"
+                value={9}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryScreen')
+                }
+              />
+              <ParallaxButtons
+                name="Following"
+                value={12}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryScreen')
+                }
+              />
             </View>
           </View>
         )}
@@ -81,11 +106,16 @@ class ProfileScreen extends Component<Props> {
     );
   }
 }
+type ParalaxProps = {
+  name: string;
+  value: number;
+  onPress?: () => boolean;
+};
 
-function ParallaxButtons(props) {
-  let {name, value} = props;
+function ParallaxButtons(props: ParalaxProps) {
+  let {name, value, onPress = null} = props;
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View style={styleParallax.buttonRepositories}>
         <Text style={styleParallax.txtButtonValue}> {value} </Text>
         <Text style={styleParallax.txtButton}> {name} </Text>
@@ -93,8 +123,11 @@ function ParallaxButtons(props) {
     </TouchableOpacity>
   );
 }
-
-function DetailsGroup(props) {
+type DetailsGroupProps = {
+  name: string;
+  children: ReactEl;
+};
+function DetailsGroup(props: DetailsGroupProps) {
   let {name, children, ...otherProps} = props;
   return (
     <View>
@@ -109,7 +142,7 @@ function DetailsGroup(props) {
               {...otherProps}
               style={styles.containerProfileDetailsContent}
             >
-              <Text style={styles.txtProfileDetailsContent}>{child}</Text>
+              <Text>{child}</Text>
             </View>
           );
         })}
@@ -117,12 +150,14 @@ function DetailsGroup(props) {
     </View>
   );
 }
-
-function DetailsContent(props) {
+type DetailsContentProps = {
+  children: ReactEl;
+};
+function DetailsContent(props: DetailsContentProps) {
   let {children, ...otherProps} = props;
   return <Text {...otherProps}>{children}</Text>;
 }
-const styles = StyleSheet.create({
+const styles = {
   containerProfileDetails: {
     flex: 1,
     flexDirection: 'column',
@@ -146,8 +181,8 @@ const styles = StyleSheet.create({
   txtProfileDetailsTitle: {
     fontWeight: 'bold',
   },
-});
-const styleParallax = StyleSheet.create({
+};
+const styleParallax = {
   contentStyle: {
     flex: 1,
   },
@@ -243,5 +278,5 @@ const styleParallax = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
   },
-});
+};
 export default ProfileScreen;

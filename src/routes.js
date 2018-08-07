@@ -18,6 +18,34 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
+import {
+  RepositoryScreen,
+  RepositoryDetailScreen,
+} from './features/repository/screens/index';
+
+// TODO: Put back to inside RepositoryDetailScreen
+import React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
+
+let Repository = createStackNavigator({
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+    title: 'Repository',
+  },
+  RepositoryDetailScreen: {
+    screen: RepositoryDetailScreen,
+    navigationOptions: ({navigation}) => ({
+      headerTransparent: true,
+      headerLeft: (
+        <View style={{paddingLeft: 10}}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={{color: 'white'}}>Back</Text>
+          </TouchableOpacity>
+        </View>
+      ),
+    }),
+  },
+});
 
 import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
 
@@ -31,10 +59,9 @@ let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
   },
-  RepositoryScreen: {
-    screen: RepositoryScreen,
-    title: 'Repository',
-  },
+  Repository: {
+    screen: Repository,
+
   ProfileScreen: {
     screen: ProfileScreen,
     title: 'Profile',

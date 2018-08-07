@@ -19,7 +19,6 @@ class RepositoryDetailScreen extends Component<Props, {}> {
       </View>
     ),
   });
-
   render() {
     let type = 1;
     let repoType = type ? 'repo-forked' : 'repo';
@@ -35,7 +34,7 @@ class RepositoryDetailScreen extends Component<Props, {}> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}> sstur </Text>
+              <Text style={styleParallax.txtStickyHeader}> Bootcamp </Text>
             </View>
           )}
           renderForeground={() => (

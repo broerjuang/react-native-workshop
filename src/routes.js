@@ -18,26 +18,31 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
-
+import {
+  RepositoryScreen,
+  RepositoryDetailScreen,
+} from './features/repository/screens/index';
 import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
-
-import {RepositoryScreen} from './features/repository/screens';
 
 import SearchTab from './assets/SearchTab';
 
 import renderIcon from './assets/renderIcon';
 
+let Repository = createStackNavigator({
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+  },
+  RepositoryDetailScreen: {
+    screen: RepositoryDetailScreen,
+  },
+});
+
 let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
   },
-  RepositoryScreen: {
-    screen: RepositoryScreen,
-    title: 'Repository',
-  },
-  ProfileScreen: {
-    screen: ProfileScreen,
-    title: 'Profile',
+  Repository: {
+    screen: Repository,
   },
 };
 

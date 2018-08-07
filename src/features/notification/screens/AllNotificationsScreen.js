@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 1, height: 1},
     shadowColor: 'black',
     shadowOpacity: 0.2,
-    // borderColor: "#B3B3B3"
   },
   upperListPart: {
     flex: 1,

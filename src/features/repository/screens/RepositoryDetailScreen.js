@@ -8,7 +8,7 @@ import type {NavigationScreenProp} from 'react-navigation';
 type Props = {
   navigation: NavigationScreenProp<*>;
 };
-class RepositoryDetailScreen extends Component<Props, {}> {
+class RepositoryDetailScreen extends Component<Props> {
   static navigationOptions = (options: *) => ({
     headerTransparent: true,
     headerLeft: (
@@ -19,7 +19,6 @@ class RepositoryDetailScreen extends Component<Props, {}> {
       </View>
     ),
   });
-
   render() {
     let type = 1;
     let repoType = type ? 'repo-forked' : 'repo';

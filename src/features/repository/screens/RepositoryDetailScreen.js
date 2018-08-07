@@ -46,11 +46,7 @@ class RepositoryDetailScreen extends Component<Props> {
                 <Text style={styleParallax.txtFullName}>Bootcamp</Text>
               </View>
               <View style={styleParallax.containerButton}>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.props.navigation.navigate('RepositoryDetailScreen');
-                  }}
-                >
+                <TouchableOpacity>
                   <View style={styleParallax.buttonRepositories}>
                     <Text style={styleParallax.txtButtonValue}> 0 </Text>
                     <Text style={styleParallax.txtButton}> Stars </Text>

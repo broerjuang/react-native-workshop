@@ -18,6 +18,9 @@ import {
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
+
+import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
+
 import {RepositoryScreen} from './features/repository/screens';
 
 import SearchTab from './assets/SearchTab';
@@ -73,38 +76,64 @@ let Profile = createStackNavigator(
   },
 );
 
-let UnreadNotification = createStackNavigator({
-  Unread: {
-    screen: UnreadScreen,
+let UnreadNotification = createStackNavigator(
+  {
+    Unread: {
+      screen: UnreadScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  },
+);
 
-let AllNotification = createStackNavigator({
-  AllNotificationsScreen: {
-    screen: AllNotificationsScreen,
+let AllNotification = createStackNavigator(
+  {
+    AllNotificationsScreen: {
+      screen: AllNotificationsScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  },
+);
 
-let ParticipatingNotification = createStackNavigator({
-  Participating: {
-    screen: ParticipatingScreen,
+let ParticipatingNotification = createStackNavigator(
+  {
+    Participating: {
+      screen: ParticipatingScreen,
+    },
+    ...sharedScreens,
   },
-  ...sharedScreens,
-});
+  {
+    navigationOptions: {
+      header: null,
+    },
+  },
+);
 
-let Notification = createMaterialTopTabNavigator({
-  UnreadNotification: {
-    screen: UnreadNotification,
+let Notification = createMaterialTopTabNavigator(
+  {
+    Unread: {
+      screen: UnreadNotification,
+    },
+    Participating: {
+      screen: ParticipatingNotification,
+    },
+    All: {
+      screen: AllNotification,
+    },
   },
-  ParticipatingNotification: {
-    screen: ParticipatingNotification,
+  {
+    tabBarComponent: TabBarButtonGroup,
   },
-  AllNotification: {
-    screen: AllNotification,
-  },
-});
+);
 
 let Search = createMaterialTopTabNavigator(
   {
@@ -177,13 +206,18 @@ let GitClient = createBottomTabNavigator(
   },
 );
 
-let RootNavigation = createSwitchNavigator({
-  GitClient: {
-    screen: GitClient,
+let RootNavigation = createSwitchNavigator(
+  {
+    LoginScreen: {
+      screen: LoginScreen,
+    },
+    GitClient: {
+      screen: GitClient,
+    },
   },
-  LoginScreen: {
-    screen: LoginScreen,
+  {
+    initialRouteName: 'GitClient',
   },
-});
+);
 
 export default RootNavigation;

@@ -5,7 +5,9 @@ import LoginScreen from '../LoginScreen';
 
 describe('LoginScreen', () => {
   it('should render LoginScreen corectly', () => {
-    let component = renderer.create(<LoginScreen />);
+    let component = renderer.create(
+      <LoginScreen navigation={{navigate: (s) => s}} />,
+    );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

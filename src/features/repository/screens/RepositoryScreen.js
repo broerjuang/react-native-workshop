@@ -21,7 +21,7 @@ type Items = {
 };
 class RepositoryScreen extends Component<Props, {}> {
   render() {
-    let {items} = this.props;
+    let {items = []} = this.props;
     return (
       <View>
         <SearchBar
@@ -41,7 +41,8 @@ class RepositoryScreen extends Component<Props, {}> {
             borderBottomWidth: 0.1,
             borderTopWidth: 0.5,
           }}
-        />{items.map((item, key) => {
+        />
+        {items.map((item, key) => {
           return (
             <View key={key}>
               <RepoComponent {...item} />

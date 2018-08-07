@@ -8,7 +8,17 @@ import type {NavigationScreenProp} from 'react-navigation';
 type Props = {
   navigation: NavigationScreenProp<*>;
 };
-class RepositoryDetailScreen extends Component<Props> {
+class RepositoryDetailScreen extends Component<Props, {}> {
+  static navigationOptions = (options: *) => ({
+    headerTransparent: true,
+    headerLeft: (
+      <View style={{paddingLeft: 10}}>
+        <TouchableOpacity onPress={() => options.navigation.goBack()}>
+          <Text style={{color: 'white'}}>Back</Text>
+        </TouchableOpacity>
+      </View>
+    ),
+  });
   render() {
     let type = 1;
     let repoType = type ? 'repo-forked' : 'repo';
@@ -36,11 +46,7 @@ class RepositoryDetailScreen extends Component<Props> {
                 <Text style={styleParallax.txtFullName}>Bootcamp</Text>
               </View>
               <View style={styleParallax.containerButton}>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.props.navigation.navigate('RepositoryDetailScreen');
-                  }}
-                >
+                <TouchableOpacity>
                   <View style={styleParallax.buttonRepositories}>
                     <Text style={styleParallax.txtButtonValue}> 0 </Text>
                     <Text style={styleParallax.txtButton}> Stars </Text>

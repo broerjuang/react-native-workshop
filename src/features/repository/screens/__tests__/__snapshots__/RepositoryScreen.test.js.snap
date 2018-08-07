@@ -86,7 +86,6 @@ exports[`Repository screee  should render Repository corectly 1`] = `
       
     </Text>
   </View>
-  ;
   <View>
     <View
       style={

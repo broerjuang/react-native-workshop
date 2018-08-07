@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import {MaterialIcons} from '@expo/vector-icons';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
@@ -33,14 +34,14 @@ class ProfileScreen extends Component<Props> {
               top: 10,
               height: 30,
               width: 30,
-              backgroundColor: 'yellow',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            {' '}
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Setting')}
             >
-              <Text> asd </Text>
+              <MaterialIcons name="settings" size={30} color="white" />
             </TouchableOpacity>
           </View>
         )}
@@ -56,11 +57,7 @@ class ProfileScreen extends Component<Props> {
               <Text style={styleParallax.txtUsername}>sstur</Text>
             </View>
             <View style={styleParallax.containerButton}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.props.navigation.navigate('Setting');
-                }}
-              >
+              <TouchableOpacity>
                 <View style={styleParallax.buttonRepositories}>
                   <Text style={styleParallax.txtButtonValue}> 3 </Text>
                   <Text style={styleParallax.txtButton}> Repositories </Text>

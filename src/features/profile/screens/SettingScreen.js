@@ -25,7 +25,7 @@ class SettingScreen extends Component<Props> {
   });
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={{paddingTop: 40, flex: 1, backgroundColor: 'white'}}>
         <View style={styles.containerSetting}>
           <SettingButton name="Language" />
           <View style={styles.containerBorder} />
@@ -37,7 +37,7 @@ class SettingScreen extends Component<Props> {
           <View style={styles.containerBorder} />
           <SettingButton name="Sign Out" color="red" />
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 }

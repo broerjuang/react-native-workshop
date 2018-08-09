@@ -24,9 +24,8 @@ import {
 } from './features/repository/screens/index';
 import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
 
-import SearchTab from './assets/SearchTab';
-
-import renderIcon from './assets/renderIcon';
+import SearchTab from './features/search/assets/SearchTab';
+import renderIcon from './features/search/assets/renderIcon';
 
 let Repository = createStackNavigator({
   RepositoryScreen: {

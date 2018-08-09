@@ -9,7 +9,7 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import {FontAwesome} from '@expo/vector-icons';
+import {Icon} from '../../../general/core-ui/index';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
@@ -53,7 +53,7 @@ class SearchUserScreen extends Component<Object> {
                 />
                 <Text style={username}>{user.fullName}</Text>
               </View>
-              <FontAwesome name="angle-right" size={24} color="grey" />
+              <Icon name="angle-right" size={24} color="grey" type="FONTAWESOME"/>
             </TouchableOpacity>
           );
         })}

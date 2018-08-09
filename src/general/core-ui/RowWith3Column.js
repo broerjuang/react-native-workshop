@@ -1,7 +1,6 @@
 // @flow
 import React, {Component} from 'react';
 import {View} from 'react-native';
-
 type Props = {
   left?: ReactEl;
   content?: ReactEl;
@@ -9,6 +8,7 @@ type Props = {
 };
 
 type State = {
+  minHeight: number;
   height: number;
 };
 
@@ -20,7 +20,8 @@ type Event = {
 
 class RowWith3Column extends Component<Props, State> {
   state = {
-    height: 30,
+    minHeight: 30,
+    height: 0,
   };
 
   rightContent = React.isValidElement(this.props.right)
@@ -34,14 +35,16 @@ class RowWith3Column extends Component<Props, State> {
     : null;
 
   onLayout(event: Event) {
-    const {width} = event.nativeEvent.layout;
+    const {width, height} = event.nativeEvent.layout;
     this.setState({
-      height: Math.floor(width / 6),
+      minHeight: Math.floor(width / 6),
+      height,
     });
   }
 
   render() {
-    let {height} = this.state;
+    let {minHeight, height} = this.state;
+    height = height > minHeight ? height : minHeight;
     return (
       <View
         onLayout={(event: Event) => {
@@ -73,6 +76,7 @@ let styles = {
     width: widthConstantMiddle,
     justifyContent: 'center',
     alignItems: 'flex-start',
+    // alignSelf: 'center',
   },
   edge: {
     width: widthConstantEdge,

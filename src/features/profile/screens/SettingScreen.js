@@ -1,10 +1,10 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
 
 import type {NavigationScreenProp} from 'react-navigation';
-import {MaterialIcons} from '@expo/vector-icons';
+import SettingButton from '../../../general/core-ui/SettingButton';
 
 type Props = {};
 
@@ -25,37 +25,24 @@ class SettingScreen extends Component<Props> {
   });
   render() {
     return (
-      <View style={{paddingTop: 40}}>
+      <View style={{paddingTop: 40, flex: 1, backgroundColor: 'white'}}>
         <View style={styles.containerSetting}>
-          <View style={styles.containerButton}>
-            <SettingButton name="Language" />
-            <View style={styles.containerBorder}>
-              <SettingButton name="Open in Browser" />
-            </View>
-            <SettingButton name="Privacy Policy" />
-            <View style={styles.containerBorder}>
-              <SettingButton name="Make a donation" />
-            </View>
-            <SettingButton name="Sign Out" />
-          </View>
+          <SettingButton name="Language" />
+          <View style={styles.containerBorder} />
+          <SettingButton name="Open in Browser" />
+          <View style={styles.containerBorder} />
+          <SettingButton name="Privacy Policy" />
+          <View style={styles.containerBorder} />
+          <SettingButton name="Make a donation" />
+          <View style={styles.containerBorder} />
+          <SettingButton name="Sign Out" color="red" />
         </View>
       </View>
     );
   }
 }
 
-function SettingButton(props) {
-  return (
-    <TouchableOpacity>
-      <View style={styles.buttonSetting}>
-        <Text style={styles.txtButton}>{props.name}</Text>
-        <MaterialIcons name="chevron-right" size={30} />
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-const styles = StyleSheet.create({
+const styles = {
   headerLeft: {
     paddingLeft: 10,
   },
@@ -63,20 +50,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     borderTopWidth: 2,
     borderBottomWidth: 2,
-  },
-  buttonSetting: {
-    height: 50,
-    padding: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    borderTopColor: 'grey',
+    borderBottomColor: 'grey',
+    backgroundColor: 'white',
   },
   containerBorder: {
-    borderTopWidth: 1,
     borderBottomWidth: 1,
+    borderTopColor: 'grey',
+    borderBottomColor: 'grey',
+    opacity: 0.5,
   },
-});
+};
 
 export default SettingScreen;

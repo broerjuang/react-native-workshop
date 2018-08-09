@@ -5,6 +5,11 @@ import {Octicons, MaterialIcons} from '@expo/vector-icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {SafeAreaView} from 'react-navigation';
 import type {NavigationScreenProp} from 'react-navigation';
+
+import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
+import DetailsGroup from '../../../general/core-ui/DetailsGroup';
+import DetailsContent from '../../../general/core-ui/DetailsContent';
+
 type Props = {
   navigation: NavigationScreenProp<*>;
 };
@@ -34,7 +39,7 @@ class RepositoryDetailScreen extends Component<Props> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}> sstur </Text>
+              <Text style={styleParallax.txtStickyHeader}> Repo Name </Text>
             </View>
           )}
           renderForeground={() => (
@@ -46,24 +51,9 @@ class RepositoryDetailScreen extends Component<Props> {
                 <Text style={styleParallax.txtFullName}>Bootcamp</Text>
               </View>
               <View style={styleParallax.containerButton}>
-                <TouchableOpacity>
-                  <View style={styleParallax.buttonRepositories}>
-                    <Text style={styleParallax.txtButtonValue}> 0 </Text>
-                    <Text style={styleParallax.txtButton}> Stars </Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <View style={styleParallax.buttonStars}>
-                    <Text style={styleParallax.txtButtonValue}> 2 </Text>
-                    <Text style={styleParallax.txtButton}> Watcher </Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <View style={styleParallax.buttonFollowers}>
-                    <Text style={styleParallax.txtButtonValue}> 1 </Text>
-                    <Text style={styleParallax.txtButton}> Forks </Text>
-                  </View>
-                </TouchableOpacity>
+                <ParallaxButtons name="Stars" value={3} />
+                <ParallaxButtons name="Watchers" value={6} />
+                <ParallaxButtons name="Forks" value={9} />
               </View>
             </View>
           )}

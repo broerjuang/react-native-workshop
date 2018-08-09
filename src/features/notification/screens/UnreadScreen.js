@@ -8,7 +8,6 @@ import {
   NotificationHeader,
   NotificationList,
 } from '../../../general/core-ui/NotificationList';
-import {connect} from 'react-redux';
 
 type Props = {markAsRead: (itemID: number) => void; markAllAsRead: () => void};
 
@@ -16,7 +15,7 @@ type State = {
   itemID: number;
 };
 
-class UnreadScreen extends Component<Props, State> {
+export default class UnreadScreen extends Component<Props, State> {
   render() {
     const {mainContainer} = styles;
 
@@ -95,22 +94,6 @@ class UnreadScreen extends Component<Props, State> {
     );
   }
 }
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    markAllAsRead: () =>
-      dispatch({
-        type: 'MARK_ALL_AS_READ',
-      }),
-    markAsRead: (itemID: number) =>
-      dispatch({type: 'MARK_AS_READ', payload: itemID}),
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(UnreadScreen);
 
 const styles = StyleSheet.create({
   mainContainer: {

@@ -27,16 +27,7 @@ exports[`RowWith3Collumn should render RowWith3Collumn corectly 1`] = `
           },
         ]
       }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "blue",
-            "flex": 1,
-          }
-        }
-      />
-    </View>
+    />
     <View
       style={
         Array [
@@ -65,16 +56,7 @@ exports[`RowWith3Collumn should render RowWith3Collumn corectly 1`] = `
           },
         ]
       }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "blue",
-            "flex": 1,
-          }
-        }
-      />
-    </View>
+    />
   </View>
 </View>
 `;

@@ -1,7 +1,6 @@
 // @flow
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import isNull from '../helpers/isNull';
 
 type Props = {
   left?: ReactEl;
@@ -24,9 +23,15 @@ class RowWith3Column extends Component<Props, State> {
     height: 30,
   };
 
-  rightContent = isNull(this.props.right) ? null : this.props.right;
-  leftContent = isNull(this.props.left) ? null : this.props.left;
-  middleContent = isNull(this.props.content) ? null : this.props.content;
+  rightContent = React.isValidElement(this.props.right)
+    ? null
+    : this.props.right;
+
+  leftContent = React.isValidElement(this.props.left) ? null : this.props.left;
+
+  middleContent = React.isValidElement(this.props.content)
+    ? null
+    : this.props.content;
 
   onLayout(event: Event) {
     const {width} = event.nativeEvent.layout;

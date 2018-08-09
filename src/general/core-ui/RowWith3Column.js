@@ -1,61 +1,32 @@
 // @flow
-import React, {Component} from 'react';
+import React from 'react';
 import {View} from 'react-native';
-
 type Props = {
   left?: ReactEl;
   content?: ReactEl;
   right?: ReactEl;
+  style?: Object;
 };
 
-type State = {
-  height: number;
-};
+function RowWith3Column(props: Props) {
+  let rightContent = React.isValidElement(props.right) ? props.right : null;
 
-type Event = {
-  nativeEvent: {
-    layout: {x: number; y: number; width: number; height: number};
-  };
-};
+  let leftContent = React.isValidElement(props.left) ? props.left : null;
 
-class RowWith3Column extends Component<Props, State> {
-  state = {
-    height: 30,
-  };
+  let middleContent = React.isValidElement(props.content)
+    ? props.content
+    : null;
 
-  rightContent = React.isValidElement(this.props.right)
-    ? null
-    : this.props.right;
-
-  leftContent = React.isValidElement(this.props.left) ? null : this.props.left;
-
-  middleContent = React.isValidElement(this.props.content)
-    ? null
-    : this.props.content;
-
-  onLayout(event: Event) {
-    const {width} = event.nativeEvent.layout;
-    this.setState({
-      height: Math.floor(width / 6),
-    });
-  }
-
-  render() {
-    let {height} = this.state;
-    return (
-      <View
-        onLayout={(event: Event) => {
-          this.onLayout(event);
-        }}
-      >
-        <View style={styles.container}>
-          <View style={[styles.edge, {height}]}>{this.leftContent}</View>
-          <View style={[styles.middle, {height}]}>{this.middleContent}</View>
-          <View style={[styles.edge, {height}]}>{this.rightContent}</View>
-        </View>
+  let containerStyle = props.style ? props.style : [];
+  return (
+    <View>
+      <View style={[styles.container, containerStyle]}>
+        <View style={styles.edge}>{leftContent}</View>
+        <View style={styles.middle}>{middleContent}</View>
+        <View style={styles.edge}>{rightContent}</View>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 let widthConstantEdge = '15%';
@@ -73,6 +44,8 @@ let styles = {
     width: widthConstantMiddle,
     justifyContent: 'center',
     alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    // alignSelf: 'center',
   },
   edge: {
     width: widthConstantEdge,

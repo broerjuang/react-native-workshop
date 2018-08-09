@@ -1,62 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RowWith3Collumn should render RowWith3Collumn corectly 1`] = `
-<View
-  onLayout={[Function]}
->
+<View>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Array [],
+      ]
     }
   >
     <View
       style={
-        Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "15%",
+        }
+      }
+    >
+      <View
+        style={
           Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "width": "15%",
-          },
-          Object {
-            "height": 30,
-          },
-        ]
+            "backgroundColor": "blue",
+            "flex": 1,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flexWrap": "wrap",
+          "justifyContent": "center",
+          "padding": 10,
+          "width": "70%",
+        }
       }
     />
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "flex-start",
-            "justifyContent": "center",
-            "padding": 10,
-            "width": "70%",
-          },
-          Object {
-            "height": 30,
-          },
-        ]
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "15%",
+        }
       }
-    />
-    <View
-      style={
-        Array [
+    >
+      <View
+        style={
           Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "width": "15%",
-          },
-          Object {
-            "height": 30,
-          },
-        ]
-      }
-    />
+            "backgroundColor": "blue",
+            "flex": 1,
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;

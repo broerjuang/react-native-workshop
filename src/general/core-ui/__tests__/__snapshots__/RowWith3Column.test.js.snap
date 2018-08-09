@@ -4,12 +4,15 @@ exports[`RowWith3Collumn should render RowWith3Collumn corectly 1`] = `
 <View>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Array [],
+      ]
     }
   >
     <View

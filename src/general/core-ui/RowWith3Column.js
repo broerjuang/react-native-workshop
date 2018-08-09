@@ -5,6 +5,7 @@ type Props = {
   left?: ReactEl;
   content?: ReactEl;
   right?: ReactEl;
+  style?: Object;
 };
 
 function RowWith3Column(props: Props) {
@@ -16,9 +17,10 @@ function RowWith3Column(props: Props) {
     ? props.content
     : null;
 
+  let containerStyle = props.style ? props.style : [];
   return (
     <View>
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         <View style={styles.edge}>{leftContent}</View>
         <View style={styles.middle}>{middleContent}</View>
         <View style={styles.edge}>{rightContent}</View>

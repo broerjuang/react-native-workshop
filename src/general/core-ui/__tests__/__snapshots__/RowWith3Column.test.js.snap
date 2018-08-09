@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RowWith3Collumn should render RowWith3Collumn corectly 1`] = `
+<View
+  onLayout={[Function]}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "width": "15%",
+          },
+          Object {
+            "height": 30,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "justifyContent": "center",
+            "padding": 10,
+            "width": "70%",
+          },
+          Object {
+            "height": 30,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "width": "15%",
+          },
+          Object {
+            "height": 30,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

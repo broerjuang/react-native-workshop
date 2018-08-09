@@ -24,14 +24,14 @@ class RowWith3Column extends Component<Props, State> {
   };
 
   rightContent = React.isValidElement(this.props.right)
-    ? null
-    : this.props.right;
+    ? this.props.right
+    : null;
 
-  leftContent = React.isValidElement(this.props.left) ? null : this.props.left;
+  leftContent = React.isValidElement(this.props.left) ? this.props.left : null;
 
   middleContent = React.isValidElement(this.props.content)
-    ? null
-    : this.props.content;
+    ? this.props.content
+    : null;
 
   onLayout(event: Event) {
     const {width} = event.nativeEvent.layout;

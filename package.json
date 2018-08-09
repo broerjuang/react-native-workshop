@@ -13,7 +13,9 @@
     "husky": "^0.14.3",
     "jest-expo": "~26.0.0",
     "react-native-scripts": "1.14.0",
-    "react-test-renderer": "^16.4.1"
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.4.1",
+    "redux": "^4.0.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {

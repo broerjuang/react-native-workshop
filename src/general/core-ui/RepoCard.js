@@ -1,14 +1,8 @@
 //@flow
 
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {Ionicons, Octicons, FontAwesome} from '@expo/vector-icons';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {Icon} from './index';
 
 type Repo = {
   fullName: string,
@@ -34,29 +28,29 @@ export default function RepoCard(props: RepoCardProps) {
     repoIconWrapper,
   } = styles;
   return (
-    <TouchableOpacity style={list} onPress={() => onPress(repo)}>
+    <TouchableOpacity style={list} onPress={onPress}>
       <View>
         <Text style={repoTitle}>{repo.fullName}</Text>
         {repo.description !== '' ? <Text>{repo.description}</Text> : null}
         <View style={repoIconListWrapper}>
           <View style={repoIconWrapper}>
-            <Ionicons name="md-star" size={16} color="grey" />
+            <Icon name="md-star" size={16} color="grey" type="IONICONS" />
             <Text style={repoIconText}>{repo.starsCount}</Text>
           </View>
           <View style={repoIconWrapper}>
-            <Octicons name="repo-forked" size={16} color="grey" />
+            <Icon name="repo-forked" size={16} color="grey" type="OCTICONS" />
             <Text style={repoIconText}>{repo.forksCount}</Text>
           </View>
           <View style={repoIconWrapper}>
-            <FontAwesome name="circle" size={16} color="#f9e03b" />
+            <Icon name="circle" size={16} color="#f9e03b" type="FONTAWESOME" />
             <Text style={repoIconText}>{repo.language}</Text>
           </View>
         </View>
       </View>
       {repo.fork ? (
-        <Octicons name="repo-forked" size={32} color="grey" />
+        <Icon name="repo-forked" size={32} color="grey" type="OCTICONS" />
       ) : (
-        <Octicons name="repo" size={32} color="grey" />
+        <Icon name="repo" size={32} color="grey" type="OCTICONS" />
       )}
     </TouchableOpacity>
   );

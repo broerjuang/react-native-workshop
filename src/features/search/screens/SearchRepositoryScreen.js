@@ -1,15 +1,7 @@
 // @flow
-
 import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {Ionicons, Octicons, FontAwesome} from '@expo/vector-icons';
-import RepoCard from '../../../general/core-ui/RepoCard';
+import {ScrollView} from 'react-native';
+import {RepoCard} from '../../../general/core-ui/index';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
@@ -49,7 +41,13 @@ class SearchRepositoryScreen extends Component<Object> {
     return (
       <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
         {repoList.map((repo, index) => {
-          return <RepoCard key={index} repo={repo} onPress={this._openRepo} />;
+          return (
+            <RepoCard
+              key={index}
+              repo={repo}
+              onPress={() => this._openRepo(repo)}
+            />
+          );
         })}
       </ScrollView>
     );

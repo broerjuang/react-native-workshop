@@ -45,13 +45,16 @@ let sharedScreens = {
   Repository: {
     screen: Repository,
   },
+  UserScreen: {
+    screen: ProfileScreen,
+  },
 };
 
 let Events = createStackNavigator({
   EventsScreen: {
     screen: EventsScreen,
     navigationOptions: {
-      title: 'events',
+      title: 'GitPoint',
     },
   },
   ...sharedScreens,
@@ -68,7 +71,7 @@ let Profile = createStackNavigator(
     Profile: {
       screen: ProfileScreen,
       navigationOptions: {
-        title: 'Nah',
+        title: 'Profile',
         header: null,
       },
     },
@@ -209,7 +212,7 @@ let GitClient = createBottomTabNavigator(
       activeTintColor: '#000',
       inactiveTintColor: 'grey',
     },
-    initialRouteName: 'Notification',
+    initialRouteName: 'Events',
   },
 );
 
@@ -223,7 +226,7 @@ let RootNavigation = createSwitchNavigator(
     },
   },
   {
-    initialRouteName: 'GitClient',
+    initialRouteName: 'LoginScreen',
   },
 );
 

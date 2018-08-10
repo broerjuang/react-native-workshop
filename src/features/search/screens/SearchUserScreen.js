@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  SafeAreaView,
   StyleSheet,
 } from 'react-native';
 import {Icon} from '../../../general/core-ui/index';
@@ -38,31 +39,38 @@ class SearchUserScreen extends Component<Object> {
       },
     ];
     return (
-      <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-        {userList.map((user, index) => {
-          return (
-            <TouchableOpacity
-              key={index}
-              style={list}
-              onPress={() => this._openUser(user)}
-            >
-              <View style={userWrapper}>
-                <Image
-                  style={{width: 32, height: 32, borderRadius: 16}}
-                  source={{uri: user.profilePicture}}
+      <SafeAreaView>
+        <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
+          {userList.map((user, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                style={list}
+                onPress={() => this._openUser(user)}
+              >
+                <View style={userWrapper}>
+                  <Image
+                    style={{width: 32, height: 32, borderRadius: 16}}
+                    source={{uri: user.profilePicture}}
+                  />
+                  <Text style={username}>{user.fullName}</Text>
+                </View>
+                <Icon
+                  name="angle-right"
+                  size={24}
+                  color="grey"
+                  type="FONTAWESOME"
                 />
-                <Text style={username}>{user.fullName}</Text>
-              </View>
-              <Icon name="angle-right" size={24} color="grey" type="FONTAWESOME"/>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 
   _openUser(user: User) {
-    this.props.navigation.navigate('ProfileScreen');
+    this.props.navigation.navigate('UserScreen');
   }
 }
 

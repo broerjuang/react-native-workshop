@@ -1,8 +1,9 @@
 // @flow
+
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import {RowWith3Column, Icon} from '../general/core-ui/index';
 import {EventContent} from './index';
+import {RowWith3Column, Icon} from '../general/core-ui/index';
 
 type Event = {
   profilePicture: string,

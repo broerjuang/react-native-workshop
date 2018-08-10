@@ -591,7 +591,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -743,7 +767,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -849,7 +897,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1001,7 +1073,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1107,7 +1203,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1259,7 +1379,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1365,7 +1509,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1517,7 +1685,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1623,7 +1815,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [
@@ -1775,7 +1991,31 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View>
+                                  <View
+                                    accessibilityComponentType={undefined}
+                                    accessibilityLabel={undefined}
+                                    accessibilityTraits={undefined}
+                                    accessible={true}
+                                    collapsable={undefined}
+                                    hasTVPreferredFocus={undefined}
+                                    hitSlop={undefined}
+                                    isTVSelectable={true}
+                                    nativeID={undefined}
+                                    onLayout={undefined}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                    testID={undefined}
+                                    tvParallaxProperties={undefined}
+                                  >
                                     <View
                                       style={
                                         Array [

@@ -1,13 +1,18 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
-import Button from '../../../general/core-ui/Button';
 import {
-  NotificationDetails,
-  NotificationHeader,
-  NotificationList,
-} from '../../../general/core-ui/NotificationList';
+  View,
+  StyleSheet,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+import Button from '../../../general/core-ui/Button';
+import RowWith3Column from '../../../general/core-ui/RowWith3Column';
+import {Ionicons, Octicons} from '@expo/vector-icons';
+import {Avatar} from 'react-native-elements';
+import {NotificationList} from '../../../general/core-ui/NotificationList';
 
 type Props = {markAsRead: (itemID: number) => void; markAllAsRead: () => void};
 
@@ -77,15 +82,34 @@ export default class UnreadScreen extends Component<Props, State> {
 
           {list.map((item, i) => (
             <NotificationList key={i}>
-              <NotificationHeader
-                avatar={item.avatar}
-                title={item.title}
-                id={item.id}
-                onPress={() => this.props.markAsRead(item.id)}
+              <RowWith3Column
+                style={{backgroundColor: '#F1F1F1'}}
+                left={<Avatar small rounded source={{uri: item.avatar}} />}
+                content={<Text>{item.title}</Text>}
+                right={
+                  <TouchableOpacity
+                    onPress={() => this.props.markAsRead(item.id)}
+                  >
+                    <Ionicons name="ios-checkmark" size={50} color="black" />
+                  </TouchableOpacity>
+                }
               />
-              <NotificationDetails
-                isWarned={item.isWarned}
-                detailText={item.subtitle}
+              <RowWith3Column
+                left={
+                  item.isWarned ? (
+                    <Ionicons name="ios-checkmark" size={50} color="black" />
+                  ) : (
+                    <Octicons name="repo-forked" size={25} type="OCTICONS" />
+                  )
+                }
+                content={<Text>{item.subtitle}</Text>}
+                right={
+                  <TouchableOpacity
+                    onPress={() => this.props.markAsRead(item.id)}
+                  >
+                    <Ionicons name="ios-checkmark" size={50} color="black" />
+                  </TouchableOpacity>
+                }
               />
             </NotificationList>
           ))}

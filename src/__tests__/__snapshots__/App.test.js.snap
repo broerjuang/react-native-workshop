@@ -591,522 +591,44 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#F1F1F1",
-                                        "flex": 1,
-                                      }
-                                    }
-                                  >
+                                  <View>
                                     <View
-                                      style={
-                                        Object {
-                                          "flexDirection": "row",
-                                          "margin": 10,
-                                        }
-                                      }
-                                    >
-                                      <View
-                                        activeOpacity={undefined}
-                                        onLongPress={undefined}
-                                        onPress={undefined}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "height": 34,
-                                              "paddingBottom": 10,
-                                              "paddingRight": 10,
-                                              "paddingTop": 10,
-                                              "width": 34,
-                                            },
-                                            Object {
-                                              "borderRadius": 17,
-                                            },
-                                            undefined,
-                                          ]
-                                        }
-                                      >
-                                        <View
-                                          style={
-                                            Array [
-                                              Object {
-                                                "alignItems": "center",
-                                                "alignSelf": "stretch",
-                                                "backgroundColor": "rgba(0,0,0,0.2)",
-                                                "bottom": 0,
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                                "left": 0,
-                                                "position": "absolute",
-                                                "right": 0,
-                                                "top": 0,
-                                              },
-                                              Object {
-                                                "borderRadius": 17,
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                        >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://png.icons8.com/color/1600/person-male.png",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "height": 34,
-                                                  "width": 34,
-                                                },
-                                                Object {
-                                                  "borderRadius": 17,
-                                                },
-                                                undefined,
-                                              ]
-                                            }
-                                          />
-                                        </View>
-                                      </View>
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={true}
-                                        ellipsizeMode="tail"
-                                        style={
-                                          Object {
-                                            "alignSelf": "center",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 5,
-                                          }
-                                        }
-                                      >
-                                         
-                                        deandrasita/abcd
-                                      </Text>
-                                      <View
-                                        accessibilityComponentType={undefined}
-                                        accessibilityLabel={undefined}
-                                        accessibilityTraits={undefined}
-                                        accessible={true}
-                                        collapsable={undefined}
-                                        hasTVPreferredFocus={undefined}
-                                        hitSlop={undefined}
-                                        isTVSelectable={true}
-                                        nativeID={undefined}
-                                        onLayout={undefined}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "opacity": 1,
-                                          }
-                                        }
-                                        testID={undefined}
-                                        tvParallaxProperties={undefined}
-                                      >
-                                        <View
-                                          onPress={undefined}
-                                          style={
-                                            Array [
-                                              false,
-                                              false,
-                                              false,
-                                              Object {
-                                                "alignItems": "center",
-                                                "backgroundColor": "transparent",
-                                                "justifyContent": "center",
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                          underlayColor="white"
-                                        >
-                                          <Text
-                                            accessible={true}
-                                            allowFontScaling={false}
-                                            ellipsizeMode="tail"
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "color": "black",
-                                                  "fontSize": 24,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                  },
-                                                  undefined,
-                                                ],
-                                                Object {
-                                                  "fontFamily": "Material Icons",
-                                                  "fontStyle": "normal",
-                                                  "fontWeight": "normal",
-                                                },
-                                              ]
-                                            }
-                                          >
-                                            
-                                          </Text>
-                                        </View>
-                                      </View>
-                                    </View>
-                                  </View>
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "white",
-                                        "flex": 1,
-                                        "flexDirection": "row",
-                                        "paddingLeft": 5,
-                                      }
-                                    }
-                                  >
-                                    
-                                    <Text
-                                      accessible={true}
-                                      allowFontScaling={true}
-                                      ellipsizeMode="tail"
-                                      style={
-                                        Object {
-                                          "alignSelf": "center",
-                                          "flex": 1,
-                                          "flexWrap": "wrap",
-                                          "fontSize": 12,
-                                          "padding": 5,
-                                          "textAlign": "left",
-                                        }
-                                      }
-                                    >
-                                      (testing long lines) Potential security vulnedjfjldsfl sldjflkdsjf kdjs flksdjflkjljflkjsd fjsdlfslfjsdklfkjf lkdsj  lkjkrability found in the hoek dependency.
-                                    </Text>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Object {
-                                      "flex": 1,
-                                      "margin": 10,
-                                      "shadowColor": "black",
-                                      "shadowOffset": Object {
-                                        "height": 1,
-                                        "width": 1,
-                                      },
-                                      "shadowOpacity": 0.2,
-                                    }
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#F1F1F1",
-                                        "flex": 1,
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Object {
-                                          "flexDirection": "row",
-                                          "margin": 10,
-                                        }
-                                      }
-                                    >
-                                      <View
-                                        activeOpacity={undefined}
-                                        onLongPress={undefined}
-                                        onPress={undefined}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "height": 34,
-                                              "paddingBottom": 10,
-                                              "paddingRight": 10,
-                                              "paddingTop": 10,
-                                              "width": 34,
-                                            },
-                                            Object {
-                                              "borderRadius": 17,
-                                            },
-                                            undefined,
-                                          ]
-                                        }
-                                      >
-                                        <View
-                                          style={
-                                            Array [
-                                              Object {
-                                                "alignItems": "center",
-                                                "alignSelf": "stretch",
-                                                "backgroundColor": "rgba(0,0,0,0.2)",
-                                                "bottom": 0,
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                                "left": 0,
-                                                "position": "absolute",
-                                                "right": 0,
-                                                "top": 0,
-                                              },
-                                              Object {
-                                                "borderRadius": 17,
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                        >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
-                                              }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "height": 34,
-                                                  "width": 34,
-                                                },
-                                                Object {
-                                                  "borderRadius": 17,
-                                                },
-                                                undefined,
-                                              ]
-                                            }
-                                          />
-                                        </View>
-                                      </View>
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={true}
-                                        ellipsizeMode="tail"
-                                        style={
-                                          Object {
-                                            "alignSelf": "center",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 5,
-                                          }
-                                        }
-                                      >
-                                         
-                                        deandrasita/abcd
-                                      </Text>
-                                      <View
-                                        accessibilityComponentType={undefined}
-                                        accessibilityLabel={undefined}
-                                        accessibilityTraits={undefined}
-                                        accessible={true}
-                                        collapsable={undefined}
-                                        hasTVPreferredFocus={undefined}
-                                        hitSlop={undefined}
-                                        isTVSelectable={true}
-                                        nativeID={undefined}
-                                        onLayout={undefined}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "opacity": 1,
-                                          }
-                                        }
-                                        testID={undefined}
-                                        tvParallaxProperties={undefined}
-                                      >
-                                        <View
-                                          onPress={undefined}
-                                          style={
-                                            Array [
-                                              false,
-                                              false,
-                                              false,
-                                              Object {
-                                                "alignItems": "center",
-                                                "backgroundColor": "transparent",
-                                                "justifyContent": "center",
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                          underlayColor="white"
-                                        >
-                                          <Text
-                                            accessible={true}
-                                            allowFontScaling={false}
-                                            ellipsizeMode="tail"
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "color": "black",
-                                                  "fontSize": 24,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                  },
-                                                  undefined,
-                                                ],
-                                                Object {
-                                                  "fontFamily": "Material Icons",
-                                                  "fontStyle": "normal",
-                                                  "fontWeight": "normal",
-                                                },
-                                              ]
-                                            }
-                                          >
-                                            
-                                          </Text>
-                                        </View>
-                                      </View>
-                                    </View>
-                                  </View>
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "white",
-                                        "flex": 1,
-                                        "flexDirection": "row",
-                                        "paddingLeft": 5,
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      onPress={undefined}
                                       style={
                                         Array [
-                                          false,
-                                          false,
-                                          false,
                                           Object {
                                             "alignItems": "center",
-                                            "backgroundColor": "transparent",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
                                             "justifyContent": "center",
                                           },
-                                          undefined,
+                                          Object {
+                                            "backgroundColor": "#F1F1F1",
+                                          },
                                         ]
                                       }
-                                      underlayColor="white"
-                                    >
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={false}
-                                        ellipsizeMode="tail"
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "black",
-                                              "fontSize": 24,
-                                            },
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                              },
-                                              undefined,
-                                            ],
-                                            Object {
-                                              "fontFamily": "Material Icons",
-                                              "fontStyle": "normal",
-                                              "fontWeight": "normal",
-                                            },
-                                          ]
-                                        }
-                                      >
-                                        
-                                      </Text>
-                                    </View>
-                                    <Text
-                                      accessible={true}
-                                      allowFontScaling={true}
-                                      ellipsizeMode="tail"
-                                      style={
-                                        Object {
-                                          "alignSelf": "center",
-                                          "flex": 1,
-                                          "flexWrap": "wrap",
-                                          "fontSize": 12,
-                                          "padding": 5,
-                                          "textAlign": "left",
-                                        }
-                                      }
-                                    >
-                                      Potential security vulnerability found in the hoek dependency.
-                                    </Text>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Object {
-                                      "flex": 1,
-                                      "margin": 10,
-                                      "shadowColor": "black",
-                                      "shadowOffset": Object {
-                                        "height": 1,
-                                        "width": 1,
-                                      },
-                                      "shadowOpacity": 0.2,
-                                    }
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#F1F1F1",
-                                        "flex": 1,
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Object {
-                                          "flexDirection": "row",
-                                          "margin": 10,
-                                        }
-                                      }
                                     >
                                       <View
-                                        activeOpacity={undefined}
-                                        onLongPress={undefined}
-                                        onPress={undefined}
                                         style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "height": 34,
-                                              "paddingBottom": 10,
-                                              "paddingRight": 10,
-                                              "paddingTop": 10,
-                                              "width": 34,
-                                            },
-                                            Object {
-                                              "borderRadius": 17,
-                                            },
-                                            undefined,
-                                          ]
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
                                         }
                                       >
                                         <View
+                                          activeOpacity={undefined}
+                                          onLongPress={undefined}
+                                          onPress={undefined}
                                           style={
                                             Array [
                                               Object {
-                                                "alignItems": "center",
-                                                "alignSelf": "stretch",
-                                                "backgroundColor": "rgba(0,0,0,0.2)",
-                                                "bottom": 0,
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                                "left": 0,
-                                                "position": "absolute",
-                                                "right": 0,
-                                                "top": 0,
+                                                "backgroundColor": "transparent",
+                                                "height": 34,
+                                                "paddingBottom": 10,
+                                                "paddingRight": 10,
+                                                "paddingTop": 10,
+                                                "width": 34,
                                               },
                                               Object {
                                                 "borderRadius": 17,
@@ -1115,17 +637,20 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                             ]
                                           }
                                         >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
-                                              }
-                                            }
+                                          <View
                                             style={
                                               Array [
                                                 Object {
-                                                  "height": 34,
-                                                  "width": 34,
+                                                  "alignItems": "center",
+                                                  "alignSelf": "stretch",
+                                                  "backgroundColor": "rgba(0,0,0,0.2)",
+                                                  "bottom": 0,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                  "left": 0,
+                                                  "position": "absolute",
+                                                  "right": 0,
+                                                  "top": 0,
                                                 },
                                                 Object {
                                                   "borderRadius": 17,
@@ -1133,378 +658,181 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                                 undefined,
                                               ]
                                             }
-                                          />
-                                        </View>
-                                      </View>
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={true}
-                                        ellipsizeMode="tail"
-                                        style={
-                                          Object {
-                                            "alignSelf": "center",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 5,
-                                          }
-                                        }
-                                      >
-                                         
-                                        deandrasita/abcd
-                                      </Text>
-                                      <View
-                                        accessibilityComponentType={undefined}
-                                        accessibilityLabel={undefined}
-                                        accessibilityTraits={undefined}
-                                        accessible={true}
-                                        collapsable={undefined}
-                                        hasTVPreferredFocus={undefined}
-                                        hitSlop={undefined}
-                                        isTVSelectable={true}
-                                        nativeID={undefined}
-                                        onLayout={undefined}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        style={
-                                          Object {
-                                            "opacity": 1,
-                                          }
-                                        }
-                                        testID={undefined}
-                                        tvParallaxProperties={undefined}
-                                      >
-                                        <View
-                                          onPress={undefined}
-                                          style={
-                                            Array [
-                                              false,
-                                              false,
-                                              false,
-                                              Object {
-                                                "alignItems": "center",
-                                                "backgroundColor": "transparent",
-                                                "justifyContent": "center",
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                          underlayColor="white"
-                                        >
-                                          <Text
-                                            accessible={true}
-                                            allowFontScaling={false}
-                                            ellipsizeMode="tail"
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "color": "black",
-                                                  "fontSize": 24,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                  },
-                                                  undefined,
-                                                ],
-                                                Object {
-                                                  "fontFamily": "Material Icons",
-                                                  "fontStyle": "normal",
-                                                  "fontWeight": "normal",
-                                                },
-                                              ]
-                                            }
                                           >
-                                            
-                                          </Text>
-                                        </View>
-                                      </View>
-                                    </View>
-                                  </View>
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "white",
-                                        "flex": 1,
-                                        "flexDirection": "row",
-                                        "paddingLeft": 5,
-                                      }
-                                    }
-                                  >
-                                    
-                                    <Text
-                                      accessible={true}
-                                      allowFontScaling={true}
-                                      ellipsizeMode="tail"
-                                      style={
-                                        Object {
-                                          "alignSelf": "center",
-                                          "flex": 1,
-                                          "flexWrap": "wrap",
-                                          "fontSize": 12,
-                                          "padding": 5,
-                                          "textAlign": "left",
-                                        }
-                                      }
-                                    >
-                                      Potential security vulnerability found in the hoek dependency.
-                                    </Text>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Object {
-                                      "flex": 1,
-                                      "margin": 10,
-                                      "shadowColor": "black",
-                                      "shadowOffset": Object {
-                                        "height": 1,
-                                        "width": 1,
-                                      },
-                                      "shadowOpacity": 0.2,
-                                    }
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#F1F1F1",
-                                        "flex": 1,
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Object {
-                                          "flexDirection": "row",
-                                          "margin": 10,
-                                        }
-                                      }
-                                    >
-                                      <View
-                                        activeOpacity={undefined}
-                                        onLongPress={undefined}
-                                        onPress={undefined}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "height": 34,
-                                              "paddingBottom": 10,
-                                              "paddingRight": 10,
-                                              "paddingTop": 10,
-                                              "width": 34,
-                                            },
-                                            Object {
-                                              "borderRadius": 17,
-                                            },
-                                            undefined,
-                                          ]
-                                        }
-                                      >
-                                        <View
-                                          style={
-                                            Array [
-                                              Object {
-                                                "alignItems": "center",
-                                                "alignSelf": "stretch",
-                                                "backgroundColor": "rgba(0,0,0,0.2)",
-                                                "bottom": 0,
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                                "left": 0,
-                                                "position": "absolute",
-                                                "right": 0,
-                                                "top": 0,
-                                              },
-                                              Object {
-                                                "borderRadius": 17,
-                                              },
-                                              undefined,
-                                            ]
-                                          }
-                                        >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://png.icons8.com/color/1600/person-male.png",
+                                                }
                                               }
-                                            }
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "height": 34,
-                                                  "width": 34,
-                                                },
-                                                Object {
-                                                  "borderRadius": 17,
-                                                },
-                                                undefined,
-                                              ]
-                                            }
-                                          />
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "height": 34,
+                                                    "width": 34,
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17,
+                                                  },
+                                                  undefined,
+                                                ]
+                                              }
+                                            />
+                                          </View>
                                         </View>
                                       </View>
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={true}
-                                        ellipsizeMode="tail"
+                                      <View
                                         style={
                                           Object {
-                                            "alignSelf": "center",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 5,
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
                                           }
                                         }
                                       >
-                                         
-                                        deandrasita/abcd
-                                      </Text>
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          deandrasita/abcd
+                                        </Text>
+                                      </View>
                                       <View
-                                        accessibilityComponentType={undefined}
-                                        accessibilityLabel={undefined}
-                                        accessibilityTraits={undefined}
-                                        accessible={true}
-                                        collapsable={undefined}
-                                        hasTVPreferredFocus={undefined}
-                                        hitSlop={undefined}
-                                        isTVSelectable={true}
-                                        nativeID={undefined}
-                                        onLayout={undefined}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
                                         style={
                                           Object {
-                                            "opacity": 1,
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
                                           }
                                         }
-                                        testID={undefined}
-                                        tvParallaxProperties={undefined}
                                       >
                                         <View
-                                          onPress={undefined}
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
                                           style={
-                                            Array [
-                                              false,
-                                              false,
-                                              false,
-                                              Object {
-                                                "alignItems": "center",
-                                                "backgroundColor": "transparent",
-                                                "justifyContent": "center",
-                                              },
-                                              undefined,
-                                            ]
+                                            Object {
+                                              "opacity": 1,
+                                            }
                                           }
-                                          underlayColor="white"
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
                                         >
                                           <Text
                                             accessible={true}
-                                            allowFontScaling={false}
+                                            allowFontScaling={true}
                                             ellipsizeMode="tail"
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "color": "black",
-                                                  "fontSize": 24,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                  },
-                                                  undefined,
-                                                ],
-                                                Object {
-                                                  "fontFamily": "Material Icons",
-                                                  "fontStyle": "normal",
-                                                  "fontWeight": "normal",
-                                                },
-                                              ]
-                                            }
-                                          >
-                                            
-                                          </Text>
+                                          />
                                         </View>
                                       </View>
                                     </View>
                                   </View>
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "white",
-                                        "flex": 1,
-                                        "flexDirection": "row",
-                                        "paddingLeft": 5,
-                                      }
-                                    }
-                                  >
+                                  <View>
                                     <View
-                                      onPress={undefined}
                                       style={
                                         Array [
-                                          false,
-                                          false,
-                                          false,
                                           Object {
                                             "alignItems": "center",
-                                            "backgroundColor": "transparent",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
                                             "justifyContent": "center",
                                           },
-                                          undefined,
+                                          Array [],
                                         ]
                                       }
-                                      underlayColor="white"
                                     >
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={false}
-                                        ellipsizeMode="tail"
+                                      <View
                                         style={
-                                          Array [
-                                            Object {
-                                              "color": "black",
-                                              "fontSize": 24,
-                                            },
-                                            Array [
-                                              Object {
-                                                "backgroundColor": "transparent",
-                                              },
-                                              undefined,
-                                            ],
-                                            Object {
-                                              "fontFamily": "Material Icons",
-                                              "fontStyle": "normal",
-                                              "fontWeight": "normal",
-                                            },
-                                          ]
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
                                         }
                                       >
-                                        
-                                      </Text>
-                                    </View>
-                                    <Text
-                                      accessible={true}
-                                      allowFontScaling={true}
-                                      ellipsizeMode="tail"
-                                      style={
-                                        Object {
-                                          "alignSelf": "center",
-                                          "flex": 1,
-                                          "flexWrap": "wrap",
-                                          "fontSize": 12,
-                                          "padding": 5,
-                                          "textAlign": "left",
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        />
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
                                         }
-                                      }
-                                    >
-                                      Potential security vulnerability found in the hoek dependency.
-                                    </Text>
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          (testing long lines) Potential security vulnedjfjldsfl sldjflkdsjf kdjs flksdjflkjljflkjsd fjsdlfslfjsdklfkjf lkdsj  lkjkrability found in the hoek dependency.
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
                                   </View>
                                 </View>
                                 <View
@@ -1521,57 +849,44 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                     }
                                   }
                                 >
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#F1F1F1",
-                                        "flex": 1,
-                                      }
-                                    }
-                                  >
+                                  <View>
                                     <View
                                       style={
-                                        Object {
-                                          "flexDirection": "row",
-                                          "margin": 10,
-                                        }
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "backgroundColor": "#F1F1F1",
+                                          },
+                                        ]
                                       }
                                     >
                                       <View
-                                        activeOpacity={undefined}
-                                        onLongPress={undefined}
-                                        onPress={undefined}
                                         style={
-                                          Array [
-                                            Object {
-                                              "backgroundColor": "transparent",
-                                              "height": 34,
-                                              "paddingBottom": 10,
-                                              "paddingRight": 10,
-                                              "paddingTop": 10,
-                                              "width": 34,
-                                            },
-                                            Object {
-                                              "borderRadius": 17,
-                                            },
-                                            undefined,
-                                          ]
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
                                         }
                                       >
                                         <View
+                                          activeOpacity={undefined}
+                                          onLongPress={undefined}
+                                          onPress={undefined}
                                           style={
                                             Array [
                                               Object {
-                                                "alignItems": "center",
-                                                "alignSelf": "stretch",
-                                                "backgroundColor": "rgba(0,0,0,0.2)",
-                                                "bottom": 0,
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                                "left": 0,
-                                                "position": "absolute",
-                                                "right": 0,
-                                                "top": 0,
+                                                "backgroundColor": "transparent",
+                                                "height": 34,
+                                                "paddingBottom": 10,
+                                                "paddingRight": 10,
+                                                "paddingTop": 10,
+                                                "width": 34,
                                               },
                                               Object {
                                                 "borderRadius": 17,
@@ -1580,17 +895,20 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                             ]
                                           }
                                         >
-                                          <Image
-                                            source={
-                                              Object {
-                                                "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
-                                              }
-                                            }
+                                          <View
                                             style={
                                               Array [
                                                 Object {
-                                                  "height": 34,
-                                                  "width": 34,
+                                                  "alignItems": "center",
+                                                  "alignSelf": "stretch",
+                                                  "backgroundColor": "rgba(0,0,0,0.2)",
+                                                  "bottom": 0,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                  "left": 0,
+                                                  "position": "absolute",
+                                                  "right": 0,
+                                                  "top": 0,
                                                 },
                                                 Object {
                                                   "borderRadius": 17,
@@ -1598,167 +916,955 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
                                                 undefined,
                                               ]
                                             }
-                                          />
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "height": 34,
+                                                    "width": 34,
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17,
+                                                  },
+                                                  undefined,
+                                                ]
+                                              }
+                                            />
+                                          </View>
                                         </View>
                                       </View>
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={true}
-                                        ellipsizeMode="tail"
+                                      <View
                                         style={
                                           Object {
-                                            "alignSelf": "center",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 5,
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
                                           }
                                         }
                                       >
-                                         
-                                        deandrasita/abcd
-                                      </Text>
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          deandrasita/abcd
+                                        </Text>
+                                      </View>
                                       <View
-                                        accessibilityComponentType={undefined}
-                                        accessibilityLabel={undefined}
-                                        accessibilityTraits={undefined}
-                                        accessible={true}
-                                        collapsable={undefined}
-                                        hasTVPreferredFocus={undefined}
-                                        hitSlop={undefined}
-                                        isTVSelectable={true}
-                                        nativeID={undefined}
-                                        onLayout={undefined}
-                                        onResponderGrant={[Function]}
-                                        onResponderMove={[Function]}
-                                        onResponderRelease={[Function]}
-                                        onResponderTerminate={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
                                         style={
                                           Object {
-                                            "opacity": 1,
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
                                           }
                                         }
-                                        testID={undefined}
-                                        tvParallaxProperties={undefined}
                                       >
                                         <View
-                                          onPress={undefined}
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
                                           style={
-                                            Array [
-                                              false,
-                                              false,
-                                              false,
-                                              Object {
-                                                "alignItems": "center",
-                                                "backgroundColor": "transparent",
-                                                "justifyContent": "center",
-                                              },
-                                              undefined,
-                                            ]
+                                            Object {
+                                              "opacity": 1,
+                                            }
                                           }
-                                          underlayColor="white"
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
                                         >
                                           <Text
                                             accessible={true}
-                                            allowFontScaling={false}
+                                            allowFontScaling={true}
                                             ellipsizeMode="tail"
-                                            style={
-                                              Array [
-                                                Object {
-                                                  "color": "black",
-                                                  "fontSize": 24,
-                                                },
-                                                Array [
-                                                  Object {
-                                                    "backgroundColor": "transparent",
-                                                  },
-                                                  undefined,
-                                                ],
-                                                Object {
-                                                  "fontFamily": "Material Icons",
-                                                  "fontStyle": "normal",
-                                                  "fontWeight": "normal",
-                                                },
-                                              ]
-                                            }
-                                          >
-                                            
-                                          </Text>
+                                          />
                                         </View>
                                       </View>
                                     </View>
                                   </View>
-                                  <View
-                                    style={
-                                      Object {
-                                        "backgroundColor": "white",
-                                        "flex": 1,
-                                        "flexDirection": "row",
-                                        "paddingLeft": 5,
-                                      }
-                                    }
-                                  >
+                                  <View>
                                     <View
-                                      onPress={undefined}
                                       style={
                                         Array [
-                                          false,
-                                          false,
-                                          false,
                                           Object {
                                             "alignItems": "center",
-                                            "backgroundColor": "transparent",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
                                             "justifyContent": "center",
                                           },
-                                          undefined,
+                                          Array [],
                                         ]
                                       }
-                                      underlayColor="white"
                                     >
-                                      <Text
-                                        accessible={true}
-                                        allowFontScaling={false}
-                                        ellipsizeMode="tail"
+                                      <View
                                         style={
-                                          Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        />
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          Potential security vulnerability found in the hoek dependency.
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
                                             Object {
-                                              "color": "black",
-                                              "fontSize": 24,
-                                            },
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                      "margin": 10,
+                                      "shadowColor": "black",
+                                      "shadowOffset": Object {
+                                        "height": 1,
+                                        "width": 1,
+                                      },
+                                      "shadowOpacity": 0.2,
+                                    }
+                                  }
+                                >
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "backgroundColor": "#F1F1F1",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          activeOpacity={undefined}
+                                          onLongPress={undefined}
+                                          onPress={undefined}
+                                          style={
                                             Array [
                                               Object {
                                                 "backgroundColor": "transparent",
+                                                "height": 34,
+                                                "paddingBottom": 10,
+                                                "paddingRight": 10,
+                                                "paddingTop": 10,
+                                                "width": 34,
+                                              },
+                                              Object {
+                                                "borderRadius": 17,
                                               },
                                               undefined,
-                                            ],
-                                            Object {
-                                              "fontFamily": "Material Icons",
-                                              "fontStyle": "normal",
-                                              "fontWeight": "normal",
-                                            },
-                                          ]
+                                            ]
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "alignItems": "center",
+                                                  "alignSelf": "stretch",
+                                                  "backgroundColor": "rgba(0,0,0,0.2)",
+                                                  "bottom": 0,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                  "left": 0,
+                                                  "position": "absolute",
+                                                  "right": 0,
+                                                  "top": 0,
+                                                },
+                                                Object {
+                                                  "borderRadius": 17,
+                                                },
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "height": 34,
+                                                    "width": 34,
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17,
+                                                  },
+                                                  undefined,
+                                                ]
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
                                         }
                                       >
-                                        
-                                      </Text>
-                                    </View>
-                                    <Text
-                                      accessible={true}
-                                      allowFontScaling={true}
-                                      ellipsizeMode="tail"
-                                      style={
-                                        Object {
-                                          "alignSelf": "center",
-                                          "flex": 1,
-                                          "flexWrap": "wrap",
-                                          "fontSize": 12,
-                                          "padding": 5,
-                                          "textAlign": "left",
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          deandrasita/abcd
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
                                         }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Array [],
+                                        ]
                                       }
                                     >
-                                      Potential security vulnerability found in the hoek dependency.
-                                    </Text>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        />
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          Potential security vulnerability found in the hoek dependency.
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                      "margin": 10,
+                                      "shadowColor": "black",
+                                      "shadowOffset": Object {
+                                        "height": 1,
+                                        "width": 1,
+                                      },
+                                      "shadowOpacity": 0.2,
+                                    }
+                                  }
+                                >
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "backgroundColor": "#F1F1F1",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          activeOpacity={undefined}
+                                          onLongPress={undefined}
+                                          onPress={undefined}
+                                          style={
+                                            Array [
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "height": 34,
+                                                "paddingBottom": 10,
+                                                "paddingRight": 10,
+                                                "paddingTop": 10,
+                                                "width": 34,
+                                              },
+                                              Object {
+                                                "borderRadius": 17,
+                                              },
+                                              undefined,
+                                            ]
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "alignItems": "center",
+                                                  "alignSelf": "stretch",
+                                                  "backgroundColor": "rgba(0,0,0,0.2)",
+                                                  "bottom": 0,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                  "left": 0,
+                                                  "position": "absolute",
+                                                  "right": 0,
+                                                  "top": 0,
+                                                },
+                                                Object {
+                                                  "borderRadius": 17,
+                                                },
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "height": 34,
+                                                    "width": 34,
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17,
+                                                  },
+                                                  undefined,
+                                                ]
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          deandrasita/abcd
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Array [],
+                                        ]
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        />
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          Potential security vulnerability found in the hoek dependency.
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                      "margin": 10,
+                                      "shadowColor": "black",
+                                      "shadowOffset": Object {
+                                        "height": 1,
+                                        "width": 1,
+                                      },
+                                      "shadowOpacity": 0.2,
+                                    }
+                                  }
+                                >
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "backgroundColor": "#F1F1F1",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          activeOpacity={undefined}
+                                          onLongPress={undefined}
+                                          onPress={undefined}
+                                          style={
+                                            Array [
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "height": 34,
+                                                "paddingBottom": 10,
+                                                "paddingRight": 10,
+                                                "paddingTop": 10,
+                                                "width": 34,
+                                              },
+                                              Object {
+                                                "borderRadius": 17,
+                                              },
+                                              undefined,
+                                            ]
+                                          }
+                                        >
+                                          <View
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "alignItems": "center",
+                                                  "alignSelf": "stretch",
+                                                  "backgroundColor": "rgba(0,0,0,0.2)",
+                                                  "bottom": 0,
+                                                  "flex": 1,
+                                                  "justifyContent": "center",
+                                                  "left": 0,
+                                                  "position": "absolute",
+                                                  "right": 0,
+                                                  "top": 0,
+                                                },
+                                                Object {
+                                                  "borderRadius": 17,
+                                                },
+                                                undefined,
+                                              ]
+                                            }
+                                          >
+                                            <Image
+                                              source={
+                                                Object {
+                                                  "uri": "https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg",
+                                                }
+                                              }
+                                              style={
+                                                Array [
+                                                  Object {
+                                                    "height": 34,
+                                                    "width": 34,
+                                                  },
+                                                  Object {
+                                                    "borderRadius": 17,
+                                                  },
+                                                  undefined,
+                                                ]
+                                              }
+                                            />
+                                          </View>
+                                        </View>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          deandrasita/abcd
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
+                                  </View>
+                                  <View>
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "backgroundColor": "white",
+                                            "flexDirection": "row",
+                                            "justifyContent": "center",
+                                          },
+                                          Array [],
+                                        ]
+                                      }
+                                    >
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        />
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "flex-start",
+                                            "flexWrap": "wrap",
+                                            "justifyContent": "center",
+                                            "padding": 10,
+                                            "width": "70%",
+                                          }
+                                        }
+                                      >
+                                        <Text
+                                          accessible={true}
+                                          allowFontScaling={true}
+                                          ellipsizeMode="tail"
+                                        >
+                                          Potential security vulnerability found in the hoek dependency.
+                                        </Text>
+                                      </View>
+                                      <View
+                                        style={
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                            "width": "15%",
+                                          }
+                                        }
+                                      >
+                                        <View
+                                          accessibilityComponentType={undefined}
+                                          accessibilityLabel={undefined}
+                                          accessibilityTraits={undefined}
+                                          accessible={true}
+                                          collapsable={undefined}
+                                          hasTVPreferredFocus={undefined}
+                                          hitSlop={undefined}
+                                          isTVSelectable={true}
+                                          nativeID={undefined}
+                                          onLayout={undefined}
+                                          onResponderGrant={[Function]}
+                                          onResponderMove={[Function]}
+                                          onResponderRelease={[Function]}
+                                          onResponderTerminate={[Function]}
+                                          onResponderTerminationRequest={[Function]}
+                                          onStartShouldSetResponder={[Function]}
+                                          style={
+                                            Object {
+                                              "opacity": 1,
+                                            }
+                                          }
+                                          testID={undefined}
+                                          tvParallaxProperties={undefined}
+                                        >
+                                          <Text
+                                            accessible={true}
+                                            allowFontScaling={true}
+                                            ellipsizeMode="tail"
+                                          />
+                                        </View>
+                                      </View>
+                                    </View>
                                   </View>
                                 </View>
                               </View>

@@ -119,7 +119,9 @@ class ProfileScreen extends Component<Props> {
               />
               <RowWith3Column
                 isTouchable={true}
-                onPress={() => this.props.navigation.navigate('Setting')}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryDetailScreen')
+                }
                 content={<Text>Go to Settings</Text>}
               />
             </DetailsGroup>

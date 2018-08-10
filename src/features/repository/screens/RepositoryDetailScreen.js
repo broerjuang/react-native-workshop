@@ -8,7 +8,8 @@ import type {NavigationScreenProp} from 'react-navigation';
 
 import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
 import DetailsGroup from '../../../general/core-ui/DetailsGroup';
-import DetailsContent from '../../../general/core-ui/DetailsContent';
+import RowWith3Column from '../../../general/core-ui/RowWith3Column';
+import Button from '../../../general/core-ui/Button';
 
 type Props = {
   navigation: NavigationScreenProp<*>;
@@ -59,89 +60,58 @@ class RepositoryDetailScreen extends Component<Props> {
           )}
         >
           <View style={styles.containerProfileDetails}>
-            <View style={styles.containerProfileDetailsTitle}>
-              <Text style={styles.txtProfileDetailsTitle}>Owner</Text>
-            </View>
-            <View style={styles.containerProfileDetailsBody}>
-              <View style={styles.containerProfileDetailsContent}>
-                <View
-                  style={{
-                    height: 40,
-                    width: 40,
-                    borderRadius: 40,
-                    backgroundColor: 'yellow',
-                  }}
-                />
-                <Text style={styles.txtProfileDetailsContent}>jhnoa</Text>
-                <MaterialIcons
-                  name="keyboard-arrow-right"
-                  size={32}
-                  color="#D3D3D3"
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>Contributors</Text>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <Text style={styles.txtProfileDetailsContent}>
-                No Contributors Found
-              </Text>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>Source</Text>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <MaterialIcons name="code" size={32} color="#D3D3D3" />
-              <Text style={styles.txtProfileDetailsContent}>Code</Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={32}
-                color="#D3D3D3"
+            <DetailsGroup name="Owner">
+              <RowWith3Column
+                left={
+                  <View
+                    style={{
+                      height: 40,
+                      width: 40,
+                      borderRadius: 40,
+                      backgroundColor: 'yellow',
+                    }}
+                  />
+                }
+                content={<Text>jhnoa</Text>}
+                right={
+                  <MaterialIcons
+                    name="keyboard-arrow-right"
+                    size={32}
+                    color="#D3D3D3"
+                  />
+                }
+                isTouchable={true}
               />
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>Issues</Text>
-            <View
-              style={{
-                borderWidth: 1,
-                borderColor: 'black',
-                padding: 10,
-                borderRadius: 3,
-              }}
+            </DetailsGroup>
+            <DetailsGroup name="Contributors">
+              <RowWith3Column content={<Text>No Contributors Found</Text>} />
+            </DetailsGroup>
+            <DetailsGroup name="Source">
+              <RowWith3Column
+                left={<MaterialIcons name="code" size={32} color="#D3D3D3" />}
+                content={<Text>Code</Text>}
+                right={
+                  <MaterialIcons
+                    name="keyboard-arrow-right"
+                    size={32}
+                    color="#D3D3D3"
+                  />
+                }
+                isTouchable={true}
+              />
+            </DetailsGroup>
+            <DetailsGroup
+              name="Issues"
+              right={<Button title="Add Issue" onPress={() => {}} />}
             >
-              <Text>New Issue</Text>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <Text style={styles.txtProfileDetailsContent}>No Issues</Text>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsTitle}>
-            <Text style={styles.txtProfileDetailsTitle}>Pull Request</Text>
-            <View
-              style={{
-                borderWidth: 1,
-                borderColor: 'black',
-                padding: 10,
-                borderRadius: 3,
-              }}
+              <RowWith3Column content={<Text> No Issues </Text>} />
+            </DetailsGroup>
+            <DetailsGroup
+              name="Pull Request"
+              right={<Button title="View All" onPress={() => {}} />}
             >
-              <Text>View All</Text>
-            </View>
-          </View>
-          <View style={styles.containerProfileDetailsBody}>
-            <View style={styles.containerProfileDetailsContent}>
-              <Text style={styles.txtProfileDetailsContent}>
-                No Pull Request
-              </Text>
-            </View>
+              <RowWith3Column content={<Text> No Pull Request </Text>} />
+            </DetailsGroup>
           </View>
         </ParallaxScrollView>
       </SafeAreaView>
@@ -152,34 +122,6 @@ const styles = {
   containerProfileDetails: {
     flex: 1,
     flexDirection: 'column',
-  },
-  containerProfileDetailsTitle: {
-    flexDirection: 'row',
-    paddingTop: 30,
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
-    alignItems: 'center',
-  },
-  containerProfileDetailsBody: {
-    flex: 1,
-    padding: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: 'grey',
-  },
-  containerProfileDetailsContent: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    padding: 10,
-  },
-  txtProfileDetailsTitle: {
-    fontWeight: 'bold',
-    flex: 1,
-  },
-  txtProfileDetailsContent: {
-    paddingLeft: 15,
-    flex: 1,
   },
 };
 const styleParallax = {
@@ -226,7 +168,7 @@ const styleParallax = {
   containerButton: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     paddingTop: 25,
     paddingBottom: 25,
     paddingLeft: 15,

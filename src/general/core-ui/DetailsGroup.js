@@ -5,16 +5,19 @@ import {View, Text} from 'react-native';
 
 type DetailsGroupProps = {
   name: string;
+  right?: ReactEl;
+
   children: ReactEl;
-  disabled?: boolean;
 };
 
 export default function DetailsGroup(props: DetailsGroupProps) {
-  let {name, children, ...otherProps} = props;
+  let {name, children, right, ...otherProps} = props;
+  let rightContent = React.isValidElement(props.right) ? props.right : null;
   return (
     <View>
       <View {...otherProps} style={styles.containerProfileDetailsTitle}>
         <Text style={styles.txtProfileDetailsTitle}>{name}</Text>
+        <View> {right} </View>
       </View>
       <View style={styles.containerProfileDetailsBody}>
         {Children.map(children, (child: ReactEl, i) => {
@@ -39,11 +42,14 @@ const styles = {
     padding: 15,
     borderBottomWidth: 1,
     borderBottomColor: 'grey',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   containerProfileDetailsBody: {
     flex: 1,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: 15,
+    paddingBottom: 15,
     borderBottomWidth: 2,
     borderBottomColor: 'grey',
   },

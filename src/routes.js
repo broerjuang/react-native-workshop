@@ -75,6 +75,9 @@ let Profile = createStackNavigator(
     Setting: {
       screen: Setting,
     },
+    RepositoryDetailScreen: {
+      screen: RepositoryDetailScreen,
+    },
     ...sharedScreens,
   },
   {

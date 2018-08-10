@@ -44,6 +44,7 @@
     }
   },
   "dependencies": {
+    "@types/node-fetch": "^2.1.2",
     "class-autobind": "^0.1.4",
     "expo": "^26.0.1",
     "react": "16.3.1",

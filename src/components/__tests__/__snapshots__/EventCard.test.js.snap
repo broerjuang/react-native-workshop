@@ -10,6 +10,7 @@ exports[`Icon should render EventCard corectly 1`] = `
     }
   }
 >
+<<<<<<< HEAD
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -35,6 +36,9 @@ exports[`Icon should render EventCard corectly 1`] = `
     testID={undefined}
     tvParallaxProperties={undefined}
   >
+=======
+  <View>
+>>>>>>> Create Test for Component EventCard and EventContent
     <View
       style={
         Array [

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllNotificationScreen should render AllNotificationScreen corectly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignSelf": "center",
+        "marginTop": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    You dont have any notifications of this type.
+  </Text>
+</View>
+`;

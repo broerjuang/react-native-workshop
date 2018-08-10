@@ -11,8 +11,10 @@ import {EventsScreen, EventDetail} from './features/events/screens';
 import {
   AllNotificationsScreen,
   ParticipatingScreen,
-  UnreadScreen,
 } from './features/notification/screens';
+
+import UnreadScreen from './containers/UnreadScreen.container';
+
 import {
   SearchRepositoryScreen,
   SearchUserScreen,
@@ -207,6 +209,7 @@ let GitClient = createBottomTabNavigator(
       activeTintColor: '#000',
       inactiveTintColor: 'grey',
     },
+    initialRouteName: 'Notification',
   },
 );
 
@@ -220,7 +223,7 @@ let RootNavigation = createSwitchNavigator(
     },
   },
   {
-    initialRouteName: 'LoginScreen',
+    initialRouteName: 'GitClient',
   },
 );
 

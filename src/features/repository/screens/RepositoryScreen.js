@@ -21,7 +21,7 @@ type Items = {
 };
 class RepositoryScreen extends Component<Props, {}> {
   render() {
-    let {items} = this.props;
+    let {items = []} = this.props;
     return (
       <View>
         <SearchBar

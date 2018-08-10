@@ -1,12 +1,11 @@
-// @flow
 import React from 'react';
 import renderer from 'react-test-renderer';
-import LoginScreen from '../LoginScreen';
+import {Icon} from '../index';
 
-describe('LoginScreen', () => {
-  it('should render LoginScreen corectly', () => {
+describe('Icon', () => {
+  it('should render Icon corectly', () => {
     let component = renderer.create(
-      <LoginScreen navigation={{navigate: (s) => s}} />,
+      <Icon name="md-star" size={16} color="grey" type="IONICONS" />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -7,12 +7,12 @@ import type {NavigationScreenProp} from 'react-navigation';
 import {MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>,
+  navigation: NavigationScreenProp<[]>;
 };
 type State = {
-  selectedIndex: number,
-  searchInput: string,
-  showClear: boolean,
+  selectedIndex: number;
+  searchInput: string;
+  showClear: boolean;
 };
 
 class SearchTab extends Component<Props, State> {

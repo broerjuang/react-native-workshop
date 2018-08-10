@@ -1,17 +1,14 @@
 // @flow
 
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-type Props = {};
+import React from 'react';
+import {Provider} from 'react-redux';
+import RootNavigation from './routes';
+import createStore from './store/createStore';
 
-class App extends Component<Props> {
-  render() {
-    return (
-      <View>
-        <Text>Testasd</Text>
-      </View>
-    );
-  }
+export default function Wrapper() {
+  return (
+    <Provider store={createStore}>
+      <RootNavigation />
+    </Provider>
+  );
 }
-
-export default App;

@@ -11,33 +11,39 @@ import {EventsScreen, EventDetail} from './features/events/screens';
 import {
   AllNotificationsScreen,
   ParticipatingScreen,
-  UnreadScreen,
 } from './features/notification/screens';
+
+import UnreadScreen from './containers/UnreadScreen.container';
+
 import {
   SearchRepositoryScreen,
   SearchUserScreen,
 } from './features/search/screens';
 import {ProfileScreen, SettingScreen} from './features/profile/screens';
-
+import {
+  RepositoryScreen,
+  RepositoryDetailScreen,
+} from './features/repository/screens/index';
 import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
 
-import {RepositoryScreen} from './features/repository/screens';
+import SearchTab from './features/search/assets/SearchTab';
+import renderIcon from './features/search/assets/renderIcon';
 
-import SearchTab from './assets/SearchTab';
-
-import renderIcon from './assets/renderIcon';
+let Repository = createStackNavigator({
+  RepositoryScreen: {
+    screen: RepositoryScreen,
+  },
+  RepositoryDetailScreen: {
+    screen: RepositoryDetailScreen,
+  },
+});
 
 let sharedScreens = {
   EventDetail: {
     screen: EventDetail,
   },
-  RepositoryScreen: {
-    screen: RepositoryScreen,
-    title: 'Repository',
-  },
-  ProfileScreen: {
-    screen: ProfileScreen,
-    title: 'Profile',
+  Repository: {
+    screen: Repository,
   },
 };
 
@@ -203,6 +209,7 @@ let GitClient = createBottomTabNavigator(
       activeTintColor: '#000',
       inactiveTintColor: 'grey',
     },
+    initialRouteName: 'Notification',
   },
 );
 

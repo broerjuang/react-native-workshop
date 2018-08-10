@@ -1,11 +1,14 @@
 // @flow
 
-import React, {Component, Children} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {MaterialIcons} from '@expo/vector-icons';
 
 import type {NavigationScreenProp} from 'react-navigation';
+import DetailsGroup from '../../../general/core-ui/DetailsGroup';
+import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
+import RowWith3Column from '../../../general/core-ui/RowWith3Column';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
@@ -14,141 +17,126 @@ type Props = {
 class ProfileScreen extends Component<Props> {
   render() {
     return (
-      <ParallaxScrollView
-        styles={{height: 10000}}
-        backgroundColor="#272727"
-        contentBackgroundColor="white"
-        parallaxHeaderHeight={300}
-        stickyHeaderHeight={50}
-        contentContainerStyle={styleParallax.contentStyle}
-        renderStickyHeader={() => (
-          <View style={styleParallax.stickyHeader}>
-            <Text style={styleParallax.txtStickyHeader}> sstur </Text>
-          </View>
-        )}
-        renderFixedHeader={() => (
-          <View
-            style={{
-              position: 'absolute',
-              right: 10,
-              top: 10,
-              height: 30,
-              width: 30,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Setting')}
+      <SafeAreaView style={{flex: 1}}>
+        <ParallaxScrollView
+          styles={{height: 10000}}
+          backgroundColor="#272727"
+          contentBackgroundColor="white"
+          parallaxHeaderHeight={300}
+          stickyHeaderHeight={65}
+          contentContainerStyle={styleParallax.contentStyle}
+          renderStickyHeader={() => (
+            <View style={styleParallax.stickyHeader}>
+              <Text style={styleParallax.txtStickyHeader}> sstur </Text>
+            </View>
+          )}
+          renderFixedHeader={() => (
+            <View
+              style={{
+                position: 'absolute',
+                right: 10,
+                top: 25,
+                height: 30,
+                width: 30,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              <MaterialIcons name="settings" size={30} color="white" />
-            </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Setting')}
+              >
+                <MaterialIcons name="settings" size={30} color="white" />
+              </TouchableOpacity>
+            </View>
+          )}
+          renderForeground={() => (
+            <View style={styleParallax.containerForeground}>
+              <View style={styleParallax.containerProfilePicture}>
+                <View style={styleParallax.imgProfilePicture} />
+              </View>
+              <View style={styleParallax.containerFullName}>
+                <Text style={styleParallax.txtFullName}>Simon Stürmer</Text>
+              </View>
+              <View style={styleParallax.containerUsername}>
+                <Text style={styleParallax.txtUsername}>sstur</Text>
+              </View>
+              <View style={styleParallax.containerButton}>
+                <ParallaxButtons
+                  name="Repositories"
+                  value={3}
+                  onPress={() =>
+                    this.props.navigation.navigate('RepositoryScreen')
+                  }
+                />
+
+                <ParallaxButtons
+                  name="Stars"
+                  value={6}
+                  onPress={() =>
+                    this.props.navigation.navigate('RepositoryScreen')
+                  }
+                />
+                <ParallaxButtons
+                  name="Followers"
+                  value={9}
+                  onPress={() =>
+                    this.props.navigation.navigate('RepositoryScreen')
+                  }
+                />
+                <ParallaxButtons
+                  name="Following"
+                  value={12}
+                  onPress={() =>
+                    this.props.navigation.navigate('RepositoryScreen')
+                  }
+                />
+              </View>
+            </View>
+          )}
+        >
+          <View style={styles.containerProfileDetails}>
+            <DetailsGroup disabled={true} name="Bio">
+              <RowWith3Column content={<Text> Short Biography</Text>} />
+            </DetailsGroup>
+            <DetailsGroup name="Website">
+              <RowWith3Column
+                left={
+                  <MaterialIcons
+                    name="link"
+                    size={35}
+                    style={{
+                      opacity: 0.5,
+                    }}
+                  />
+                }
+                content={<Text>URL</Text>}
+              />
+            </DetailsGroup>
+            <DetailsGroup name="Organizations">
+              <RowWith3Column
+                isTouchable={false}
+                content={<Text>Organizations</Text>}
+              />
+              <RowWith3Column
+                isTouchable={true}
+                onPress={() => this.props.navigation.navigate('Setting')}
+                content={<Text>Go to Settings</Text>}
+              />
+            </DetailsGroup>
           </View>
-        )}
-        renderForeground={() => (
-          <View style={styleParallax.containerForeground}>
-            <View style={styleParallax.containerProfilePicture}>
-              <View style={styleParallax.imgProfilePicture} />
-            </View>
-            <View style={styleParallax.containerFullName}>
-              <Text style={styleParallax.txtFullName}>Simon Stürmer</Text>
-            </View>
-            <View style={styleParallax.containerUsername}>
-              <Text style={styleParallax.txtUsername}>sstur</Text>
-            </View>
-            <View style={styleParallax.containerButton}>
-              <ParallaxButtons name="Repositories" value={3} />
-              <ParallaxButtons name="Stars" value={6} />
-              <ParallaxButtons name="Followers" value={9} />
-              <ParallaxButtons name="Following" value={12} />
-            </View>
-          </View>
-        )}
-      >
-        <View style={styles.containerProfileDetails}>
-          <DetailsGroup name="Bio">
-            <DetailsContent>Short Biography</DetailsContent>
-          </DetailsGroup>
-          <DetailsGroup name="Website">
-            <DetailsContent>URL</DetailsContent>
-          </DetailsGroup>
-          <DetailsGroup name="Organizations">
-            <DetailsContent>Org 1</DetailsContent>
-            <DetailsContent>Org 2</DetailsContent>
-          </DetailsGroup>
-        </View>
-      </ParallaxScrollView>
+        </ParallaxScrollView>
+      </SafeAreaView>
     );
   }
 }
 
-function ParallaxButtons(props) {
-  let {name, value} = props;
-  return (
-    <TouchableOpacity>
-      <View style={styleParallax.buttonRepositories}>
-        <Text style={styleParallax.txtButtonValue}> {value} </Text>
-        <Text style={styleParallax.txtButton}> {name} </Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-function DetailsGroup(props) {
-  let {name, children, ...otherProps} = props;
-  return (
-    <View>
-      <View {...otherProps} style={styles.containerProfileDetailsTitle}>
-        <Text style={styles.txtProfileDetailsTitle}>{name}</Text>
-      </View>
-      <View style={styles.containerProfileDetailsBody}>
-        {Children.map(children, (child, i) => {
-          return (
-            <View
-              key={i}
-              {...otherProps}
-              style={styles.containerProfileDetailsContent}
-            >
-              <Text style={styles.txtProfileDetailsContent}>{child}</Text>
-            </View>
-          );
-        })}
-      </View>
-    </View>
-  );
-}
-
-function DetailsContent(props) {
-  let {children, ...otherProps} = props;
-  return <Text {...otherProps}>{children}</Text>;
-}
-
-const styles = StyleSheet.create({
+const styles = {
   containerProfileDetails: {
     flex: 1,
     flexDirection: 'column',
   },
-  containerProfileDetailsTitle: {
-    paddingTop: 30,
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
-  },
-  containerProfileDetailsBody: {
-    flex: 1,
-    padding: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: 'grey',
-  },
-  containerProfileDetailsContent: {
-    justifyContent: 'center',
-    padding: 10,
-  },
-  txtProfileDetailsTitle: {
-    fontWeight: 'bold',
-  },
-});
-const styleParallax = StyleSheet.create({
+};
+const styleParallax = {
   contentStyle: {
     flex: 1,
   },
@@ -163,7 +151,7 @@ const styleParallax = StyleSheet.create({
     backgroundColor: '#272727',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 50,
+    height: 80,
   },
   containerProfilePicture: {
     // flex: 1,
@@ -197,30 +185,7 @@ const styleParallax = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
   },
-  buttonRepositories: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonStars: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonFollowers: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonFollowing: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   txtStickyHeader: {
     color: 'white',
     fontWeight: 'bold',
@@ -235,14 +200,5 @@ const styleParallax = StyleSheet.create({
     color: 'white',
     fontSize: 16,
   },
-  txtButton: {
-    color: 'white',
-    fontSize: 14,
-  },
-  txtButtonValue: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 24,
-  },
-});
+};
 export default ProfileScreen;

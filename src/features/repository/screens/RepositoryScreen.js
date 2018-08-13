@@ -6,18 +6,18 @@ import RepoComponent from '../../../components/Repo';
 import {SearchBar} from 'react-native-elements';
 
 type Props = {
-  total_count: number;
-  incomplete_results: boolean;
-  items: Array<Items>;
+  total_count: number,
+  incomplete_results: boolean,
+  items: Array<Items>,
 };
 type Items = {
-  id: number;
-  repo_name: string;
-  description: string;
-  star: number;
-  forked: number;
-  language: string;
-  repoType: string;
+  id: number,
+  repo_name: string,
+  description: string,
+  star: number,
+  forked: number,
+  language: string,
+  repoType: string,
 };
 class RepositoryScreen extends Component<Props, {}> {
   render() {

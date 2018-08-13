@@ -1,14 +1,19 @@
 // @flow
 import React from 'react';
-import {View} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 type Props = {
   left?: ReactEl;
   content?: ReactEl;
   right?: ReactEl;
   style?: Object;
+  isTouchable?: boolean;
+  onPress?: Function;
 };
 
 function RowWith3Column(props: Props) {
+  let {isTouchable, onPress} = props;
+  isTouchable = typeof isTouchable === undefined ? false : isTouchable;
+
   let rightContent = React.isValidElement(props.right) ? props.right : null;
 
   let leftContent = React.isValidElement(props.left) ? props.left : null;
@@ -19,13 +24,13 @@ function RowWith3Column(props: Props) {
 
   let containerStyle = props.style ? props.style : [];
   return (
-    <View>
+    <TouchableOpacity disabled={!isTouchable} onPress={onPress}>
       <View style={[styles.container, containerStyle]}>
         <View style={styles.edge}>{leftContent}</View>
         <View style={styles.middle}>{middleContent}</View>
         <View style={styles.edge}>{rightContent}</View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

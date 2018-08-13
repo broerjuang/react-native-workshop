@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import SettingButton from '../../../general/core-ui/SettingButton';

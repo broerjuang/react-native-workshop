@@ -7,8 +7,8 @@ import {MaterialIcons} from '@expo/vector-icons';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../general/core-ui/DetailsGroup';
-import DetailsContent from '../../../general/core-ui/DetailsContent';
 import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
+import RowWith3Column from '../../../general/core-ui/RowWith3Column';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
@@ -95,15 +95,35 @@ class ProfileScreen extends Component<Props> {
           )}
         >
           <View style={styles.containerProfileDetails}>
-            <DetailsGroup name="Bio">
-              <DetailsContent>Short Biography</DetailsContent>
+            <DetailsGroup disabled={true} name="Bio">
+              <RowWith3Column content={<Text> Short Biography</Text>} />
             </DetailsGroup>
             <DetailsGroup name="Website">
-              <DetailsContent>URL</DetailsContent>
+              <RowWith3Column
+                left={
+                  <MaterialIcons
+                    name="link"
+                    size={35}
+                    style={{
+                      opacity: 0.5,
+                    }}
+                  />
+                }
+                content={<Text>URL</Text>}
+              />
             </DetailsGroup>
             <DetailsGroup name="Organizations">
-              <DetailsContent>Org 1</DetailsContent>
-              <DetailsContent>Org 2</DetailsContent>
+              <RowWith3Column
+                isTouchable={false}
+                content={<Text>Organizations</Text>}
+              />
+              <RowWith3Column
+                isTouchable={true}
+                onPress={() =>
+                  this.props.navigation.navigate('RepositoryDetailScreen')
+                }
+                content={<Text>Go to Settings</Text>}
+              />
             </DetailsGroup>
           </View>
         </ParallaxScrollView>

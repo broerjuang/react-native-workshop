@@ -9,7 +9,7 @@ type ItemID = {
   itemID: number;
 };
 
-export default function _markAsRead(id: ItemID, action: Action) {
+export default function _markAsRead(id: ItemID = {itemID: -1}, action: Action) {
   // TODO: write function
 
   switch (action.type) {

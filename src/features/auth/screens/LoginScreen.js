@@ -15,9 +15,13 @@ import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
 import {USERTOKEN} from './../../../general/constants/asyncStorage';
+import {connect} from 'react-redux';
 
 type Props = {
   navigation: *;
+  handleAction: (action: Object) => void;
+  token: string;
+  isLogin: boolean;
 };
 
 type State = {
@@ -30,7 +34,7 @@ type Event = {
   nativeEvent: {layout: {x: number; y: number; width: number; height: number}};
 };
 
-class LoginScreen extends Component<Props, State> {
+export class LoginScreen extends Component<Props, State> {
   state = {
     visible: false,
     loginHeight: 0,
@@ -42,6 +46,11 @@ class LoginScreen extends Component<Props, State> {
 
   componentDidMount() {
     AsyncStorage.getItem(USERTOKEN).then((res) => console.log(res));
+    // fetch();
+  }
+
+  componentWillUnmount() {
+    console.log('umount : ', this.props.token);
   }
 
   render() {
@@ -160,16 +169,21 @@ class LoginScreen extends Component<Props, State> {
     let constant = 'code=';
     if (url.includes(constant)) {
       let code = url.slice(url.indexOf(constant) + 5);
-
       try {
-        let {
-          access_token,
-        }: {access_token: string} = await this._createTokenWithCode(code);
+        let {access_token} = await this._createTokenWithCode(code);
+        console.log('Token: ', access_token);
         await AsyncStorage.setItem(USERTOKEN, access_token);
+
+        this.props.handleAction({
+          type: 'LOGINSUCCESS',
+          payload: {token: access_token},
+        });
+
         this.props.navigation.navigate('GitClient');
       } catch (e) {
         console.log(e);
       }
+    } else {
     }
   };
 
@@ -179,7 +193,7 @@ class LoginScreen extends Component<Props, State> {
       `?client_id=${this.clientID}` +
       `&client_secret=${this.clientSecret}` +
       `&code=${code}`;
-    let content: {[string]: *} = fetch(url, {
+    let content: Promise<Object> = fetch(url, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -223,4 +237,19 @@ let styles = {
   },
 };
 
-export default LoginScreen;
+function mapStateToProps(state) {
+  return {
+    token: state.loginReducer.token,
+    isLogin: state.loginReducer.isLogin,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    handleAction: (action: Object) => dispatch(action),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LoginScreen);

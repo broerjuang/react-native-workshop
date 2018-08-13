@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render EventContent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  commented on issue
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    Parallax Header Bug
+     
+  </Text>
+  at
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    1d
+  </Text>
+</Text>
+`;

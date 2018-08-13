@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render EventCard corectly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderColor": "#d6d4d4",
+      "borderWidth": 0.5,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Array [],
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "width": "15%",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 16,
+              "height": 32,
+              "width": 32,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+            "padding": 10,
+            "width": "70%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            zzzcielo
+             
+          </Text>
+          commented on issue
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+             
+            Parallax Header Bug
+             
+          </Text>
+          at
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+             
+            astridtamara/bootcamp
+             
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "grey",
+              }
+            }
+          >
+            1d
+          </Text>
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "width": "15%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        />
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    numberOfLines={3}
+    style={
+      Object {
+        "color": "grey",
+        "fontWeight": "bold",
+        "padding": 12,
+        "paddingTop": 0,
+      }
+    }
+  >
+    [Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time. 
+  </Text>
+</View>
+`;

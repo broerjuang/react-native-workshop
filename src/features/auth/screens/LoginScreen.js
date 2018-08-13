@@ -9,10 +9,12 @@ import {
   Button,
   TouchableOpacity,
   WebView,
+  AsyncStorage,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
+import {USERTOKEN} from './../../../general/constants/asyncStorage';
 
 type Props = {
   navigation: *;
@@ -37,22 +39,10 @@ class LoginScreen extends Component<Props, State> {
 
   clientID = '65604622816426805c88';
   clientSecret = '54fcf0e5666b46739b0ada3c6cab7e407cca6bec';
-  _signInButtonPosition = () => {
-    let {height, width}: {height: number; width: number} = Dimensions.get(
-      'window',
-    );
-    return {
-      position: 'absolute',
-      backgroundColor: 'grey',
-      width: Math.floor(width / 3),
-      height: Math.floor(height / 12),
-      right: Math.floor(width / 3),
-      bottom: Math.floor(height / 6),
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: Math.floor(height / 36),
-    };
-  };
+
+  componentDidMount() {
+    AsyncStorage.getItem(USERTOKEN).then((res) => console.log(res));
+  }
 
   render() {
     let iconSize = 110;
@@ -141,6 +131,22 @@ class LoginScreen extends Component<Props, State> {
       </SafeAreaView>
     );
   }
+  _signInButtonPosition = () => {
+    let {height, width}: {height: number; width: number} = Dimensions.get(
+      'window',
+    );
+    return {
+      position: 'absolute',
+      backgroundColor: 'grey',
+      width: Math.floor(width / 3),
+      height: Math.floor(height / 12),
+      right: Math.floor(width / 3),
+      bottom: Math.floor(height / 6),
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: Math.floor(height / 36),
+    };
+  };
 
   _onLayout(event: Event) {
     const {height, width} = event.nativeEvent.layout;
@@ -154,8 +160,16 @@ class LoginScreen extends Component<Props, State> {
     let constant = 'code=';
     if (url.includes(constant)) {
       let code = url.slice(url.indexOf(constant) + 5);
-      let {access_token} = await this._createTokenWithCode(code);
-      this.props.navigation.navigate('GitClient');
+
+      try {
+        let {
+          access_token,
+        }: {access_token: string} = await this._createTokenWithCode(code);
+        await AsyncStorage.setItem(USERTOKEN, access_token);
+        this.props.navigation.navigate('GitClient');
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 
@@ -165,7 +179,7 @@ class LoginScreen extends Component<Props, State> {
       `?client_id=${this.clientID}` +
       `&client_secret=${this.clientSecret}` +
       `&code=${code}`;
-    let content: Object = fetch(url, {
+    let content: {[string]: *} = fetch(url, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

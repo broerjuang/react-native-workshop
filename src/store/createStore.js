@@ -1,4 +1,4 @@
 import {createStore} from 'redux';
-import _markAsRead from '../features/reducers/markAsReadReducer';
+import _markAsRead from '../reducers/markAsReadReducer';
 
 export default createStore(_markAsRead);

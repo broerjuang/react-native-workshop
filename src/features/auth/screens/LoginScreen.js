@@ -14,7 +14,7 @@ import {
 import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
-import {USERTOKEN} from './../../../general/constants/asyncStorage';
+import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import {connect} from 'react-redux';
 
 type Props = {
@@ -170,13 +170,14 @@ export class LoginScreen extends Component<Props, State> {
     if (url.includes(constant)) {
       let code = url.slice(url.indexOf(constant) + 5);
       try {
-        let {access_token} = await this._createTokenWithCode(code);
-        console.log('Token: ', access_token);
-        await AsyncStorage.setItem(USERTOKEN, access_token);
+        let access = await this._createTokenWithCode(code);
+        console.log('Token: ', access.access_token);
+        console.log('Access: ', access);
+        await AsyncStorage.setItem(USERTOKEN, access.access_token);
 
         this.props.handleAction({
           type: 'LOGIN_SUCCESS',
-          payload: {token: access_token},
+          payload: {token: access.access_token},
         });
 
         this.props.navigation.navigate('GitClient');
@@ -198,6 +199,7 @@ export class LoginScreen extends Component<Props, State> {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        scopes: ['user'],
       },
     }).then((res) => res.json());
     return content;

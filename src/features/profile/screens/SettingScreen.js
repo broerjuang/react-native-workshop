@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 
 import type {NavigationScreenProp} from 'react-navigation';
-import SettingButton from '../../../general/core-ui/SettingButton';
+import SettingButton from '../../../global/core-ui/SettingButton';
 
 type Props = {};
 

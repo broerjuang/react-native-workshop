@@ -1,21 +1,21 @@
 // @flow
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
-import {RepoCard} from '../../../general/core-ui/index';
+import {RepoCard} from '../../../global/core-ui/index';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
 type Repo = {
-  fullName: string,
-  description: string,
-  starsCount: number,
-  forksCount: number,
-  language: string,
-  fork: boolean,
+  fullName: string;
+  description: string;
+  starsCount: number;
+  forksCount: number;
+  language: string;
+  fork: boolean;
 };
 
 type Object = {
-  navigation: NavigationScreenProp<[]>,
+  navigation: NavigationScreenProp<[]>;
 };
 
 class SearchRepositoryScreen extends Component<Object> {

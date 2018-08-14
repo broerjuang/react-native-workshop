@@ -2,7 +2,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {FontAwesome, Octicons, Entypo} from '@expo/vector-icons';
-import {DARK_GREY, FACEBOOK_BLUE} from '../general/constants/colors';
+import {DARK_GREY, FACEBOOK_BLUE} from '../global/constants/colors';
 
 type Items = {
   id: number;

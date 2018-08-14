@@ -6,9 +6,9 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {MaterialIcons} from '@expo/vector-icons';
 
 import type {NavigationScreenProp} from 'react-navigation';
-import DetailsGroup from '../../../general/core-ui/DetailsGroup';
-import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
-import RowWith3Column from '../../../general/core-ui/RowWith3Column';
+import DetailsGroup from '../../../global/core-ui/DetailsGroup';
+import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
+import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;

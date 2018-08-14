@@ -212,16 +212,22 @@ let GitClient = createBottomTabNavigator(
       activeTintColor: '#000',
       inactiveTintColor: 'grey',
     },
+    initialRouteName: 'Search',
   },
 );
 
-let RootNavigation = createSwitchNavigator({
-  LoginScreen: {
-    screen: LoginScreen,
+let RootNavigation = createSwitchNavigator(
+  {
+    LoginScreen: {
+      screen: LoginScreen,
+    },
+    GitClient: {
+      screen: GitClient,
+    },
   },
-  GitClient: {
-    screen: GitClient,
+  {
+    initialRouteName: 'GitClient',
   },
-});
+);
 
 export default RootNavigation;

@@ -2,45 +2,30 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import {RepoCard} from '../../../global/core-ui/index';
+import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
 type Repo = {
-  fullName: string;
-  description: string;
-  starsCount: number;
-  forksCount: number;
-  language: string;
-  fork: boolean;
+  full_name: string,
+  description: string,
+  stargazers_count: number,
+  forks_count: number,
+  language: string,
+  fork: boolean,
 };
 
 type Object = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: NavigationScreenProp<[]>,
+  repos: Array<Repo>,
 };
 
 class SearchRepositoryScreen extends Component<Object> {
   render() {
-    let repoList: Array<Repo> = [
-      {
-        fullName: 'astridtamara/bootcamp',
-        description: 'KodeFox Bootcamp',
-        starsCount: 0,
-        forksCount: 1,
-        language: 'JavaScript',
-        fork: false,
-      },
-      {
-        fullName: 'astridtamara/kfbootcamp',
-        description: '',
-        starsCount: 0,
-        forksCount: 0,
-        language: 'JavaScript',
-        fork: true,
-      },
-    ];
+    let {repos} = this.props;
     return (
       <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-        {repoList.map((repo, index) => {
+        {repos.map((repo, index) => {
           return (
             <RepoCard
               key={index}
@@ -54,8 +39,14 @@ class SearchRepositoryScreen extends Component<Object> {
   }
 
   _openRepo(repo: Repo) {
-    this.props.navigation.navigate('RepositoryScreen');
+    this.props.navigation.navigate('RepositoryDetailScreen');
   }
 }
 
-export default SearchRepositoryScreen;
+function mapStateToProps(state) {
+  return {
+    repos: state.searchReducer.repos,
+  };
+}
+
+export default connect(mapStateToProps)(SearchRepositoryScreen);

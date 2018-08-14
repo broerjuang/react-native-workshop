@@ -5,10 +5,10 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {Icon} from './index';
 
 type Repo = {
-  fullName: string,
+  full_name: string,
   description: string,
-  starsCount: number,
-  forksCount: number,
+  stargazers_count: number,
+  forks_count: number,
   language: string,
   fork: boolean,
 };
@@ -29,17 +29,17 @@ export default function RepoCard(props: RepoCardProps) {
   } = styles;
   return (
     <TouchableOpacity style={list} onPress={onPress}>
-      <View>
-        <Text style={repoTitle}>{repo.fullName}</Text>
+      <View style={{width: '85%'}}>
+        <Text style={repoTitle}>{repo.full_name}</Text>
         {repo.description !== '' ? <Text>{repo.description}</Text> : null}
         <View style={repoIconListWrapper}>
           <View style={repoIconWrapper}>
             <Icon name="md-star" size={16} color="grey" type="IONICONS" />
-            <Text style={repoIconText}>{repo.starsCount}</Text>
+            <Text style={repoIconText}>{repo.stargazers_count}</Text>
           </View>
           <View style={repoIconWrapper}>
             <Icon name="repo-forked" size={16} color="grey" type="OCTICONS" />
-            <Text style={repoIconText}>{repo.forksCount}</Text>
+            <Text style={repoIconText}>{repo.forks_count}</Text>
           </View>
           <View style={repoIconWrapper}>
             <Icon name="circle" size={16} color="#f9e03b" type="FONTAWESOME" />

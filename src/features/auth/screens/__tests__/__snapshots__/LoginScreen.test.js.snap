@@ -573,61 +573,61 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
       swipeThreshold={100}
     >
       <View
-        collapsable={undefined}
         onLayout={[Function]}
-        pointerEvents="box-none"
         style={
           Object {
             "alignItems": "center",
             "backgroundColor": "#24292e",
             "flex": 1,
             "justifyContent": "space-between",
-            "paddingBottom": 0,
-            "paddingLeft": 0,
-            "paddingRight": 0,
-            "paddingTop": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Here is the content inside panel
-        </Text>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
+              "flex": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          >
-            Go To Main Menu
-          </Text>
+          <RCTWebView
+            allowsInlineMediaPlayback={undefined}
+            automaticallyAdjustContentInsets={undefined}
+            bounces={undefined}
+            contentInset={undefined}
+            dataDetectorTypes={undefined}
+            decelerationRate={undefined}
+            injectedJavaScript={undefined}
+            mediaPlaybackRequiresUserAction={undefined}
+            messagingEnabled={false}
+            onLoadingError={[Function]}
+            onLoadingFinish={[Function]}
+            onLoadingStart={[Function]}
+            onMessage={[Function]}
+            onShouldStartLoadWithRequest={undefined}
+            scalesPageToFit={true}
+            scrollEnabled={undefined}
+            source={
+              Object {
+                "uri": "https://github.com/login/oauth/authorize?client_id=65604622816426805c88",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "backgroundColor": "#ffffff",
+                },
+                Object {
+                  "backgroundColor": "blue",
+                  "height": 0,
+                  "width": 0,
+                },
+              ]
+            }
+          />
         </View>
         <View>
           <View

@@ -1,23 +1,23 @@
 // @flow
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import {RowWith3Column, Icon} from '../general/core-ui/index';
+import {RowWith3Column, Icon} from '../global/core-ui/index';
 import {EventContent} from './index';
 
 type Event = {
-  profilePicture: string,
-  username: string,
-  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK',
-  actionTarget: string,
-  repoTarget: string,
-  date: string,
-  comment?: string,
+  profilePicture: string;
+  username: string;
+  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK';
+  actionTarget: string;
+  repoTarget: string;
+  date: string;
+  comment?: string;
 };
 
 type EventCardProps = {
-  event: Event,
-  openRepo: (repo: string) => void,
-  openUser: (user: string) => void,
+  event: Event;
+  openRepo: (repo: string) => void;
+  openUser: (user: string) => void;
 };
 
 function EventCard(props: EventCardProps) {

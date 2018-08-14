@@ -6,10 +6,10 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {SafeAreaView} from 'react-navigation';
 import type {NavigationScreenProp} from 'react-navigation';
 
-import ParallaxButtons from '../../../general/core-ui/ParallaxButtons';
-import DetailsGroup from '../../../general/core-ui/DetailsGroup';
-import RowWith3Column from '../../../general/core-ui/RowWith3Column';
-import Button from '../../../general/core-ui/Button';
+import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
+import DetailsGroup from '../../../global/core-ui/DetailsGroup';
+import RowWith3Column from '../../../global/core-ui/RowWith3Column';
+import Button from '../../../global/core-ui/Button';
 
 type Props = {
   navigation: NavigationScreenProp<*>;

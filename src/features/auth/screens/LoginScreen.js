@@ -175,7 +175,7 @@ export class LoginScreen extends Component<Props, State> {
         await AsyncStorage.setItem(USERTOKEN, access_token);
 
         this.props.handleAction({
-          type: 'LOGINSUCCESS',
+          type: 'LOGIN_SUCCESS',
           payload: {token: access_token},
         });
 

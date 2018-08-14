@@ -7,10 +7,10 @@ type InitialState = {
 
 type Action =
   | {
-      type: 'LOGINREQUEST' | 'LOGINFAILED';
+      type: 'LOGIN_REQUEST' | 'LOGIN_FAILED';
     }
   | {
-      type: 'LOGINSUCCESS';
+      type: 'LOGIN_SUCCESS';
       payload: {
         token: string;
       };
@@ -22,7 +22,7 @@ let initialState: InitialState = {
 
 function loginReducer(state: InitialState = initialState, action: Action) {
   switch (action.type) {
-    case 'LOGINSUCCESS':
+    case 'LOGIN_SUCCESS':
       return {...state, isLogin: true, token: action.payload.token};
     default:
       return state;

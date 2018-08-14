@@ -5,8 +5,6 @@ async function getToken() {
     const token = await AsyncStorage.getItem('token');
     if (token !== null) {
       return token;
-    } else {
-      return false;
     }
   } catch (error) {
     throw error;

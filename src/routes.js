@@ -7,6 +7,8 @@ import {
 } from 'react-navigation';
 
 import {LoginScreen} from './features/auth/screens';
+import {LoginContainer} from '../src/containers';
+
 import {EventsScreen, EventDetail} from './features/events/screens';
 import {
   AllNotificationsScreen,
@@ -27,6 +29,8 @@ import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup'
 import SearchTab from './assets/SearchTab';
 
 import renderIcon from './assets/renderIcon';
+
+import store from './store';
 
 let Repository = createStackNavigator({
   RepositoryScreen: {
@@ -214,7 +218,7 @@ let GitClient = createBottomTabNavigator(
 let RootNavigation = createSwitchNavigator(
   {
     LoginScreen: {
-      screen: LoginScreen,
+      screen: LoginContainer,
     },
     GitClient: {
       screen: GitClient,

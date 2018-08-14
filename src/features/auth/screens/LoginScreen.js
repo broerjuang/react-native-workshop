@@ -6,15 +6,22 @@ import {View, Text, Dimensions, Button, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
-
+import authenticateWithGithubAsync from '../../../api/authWithGithub';
+// import {WebView} from 'react-native';
 type Props = {
   navigation: *;
 };
 
-class LoginScreen extends Component<Props, {visible: boolean}> {
+class LoginScreen extends Component<
+  Props,
+  {visible: boolean; githubToken: string; error: string},
+> {
   state = {
     visible: false,
+    githubToken: '',
+    error: '',
   };
+
   signInButtonPosition = () => {
     let {height, width}: {height: number; width: number} = Dimensions.get(
       'window',
@@ -33,6 +40,7 @@ class LoginScreen extends Component<Props, {visible: boolean}> {
   };
 
   render() {
+    console.log(this.props.currenUser, 'propsssss');
     let iconSize = 110;
     let SignInForm = () => {
       return (
@@ -47,7 +55,7 @@ class LoginScreen extends Component<Props, {visible: boolean}> {
           <Text>Here is the content inside panel</Text>
           <TouchableOpacity
             onPress={() => {
-              this.props.navigation.navigate('GitClient');
+              this.props.authGithub();
             }}
           >
             <Text>Go To Main Menu</Text>
@@ -88,11 +96,11 @@ class LoginScreen extends Component<Props, {visible: boolean}> {
         </Swiper>
         <TouchableOpacity
           style={this.signInButtonPosition()}
-          onPress={() => {
-            this.setState({visible: true});
-          }}
+          onPress={() => this.props.authGithub()}
         >
-          <Text style={styles.title}>Sign In</Text>
+          <Text style={styles.title}>
+            Sign In {JSON.stringify(this.state.githubToken)}
+          </Text>
         </TouchableOpacity>
         <Modal
           isVisible={this.state.visible}

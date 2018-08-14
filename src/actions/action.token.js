@@ -1,0 +1,3 @@
+//@flow
+const GITHUB_TOKEN = 'ACTIONS/GITHUB_TOKEN';
+export {GITHUB_TOKEN};

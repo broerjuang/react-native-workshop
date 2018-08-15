@@ -16,7 +16,10 @@ import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import {connect} from 'react-redux';
+<<<<<<< HEAD
 import {clientID, clientSecret, authorizationURI} from '../../../global/env';
+=======
+>>>>>>> update LoginScreen and fetchJSON
 import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {

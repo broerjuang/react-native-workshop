@@ -28,7 +28,8 @@
     "jest": "jest --coverage",
     "typecheck": "yarn flow && yarn flow-coverage",
     "ios": "react-native-scripts ios",
-    "test": "npm run lint && yarn typecheck && node node_modules/jest/bin/jest.js",
+    "test":
+      "npm run lint && yarn typecheck && node node_modules/jest/bin/jest.js",
     "lint": "eslint . —max-warnings 0"
   },
   "jest": {

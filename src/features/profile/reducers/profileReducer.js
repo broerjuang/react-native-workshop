@@ -1,0 +1,75 @@
+// @flow
+
+import type {ProfileAction} from '../actions/profileReducer.action';
+
+export type Organizations = {
+  name: string;
+  url: string;
+};
+
+export type ProfileState = {
+  userLogin: string;
+  userFullName: string;
+  userPicture?: Image;
+  sumRepositories: number;
+  sumStars: number;
+  sumFollowers: number;
+  sumFollowing: number;
+  biography?: string;
+  website?: string;
+  organizations?: Array<Organizations>;
+};
+
+let initialState: ProfileState = {
+  userLogin: '',
+  userFullName: '',
+  sumRepositories: 0,
+  sumStars: 0,
+  sumFollowers: 0,
+  sumFollowing: 0,
+  biography: '',
+  website: '',
+  organizations: [],
+};
+
+function loginReducer(
+  state: ProfileState = initialState,
+  action: ProfileAction,
+) {
+  switch (action.type) {
+    case 'PROFILE_DOWNLOAD':
+      return {
+        ...state,
+        userLogin: action.payload.login,
+        userFullName: action.payload.name,
+        sumRepositories: action.payload.public_repos,
+        sumFollowers: action.payload.followers,
+        sumFollowing: action.payload.following,
+        sumStars: 0,
+        biography: action.payload.bio,
+        website: action.payload.blog,
+      };
+    case 'ORGANIZATION_DOWNLOAD':
+      let orgData: Array<Organizations> = [];
+      for (let i = 0; i < action.payload.length; i++) {
+        let breakData: Organizations = {
+          name: action.payload[i].login,
+          url: action.payload[i].url,
+        };
+        orgData.push(breakData);
+      }
+      return {
+        ...state,
+        organizations: orgData,
+      };
+    case 'STAR_DOWNLOAD':
+      return {
+        ...state,
+        sumStars: action.payload.length,
+      };
+    default:
+      return state;
+  }
+}
+
+export default loginReducer;

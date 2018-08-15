@@ -16,7 +16,8 @@ import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import {connect} from 'react-redux';
-import {clientID, clientSecret} from '../../../global/env';
+import {clientID, clientSecret, authorizationURI} from '../../../global/env';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
   navigation: *;
@@ -43,22 +44,27 @@ export class LoginScreen extends Component<Props, State> {
   };
 
   async componentDidMount() {
-    let savedToken = await AsyncStorage.getItem(USERTOKEN);
-    // fetch();
-    let checkToken = await fetch(`https://api.github.com/`, {
-      Authorization: `token ${savedToken}`,
-    });
-    console.log(checkToken);
-    if (checkToken.ok === true) {
-      await this.props.handleAction({
-        type: 'LOGIN_SUCCESS',
-        payload: {token: savedToken},
-      });
-      await this.props.navigation.navigate('GitClient');
+    try {
+      let savedToken = await AsyncStorage.getItem(USERTOKEN);
+      // fetch();
+      if (savedToken) {
+        console.log('saved', savedToken);
+        let checkToken = await fetchJSON('user', 'GET', savedToken);
+        console.log('check', checkToken);
+        if (checkToken.login) {
+          await this.props.handleAction({
+            type: 'LOGIN_SUCCESS',
+            payload: {token: savedToken},
+          });
+          await this.props.navigation.navigate('GitClient');
+        }
+      }
+    } catch (e) {
+      console.log(e);
     }
   }
 
-  componentWillUnmount() {
+  async componentWillUnmount() {
     console.log('umount : ', this.props.token);
   }
 
@@ -66,7 +72,6 @@ export class LoginScreen extends Component<Props, State> {
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
-    let uri = `https://github.com/login/oauth/authorize?client_id=${clientID}`;
     let SignInForm = () => {
       return (
         <View
@@ -81,7 +86,7 @@ export class LoginScreen extends Component<Props, State> {
           }}
         >
           <WebView
-            source={{uri}}
+            source={{uri: authorizationURI}}
             onNavigationStateChange={(e: Object) =>
               this._onNavigationStateChange(e)
             }
@@ -206,7 +211,7 @@ export class LoginScreen extends Component<Props, State> {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        scopes: ['user'],
+        scope: ['repo', 'user', 'notifications', 'gist'],
       },
     }).then((res) => res.json());
     return content;

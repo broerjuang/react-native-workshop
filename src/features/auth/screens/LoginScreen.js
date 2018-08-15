@@ -16,7 +16,7 @@ import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import {connect} from 'react-redux';
-import fetchJSON from '../../../global/helpers/fetchJSON';
+import {clientID, clientSecret} from '../../../global/env';
 
 type Props = {
   navigation: *;
@@ -42,9 +42,6 @@ export class LoginScreen extends Component<Props, State> {
     loginWidth: 0,
   };
 
-  clientID = '65604622816426805c88';
-  clientSecret = '54fcf0e5666b46739b0ada3c6cab7e407cca6bec';
-
   async componentDidMount() {
     let savedToken = await AsyncStorage.getItem(USERTOKEN);
     // fetch();
@@ -69,9 +66,7 @@ export class LoginScreen extends Component<Props, State> {
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
-    let uri = `https://github.com/login/oauth/authorize?client_id=${
-      this.clientID
-    }`;
+    let uri = `https://github.com/login/oauth/authorize?client_id=${clientID}`;
     let SignInForm = () => {
       return (
         <View
@@ -203,8 +198,8 @@ export class LoginScreen extends Component<Props, State> {
   _createTokenWithCode = (code: string) => {
     const url =
       'https://github.com/login/oauth/access_token' +
-      `?client_id=${this.clientID}` +
-      `&client_secret=${this.clientSecret}` +
+      `?client_id=${clientID}` +
+      `&client_secret=${clientSecret}` +
       `&code=${code}`;
     let content: Promise<Object> = fetch(url, {
       method: 'POST',

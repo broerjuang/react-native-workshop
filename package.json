@@ -44,9 +44,11 @@
     }
   },
   "dependencies": {
+    "@types/node-fetch": "^2.1.2",
     "class-autobind": "^0.1.4",
     "expo": "^26.0.1",
     "react": "16.3.1",
+    "react-dom": "16.3.2",
     "react-native": "~0.55.2",
     "react-native-elements": "^0.19.1",
     "react-native-markdown-renderer": "^3.2.8",

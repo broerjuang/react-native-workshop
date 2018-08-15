@@ -2,63 +2,95 @@
 
 import React, {Component} from 'react';
 import {Ionicons} from '@expo/vector-icons';
-import {View, Text, Dimensions, Button, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Dimensions,
+  Button,
+  TouchableOpacity,
+  WebView,
+  AsyncStorage,
+} from 'react-native';
 import Swiper from 'react-native-swiper';
 import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
+import {USERTOKEN} from './../../../global/constants/asyncStorage';
+import {connect} from 'react-redux';
 
 type Props = {
   navigation: *;
+  handleAction: (action: Object) => void;
+  token: string;
+  isLogin: boolean;
 };
 
-class LoginScreen extends Component<Props, {visible: boolean}> {
+type State = {
+  visible: boolean;
+  loginWidth: number;
+  loginHeight: number;
+};
+
+type Event = {
+  nativeEvent: {layout: {x: number; y: number; width: number; height: number}};
+};
+
+export class LoginScreen extends Component<Props, State> {
   state = {
     visible: false,
+    loginHeight: 0,
+    loginWidth: 0,
   };
-  signInButtonPosition = () => {
-    let {height, width}: {height: number; width: number} = Dimensions.get(
-      'window',
-    );
-    return {
-      position: 'absolute',
-      backgroundColor: 'grey',
-      width: Math.floor(width / 3),
-      height: Math.floor(height / 12),
-      right: Math.floor(width / 3),
-      bottom: Math.floor(height / 6),
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: Math.floor(height / 36),
-    };
-  };
+
+  clientID = '65604622816426805c88';
+  clientSecret = '54fcf0e5666b46739b0ada3c6cab7e407cca6bec';
+
+  componentDidMount() {
+    AsyncStorage.getItem(USERTOKEN).then((res) => console.log(res));
+    // fetch();
+  }
+
+  componentWillUnmount() {
+    console.log('umount : ', this.props.token);
+  }
 
   render() {
     let iconSize = 110;
+    let height = this.state.loginHeight;
+    let width = this.state.loginWidth;
+    let uri = `https://github.com/login/oauth/authorize?client_id=${
+      this.clientID
+    }`;
     let SignInForm = () => {
       return (
-        <SafeAreaView
+        <View
           style={{
             flex: 1,
             alignItems: 'center',
             justifyContent: 'space-between',
             backgroundColor: '#24292e',
           }}
+          onLayout={(e: Object) => {
+            this._onLayout(e);
+          }}
         >
-          <Text>Here is the content inside panel</Text>
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate('GitClient');
+          <WebView
+            source={{uri}}
+            onNavigationStateChange={(e: Object) =>
+              this._onNavigationStateChange(e)
+            }
+            style={{
+              height,
+              width,
+              backgroundColor: 'blue',
             }}
-          >
-            <Text>Go To Main Menu</Text>
-          </TouchableOpacity>
+          />
           <View>
             <Button
               title="Hide"
               onPress={() => this.setState({visible: false})}
             />
           </View>
-        </SafeAreaView>
+        </View>
       );
     };
     return (
@@ -87,7 +119,7 @@ class LoginScreen extends Component<Props, {visible: boolean}> {
           </View>
         </Swiper>
         <TouchableOpacity
-          style={this.signInButtonPosition()}
+          style={this._signInButtonPosition()}
           onPress={() => {
             this.setState({visible: true});
           }}
@@ -108,6 +140,70 @@ class LoginScreen extends Component<Props, {visible: boolean}> {
       </SafeAreaView>
     );
   }
+  _signInButtonPosition = () => {
+    let {height, width}: {height: number; width: number} = Dimensions.get(
+      'window',
+    );
+    return {
+      position: 'absolute',
+      backgroundColor: 'grey',
+      width: Math.floor(width / 3),
+      height: Math.floor(height / 12),
+      right: Math.floor(width / 3),
+      bottom: Math.floor(height / 6),
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: Math.floor(height / 36),
+    };
+  };
+
+  _onLayout(event: Event) {
+    const {height, width} = event.nativeEvent.layout;
+    if (height !== this.state.loginHeight) {
+      this.setState({loginHeight: height, loginWidth: width});
+    }
+  }
+
+  _onNavigationStateChange = async(navState: Object) => {
+    const url: string = navState.url;
+    let constant = 'code=';
+    if (url.includes(constant)) {
+      let code = url.slice(url.indexOf(constant) + 5);
+      try {
+        let access = await this._createTokenWithCode(code);
+        console.log('Token: ', access.access_token);
+        console.log('Access: ', access);
+        await AsyncStorage.setItem(USERTOKEN, access.access_token);
+
+        this.props.handleAction({
+          type: 'LOGIN_SUCCESS',
+          payload: {token: access.access_token},
+        });
+
+        this.props.navigation.navigate('GitClient');
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+    }
+  };
+
+  _createTokenWithCode = (code: string) => {
+    const url =
+      'https://github.com/login/oauth/access_token' +
+      `?client_id=${this.clientID}` +
+      `&client_secret=${this.clientSecret}` +
+      `&code=${code}`;
+    let content: Promise<Object> = fetch(url, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        scopes: ['user'],
+      },
+    }).then((res) => res.json());
+    return content;
+  };
 }
 
 let styles = {
@@ -143,4 +239,19 @@ let styles = {
   },
 };
 
-export default LoginScreen;
+function mapStateToProps(state) {
+  return {
+    token: state.loginReducer.token,
+    isLogin: state.loginReducer.isLogin,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    handleAction: (action: Object) => dispatch(action),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LoginScreen);

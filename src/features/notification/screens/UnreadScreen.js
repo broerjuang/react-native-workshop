@@ -8,11 +8,11 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import Button from '../../../general/core-ui/Button';
-import RowWith3Column from '../../../general/core-ui/RowWith3Column';
+import Button from '../../../global/core-ui/Button';
+import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import {Ionicons, Octicons} from '@expo/vector-icons';
 import {Avatar} from 'react-native-elements';
-import {NotificationList} from '../../../general/core-ui/NotificationList';
+import {NotificationList} from '../../../global/core-ui/NotificationList';
 
 type Props = {markAsRead: (itemID: number) => void; markAllAsRead: () => void};
 

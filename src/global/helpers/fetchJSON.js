@@ -1,5 +1,6 @@
 // @flow
 import getToken from './getToken';
+import {rootAPI} from '../env';
 
 type Method = 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'POST';
 
@@ -9,9 +10,7 @@ function fetchJSON(endpoint: string, method: Method): Promise<JSON> {
     method: method,
     Authorization: `token ${token}`,
   };
-  return fetch('http://api.github.com/' + endpoint, headers).then(
-    (res: Response) => res.json(),
-  );
+  return fetch(rootAPI + endpoint, headers).then((res: Response) => res.json());
 }
 
 export default fetchJSON;

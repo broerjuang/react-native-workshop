@@ -20,27 +20,21 @@ type Object = {
   repos: Array<Repo>,
 };
 
-class SearchRepositoryScreen extends Component<Object> {
-  render() {
-    let {repos} = this.props;
-    return (
-      <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-        {repos.map((repo, index) => {
-          return (
-            <RepoCard
-              key={index}
-              repo={repo}
-              onPress={() => this._openRepo(repo)}
-            />
-          );
-        })}
-      </ScrollView>
-    );
-  }
-
-  _openRepo(repo: Repo) {
-    this.props.navigation.navigate('RepositoryDetailScreen');
-  }
+function SearchRepositoryScreen(props: Object) {
+  let {repos} = props;
+  return (
+    <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
+      {repos.map((repo, index) => {
+        return (
+          <RepoCard
+            key={index}
+            repo={repo}
+            onPress={() => props.navigation.navigate('RepositoryDetailScreen')}
+          />
+        );
+      })}
+    </ScrollView>
+  );
 }
 
 function mapStateToProps(state) {

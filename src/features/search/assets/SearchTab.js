@@ -3,9 +3,9 @@
 import React, {Component} from 'react';
 import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
+import {Icon} from '../../../global/core-ui/index';
 import type {NavigationScreenProp} from 'react-navigation';
 
-import {MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 import {connect} from 'react-redux';
 
 type Props = {
@@ -42,14 +42,20 @@ class SearchTab extends Component<Props, State> {
         <View style={inputContainer}>
           {textInput === '' ? (
             <TouchableOpacity onPress={this.clearSearch}>
-              <MaterialIcons name="search" size={20} color="grey" />
+              <Icon
+                name="search"
+                size={20}
+                color="grey"
+                type="MATERIAL_ICONS"
+              />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={this.clearSearch}>
-              <MaterialCommunityIcons
+              <Icon
                 name="arrow-left"
                 size={20}
                 color="grey"
+                type="MATERIAL_COMMUNITY_ICONS"
               />
             </TouchableOpacity>
           )}
@@ -64,7 +70,7 @@ class SearchTab extends Component<Props, State> {
           />
           {showClear ? (
             <TouchableOpacity onPress={this.clearInput}>
-              <MaterialIcons name="clear" size={20} color="grey" />
+              <Icon name="clear" size={20} color="grey" type="MATERIAL_ICONS" />
             </TouchableOpacity>
           ) : null}
         </View>

@@ -16,6 +16,7 @@ import {SafeAreaView} from 'react-navigation';
 import Modal from 'react-native-modal';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import {connect} from 'react-redux';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
   navigation: *;
@@ -44,9 +45,20 @@ export class LoginScreen extends Component<Props, State> {
   clientID = '65604622816426805c88';
   clientSecret = '54fcf0e5666b46739b0ada3c6cab7e407cca6bec';
 
-  componentDidMount() {
-    AsyncStorage.getItem(USERTOKEN).then((res) => console.log(res));
+  async componentDidMount() {
+    let savedToken = await AsyncStorage.getItem(USERTOKEN);
     // fetch();
+    let checkToken = await fetch(`https://api.github.com/`, {
+      Authorization: `token ${savedToken}`,
+    });
+    console.log(checkToken);
+    if (checkToken.ok === true) {
+      await this.props.handleAction({
+        type: 'LOGIN_SUCCESS',
+        payload: {token: savedToken},
+      });
+      await this.props.navigation.navigate('GitClient');
+    }
   }
 
   componentWillUnmount() {

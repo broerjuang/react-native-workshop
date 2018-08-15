@@ -609,7 +609,7 @@ exports[`LoginScreen should render LoginScreen corectly 1`] = `
             scrollEnabled={undefined}
             source={
               Object {
-                "uri": "https://github.com/login/oauth/authorize?client_id=65604622816426805c88",
+                "uri": "https://github.com/login/oauth/authorize?client_id=6b2f1b1ed973776bd76f&scope=user%20repo%20notifications",
               }
             }
             style={

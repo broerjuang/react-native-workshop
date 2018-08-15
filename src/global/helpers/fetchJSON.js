@@ -1,22 +1,19 @@
 // @flow
-import {connect} from 'react-redux';
+import getToken from './getToken';
+import {rootAPI} from '../env';
 
-function checkEndpoint(endpoint: string) {
-  if (endpoint.startsWith('/')) {
-    endpoint = endpoint.slice(1);
-  }
-  return endpoint;
+type Method = 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'POST';
+
+function fetchJSON(
+  endpoint: string,
+  method: Method,
+  token: string = getToken(),
+): Promise<*> {
+  let headers = {
+    method: method,
+    headers: {Authorization: `token ${token}`},
+  };
+  return fetch(rootAPI + endpoint, headers).then((res: Response) => res.json());
 }
 
-function fetchJSON(endpoint: string, token: string): Promise<JSON> {
-  endpoint = checkEndpoint(endpoint);
-  return fetch(
-    'http://api.github.com/' + endpoint + '?access_token=' + token,
-  ).then((res: Response) => res.json());
-}
-
-function mapStateToProps(state) {
-  return {token: state.loginReducer.token};
-}
-
-export default connect(mapStateToProps)(fetchJSON);
+export default fetchJSON;

@@ -876,10 +876,50 @@ exports[`Application should render App corectly 1`] = `
             }
           }
         >
+<<<<<<< HEAD
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
+=======
+          <RCTWebView
+            allowsInlineMediaPlayback={undefined}
+            automaticallyAdjustContentInsets={undefined}
+            bounces={undefined}
+            contentInset={undefined}
+            dataDetectorTypes={undefined}
+            decelerationRate={undefined}
+            injectedJavaScript={undefined}
+            mediaPlaybackRequiresUserAction={undefined}
+            messagingEnabled={false}
+            onLoadingError={[Function]}
+            onLoadingFinish={[Function]}
+            onLoadingStart={[Function]}
+            onMessage={[Function]}
+            onShouldStartLoadWithRequest={undefined}
+            scalesPageToFit={true}
+            scrollEnabled={undefined}
+            source={
+              Object {
+                "uri": "https://github.com/login/oauth/authorize?client_id=6b2f1b1ed973776bd76f&scope=user%20repo%20notifications",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "backgroundColor": "#ffffff",
+                },
+                Object {
+                  "backgroundColor": "blue",
+                  "height": 0,
+                  "width": 0,
+                },
+              ]
+            }
+>>>>>>> update login screen token checking, add token to fetchJSON for login only
           />
         </View>
         <View

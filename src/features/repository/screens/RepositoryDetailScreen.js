@@ -1,10 +1,13 @@
 // @flow
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {Octicons, MaterialIcons} from '@expo/vector-icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {SafeAreaView} from 'react-navigation';
 import type {NavigationScreenProp} from 'react-navigation';
+import languageColor from '../../../global/constants/languageColor';
+import Icon from '../../../global/core-ui/Icon';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
@@ -14,7 +17,20 @@ import Button from '../../../global/core-ui/Button';
 type Props = {
   navigation: NavigationScreenProp<*>;
 };
-class RepositoryDetailScreen extends Component<Props> {
+
+type State = {
+  forks: number;
+  fork: boolean;
+  language: string;
+  name: string;
+  description: string;
+  watchers: number;
+  stargazersCount: number;
+  ownerProfilePicture: string;
+  ownerName: string;
+};
+
+class RepositoryDetailScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerTransparent: true,
     headerLeft: (
@@ -25,10 +41,54 @@ class RepositoryDetailScreen extends Component<Props> {
       </View>
     ),
   });
-  render() {
-    let type = 1;
-    let repoType = type ? 'repo-forked' : 'repo';
+  state = {
+    forks: 0,
+    fork: false,
+    language: '',
+    name: '',
+    description: '',
+    watchers: 0,
+    stargazersCount: 0,
+    ownerProfilePicture: '',
+    ownerName: '',
+  };
+  async componentDidMount() {
+    console.log(this.props.navigation.state.params);
+    let {fullName} = this.props.navigation.state.params;
+    let url = `repos/${fullName}`;
+    console.log('url: ', url);
+    let repoData = await fetchJSON(url, 'GET');
+    let {
+      forks,
+      fork,
+      language,
+      name,
+      description,
+      watchers,
+      stargazers_count,
+      owner,
+    } = repoData;
+    console.log(repoData);
+    this.setState({
+      forks,
+      fork,
+      language,
+      name,
+      description,
+      watchers,
+      stargazersCount: stargazers_count,
+      ownerProfilePicture: owner.avatar_url,
+      ownerName: owner.login,
+    });
+  }
 
+  render() {
+    let {language} = this.state;
+    let repoType = this.state.fork ? 'repo-forked' : 'repo';
+    let langColor = languageColor.hasOwnProperty(language)
+      ? languageColor[language]
+      : '#000000';
+    langColor = langColor ? langColor : '#000000';
     return (
       <SafeAreaView style={{flex: 1}}>
         <ParallaxScrollView
@@ -40,21 +100,40 @@ class RepositoryDetailScreen extends Component<Props> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}> Repo Name </Text>
+              <Text style={styleParallax.txtStickyHeader}>
+                {this.state.name}
+              </Text>
             </View>
           )}
           renderForeground={() => (
             <View style={styleParallax.containerForeground}>
+              <View style={styleParallax.containerLanguage}>
+                <Icon
+                  name="circle"
+                  color={langColor}
+                  size={12}
+                  type={'FONTAWESOME'}
+                />
+                <Text
+                  style={{fontSize: 12, color: 'white', textAlign: 'center'}}
+                >
+                  {language}
+                </Text>
+              </View>
               <View style={styleParallax.containerProfilePicture}>
-                <Octicons name={repoType} size={100} color="white" />
+                <Text style={{fontSize: 75}}> </Text>
+                <Octicons name={repoType} size={75} color="white" />
               </View>
               <View style={styleParallax.containerFullName}>
-                <Text style={styleParallax.txtFullName}>Bootcamp</Text>
+                <Text style={styleParallax.txtFullName}>{this.state.name}</Text>
               </View>
               <View style={styleParallax.containerButton}>
-                <ParallaxButtons name="Stars" value={3} />
-                <ParallaxButtons name="Watchers" value={6} />
-                <ParallaxButtons name="Forks" value={9} />
+                <ParallaxButtons
+                  name="Stars"
+                  value={this.state.stargazersCount}
+                />
+                <ParallaxButtons name="Watchers" value={this.state.watchers} />
+                <ParallaxButtons name="Forks" value={this.state.forks} />
               </View>
             </View>
           )}
@@ -63,16 +142,20 @@ class RepositoryDetailScreen extends Component<Props> {
             <DetailsGroup name="Owner">
               <RowWith3Column
                 left={
-                  <View
-                    style={{
-                      height: 40,
-                      width: 40,
-                      borderRadius: 40,
-                      backgroundColor: 'yellow',
-                    }}
-                  />
+                  this.state.ownerProfilePicture ? (
+                    <Image
+                      source={{uri: this.state.ownerProfilePicture}}
+                      alt={'profilePicture'}
+                      style={{
+                        height: 40,
+                        width: 40,
+                        borderRadius: 40,
+                        backgroundColor: 'yellow',
+                      }}
+                    />
+                  ) : null
                 }
-                content={<Text>jhnoa</Text>}
+                content={<Text>{this.state.ownerName}</Text>}
                 right={
                   <MaterialIcons
                     name="keyboard-arrow-right"
@@ -141,9 +224,16 @@ const styleParallax = {
     alignItems: 'center',
     height: 50,
   },
+  containerLanguage: {
+    flexDirection: 'row',
+    height: 25,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
   containerProfilePicture: {
     // flex: 1,
-    height: 100,
+    flexDirection: 'row',
+    height: 75,
     alignItems: 'center',
     justifyContent: 'center',
   },

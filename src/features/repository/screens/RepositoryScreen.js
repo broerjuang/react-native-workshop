@@ -1,32 +1,126 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {ScrollView, View, TouchableOpacity, Text} from 'react-native';
 import RepoComponent from '../../../components/Repo';
 import {SearchBar} from 'react-native-elements';
-
+import fetchJSON from '../../../global/helpers/fetchJSON';
+import Icon from '../../../global/core-ui/Icon';
 type Props = {
-  total_count: number;
-  incomplete_results: boolean;
-  items: Array<Items>;
+  // total_count: number;
+  // incomplete_results: boolean;
+  // items: Array<Items>;
+  navigation: Object;
 };
-type Items = {
-  id: number;
-  repo_name: string;
+type RepoFromAPI = {
   description: string;
-  star: number;
-  forked: number;
+  fork: boolean;
+  forks: number;
+  full_name: string; // Different
+  id: number;
   language: string;
-  repoType: string;
+  name: string;
+  stargazers_count: number; // Different
 };
-class RepositoryScreen extends Component<Props, {}> {
+type Repo = {
+  description: string;
+  fork: boolean;
+  forks: number;
+  link: Function;
+  id: number;
+  language: string;
+  name: string;
+  stargazersCount: number;
+};
+type State = {
+  items: Array<Repo>;
+  search: string;
+};
+class RepositoryScreen extends Component<Props, State> {
+  static navigationOptions = (options: *) => ({
+    headerLeft: (
+      <View style={{paddingLeft: 10}}>
+        <TouchableOpacity onPress={() => options.navigation.goBack()}>
+          <Icon
+            name={'arrow-back'}
+            size={30}
+            color={'black'}
+            type={'MATERIAL_ICONS'}
+          />
+        </TouchableOpacity>
+      </View>
+    ),
+    headerTitle: (
+      <Text style={{fontSize: 24, fontWeight: 'bold'}}>Repositories</Text>
+    ),
+  });
+  state = {
+    items: [],
+    search: '',
+  };
+  async componentDidMount() {
+    console.log('mount');
+    let url = '';
+    if (this.props.navigation.state.params) {
+      if (this.props.navigation.state.params.username != null) {
+        url = `users/${
+          this.props.navigation.state.params.username
+        }/repos?sort=created`;
+      }
+    }
+    if (url === '') {
+      url = 'user/repos?affiliation=owner&sort=created';
+    }
+    console.log('URL: ', url);
+    let repoList: Array<RepoFromAPI> = await fetchJSON(url, 'GET');
+    console.log('head: ', repoList);
+    let repos = [];
+    repoList.map((repo) => {
+      let {
+        id,
+        name,
+        description,
+        forks,
+        fork,
+        full_name,
+        language,
+        stargazers_count,
+      } = repo;
+      repos.push({
+        id,
+        name,
+        description,
+        fork,
+        forks,
+        link: () => {
+          this.props.navigation.navigate('RepositoryDetailScreen', {
+            fullName: full_name,
+          });
+        },
+        language,
+        stargazersCount: stargazers_count,
+      });
+    });
+    this.setState({items: repos});
+  }
   render() {
-    let {items = []} = this.props;
+    let {items = [], search} = this.state;
+    let showItems = [];
+    if (search !== '') {
+      items.forEach((item) => {
+        if (item.name.toLowerCase().includes(search.toLowerCase())) {
+          showItems.push(item);
+        }
+      });
+    } else {
+      showItems = items;
+    }
     return (
-      <View>
+      <View style={{flex: 1}}>
         <SearchBar
-          onChangeText={(text: string): void => console.log(text)}
-          onClearText={() => console.log('remove')}
+          onChangeText={(text: string): void => this.setState({search: text})}
+          onClearText={() => this.setState({search: ''})}
+          value={this.state.search}
           placeholderTextColor={'#E1E4EC'}
           placeholder={'Type Here...'}
           icon={{
@@ -42,13 +136,15 @@ class RepositoryScreen extends Component<Props, {}> {
             borderTopWidth: 0.5,
           }}
         />
-        {items.map((item, key) => {
-          return (
-            <View key={key}>
-              <RepoComponent {...item} />
-            </View>
-          );
-        })}
+        <ScrollView>
+          {showItems.map((item, key) => {
+            return (
+              <View key={key}>
+                <RepoComponent {...item} />
+              </View>
+            );
+          })}
+        </ScrollView>
       </View>
     );
   }

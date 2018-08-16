@@ -5,6 +5,7 @@ import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import {Icon} from '../../../global/core-ui/index';
 import type {NavigationScreenProp} from 'react-navigation';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 import {connect} from 'react-redux';
 
@@ -14,6 +15,7 @@ type Props = {
   handleSearchRepo: (repos: Array<Repo>) => {},
   handleSearchUser: (users: Array<User>) => {},
 };
+
 type State = {
   textInput: string,
   searchInput: string,
@@ -115,42 +117,23 @@ class SearchTab extends Component<Props, State> {
     });
   };
 
-  doSearch = async () => {
+  doSearch = async() => {
     let {searchInput} = this.state;
     if (searchInput.trim() !== '') {
       if (this.state.selectedIndex === 0) {
         // Search Repo
-        let {items} = await this.fetchSearchApi('repositories');
+        let {items} = await fetchJSON(
+          'search/repositories?q=${searchInput}',
+          'POST',
+        );
         this.props.handleSearchRepo(items);
       } else {
         // Search User
-        let {items} = await this.fetchSearchApi('users');
+        let {items} = await fetchJSON('search/users?q=${searchInput}', 'POST');
         this.props.handleSearchUser(items);
       }
     }
   };
-
-  fetchSearchApi = (type: string) => {
-    let {searchInput} = this.state;
-    const url = `https://api.github.com/search/${type}?q=${searchInput}`;
-    return new Promise((resolve, reject) => {
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => {
-          resolve(res.json());
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  };
-
-  searchUser = () => {};
 }
 
 const styles = StyleSheet.create({

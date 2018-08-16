@@ -171,7 +171,7 @@ export class LoginScreen extends Component<Props, State> {
 
   _onLayout(event: Event) {
     const {height, width} = event.nativeEvent.layout;
-    if (height !== this.state.loginHeight) {
+    if (width !== this.state.loginWidth) {
       this.setState({loginHeight: height, loginWidth: width});
     }
   }

@@ -590,15 +590,6 @@ exports[`Application should render App corectly 1`] = `
             }
           }
         >
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-=======
->>>>>>> update login screen token checking, add token to fetchJSON for login only
           <RCTWebView
             allowsInlineMediaPlayback={undefined}
             automaticallyAdjustContentInsets={undefined}
@@ -636,10 +627,6 @@ exports[`Application should render App corectly 1`] = `
                 },
               ]
             }
-<<<<<<< HEAD
-=======
->>>>>>> update login screen token checking, add token to fetchJSON for login only
->>>>>>> update login screen token checking, add token to fetchJSON for login only
           />
         </View>
         <View>

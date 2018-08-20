@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import renderer from 'react-test-renderer';
-import RepositoryScreen from '../RepositoryScreen';
+import {RepositoryScreen} from '../RepositoryScreen';
 let datas = {
   // total_count: 2570,
   // incomplete_results: false,
@@ -35,6 +35,9 @@ let datas = {
   //   },
   // ],
   navigation: {},
+  handleAction: () => {
+    return;
+  },
 };
 describe('Repository screee ', () => {
   it('should render Repository corectly', () => {

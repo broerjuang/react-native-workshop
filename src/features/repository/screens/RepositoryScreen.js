@@ -6,37 +6,22 @@ import RepoComponent from '../../../components/Repo';
 import {SearchBar} from 'react-native-elements';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 import Icon from '../../../global/core-ui/Icon';
+import {connect} from 'react-redux';
+
+import type {Repo, RepoFromAPI} from '../types';
+
 type Props = {
   // total_count: number;
   // incomplete_results: boolean;
   // items: Array<Items>;
   navigation: Object;
-};
-type RepoFromAPI = {
-  description: string;
-  fork: boolean;
-  forks: number;
-  full_name: string; // Different
-  id: number;
-  language: string;
-  name: string;
-  stargazers_count: number; // Different
-};
-type Repo = {
-  description: string;
-  fork: boolean;
-  forks: number;
-  link: Function;
-  id: number;
-  language: string;
-  name: string;
-  stargazersCount: number;
+  handleAction: (action: Object) => void;
 };
 type State = {
   items: Array<Repo>;
   search: string;
 };
-class RepositoryScreen extends Component<Props, State> {
+export class RepositoryScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerLeft: (
       <View style={{paddingLeft: 10}}>
@@ -102,6 +87,7 @@ class RepositoryScreen extends Component<Props, State> {
         stargazersCount: stargazers_count,
       });
     });
+    this.props.handleAction({type: 'REPOSITORY_LIST_SUCCESS', data: repos});
     this.setState({items: repos});
   }
   render() {
@@ -151,4 +137,19 @@ class RepositoryScreen extends Component<Props, State> {
   }
 }
 
-export default RepositoryScreen;
+function mapStateToProps(state) {
+  return {
+    lastUri: state.repositoryListReducer.lastUri,
+    lastResult: state.repositoryListReducer.lastResult,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    handleAction: (action: Object) => dispatch(action),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(RepositoryScreen);

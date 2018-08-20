@@ -3,8 +3,8 @@ import React from 'react';
 import App from '../App';
 import renderer from 'react-test-renderer';
 
-describe('LoginScreen', () => {
-  it('should render LoginScreen corectly', () => {
+describe('Application', () => {
+  it('should render App corectly', () => {
     let component = renderer.create(<App />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

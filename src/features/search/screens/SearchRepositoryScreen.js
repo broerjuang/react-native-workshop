@@ -2,60 +2,45 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import {RepoCard} from '../../../global/core-ui/index';
+import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
 type Repo = {
-  fullName: string;
-  description: string;
-  starsCount: number;
-  forksCount: number;
-  language: string;
-  fork: boolean;
+  full_name: string,
+  description: string,
+  stargazers_count: number,
+  forks_count: number,
+  language: string,
+  fork: boolean,
 };
 
 type Object = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: NavigationScreenProp<[]>,
+  repos: Array<Repo>,
 };
 
-class SearchRepositoryScreen extends Component<Object> {
-  render() {
-    let repoList: Array<Repo> = [
-      {
-        fullName: 'astridtamara/bootcamp',
-        description: 'KodeFox Bootcamp',
-        starsCount: 0,
-        forksCount: 1,
-        language: 'JavaScript',
-        fork: false,
-      },
-      {
-        fullName: 'astridtamara/kfbootcamp',
-        description: '',
-        starsCount: 0,
-        forksCount: 0,
-        language: 'JavaScript',
-        fork: true,
-      },
-    ];
-    return (
-      <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-        {repoList.map((repo, index) => {
-          return (
-            <RepoCard
-              key={index}
-              repo={repo}
-              onPress={() => this._openRepo(repo)}
-            />
-          );
-        })}
-      </ScrollView>
-    );
-  }
-
-  _openRepo(repo: Repo) {
-    this.props.navigation.navigate('RepositoryScreen');
-  }
+function SearchRepositoryScreen(props: Object) {
+  let {repos} = props;
+  return (
+    <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
+      {repos.map((repo, index) => {
+        return (
+          <RepoCard
+            key={index}
+            repo={repo}
+            onPress={() => props.navigation.navigate('RepositoryDetailScreen')}
+          />
+        );
+      })}
+    </ScrollView>
+  );
 }
 
-export default SearchRepositoryScreen;
+function mapStateToProps(state) {
+  return {
+    repos: state.searchReducer.repos,
+  };
+}
+
+export default connect(mapStateToProps)(SearchRepositoryScreen);

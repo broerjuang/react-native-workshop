@@ -33,7 +33,13 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View>
+  <View
+    style={
+      Object {
+        "width": "85%",
+      }
+    }
+  >
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -43,9 +49,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
           "fontWeight": "bold",
         }
       }
-    >
-      astridtamara/kfbootcamp
-    </Text>
+    />
     <View
       style={
         Object {
@@ -80,9 +84,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
               "marginLeft": 6,
             }
           }
-        >
-          0
-        </Text>
+        />
       </View>
       <View
         style={
@@ -109,9 +111,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
               "marginLeft": 6,
             }
           }
-        >
-          0
-        </Text>
+        />
       </View>
       <View
         style={
@@ -185,7 +185,13 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View>
+  <View
+    style={
+      Object {
+        "width": "85%",
+      }
+    }
+  >
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -195,9 +201,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
           "fontWeight": "bold",
         }
       }
-    >
-      astridtamara/bootcamp
-    </Text>
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -239,9 +243,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
               "marginLeft": 6,
             }
           }
-        >
-          0
-        </Text>
+        />
       </View>
       <View
         style={
@@ -268,9 +270,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
               "marginLeft": 6,
             }
           }
-        >
-          1
-        </Text>
+        />
       </View>
       <View
         style={

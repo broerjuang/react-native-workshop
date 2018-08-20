@@ -107,18 +107,24 @@ exports[`Icon should render EventCard corectly 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            onPress={[Function]}
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
           >
-             
-            Parallax Header Bug
-             
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              Parallax Header bug
+               
+            </Text>
+            at
           </Text>
-          at
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -173,7 +179,6 @@ exports[`Icon should render EventCard corectly 1`] = `
     style={
       Object {
         "color": "grey",
-        "fontWeight": "bold",
         "padding": 12,
         "paddingTop": 0,
       }

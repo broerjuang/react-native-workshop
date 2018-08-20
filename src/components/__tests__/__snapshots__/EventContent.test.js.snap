@@ -25,18 +25,24 @@ exports[`Icon should render EventContent corectly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    onPress={[Function]}
-    style={
-      Object {
-        "fontWeight": "bold",
-      }
-    }
   >
-     
-    Parallax Header Bug
-     
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Parallax Header bug
+       
+    </Text>
+    at
   </Text>
-  at
   <Text
     accessible={true}
     allowFontScaling={true}

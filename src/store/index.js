@@ -5,17 +5,17 @@ import rootSaga from '../sagas';
 import {createReactNavigationReduxMiddleware} from 'react-navigation-redux-helpers';
 
 let sagaMiddleware = createSagaMiddleware();
-// const middleware = createReactNavigationReduxMiddleware(
-//   'root',
-//   (state) => state.nav,
-// );
+const middleware = createReactNavigationReduxMiddleware(
+  'root',
+  (state) => state.nav,
+);
 
 function configureStore() {
   let store = createStore(
     rootReducer,
     compose(
       applyMiddleware(sagaMiddleware),
-      // applyMiddleware(middleware),
+      applyMiddleware(middleware),
     ),
   );
   sagaMiddleware.run(rootSaga);

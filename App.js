@@ -5,8 +5,6 @@ import {Provider, connect} from 'react-redux';
 import Routes from './src/routes';
 import {
   reduxifyNavigator,
-  createReactNavigationReduxMiddleware,
-  createNavigationReducer,
 } from 'react-navigation-redux-helpers';
 
 const App = reduxifyNavigator(Routes, 'root');

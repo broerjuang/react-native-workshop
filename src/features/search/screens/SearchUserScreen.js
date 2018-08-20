@@ -28,33 +28,35 @@ function SearchUserScreen(props: Object) {
   let {users} = props;
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-      {users.map((user, index) => {
-        return (
-          <TouchableOpacity
-            key={index}
-            style={list}
-            onPress={() => props.navigation.navigate('ProfileScreen')}
-          >
-            <RowWith3Column
-              left={
-                <Image
-                  style={{width: 32, height: 32, borderRadius: 16}}
-                  source={{uri: user.avatar_url}}
+      {users
+        ? users.map((user, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                style={list}
+                onPress={() => props.navigation.navigate('ProfileScreen')}
+              >
+                <RowWith3Column
+                  left={
+                    <Image
+                      style={{width: 32, height: 32, borderRadius: 16}}
+                      source={{uri: user.avatar_url}}
+                    />
+                  }
+                  content={<Text>{user.login}</Text>}
+                  right={
+                    <Icon
+                      name="angle-right"
+                      size={24}
+                      color="grey"
+                      type="FONTAWESOME"
+                    />
+                  }
                 />
-              }
-              content={<Text>{user.login}</Text>}
-              right={
-                <Icon
-                  name="angle-right"
-                  size={24}
-                  color="grey"
-                  type="FONTAWESOME"
-                />
-              }
-            />
-          </TouchableOpacity>
-        );
-      })}
+              </TouchableOpacity>
+            );
+          })
+        : null}
     </ScrollView>
   );
 }

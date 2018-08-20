@@ -24,15 +24,19 @@ function SearchRepositoryScreen(props: Object) {
   let {repos} = props;
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-      {repos.map((repo, index) => {
-        return (
-          <RepoCard
-            key={index}
-            repo={repo}
-            onPress={() => props.navigation.navigate('RepositoryDetailScreen')}
-          />
-        );
-      })}
+      {repos
+        ? repos.map((repo, index) => {
+            return (
+              <RepoCard
+                key={index}
+                repo={repo}
+                onPress={() =>
+                  props.navigation.navigate('RepositoryDetailScreen')
+                }
+              />
+            );
+          })
+        : null}
     </ScrollView>
   );
 }

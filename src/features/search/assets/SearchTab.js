@@ -117,19 +117,20 @@ class SearchTab extends Component<Props, State> {
     });
   };
 
-  doSearch = async() => {
+  doSearch = async () => {
     let {searchInput} = this.state;
     if (searchInput.trim() !== '') {
       if (this.state.selectedIndex === 0) {
         // Search Repo
-        let {items} = await fetchJSON(
-          'search/repositories?q=${searchInput}',
-          'POST',
+        let obj = await fetchJSON(
+          `search/repositories?q=${searchInput}`,
+          'GET',
         );
+        let {items} = obj;
         this.props.handleSearchRepo(items);
       } else {
         // Search User
-        let {items} = await fetchJSON('search/users?q=${searchInput}', 'POST');
+        let {items} = await fetchJSON(`search/users?q=${searchInput}`, 'GET');
         this.props.handleSearchUser(items);
       }
     }

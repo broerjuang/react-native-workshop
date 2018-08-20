@@ -53,10 +53,8 @@ class RepositoryDetailScreen extends Component<Props, State> {
     ownerName: '',
   };
   async componentDidMount() {
-    console.log(this.props.navigation.state.params);
     let {fullName} = this.props.navigation.state.params;
     let url = `repos/${fullName}`;
-    console.log('url: ', url);
     let repoData = await fetchJSON(url, 'GET');
     let {
       forks,
@@ -68,7 +66,6 @@ class RepositoryDetailScreen extends Component<Props, State> {
       stargazers_count,
       owner,
     } = repoData;
-    console.log(repoData);
     this.setState({
       forks,
       fork,
@@ -89,6 +86,23 @@ class RepositoryDetailScreen extends Component<Props, State> {
       ? languageColor[language]
       : '#000000';
     langColor = langColor ? langColor : '#000000';
+    let langView = () => {
+      return language ? (
+        <View style={styleParallax.containerLanguage}>
+          <Icon
+            name="circle"
+            color={langColor}
+            size={12}
+            type={'FONTAWESOME'}
+          />
+          <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>
+            {language}
+          </Text>
+        </View>
+      ) : (
+        <View style={styleParallax.containerLanguage} />
+      );
+    };
     return (
       <SafeAreaView style={{flex: 1}}>
         <ParallaxScrollView
@@ -107,19 +121,7 @@ class RepositoryDetailScreen extends Component<Props, State> {
           )}
           renderForeground={() => (
             <View style={styleParallax.containerForeground}>
-              <View style={styleParallax.containerLanguage}>
-                <Icon
-                  name="circle"
-                  color={langColor}
-                  size={12}
-                  type={'FONTAWESOME'}
-                />
-                <Text
-                  style={{fontSize: 12, color: 'white', textAlign: 'center'}}
-                >
-                  {language}
-                </Text>
-              </View>
+              {langView()}
               <View style={styleParallax.containerProfilePicture}>
                 <Text style={{fontSize: 75}}> </Text>
                 <Octicons name={repoType} size={75} color="white" />

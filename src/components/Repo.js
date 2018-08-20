@@ -30,6 +30,16 @@ function repoComponent(props: Repo) {
     ? languageColor[language]
     : null;
   langColor = langColor ? langColor : '#000000';
+  let langView = () => {
+    return language ? (
+      <View style={styles.logoAndText}>
+        <FontAwesome name="circle" color={langColor} style={{marginRight: 2}} />
+        <Text>{language}</Text>
+      </View>
+    ) : (
+      <View style={styles.logoAndText} />
+    );
+  };
   return (
     <TouchableOpacity onPress={link}>
       <View key={id} style={styles.container}>
@@ -56,14 +66,7 @@ function repoComponent(props: Repo) {
               />
               <Text>{Number(forks).toString()}</Text>
             </View>
-            <View style={styles.logoAndText}>
-              <FontAwesome
-                name="circle"
-                color={langColor}
-                style={{marginRight: 2}}
-              />
-              <Text>{language}</Text>
-            </View>
+            {langView()}
           </View>
         </View>
         <View style={styles.statusRepo}>

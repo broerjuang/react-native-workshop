@@ -40,7 +40,11 @@ class RepositoryScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerLeft: (
       <View style={{paddingLeft: 10}}>
-        <TouchableOpacity onPress={() => options.navigation.goBack()}>
+        <TouchableOpacity
+          onPress={() => {
+            options.navigation.goBack(null);
+          }}
+        >
           <Icon
             name={'arrow-back'}
             size={30}
@@ -59,7 +63,6 @@ class RepositoryScreen extends Component<Props, State> {
     search: '',
   };
   async componentDidMount() {
-    console.log('mount');
     let url = '';
     if (this.props.navigation.state.params) {
       if (this.props.navigation.state.params.username != null) {
@@ -71,9 +74,7 @@ class RepositoryScreen extends Component<Props, State> {
     if (url === '') {
       url = 'user/repos?affiliation=owner&sort=created';
     }
-    console.log('URL: ', url);
     let repoList: Array<RepoFromAPI> = await fetchJSON(url, 'GET');
-    console.log('head: ', repoList);
     let repos = [];
     repoList.map((repo) => {
       let {

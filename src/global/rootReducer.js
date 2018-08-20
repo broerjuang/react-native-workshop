@@ -9,6 +9,7 @@ import followingReducer from '../features/following/reducers/followingReducer';
 import followersReducer from '../features/followers/reducers/followersReducer';
 import userReducer from '../features/user/reducers/userReducer';
 import starReducer from '../features/star/reducers/starReducer';
+import eventsReducer from '../features/events/reducers/eventsReducer';
 
 export default combineReducers({
   loginReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   followersReducer,
   userReducer,
   starReducer,
+  eventsReducer,
 });

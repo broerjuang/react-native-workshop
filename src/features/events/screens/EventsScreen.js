@@ -1,103 +1,80 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import {EventCard} from '../../../components/index';
 
 import type {NavigationScreenProp} from 'react-navigation';
+import type {Event} from '../types/Event';
 
-type Event = {
-  profilePicture: string;
-  username: string;
-  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK';
-  actionTarget: string;
-  repoTarget: string;
-  date: string;
-  comment?: string;
-};
+import {connect} from 'react-redux';
 
-type Props = {
+type Object = {
   navigation: NavigationScreenProp<[]>;
+  events: Array<Event>;
+  handleFetchEvents: (events: Array<Event>) => void;
 };
 
-class EventsScreen extends Component<Props, {}> {
+class EventsScreen extends Component<Object> {
+  async componentDidMount() {
+    let eventList: Event = await this.fetchEvents('taylorotwell');
+    this.props.handleFetchEvents(eventList);
+  }
+
   render() {
-    let eventList: Array<Event> = [
-      {
-        profilePicture:
-          'http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg',
-        username: 'zzzcielo',
-        action: 'COMMENT_ISSUE',
-        actionTarget: 'Parallax Header Bug',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '1d',
-        comment:
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time. ',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'ISSUE',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '2d',
-      },
-      {
-        profilePicture:
-          'http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg',
-        username: 'zzzcielo',
-        action: 'COMMENT_PR',
-        actionTarget: 'Quick bug fix',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '4d',
-        comment:
-          'The bug is bugging me a lot. Good job fixing it in such short time. ',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'PR',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '6d',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'FORK',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '6d',
-      },
-    ];
+    let {events} = this.props;
     return (
-      <View>
-        {eventList.map((event, index) => {
+      <ScrollView>
+        {events.map((event, index) => {
           return (
             <EventCard
               key={index}
               event={event}
-              openRepo={() => this._openRepo(event.repoTarget)}
-              openUser={() => this._openUser(event.username)}
+              navigateScreen={this._navigateScreen}
             />
           );
         })}
-      </View>
+      </ScrollView>
     );
   }
 
-  _openRepo = (repo: string) => {
-    this.props.navigation.navigate('RepositoryDetailScreen');
+  _navigateScreen = (type: 'REPO' | 'USER', props: Object) => {
+    switch (type) {
+      case 'REPO':
+        this.props.navigation.navigate('RepositoryDetailScreen', props);
+        break;
+      case 'USER':
+        this.props.navigation.navigate('ProfileScreen', props);
+        break;
+    }
   };
-  _openUser = (user: string) => {
-    this.props.navigation.navigate('UserScreen');
+
+  fetchEvents = (username: string) => {
+    const url = `https://api.github.com/users/${username}/received_events`;
+    return fetch(url, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
   };
 }
 
-export default EventsScreen;
+function mapStateToProps(state) {
+  return {
+    events: state.eventsReducer.events,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleFetchEvents: (events: Array<Event>) =>
+      dispatch({type: 'FETCH_EVENTS', payload: events}),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(EventsScreen);

@@ -122,11 +122,10 @@ class SearchTab extends Component<Props, State> {
     if (searchInput.trim() !== '') {
       if (this.state.selectedIndex === 0) {
         // Search Repo
-        let obj = await fetchJSON(
+        let {items} = await fetchJSON(
           `search/repositories?q=${searchInput}`,
           'GET',
         );
-        let {items} = obj;
         this.props.handleSearchRepo(items);
       } else {
         // Search User

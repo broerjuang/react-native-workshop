@@ -5,12 +5,23 @@ import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
+// import {createStore, applyMiddleware} from 'redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
-import type {ProfileState, Organizations} from '../reducers/profileReducer';
+import type {ProfileState} from '../reducers/profileReducer';
+
+// import createSagaMiddleware from 'redux-saga';
+// import profileReducer from '../reducers/profileReducer';
+// import onPageInit from '../sagas/profileSaga';
+
+// const sagaMiddleware = createSagaMiddleware();
+// const store = createStore(profileReducer, applyMiddleware(sagaMiddleware));
+// const action = (type) => store.dispatch({type});
+//
+// sagaMiddleware.run(onPageInit);
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
@@ -22,7 +33,8 @@ type State = {};
 
 class ProfileScreen extends Component<Props, State> {
   componentDidMount() {
-    this._initializeData();
+    //this._initializeData();
+    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
   }
 
   _initializeData = async() => {
@@ -30,7 +42,7 @@ class ProfileScreen extends Component<Props, State> {
     try {
       let newState = await this._fetchProfileData(userId);
       this.props.handleAction({
-        type: 'PROFILE_DOWNLOAD',
+        type: 'PROFILE_REQUEST',
         payload: newState,
       });
     } catch (e) {
@@ -40,7 +52,7 @@ class ProfileScreen extends Component<Props, State> {
     try {
       let orgState = await this._fetchOrganizationData(userId);
       this.props.handleAction({
-        type: 'ORGANIZATION_DOWNLOAD',
+        type: 'ORGANIZATION_REQUEST',
         payload: orgState,
       });
     } catch (e) {
@@ -50,7 +62,7 @@ class ProfileScreen extends Component<Props, State> {
     try {
       let starState = await this._fetchStarData(userId);
       this.props.handleAction({
-        type: 'STAR_DOWNLOAD',
+        type: 'STAR_REQUEST',
         payload: starState,
       });
     } catch (e) {

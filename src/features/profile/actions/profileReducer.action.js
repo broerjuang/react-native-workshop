@@ -7,10 +7,7 @@ type Organizations = {
 
 export type ProfileAction =
   | {
-      type: 'PROFILE_REQUEST';
-    }
-  | {
-      type: 'PROFILE_DOWNLOAD';
+      type: 'PROFILE_SUCCESS';
       payload: {
         login: string;
         name: string;
@@ -22,10 +19,17 @@ export type ProfileAction =
       };
     }
   | {
-      type: 'ORGANIZATION_DOWNLOAD';
+      type: 'ORGANIZATION_SUCCESS';
       payload: Array<*>;
     }
   | {
-      type: 'STAR_DOWNLOAD';
+      type: 'STAR_SUCCESS';
       payload: Array<*>;
+    }
+  | {
+      type: 'ON_PAGE_MOUNT';
+    }
+  | {
+      type: 'ON_PAGE_MOUNT_ERROR';
+      payload: {message: string};
     };

@@ -20,7 +20,7 @@ export type ProfileState = {
   organizations?: Array<Organizations>;
 };
 
-let initialState: ProfileState = {
+export const initialState: ProfileState = {
   userLogin: '',
   userFullName: '',
   sumRepositories: 0,
@@ -32,12 +32,12 @@ let initialState: ProfileState = {
   organizations: [],
 };
 
-function loginReducer(
+function profileReducer(
   state: ProfileState = initialState,
   action: ProfileAction,
 ) {
   switch (action.type) {
-    case 'PROFILE_DOWNLOAD':
+    case 'PROFILE_SUCCESS':
       return {
         ...state,
         userLogin: action.payload.login,
@@ -49,7 +49,7 @@ function loginReducer(
         biography: action.payload.bio,
         website: action.payload.blog,
       };
-    case 'ORGANIZATION_DOWNLOAD':
+    case 'ORGANIZATION_SUCCESS':
       let orgData: Array<Organizations> = [];
       for (let i = 0; i < action.payload.length; i++) {
         let breakData: Organizations = {
@@ -62,14 +62,18 @@ function loginReducer(
         ...state,
         organizations: orgData,
       };
-    case 'STAR_DOWNLOAD':
+    case 'STAR_SUCCESS':
       return {
         ...state,
         sumStars: action.payload.length,
       };
+    case 'ON_PAGE_MOUNT':
+      return state;
+    case 'ON_PAGE_MOUNT':
+      return {...state, message: action.payload.message};
     default:
       return state;
   }
 }
 
-export default loginReducer;
+export default profileReducer;

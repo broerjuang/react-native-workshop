@@ -68,7 +68,7 @@ exports[`Icon should render EventContent corectly 1`] = `
       }
     }
   >
-    1d
+    NaN years
   </Text>
 </Text>
 `;

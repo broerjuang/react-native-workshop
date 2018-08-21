@@ -150,7 +150,7 @@ exports[`Icon should render EventCard corectly 1`] = `
               }
             }
           >
-            1d
+            NaN years
           </Text>
         </Text>
       </View>

@@ -6,8 +6,8 @@ import {EventContent} from './index';
 import type {Event} from '../features/events/types/Event';
 
 type EventCardProps = {
-  event: Event,
-  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void,
+  event: Event;
+  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void;
 };
 
 function EventCard(props: EventCardProps) {
@@ -24,7 +24,7 @@ function EventCard(props: EventCardProps) {
           />
         }
         content={<EventContent event={event} navigateScreen={navigateScreen} />}
-        right={renderIconAction(type)}
+        right={renderIconType(event)}
       />
       {event.payload.comment ? (
         <Text style={textComment} numberOfLines={3}>
@@ -35,16 +35,34 @@ function EventCard(props: EventCardProps) {
   );
 }
 
-function renderIconAction(type: string) {
+function renderIconType(event: Event) {
+  let type: string = event.type;
+  if (event.type === 'IssuesEvent') {
+    if (event.payload.action === 'closed') {
+      type = 'IssuesEventClose';
+    } else if (event.payload.action === 'reopened') {
+      type = 'IssuesEventReOpen';
+    } else {
+      type = 'IssuesEventOpen';
+    }
+  }
   let iconType = {
-    CreateEvent: 'plus',
+    CommitCommentEvent: 'comment-discussion',
+    CreateEvent: 'git-branch',
     DeleteEvent: 'trashcan',
     ForkEvent: 'repo-forked',
+    GollumEvent: 'book',
     IssueCommentEvent: 'comment-discussion',
-    IssuesEvent: 'issue-opened',
+    IssuesEventOpen: 'issue-opened',
+    IssuesEventClose: 'issue-closed',
+    IssuesEventReOpen: 'issue-reopened',
+    MemberEvent: 'person',
+    PublicEvent: 'globe',
     PullRequestEvent: 'git-pull-request',
+    PullRequestReviewEvent: 'git-pull-request',
     PullRequestReviewCommentEvent: 'comment-discussion',
     PushEvent: 'git-commit',
+    ReleaseEvent: 'tag',
     WatchEvent: 'eye',
   };
   return <Icon name={iconType[type]} size={24} color="grey" type="OCTICONS" />;

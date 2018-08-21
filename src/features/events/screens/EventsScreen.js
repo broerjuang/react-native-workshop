@@ -3,21 +3,26 @@
 import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import {EventCard} from '../../../components/index';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import type {Event} from '../types/Event';
 
 import {connect} from 'react-redux';
 
-type Object = {
+type Props = {
   navigation: NavigationScreenProp<[]>;
   events: Array<Event>;
   handleFetchEvents: (events: Array<Event>) => void;
 };
 
-class EventsScreen extends Component<Object> {
+class EventsScreen extends Component<Props> {
   async componentDidMount() {
-    let eventList: Event = await this.fetchEvents('taylorotwell');
+    let username: string = 'fabpot';
+    let eventList: Array<Event> = await fetchJSON(
+      `users/${username}/received_events`,
+      'GET',
+    );
     this.props.handleFetchEvents(eventList);
   }
 
@@ -47,17 +52,6 @@ class EventsScreen extends Component<Object> {
         this.props.navigation.navigate('ProfileScreen', props);
         break;
     }
-  };
-
-  fetchEvents = (username: string) => {
-    const url = `https://api.github.com/users/${username}/received_events`;
-    return fetch(url, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }).then((res) => res.json());
   };
 }
 

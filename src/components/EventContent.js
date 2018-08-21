@@ -2,10 +2,11 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import type {Event} from '../features/events/types/Event';
+import {distanceInWordsStrict} from 'date-fns';
 
 type EventContentProps = {
-  event: Event,
-  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void,
+  event: Event;
+  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void;
 };
 
 function EventContent(props: EventContentProps) {
@@ -13,6 +14,15 @@ function EventContent(props: EventContentProps) {
   let {actor, repo, created_at} = event;
   let contentProps = {};
   switch (event.type) {
+    case 'CommitCommentEvent':
+      contentProps = {
+        actor: actor.login,
+        description: 'commented on commit ',
+        repoTarget: repo.name,
+        created_at,
+        navigateScreen,
+      };
+      return <TypeToContent {...contentProps} />;
     case 'CreateEvent':
       contentProps = {
         actor: actor.login,
@@ -41,6 +51,15 @@ function EventContent(props: EventContentProps) {
         navigateScreen,
       };
       return <TypeToContent {...contentProps} />;
+    case 'GollumEvent':
+      contentProps = {
+        actor: actor.login,
+        description: event.payload.pages[0].action + ' the wiki of',
+        repoTarget: repo.name,
+        created_at,
+        navigateScreen,
+      };
+      return <TypeToContent {...contentProps} />;
     case 'IssueCommentEvent':
       contentProps = {
         actor: actor.login,
@@ -56,6 +75,25 @@ function EventContent(props: EventContentProps) {
         actor: actor.login,
         description: event.payload.action + ' issue',
         title: event.payload.issue.title,
+        repoTarget: repo.name,
+        created_at,
+        navigateScreen,
+      };
+      return <TypeToContent {...contentProps} />;
+    case 'MemberEvent':
+      contentProps = {
+        actor: actor.login,
+        description: event.payload.action,
+        repoOrigin: event.payload.member.login,
+        repoTarget: repo.name,
+        created_at,
+        navigateScreen,
+      };
+      return <TypeToContent {...contentProps} />;
+    case 'PublicEvent':
+      contentProps = {
+        actor: actor.login,
+        description: 'made public',
         repoTarget: repo.name,
         created_at,
         navigateScreen,
@@ -92,6 +130,15 @@ function EventContent(props: EventContentProps) {
         navigateScreen,
       };
       return <TypeToContent {...contentProps} />;
+    case 'ReleaseEvent':
+      contentProps = {
+        actor: actor.login,
+        description: 'published at',
+        repoTarget: repo.name,
+        created_at,
+        navigateScreen,
+      };
+      return <TypeToContent {...contentProps} />;
     case 'WatchEvent':
       contentProps = {
         actor: actor.login,
@@ -107,13 +154,13 @@ function EventContent(props: EventContentProps) {
 }
 
 type TypeToContentProps = {
-  actor: string,
-  description: string,
-  title?: string,
-  repoTarget: string,
-  repoOrigin?: string,
-  created_at: string,
-  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void,
+  actor: string;
+  description: string;
+  title?: string;
+  repoTarget: string;
+  repoOrigin?: string;
+  created_at: string;
+  navigateScreen: (type: 'REPO' | 'USER', props: Object) => void;
 };
 
 function TypeToContent(props: TypeToContentProps) {
@@ -158,7 +205,11 @@ function TypeToContent(props: TypeToContentProps) {
         {repoTarget}{' '}
       </Text>
 
-      <Text style={textDate}>{created_at}</Text>
+      <Text style={textDate}>
+        {distanceInWordsStrict(new Date(), created_at, {
+          partialMethod: 'ceil',
+        })}
+      </Text>
     </Text>
   );
 }

@@ -117,6 +117,8 @@ export class AllNotificationsScreen extends Component<Props, State> {
       notificationDataForMap = this.props.allNotificationData;
     }
 
+    const {} = this.state;
+
     const {mainContainer} = styles;
     const buttons = ['Unread', 'Participating', 'All'];
 

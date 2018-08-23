@@ -192,10 +192,14 @@ class fileList extends Component<Props, State> {
   };
 
   _imageRender = (uri: string) => {
+    if (!this.state.imageWidth) {
+      this._getImageSize(uri);
+    }
     return (
       <Image
         style={{
-          flex: 1,
+          width: this.state.imageWidth ? this.state.imageWidth : width,
+          height: this.state.imageHeight ? this.state.imageHeight : 400,
           resizeMode: 'contain',
         }}
         source={{

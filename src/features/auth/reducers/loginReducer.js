@@ -5,10 +5,12 @@ type InitialState = {
   token?: string;
   userName?: string;
   isLogin: boolean;
+  onRequest: boolean;
 };
 
 let initialState: InitialState = {
   isLogin: false,
+  onRequest: false,
 };
 
 function loginReducer(state: InitialState = initialState, action: LoginAction) {
@@ -19,6 +21,11 @@ function loginReducer(state: InitialState = initialState, action: LoginAction) {
         isLogin: true,
         token: action.payload.token,
         userName: action.payload.userName,
+      };
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        onRequest: true,
       };
     default:
       return state;

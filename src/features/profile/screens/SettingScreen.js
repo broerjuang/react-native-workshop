@@ -61,5 +61,4 @@ const styles = {
     opacity: 0.5,
   },
 };
-
 export default SettingScreen;

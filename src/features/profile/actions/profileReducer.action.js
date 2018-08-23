@@ -11,6 +11,7 @@ export type ProfileAction =
       payload: {
         login: string;
         name: string;
+        avatar_url: string;
         public_repos: number;
         followers: number;
         following: number;

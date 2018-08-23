@@ -67,7 +67,7 @@ class ProfileScreen extends Component<Props, State> {
                 <Image
                   style={styleParallax.imgProfilePicture}
                   source={{
-                    uri: `https://avatars1.githubusercontent.com/u/369384?v=4`,
+                    uri: this.props.profileState.userPicture,
                   }}
                 />
               </View>

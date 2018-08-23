@@ -10,7 +10,7 @@ export type Organizations = {
 export type ProfileState = {
   userLogin: string;
   userFullName: string;
-  userPicture?: Image;
+  userPicture?: string;
   sumRepositories: number;
   sumStars: number;
   sumFollowers: number;
@@ -42,6 +42,7 @@ function profileReducer(
         ...state,
         userLogin: action.payload.login,
         userFullName: action.payload.name,
+        userPicture: action.payload.avatar_url,
         sumRepositories: action.payload.public_repos,
         sumFollowers: action.payload.followers,
         sumFollowing: action.payload.following,
@@ -69,7 +70,7 @@ function profileReducer(
       };
     case 'ON_PAGE_MOUNT':
       return state;
-    case 'ON_PAGE_MOUNT':
+    case 'ON_PAGE_MOUNT_ERROR':
       return {...state, message: action.payload.message};
     default:
       return state;

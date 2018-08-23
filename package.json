@@ -44,8 +44,11 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.1.2",
+    "buffer": "^5.2.0",
     "class-autobind": "^0.1.4",
     "expo": "^26.0.1",
+    "install": "^0.12.1",
+    "npm": "^6.4.0",
     "react": "16.3.1",
     "react-dom": "16.3.2",
     "react-native": "~0.55.2",
@@ -54,7 +57,10 @@
     "react-native-modal": "^6.5.0",
     "react-native-parallax-scroll-view": "^0.21.3",
     "react-native-swiper": "^1.5.13",
+    "react-native-syntax-highlighter": "^2.0.0",
     "react-navigation": "^2.8.0",
+    "react-syntax-highlighter": "^8.0.1",
+    "redux-saga": "^0.16.0",
     "rn-sliding-up-panel": "^1.2.1"
   },
   "prettier": {

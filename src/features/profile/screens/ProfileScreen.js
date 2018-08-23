@@ -1,20 +1,31 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
+import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
+// import {createStore, applyMiddleware} from 'redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
+import type {ProfileState} from '../reducers/profileReducer';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
+  handleAction: (action: Object) => void;
+  profileState: ProfileState;
 };
 
-class ProfileScreen extends Component<Props> {
+type State = {};
+
+class ProfileScreen extends Component<Props, State> {
+  componentDidMount() {
+    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+  }
+
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
@@ -27,7 +38,9 @@ class ProfileScreen extends Component<Props> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}> sstur </Text>
+              <Text style={styleParallax.txtStickyHeader}>
+                {this.props.profileState.userLogin}
+              </Text>
             </View>
           )}
           renderFixedHeader={() => (
@@ -52,18 +65,27 @@ class ProfileScreen extends Component<Props> {
           renderForeground={() => (
             <View style={styleParallax.containerForeground}>
               <View style={styleParallax.containerProfilePicture}>
-                <View style={styleParallax.imgProfilePicture} />
+                <Image
+                  style={styleParallax.imgProfilePicture}
+                  source={{
+                    uri: `https://avatars1.githubusercontent.com/u/369384?v=4`,
+                  }}
+                />
               </View>
               <View style={styleParallax.containerFullName}>
-                <Text style={styleParallax.txtFullName}>Simon Stürmer</Text>
+                <Text style={styleParallax.txtFullName}>
+                  {this.props.profileState.userFullName}
+                </Text>
               </View>
               <View style={styleParallax.containerUsername}>
-                <Text style={styleParallax.txtUsername}>sstur</Text>
+                <Text style={styleParallax.txtUsername}>
+                  {this.props.profileState.userLogin}
+                </Text>
               </View>
               <View style={styleParallax.containerButton}>
                 <ParallaxButtons
                   name="Repositories"
-                  value={3}
+                  value={this.props.profileState.sumRepositories}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
@@ -71,21 +93,21 @@ class ProfileScreen extends Component<Props> {
 
                 <ParallaxButtons
                   name="Stars"
-                  value={6}
+                  value={this.props.profileState.sumStars}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
                 />
                 <ParallaxButtons
                   name="Followers"
-                  value={9}
+                  value={this.props.profileState.sumFollowers}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
                 />
                 <ParallaxButtons
                   name="Following"
-                  value={12}
+                  value={this.props.profileState.sumFollowing}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
@@ -96,7 +118,15 @@ class ProfileScreen extends Component<Props> {
         >
           <View style={styles.containerProfileDetails}>
             <DetailsGroup disabled={true} name="Bio">
-              <RowWith3Column content={<Text> Short Biography</Text>} />
+              <RowWith3Column
+                content={
+                  this.props.profileState.biography !== null ? (
+                    <Text> {this.props.profileState.biography}</Text>
+                  ) : (
+                    <Text>No Biography Found</Text>
+                  )
+                }
+              />
             </DetailsGroup>
             <DetailsGroup name="Website">
               <RowWith3Column
@@ -109,21 +139,29 @@ class ProfileScreen extends Component<Props> {
                     }}
                   />
                 }
-                content={<Text>URL</Text>}
+                content={
+                  this.props.profileState.website !== '' ? (
+                    <Text> {this.props.profileState.website}</Text>
+                  ) : (
+                    <Text> No Website Found</Text>
+                  )
+                }
               />
             </DetailsGroup>
             <DetailsGroup name="Organizations">
-              <RowWith3Column
-                isTouchable={false}
-                content={<Text>Organizations</Text>}
-              />
-              <RowWith3Column
-                isTouchable={true}
-                onPress={() =>
-                  this.props.navigation.navigate('RepositoryDetailScreen')
-                }
-                content={<Text>Go to Settings</Text>}
-              />
+              {this.props.profileState.organizations ? (
+                this.props.profileState.organizations.map((orgRow, i) => {
+                  return (
+                    <RowWith3Column
+                      key={i}
+                      isTouchable={true}
+                      content={<Text>{orgRow.name}</Text>}
+                    />
+                  );
+                })
+              ) : (
+                <RowWith3Column content={<Text>No Organization found</Text>} />
+              )}
             </DetailsGroup>
           </View>
         </ParallaxScrollView>
@@ -161,10 +199,8 @@ const styleParallax = {
     alignItems: 'center',
   },
   imgProfilePicture: {
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    backgroundColor: 'yellow',
+    width: 90,
+    height: 90,
   },
   containerFullName: {
     // flex: 1,
@@ -187,7 +223,6 @@ const styleParallax = {
     paddingLeft: 15,
     paddingRight: 15,
   },
-
   txtStickyHeader: {
     color: 'white',
     fontWeight: 'bold',
@@ -203,4 +238,17 @@ const styleParallax = {
     fontSize: 16,
   },
 };
-export default ProfileScreen;
+
+function mapStateToProps(state) {
+  return {
+    profileState: state.profileReducer,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleAction: (action: Object) => dispatch(action),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

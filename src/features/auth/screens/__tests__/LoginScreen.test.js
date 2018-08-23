@@ -13,6 +13,7 @@ describe('LoginScreen', () => {
         }}
         token={'sd'}
         isLogin={false}
+        userName={''}
       />,
     );
     let tree = component.toJSON();

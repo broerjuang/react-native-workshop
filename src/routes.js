@@ -19,6 +19,7 @@ import {ProfileScreen, SettingScreen} from './features/profile/screens';
 import {
   RepositoryScreen,
   RepositoryDetailScreen,
+  RepositoryFileListScreen,
 } from './features/repository/screens/index';
 
 import SearchTab from './features/search/assets/SearchTab';
@@ -30,6 +31,9 @@ let Repository = createStackNavigator({
   },
   RepositoryDetailScreen: {
     screen: RepositoryDetailScreen,
+  },
+  RepositoryFileListScreen: {
+    screen: RepositoryFileListScreen,
   },
 });
 
@@ -178,18 +182,15 @@ let GitClient = createBottomTabNavigator(
   },
 );
 
-let RootNavigation = createSwitchNavigator(
-  {
-    LoginScreen: {
-      screen: LoginScreen,
-    },
-    GitClient: {
-      screen: GitClient,
-    },
+let RootNavigation = createSwitchNavigator({
+  LoginScreen: {
+    screen: LoginScreen,
   },
+ 
   {
     initialRouteName: 'LoginScreen',
+ 
   },
-);
+});
 
 export default RootNavigation;

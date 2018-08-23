@@ -174,7 +174,7 @@ class RepositoryDetailScreen extends Component<Props, State> {
             <DetailsGroup name="Source">
               <RowWith3Column
                 left={<MaterialIcons name="code" size={32} color="#D3D3D3" />}
-                content={<Text>Code</Text>}
+                content={<Text>View Code</Text>}
                 right={
                   <MaterialIcons
                     name="keyboard-arrow-right"
@@ -182,7 +182,13 @@ class RepositoryDetailScreen extends Component<Props, State> {
                     color="#D3D3D3"
                   />
                 }
-                isTouchable={true}
+                isTouchable
+                onPress={() => {
+                  this.props.navigation.navigate('RepositoryFileListScreen', {
+                    fullName: `${this.state.ownerName}/${this.state.name}`,
+                    language,
+                  });
+                }}
               />
             </DetailsGroup>
             <DetailsGroup

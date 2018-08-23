@@ -2,11 +2,11 @@
 
 declare function fetch(url: string, object?: Object): Promise<*>;
 
-type JSON =
+type JSONData =
   | null
   | void
   | string
   | number
   | boolean
-  | {[string]: JSON}
-  | Array<JSON>;
+  | {[string]: JSONData}
+  | Array<JSONData>;

@@ -138,10 +138,7 @@ export class RepositoryScreen extends Component<Props, State> {
 }
 
 function mapStateToProps(state) {
-  return {
-    lastUri: state.repositoryListReducer.lastUri,
-    lastResult: state.repositoryListReducer.lastResult,
-  };
+  return {};
 }
 function mapDispatchToProps(dispatch) {
   return {

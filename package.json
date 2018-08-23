@@ -61,6 +61,7 @@
     "react-native-syntax-highlighter": "^2.0.0",
     "react-navigation": "^2.8.0",
     "react-syntax-highlighter": "^8.0.1",
+    "redux-saga": "^0.16.0",
     "rn-sliding-up-panel": "^1.2.1"
   },
   "prettier": {

@@ -221,6 +221,7 @@ class fileList extends Component<Props, State> {
     let isKnown: boolean = getLanguage(fileType);
     return isKnown && !this._isImage(fileType);
   }
+
 }
 
 export default fileList;

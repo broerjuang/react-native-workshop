@@ -203,7 +203,6 @@ export class LoginScreen extends Component<Props, State> {
           access.access_token,
         );
         console.log('Check Token: ', checkToken);
-
         await this.props.handleAction({
           type: 'LOGIN_SUCCESS',
           payload: {token: access.access_token, userName: checkToken.login},

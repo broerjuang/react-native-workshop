@@ -175,10 +175,7 @@ function mapDispatchToProps(dispatch) {
       dispatch({type: 'SEARCH_REPOS', payload: repos}),
     handleSearchUser: (users: Array<User>) =>
       dispatch({type: 'SEARCH_USERS', payload: users}),
-    handleClearSearch: () => {
-      dispatch({type: 'SEARCH_REPOS', payload: []});
-      dispatch({type: 'SEARCH_USERS', payload: []});
-    },
+    handleClearSearch: () => dispatch({type: 'CLEAR_SEARCH'}),
   };
 }
 

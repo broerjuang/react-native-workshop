@@ -44,6 +44,9 @@ export default function searchReducer(
     case 'SEARCH_USERS': {
       return {...state, users: action.payload};
     }
+    case 'CLEAR_SEARCH': {
+      return {...state, users: [], repos: []};
+    }
     default:
       return state;
   }

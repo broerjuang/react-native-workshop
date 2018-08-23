@@ -26,6 +26,8 @@ type State = {
   fullName: string;
   fileList: Object | Array<Object>;
   path: string;
+  imageWidth?: number;
+  imageHeight?: number;
 };
 
 let {width} = Dimensions.get('window');
@@ -89,12 +91,7 @@ class fileList extends Component<Props, State> {
       </SafeAreaView>
     );
   }
-  _rowRender = (data: {
-    type: string;
-    name: string;
-    path: string;
-    sha: string;
-  }) => {
+  _rowRender = (data: FetchFile) => {
     console.log('Row Render', data);
     let {type, name, path, sha} = data;
     type = type === 'dir' ? 'file-directory' : 'file';
@@ -143,11 +140,28 @@ class fileList extends Component<Props, State> {
     }
   };
 
+  _getImageSize = (uri: string) => {
+    Image.getSize(uri, (imageWidth, imageHeight) => {
+      if (imageWidth > width) {
+        this.setState({
+          imageWidth: width,
+          imageHeight: 400,
+        });
+      } else {
+        this.setState({imageWidth, imageHeight});
+      }
+    });
+  };
+
   _imageRender = (uri: string) => {
+    if (!this.state.imageWidth) {
+      this._getImageSize(uri);
+    }
     return (
       <Image
         style={{
-          flex: 1,
+          width: this.state.imageWidth ? this.state.imageWidth : width,
+          height: this.state.imageHeight ? this.state.imageHeight : 400,
           resizeMode: 'contain',
         }}
         source={{

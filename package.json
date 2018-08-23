@@ -55,6 +55,7 @@
     "react-native-parallax-scroll-view": "^0.21.3",
     "react-native-swiper": "^1.5.13",
     "react-navigation": "^2.8.0",
+    "redux-saga": "^0.16.0",
     "rn-sliding-up-panel": "^1.2.1"
   },
   "prettier": {

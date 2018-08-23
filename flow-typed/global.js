@@ -13,11 +13,11 @@ declare type Route = {
   component: ReactEl;
   title: string;
   baseLink?: string;
-  props?: { [key: string]: mixed };
+  props?: {[key: string]: mixed};
   search?: string;
 };
 
-type ObjectOf<T> = { [key: string]: T };
+type ObjectOf<T> = {[key: string]: T};
 
 declare type JSONData =
   | null

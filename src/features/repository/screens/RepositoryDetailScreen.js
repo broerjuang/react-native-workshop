@@ -186,7 +186,6 @@ class RepositoryDetailScreen extends Component<Props, State> {
                 onPress={() => {
                   this.props.navigation.navigate('RepositoryFileListScreen', {
                     fullName: `${this.state.ownerName}/${this.state.name}`,
-                    language,
                   });
                 }}
               />

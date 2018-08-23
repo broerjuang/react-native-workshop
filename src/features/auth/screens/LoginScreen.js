@@ -24,6 +24,7 @@ type Props = {
   handleAction: (action: Object) => void;
   token: string;
   isLogin: boolean;
+  userName: string;
 };
 
 type State = {
@@ -45,16 +46,20 @@ export class LoginScreen extends Component<Props, State> {
 
   async componentDidMount() {
     try {
-      let savedToken = await AsyncStorage.getItem(USERTOKEN);
+      let savedToken: string = await AsyncStorage.getItem(USERTOKEN);
       // fetch();
       if (savedToken) {
         console.log('saved', savedToken);
-        let checkToken = await fetchJSON('user', 'GET', savedToken);
+        let checkToken: {login: string} = await fetchJSON(
+          'user',
+          'GET',
+          savedToken,
+        );
         console.log('check', checkToken);
         if (checkToken.login) {
           await this.props.handleAction({
             type: 'LOGIN_SUCCESS',
-            payload: {token: savedToken},
+            payload: {token: savedToken, userName: checkToken.login},
           });
           await this.props.navigation.navigate('GitClient');
         }
@@ -66,6 +71,7 @@ export class LoginScreen extends Component<Props, State> {
 
   async componentWillUnmount() {
     console.log('umount : ', this.props.token);
+    console.log('umount : ', this.props.userName);
   }
 
   render() {
@@ -171,7 +177,7 @@ export class LoginScreen extends Component<Props, State> {
 
   _onLayout(event: Event) {
     const {height, width} = event.nativeEvent.layout;
-    if (height !== this.state.loginHeight) {
+    if (width !== this.state.loginWidth) {
       this.setState({loginHeight: height, loginWidth: width});
     }
   }
@@ -187,9 +193,15 @@ export class LoginScreen extends Component<Props, State> {
         console.log('Access: ', access);
         await AsyncStorage.setItem(USERTOKEN, access.access_token);
 
+        let checkToken: {login: string} = await fetchJSON(
+          'user',
+          'GET',
+          access.access_token,
+        );
+
         this.props.handleAction({
           type: 'LOGIN_SUCCESS',
-          payload: {token: access.access_token},
+          payload: {token: access.access_token, userName: checkToken.login},
         });
 
         this.props.navigation.navigate('GitClient');
@@ -255,6 +267,7 @@ function mapStateToProps(state) {
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,
+    userName: state.loginReducer.userName,
   };
 }
 function mapDispatchToProps(dispatch) {

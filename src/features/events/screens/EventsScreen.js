@@ -13,12 +13,13 @@ import {connect} from 'react-redux';
 type Props = {
   navigation: NavigationScreenProp<[]>;
   events: Array<Event>;
+  userName: string;
   handleFetchEvents: (events: Array<Event>) => void;
 };
 
 class EventsScreen extends Component<Props> {
   async componentDidMount() {
-    let username: string = 'fabpot';
+    let username: string = this.props.userName;
     let eventList: Array<Event> = await fetchJSON(
       `users/${username}/received_events`,
       'GET',
@@ -57,6 +58,7 @@ class EventsScreen extends Component<Props> {
 
 function mapStateToProps(state) {
   return {
+    userName: state.loginReducer.userName,
     events: state.eventsReducer.events,
   };
 }

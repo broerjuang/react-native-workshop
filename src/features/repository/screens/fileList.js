@@ -191,6 +191,40 @@ class fileList extends Component<Props, State> {
     return highlightedCode;
   };
 
+  _imageRender = (uri: string) => {
+    return (
+      <Image
+        style={{
+          flex: 1,
+          resizeMode: 'contain',
+        }}
+        source={{
+          uri,
+        }}
+      />
+    );
+  };
+
+  _codeRender = (content: string, language: string) => {
+    let codeString: string = Buffer.from(content, 'base64').toString('ascii');
+    let highlightedCode = (
+      <SyntaxHighlighter
+        language={language}
+        style={{
+          ...GithubStyle,
+          hljs: {
+            background: 'white',
+          },
+        }}
+        CodeTag={Text}
+      >
+        {codeString}
+      </SyntaxHighlighter>
+    );
+
+    return highlightedCode;
+  };
+
   _unknownRender = (content: string) => {
     let text: string = Buffer.from(content, 'base64').toString('ascii');
 
@@ -221,7 +255,6 @@ class fileList extends Component<Props, State> {
     let isKnown: boolean = getLanguage(fileType);
     return isKnown && !this._isImage(fileType);
   }
-
 }
 
 export default fileList;

@@ -8,5 +8,6 @@ export type LoginAction =
       type: 'LOGIN_SUCCESS';
       payload: {
         token: string;
+        userName: string;
       };
     };

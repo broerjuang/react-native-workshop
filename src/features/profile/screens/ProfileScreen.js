@@ -5,6 +5,7 @@ import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
+// import {createStore, applyMiddleware} from 'redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';

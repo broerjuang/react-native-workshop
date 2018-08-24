@@ -57,7 +57,7 @@ export default class UnreadScreen extends Component<Props, State> {
         avatar:
           'https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600109/59070192-user-icon-woman-profile-businesswoman-avatar-person-icon-in-vector-illustration.jpg',
         subtitle:
-          'Potential security vulnerability found in the hoek dependency.',
+          'Potential security vulnerabiclity found in the hoek dependency.',
         isWarned: true,
       },
       {

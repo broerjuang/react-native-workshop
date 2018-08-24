@@ -17,40 +17,38 @@ type Props = {
   users: Array<User>;
 };
 
-function SearchUserScreen(props: Props) {
+export function SearchUserScreen(props: Props) {
   const {list} = styles;
   let {users} = props;
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-      {users
-        ? users.map((user, index) => {
-          return (
-            <TouchableOpacity
-              key={index}
-              style={list}
-              onPress={() => props.navigation.navigate('ProfileScreen')}
-            >
-              <RowWith3Column
-                left={
-                  <Image
-                    style={{width: 32, height: 32, borderRadius: 16}}
-                    source={{uri: user.avatar_url}}
-                  />
-                }
-                content={<Text>{user.login}</Text>}
-                right={
-                  <Icon
-                    name="angle-right"
-                    size={24}
-                    color="grey"
-                    type="FONTAWESOME"
-                  />
-                }
-              />
-            </TouchableOpacity>
-          );
-        })
-        : null}
+      {users.map((user: User, index) => {
+        return (
+          <TouchableOpacity
+            key={index}
+            style={list}
+            onPress={() => props.navigation.navigate('ProfileScreen')}
+          >
+            <RowWith3Column
+              left={
+                <Image
+                  style={{width: 32, height: 32, borderRadius: 16}}
+                  source={{uri: user.avatar_url}}
+                />
+              }
+              content={<Text>{user.login}</Text>}
+              right={
+                <Icon
+                  name="angle-right"
+                  size={24}
+                  color="grey"
+                  type="FONTAWESOME"
+                />
+              }
+            />
+          </TouchableOpacity>
+        );
+      })}
     </ScrollView>
   );
 }
@@ -63,7 +61,12 @@ const styles = {
   },
 };
 
-function mapStateToProps(state) {
+type State = {
+  searchReducer: {
+    users: Array<User>;
+  };
+};
+function mapStateToProps(state: State) {
   return {
     users: state.searchReducer.users,
   };

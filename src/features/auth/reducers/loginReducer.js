@@ -3,8 +3,6 @@
 import type {LoginAction} from '../types';
 
 type InitialState = {
-  token?: string;
-  userName?: string;
   isLogin: boolean;
   onRequest: boolean;
 };

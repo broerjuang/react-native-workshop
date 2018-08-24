@@ -1,2 +1,4 @@
-const fetch = require('isomorphic-fetch');
+// @flow
+import fetch from 'isomorphic-fetch';
+
 global.fetch = fetch;

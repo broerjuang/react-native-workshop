@@ -1,9 +1,15 @@
 // @flow
 import fetchJSON from '../fetchJSON';
 
+type Data = {
+  message: string;
+  documentation_url: string;
+};
+
 it('should fetch API', async() => {
   try {
-    let {message} = await fetchJSON('', 'GET', '');
+    let data: Data = await fetchJSON('', 'GET', '');
+    let {message} = data;
     expect(message).toEqual('Bad credentials');
   } catch (e) {
     console.log('Error, ', e);

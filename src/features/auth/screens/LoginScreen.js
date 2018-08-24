@@ -24,8 +24,8 @@ type Props = {
   handleAction: (action: Object) => void;
   token: string;
   isLogin: boolean;
-  userName: string;
-  onRequest: boolean;
+  userName?: string;
+  onRequest?: boolean;
 };
 
 type State = {
@@ -265,14 +265,16 @@ let styles = {
     fontWeight: 'bold',
   },
 };
-type StateToPRops = {
+type StateToProps = {
   loginReducer: {
     token: string;
     isLogin: boolean;
+    onRequest?: boolean;
+    userName?: string;
   };
 };
 type Dispatch = (action: Object) => void;
-export function mapStateToProps(state: StateToPRops) {
+export function mapStateToProps(state: StateToProps) {
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,

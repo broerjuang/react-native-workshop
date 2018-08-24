@@ -1,6 +1,7 @@
 //@flow
 
 declare function fetch(url: string, object?: Object): Promise<*>;
+declare var __DEV__: boolean;
 
 type JSONData =
   | null

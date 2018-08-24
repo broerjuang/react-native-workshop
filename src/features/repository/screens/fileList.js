@@ -1,7 +1,14 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, ScrollView, WebView} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+  Dimensions,
+} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 import Icon from '../../../global/core-ui/Icon';
@@ -9,6 +16,8 @@ import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import SyntaxHighlighter from 'react-native-syntax-highlighter';
 import {hybrid as GithubStyle} from 'react-syntax-highlighter/styles/hljs';
 import {Buffer} from 'buffer';
+import {getLanguage} from 'lowlight';
+import type {FetchFile} from '../types';
 
 type Props = {
   navigation: *;
@@ -17,15 +26,17 @@ type State = {
   fullName: string;
   fileList: Object | Array<Object>;
   path: string;
-  language: string;
+  imageWidth?: number;
+  imageHeight?: number;
 };
+
+let {width} = Dimensions.get('window');
 
 class fileList extends Component<Props, State> {
   state = {
     fullName: '',
     fileList: [],
     path: '',
-    language: '',
   };
   static navigationOptions = (options: *) => ({
     headerLeft: (
@@ -51,12 +62,12 @@ class fileList extends Component<Props, State> {
     ),
   });
   async componentDidMount() {
-    let {fullName, path = '', language} = this.props.navigation.state.params;
+    let {fullName, path = ''} = this.props.navigation.state.params;
     let url = `repos/${fullName}/contents/${path}`;
     console.log('path: ', url);
     let fileList = await fetchJSON(url, 'GET');
     console.log(fileList);
-    this.setState({fullName, language, path, fileList});
+    this.setState({fullName, path, fileList});
   }
   render() {
     let {fileList} = this.state;
@@ -80,12 +91,7 @@ class fileList extends Component<Props, State> {
       </SafeAreaView>
     );
   }
-  _rowRender = (data: {
-    type: string;
-    name: string;
-    path: string;
-    sha: string;
-  }) => {
+  _rowRender = (data: FetchFile) => {
     console.log('Row Render', data);
     let {type, name, path, sha} = data;
     type = type === 'dir' ? 'file-directory' : 'file';
@@ -112,7 +118,6 @@ class fileList extends Component<Props, State> {
               fullName: this.state.fullName,
               path: onClickPath,
               name,
-              language: this.state.language,
             },
             key: onClickPath,
           });
@@ -121,28 +126,102 @@ class fileList extends Component<Props, State> {
       />
     );
   };
-  _fileRender = (fileList: {content: string}) => {
-    if (!Array.isArray(fileList)) {
-      let {content} = fileList;
-      let codeString = Buffer.from(content, 'base64').toString('ascii');
-      let highlightedCode = (
-        <SyntaxHighlighter
-          language={this.state.language}
-          style={{
-            ...GithubStyle,
-            hljs: {
-              background: 'white',
-            },
-          }}
-          CodeTag={Text}
-        >
-          {codeString}
-        </SyntaxHighlighter>
-      );
-
-      return highlightedCode;
+  _fileRender = (fileList: FetchFile) => {
+    let {name, download_url: uri, content} = fileList;
+    let type = name.split('.').pop();
+    let isKnownLanguage = this._isKnownLanguage(type);
+    console.log('LANGUAGE: ', isKnownLanguage);
+    if (this._isImage(type)) {
+      return this._imageRender(uri);
+    } else if (isKnownLanguage) {
+      return this._codeRender(content, type);
+    } else {
+      return this._unknownRender(content);
     }
   };
+
+  _getImageSize = (uri: string) => {
+    Image.getSize(uri, (imageWidth, imageHeight) => {
+      if (imageWidth > width) {
+        this.setState({
+          imageWidth: width,
+          imageHeight: 400,
+        });
+      } else {
+        this.setState({imageWidth, imageHeight});
+      }
+    });
+  };
+
+  _imageRender = (uri: string) => {
+    if (!this.state.imageWidth) {
+      this._getImageSize(uri);
+    }
+    return (
+      <Image
+        style={{
+          width: this.state.imageWidth ? this.state.imageWidth : width,
+          height: this.state.imageHeight ? this.state.imageHeight : 400,
+          resizeMode: 'contain',
+        }}
+        source={{
+          uri,
+        }}
+      />
+    );
+  };
+
+  _codeRender = (content: string, language: string) => {
+    let codeString: string = Buffer.from(content, 'base64').toString('ascii');
+    let highlightedCode = (
+      <SyntaxHighlighter
+        language={language}
+        style={{
+          ...GithubStyle,
+          hljs: {
+            background: 'white',
+          },
+        }}
+        CodeTag={Text}
+      >
+        {codeString}
+      </SyntaxHighlighter>
+    );
+
+    return highlightedCode;
+  };
+
+  _unknownRender = (content: string) => {
+    let text: string = Buffer.from(content, 'base64').toString('ascii');
+
+    return (
+      <ScrollView
+        automaticallyAdjustContentInsets={false}
+        showsHorizontalScrollIndicator={false}
+        horizontal
+      >
+        <View style={{backgroundColor: 'white', width}}>
+          <Text style={{fontSize: 10}}>{text}</Text>
+        </View>
+      </ScrollView>
+    );
+  };
+
+  _isImage = (fileType: string) => {
+    return (
+      fileType === 'gif' ||
+      fileType === 'png' ||
+      fileType === 'jpg' ||
+      fileType === 'jpeg' ||
+      fileType === 'psd' ||
+      fileType === 'svg'
+    );
+  };
+  _isKnownLanguage(fileType: string): boolean {
+    let isKnown: boolean = getLanguage(fileType);
+    return isKnown && !this._isImage(fileType);
+  }
+
 }
 
 export default fileList;

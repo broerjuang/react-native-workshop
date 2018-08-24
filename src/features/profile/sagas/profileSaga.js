@@ -1,19 +1,18 @@
 import {put, all, takeLatest, fork, call} from 'redux-saga/effects';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 //watcher
 export default function* onPageInit() {
-  console.log('on page mount');
   yield takeLatest('ON_PAGE_MOUNT', fetchDataForPage);
 }
 
 //saga
 export function* fetchDataForPage() {
-  const userId = 'sstur';
   try {
     yield all([
-      fork(requestAndPut, [firstRequest, userId], firstRequestActionCreator),
-      fork(requestAndPut, [secondRequest, userId], secondRequestActionCreator),
-      fork(requestAndPut, [thirdRequest, userId], thirdRequestActionCreator),
+      fork(requestAndPut, [firstRequest], firstRequestActionCreator),
+      fork(requestAndPut, [secondRequest], secondRequestActionCreator),
+      fork(requestAndPut, [thirdRequest], thirdRequestActionCreator),
     ]);
   } catch (e) {
     yield put({type: 'ON_PAGE_MOUNT_ERROR', payload: {message: e}});
@@ -26,14 +25,8 @@ function* requestAndPut(requestParameters, actionCreator) {
   yield put(actionCreator(result));
 }
 
-const firstRequest = (userId) => {
-  return fetch(`https://api.github.com/users/${userId}`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  }).then((res) => res.json());
+const firstRequest = () => {
+  return fetchJSON('user', 'GET');
 };
 
 const firstRequestActionCreator = (data) => ({
@@ -41,14 +34,8 @@ const firstRequestActionCreator = (data) => ({
   payload: data,
 });
 
-const secondRequest = (userId) => {
-  return fetch(`https://api.github.com/users/${userId}/orgs`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  }).then((res) => res.json());
+const secondRequest = () => {
+  return fetchJSON('user/orgs', 'GET');
 };
 
 const secondRequestActionCreator = (data) => ({
@@ -56,14 +43,8 @@ const secondRequestActionCreator = (data) => ({
   payload: data,
 });
 
-const thirdRequest = (userId) => {
-  return fetch(`https://api.github.com/users/${userId}/starred`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  }).then((res) => res.json());
+const thirdRequest = () => {
+  return fetchJSON('user/starred', 'GET');
 };
 
 const thirdRequestActionCreator = (data) => ({

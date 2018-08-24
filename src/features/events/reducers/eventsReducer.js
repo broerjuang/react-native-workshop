@@ -2,12 +2,14 @@
 import type {Event} from '../types/Event';
 
 type Action = {
-  type: string,
-  payload?: any,
+  type: string;
+  payload: {
+    events: Array<Event>;
+  };
 };
 
 type State = {
-  events: Array<Event>,
+  events: Array<Event>;
 };
 
 let initialState: State = {
@@ -20,7 +22,7 @@ export default function eventsReducer(
 ) {
   switch (action.type) {
     case 'FETCH_EVENTS': {
-      return {...state, events: action.payload};
+      return {...state, events: action.payload.events};
     }
     default:
       return state;

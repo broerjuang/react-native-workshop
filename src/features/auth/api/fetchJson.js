@@ -3,7 +3,17 @@ import getToken from '../../../global/helpers/getToken';
 import {rootAPI} from '../../../global/env';
 
 type Method = 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'POST';
-
+type CurrentUsers = {
+  login: string;
+  name: string;
+  email: string;
+  follower: number;
+  private_gists: number;
+  public_repos: number;
+  avatar_url: string;
+  followers: number;
+  following: number;
+};
 function fetchJSON(
   endpoint: 'user',
   method: Method,

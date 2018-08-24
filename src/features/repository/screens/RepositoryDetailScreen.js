@@ -15,7 +15,7 @@ import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import Button from '../../../global/core-ui/Button';
 
 type Props = {
-  navigation: NavigationScreenProp<*>;
+  navigation: *;
 };
 
 type State = {
@@ -30,7 +30,7 @@ type State = {
   ownerName: string;
 };
 
-class RepositoryDetailScreen extends Component<Props, State> {
+export class RepositoryDetailScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerTransparent: true,
     headerLeft: (

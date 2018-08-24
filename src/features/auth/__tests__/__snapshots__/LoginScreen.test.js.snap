@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginScreen should render LoginScreen corectly 1`] = `
+exports[`container test should render LoginScreen corectly 1`] = `
 <View
   collapsable={undefined}
   onLayout={[Function]}

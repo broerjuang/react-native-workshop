@@ -3,7 +3,6 @@
 import type {LoginAction} from '../types';
 
 type InitialState = {
-  token?: string;
   isLogin: boolean;
 };
 

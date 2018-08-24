@@ -48,7 +48,6 @@ export class LoginScreen extends Component<Props, State> {
       let savedToken = await AsyncStorage.getItem(USERTOKEN);
       // fetch();
       if (savedToken) {
-        console.log('saved', savedToken);
         let checkToken = await fetchJSON('user', 'GET', savedToken);
         console.log('check', checkToken);
         if (checkToken.login) {
@@ -250,14 +249,20 @@ let styles = {
     fontWeight: 'bold',
   },
 };
-
-function mapStateToProps(state) {
+type StateToPRops = {
+  loginReducer: {
+    token: string;
+    isLogin: boolean;
+  };
+};
+type Dispatch = (action: Object) => void;
+export function mapStateToProps(state: StateToPRops) {
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch: Dispatch) {
   return {
     handleAction: (action: Object) => dispatch(action),
   };

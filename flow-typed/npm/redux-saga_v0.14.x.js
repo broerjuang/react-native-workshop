@@ -27,16 +27,22 @@ declare module 'redux-saga/effects' {
   declare type Task = ReduxSaga$Task;
   declare type Buffer<T> = ReduxSaga$Buffer<T>;
   declare type Channel<T> = ReduxSaga$Channel<T>;
-  declare type Action = {type: $Subtype<string>}
+  declare type Action = {type: $Subtype<string>};
   declare type Pattern<T> = string | Predicate<T> | (string | Predicate<T>)[];
 
   declare type Effect =
-    TakeEffect<any> |
-    PutEffect<any> |
-    RaceEffect | CallEffect |
-    CpsEffect | ForkEffect | JoinEffect | CancelEffect | SelectEffect |
-    ActionChannelEffect<any> | CancelledEffect | FlushEffect<any>;
-
+    | TakeEffect<any>
+    | PutEffect<any>
+    | RaceEffect
+    | CallEffect
+    | CpsEffect
+    | ForkEffect
+    | JoinEffect
+    | CancelEffect
+    | SelectEffect
+    | ActionChannelEffect<any>
+    | CancelledEffect
+    | FlushEffect<any>;
 
   // take
   declare interface TakeEffectDescriptor<T> {
@@ -104,7 +110,7 @@ declare module 'redux-saga/effects' {
   declare type Collable5<A, B, C, D, E> = (a: A, b: B, c: C, d: D, e: E) => any;
   declare type CollableR = (...args: mixed[]) => any;
 
-  declare type CallEffectArg<F> = F | [any, F] | {context: any, fn: F};
+  declare type CallEffectArg<F> = F | [any, F] | {context: any; fn: F};
 
   declare interface CallEffect {
     CALL: CallEffectDescriptor;
@@ -112,33 +118,48 @@ declare module 'redux-saga/effects' {
 
   declare type CallEffectFactory<R> = {
     (fn: CallEffectArg<Collable0>): R;
-    <A>(fn: CallEffectArg<Collable1<A>>,
-        a: A): R;
-    <A, B>(fn: CallEffectArg<Collable2<A, B>>,
-           a: A, b: B): R;
-    <A, B, C>(fn: CallEffectArg<Collable3<A, B, C>>,
-              a: A, b: B, c: C): R;
-    <A, B, C, D>(fn: CallEffectArg<Collable4<A, B, C, D>>,
-                 a: A, b: B, c: C, d: D): R;
-    <A, B, C, D, E>(fn: CallEffectArg<Collable5<A, B, C, D, E>>,
-                    a: A, b: B, c: C, d: D, e: E): R;
+    <A>(fn: CallEffectArg<Collable1<A>>, a: A): R;
+    <A, B>(fn: CallEffectArg<Collable2<A, B>>, a: A, b: B): R;
+    <A, B, C>(fn: CallEffectArg<Collable3<A, B, C>>, a: A, b: B, c: C): R;
+    <A, B, C, D>(
+      fn: CallEffectArg<Collable4<A, B, C, D>>,
+      a: A,
+      b: B,
+      c: C,
+      d: D,
+    ): R;
+    <A, B, C, D, E>(
+      fn: CallEffectArg<Collable5<A, B, C, D, E>>,
+      a: A,
+      b: B,
+      c: C,
+      d: D,
+      e: E,
+    ): R;
     (fn: CallEffectArg<CollableR>, ...args: any[]): R;
-  }
+  };
 
   declare var call: CallEffectFactory<CallEffect>;
 
   declare var apply: {
     (context: any, fn: Collable0): CallEffect;
-    <A>(context: any, fn: Collable1<A>,
-        args: [A]): CallEffect;
-    <A, B>(context: any, fn: Collable2<A, B>,
-           args: [A, B]): CallEffect;
-    <A, B, C>(context: any, fn: Collable3<A, B, C>,
-              args: [A, B, C]): CallEffect;
-    <A, B, C, D>(context: any, fn: Collable4<A, B, C, D>,
-                 args: [A, B, C, D]): CallEffect;
-    <A, B, C, D, E>(context: any, fn: Collable5<A, B, C, D, E>,
-                    args: [A, B, C, D, E]): CallEffect;
+    <A>(context: any, fn: Collable1<A>, args: [A]): CallEffect;
+    <A, B>(context: any, fn: Collable2<A, B>, args: [A, B]): CallEffect;
+    <A, B, C>(
+      context: any,
+      fn: Collable3<A, B, C>,
+      args: [A, B, C],
+    ): CallEffect;
+    <A, B, C, D>(
+      context: any,
+      fn: Collable4<A, B, C, D>,
+      args: [A, B, C, D],
+    ): CallEffect;
+    <A, B, C, D, E>(
+      context: any,
+      fn: Collable5<A, B, C, D, E>,
+      args: [A, B, C, D, E],
+    ): CallEffect;
     (context: any, fn: CollableR, args: any[]): CallEffect;
   };
 
@@ -151,14 +172,25 @@ declare module 'redux-saga/effects' {
 
   declare var cps: {
     (fn: CallEffectArg<Collable1<CpsCallback>>): CpsEffect;
-    <A>(fn: CallEffectArg<Collable2<A, CpsCallback>>,
-        a: A): CpsEffect;
-    <A, B>(fn: CallEffectArg<Collable3<A, B, CpsCallback>>,
-           a: A, b: B): CpsEffect;
-    <A, B, C>(fn: CallEffectArg<Collable4<A, B, C, CpsCallback>>,
-              a: A, b: B, c: C): CpsEffect;
-    <A, B, C, D>(fn: CallEffectArg<Collable5<A, B, C, D, CpsCallback>>,
-                 a: A, b: B, c: C, d: D): CpsEffect;
+    <A>(fn: CallEffectArg<Collable2<A, CpsCallback>>, a: A): CpsEffect;
+    <A, B>(
+      fn: CallEffectArg<Collable3<A, B, CpsCallback>>,
+      a: A,
+      b: B,
+    ): CpsEffect;
+    <A, B, C>(
+      fn: CallEffectArg<Collable4<A, B, C, CpsCallback>>,
+      a: A,
+      b: B,
+      c: C,
+    ): CpsEffect;
+    <A, B, C, D>(
+      fn: CallEffectArg<Collable5<A, B, C, D, CpsCallback>>,
+      a: A,
+      b: B,
+      c: C,
+      d: D,
+    ): CpsEffect;
   };
 
   // fork & spawn
@@ -200,14 +232,21 @@ declare module 'redux-saga/effects' {
   declare var select: {
     (): SelectEffect;
     <S>(selector: Collable1<S>): SelectEffect;
-    <S, A>(selector: Collable2<S, A>,
-           a: A): SelectEffect;
-    <S, A, B>(selector: Collable3<S, A, B>,
-              a: A, b: B): SelectEffect;
-    <S, A, B, C>(selector: Collable4<S, A, B, C>,
-                 a: A, b: B, c: C): SelectEffect;
-    <S, A, B, C, D>(selector: Collable5<S, A, B, C, D>,
-                    a: A, b: B, c: C, d: D): SelectEffect;
+    <S, A>(selector: Collable2<S, A>, a: A): SelectEffect;
+    <S, A, B>(selector: Collable3<S, A, B>, a: A, b: B): SelectEffect;
+    <S, A, B, C>(
+      selector: Collable4<S, A, B, C>,
+      a: A,
+      b: B,
+      c: C,
+    ): SelectEffect;
+    <S, A, B, C, D>(
+      selector: Collable5<S, A, B, C, D>,
+      a: A,
+      b: B,
+      c: C,
+      d: D,
+    ): SelectEffect;
     (selector: CollableR, ...rest: any[]): SelectEffect;
   };
 
@@ -222,7 +261,8 @@ declare module 'redux-saga/effects' {
   }
 
   declare function actionChannel<T>(
-    pattern: Pattern<T>, buffer?: Buffer<T>
+    pattern: Pattern<T>,
+    buffer?: Buffer<T>,
   ): ActionChannelEffect<T>;
 
   // actionChannel
@@ -244,28 +284,56 @@ declare module 'redux-saga/effects' {
   declare type Workable1<A, B> = (b: B, action?: A) => any;
   declare type Workable2<A, B, C> = (b: B, c: C, action?: A) => any;
   declare type Workable3<A, B, C, D> = (b: B, c: C, d: D, action?: A) => any;
-  declare type Workable4<A, B, C, D, E> = (b: B, c: C, d: D, e: E, action?: A) => any;
-  declare type WorkableR<A, B, C, D, E, F> = (b: B, c: C, d: D, e: E, f: F, ...args: mixed[]) => any;
+  declare type Workable4<A, B, C, D, E> = (
+    b: B,
+    c: C,
+    d: D,
+    e: E,
+    action?: A,
+  ) => any;
+  declare type WorkableR<A, B, C, D, E, F> = (
+    b: B,
+    c: C,
+    d: D,
+    e: E,
+    f: F,
+    ...args: mixed[]
+  ) => any;
 
   declare interface TakeHelper {
-    <A>(pattern: Pattern<A>,
-        worker: Workable0<A>): ForkEffect;
-    <A, B>(pattern: Pattern<A>,
-           worker: Workable1<A, B>,
-           b: B): ForkEffect;
-    <A, B, C>(pattern: Pattern<A>,
-              worker: Workable2<A, B, C>,
-              b: B, c: C): ForkEffect;
-    <A, B, C, D>(pattern: Pattern<A>,
-                 worker: Workable3<A, B, C, D>,
-                 b: B, c: C, d: D): ForkEffect;
-    <A, B, C, D, E>(pattern: Pattern<A>,
-                    worker: Workable4<A, B, C, D, E>,
-                    b: B, c: C, d: D, e: E): ForkEffect;
-    <A, B, C, D, E, F>(pattern: Pattern<A>,
-                       worker: WorkableR<A, B, C, D, E, F>,
-                       b: B, c: C, d: D, e: E, f: F,
-                       ...rest: any[]): ForkEffect;
+    <A>(pattern: Pattern<A>, worker: Workable0<A>): ForkEffect;
+    <A, B>(pattern: Pattern<A>, worker: Workable1<A, B>, b: B): ForkEffect;
+    <A, B, C>(
+      pattern: Pattern<A>,
+      worker: Workable2<A, B, C>,
+      b: B,
+      c: C,
+    ): ForkEffect;
+    <A, B, C, D>(
+      pattern: Pattern<A>,
+      worker: Workable3<A, B, C, D>,
+      b: B,
+      c: C,
+      d: D,
+    ): ForkEffect;
+    <A, B, C, D, E>(
+      pattern: Pattern<A>,
+      worker: Workable4<A, B, C, D, E>,
+      b: B,
+      c: C,
+      d: D,
+      e: E,
+    ): ForkEffect;
+    <A, B, C, D, E, F>(
+      pattern: Pattern<A>,
+      worker: WorkableR<A, B, C, D, E, F>,
+      b: B,
+      c: C,
+      d: D,
+      e: E,
+      f: F,
+      ...rest: any[]
+    ): ForkEffect;
   }
 
   declare var takeEvery: TakeHelper;
@@ -273,32 +341,61 @@ declare module 'redux-saga/effects' {
 
   // throttle
   declare var throttle: {
-    <A>(ms: number, pattern: Pattern<A>,
-        worker: Workable0<A>): ForkEffect;
-    <A, B>(ms: number, pattern: Pattern<A>,
-           worker: Workable1<A, B>,
-           b: B): ForkEffect;
-    <A, B, C>(ms: number, pattern: Pattern<A>,
-              worker: Workable2<A, B, C>,
-              b: B, c: C): ForkEffect;
-    <A, B, C, D>(ms: number, pattern: Pattern<A>,
-                 worker: Workable3<A, B, C, D>,
-                 b: B, c: C, d: D): ForkEffect;
-    <A, B, C, D, E>(ms: number, pattern: Pattern<A>,
-                    worker: Workable4<A, B, C, D, E>,
-                    b: B, c: C, d: D, e: E): ForkEffect;
-    <A, B, C, D, E, F>(ms: number, pattern: Pattern<A>,
-                       worker: WorkableR<A, B, C, D, E, F>,
-                       b: B, c: C, d: D, e: E, f: F,
-                       ...rest: any[]): ForkEffect;
+    <A>(ms: number, pattern: Pattern<A>, worker: Workable0<A>): ForkEffect;
+    <A, B>(
+      ms: number,
+      pattern: Pattern<A>,
+      worker: Workable1<A, B>,
+      b: B,
+    ): ForkEffect;
+    <A, B, C>(
+      ms: number,
+      pattern: Pattern<A>,
+      worker: Workable2<A, B, C>,
+      b: B,
+      c: C,
+    ): ForkEffect;
+    <A, B, C, D>(
+      ms: number,
+      pattern: Pattern<A>,
+      worker: Workable3<A, B, C, D>,
+      b: B,
+      c: C,
+      d: D,
+    ): ForkEffect;
+    <A, B, C, D, E>(
+      ms: number,
+      pattern: Pattern<A>,
+      worker: Workable4<A, B, C, D, E>,
+      b: B,
+      c: C,
+      d: D,
+      e: E,
+    ): ForkEffect;
+    <A, B, C, D, E, F>(
+      ms: number,
+      pattern: Pattern<A>,
+      worker: WorkableR<A, B, C, D, E, F>,
+      b: B,
+      c: C,
+      d: D,
+      e: E,
+      f: F,
+      ...rest: any[]
+    ): ForkEffect;
   };
 }
 
 declare module 'redux-saga/utils' {
   import type {
-    Effect, TakeEffectDescriptor, PutEffectDescriptor,
-    RaceEffectDescriptor, CallEffectDescriptor, ForkEffectDescriptor,
-    SelectEffectDescriptor, ActionChannelEffectDescriptor
+    Effect,
+    TakeEffectDescriptor,
+    PutEffectDescriptor,
+    RaceEffectDescriptor,
+    CallEffectDescriptor,
+    ForkEffectDescriptor,
+    SelectEffectDescriptor,
+    ActionChannelEffectDescriptor,
   } from 'redux-saga/effects';
 
   declare type Task = ReduxSaga$Task;
@@ -393,7 +490,12 @@ declare module 'redux-saga' {
   declare type Saga1<A> = (a: A) => Generator<*, *, *>;
   declare type Saga2<A, B> = (a: A, b: B) => Generator<*, *, *>;
   declare type Saga3<A, B, C> = (a: A, b: B, c: C) => Generator<*, *, *>;
-  declare type Saga4<A, B, C, D> = (a: A, b: B, c: C, d: D) => Generator<*, *, *>;
+  declare type Saga4<A, B, C, D> = (
+    a: A,
+    b: B,
+    c: C,
+    d: D,
+  ) => Generator<*, *, *>;
   declare type SagaR = (...args: mixed[]) => Generator<*, *, *>;
 
   declare export type SagaMiddleware<S, A> = Middleware<S, A> & {
@@ -403,7 +505,7 @@ declare module 'redux-saga' {
     run<A, B, C>(saga: Saga3<A, B, C>, a: A, B: B, c: C): Task;
     run<A, B, C, T4>(saga: Saga4<A, B, C, T4>, a: A, B: B, c: C, d: T4): Task;
     run(saga: SagaR, ...args: any[]): Task;
-  }
+  };
 
   declare export type Emit<T> = (input: T) => void;
 
@@ -414,23 +516,29 @@ declare module 'redux-saga' {
 
   declare export type Unsubscribe = () => void;
   declare export type Subscribe<T> = (cb: (input: T) => void) => Unsubscribe;
-  declare export type Logger = (level: 'info'|'warning'|'error', ...args: Array<any>) => void;
+  declare export type Logger = (
+    level: 'info' | 'warning' | 'error',
+    ...args: Array<any>
+  ) => void;
 
-  declare export function runSaga<S, SA, DA>(saga: Generator<*, *, *>, io: {
-    subscribe?: Subscribe<SA>;
-    dispatch?: (input: DA) => any;
-    getState?: () => S;
-    sagaMonitor?: SagaMonitor;
-    logger?: Logger;
-    onError?: void;
-  }): Task;
+  declare export function runSaga<S, SA, DA>(
+    saga: Generator<*, *, *>,
+    io: {
+      subscribe?: Subscribe<SA>;
+      dispatch?: (input: DA) => any;
+      getState?: () => S;
+      sagaMonitor?: SagaMonitor;
+      logger?: Logger;
+      onError?: void;
+    },
+  ): Task;
 
   declare export var END: {type: '@@redux-saga/CHANNEL_END'};
 
   declare export function eventChannel<T>(
     subscribe: Subscribe<T>,
     buffer?: Buffer<T>,
-    matcher?: Predicate<T>
+    matcher?: Predicate<T>,
   ): Channel<T>;
 
   declare export function channel<T>(buffer?: Buffer<T>): Channel<T>;

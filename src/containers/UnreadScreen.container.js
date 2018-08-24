@@ -3,7 +3,7 @@
 import UnreadScreen from '../features/notification/screens/UnreadScreen';
 import {connect} from 'react-redux';
 type Dispatch = (action: Object) => void;
-const mapDispatchToProps = (dispatch: Dispatch) => {
+export const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     markAllAsRead: () => dispatch({type: 'MARK_ALL_AS_READ'}),
     markAsRead: (itemID: number) =>

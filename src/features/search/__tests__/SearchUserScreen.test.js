@@ -1,18 +1,12 @@
-// @flow
-import React from 'react';
 import renderer from 'react-test-renderer';
-import {LoginScreen} from '../LoginScreen';
-
-describe('LoginScreen', () => {
+import React from 'react';
+import {SearchUserScreen} from '../screens/SearchUserScreen';
+describe('container test', () => {
   it('should render LoginScreen corectly', () => {
     let component = renderer.create(
-      <LoginScreen
+      <SearchUserScreen
+        users={['aji', 'deany', 'ari', 'jo', 'astrid']}
         navigation={{navigate: (s) => s}}
-        handleAction={(action) => {
-          return;
-        }}
-        token={'sd'}
-        isLogin={false}
       />,
     );
     let tree = component.toJSON();

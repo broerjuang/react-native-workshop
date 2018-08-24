@@ -9,8 +9,7 @@ import {
   AUTH_GITHUB_SUCCED,
   AUTH_GITHUB_FAILED,
   GITHUB_TOKEN,
-} from '../actions/loginReducer.action';
-// import checkToken from '../helpers/checkToken';
+} from '../actions/loginActions';
 function* authLogin(): Iterable<any> {
   yield takeLatest(AUTH_GITHUB_REQUESTED, fetchUser);
 }

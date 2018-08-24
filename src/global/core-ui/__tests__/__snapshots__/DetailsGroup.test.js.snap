@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render Icon corectly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "grey",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 15,
+        "paddingTop": 30,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      test
+    </Text>
+    <View>
+       
+       
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "grey",
+        "borderBottomWidth": 2,
+        "flex": 1,
+        "paddingBottom": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        asfsfsdf
+      </Text>
+    </View>
+  </View>
+</View>
+`;

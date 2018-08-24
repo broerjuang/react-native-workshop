@@ -226,7 +226,7 @@ let RootNavigation = createSwitchNavigator(
     },
   },
   {
-    initialRouteName: 'GitClient',
+    initialRouteName: 'LoginScreen',
   },
 );
 

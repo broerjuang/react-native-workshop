@@ -10,17 +10,17 @@ import fetchJSON from '../../../global/helpers/fetchJSON';
 import {connect} from 'react-redux';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>,
-  handleClearSearch: () => {},
-  handleSearchRepo: (repos: Array<Repo>) => {},
-  handleSearchUser: (users: Array<User>) => {},
+  navigation: NavigationScreenProp<[]>;
+  handleClearSearch: () => {};
+  handleSearchRepo: (repos: Array<Repo>) => {};
+  handleSearchUser: (users: Array<User>) => {};
 };
 
 type State = {
-  textInput: string,
-  searchInput: string,
-  selectedIndex: number,
-  showClear: boolean,
+  textInput: string;
+  searchInput: string;
+  selectedIndex: number;
+  showClear: boolean;
 };
 
 class SearchTab extends Component<Props, State> {
@@ -157,16 +157,16 @@ function mapStateToProps(state) {
 }
 
 type Repo = {
-  full_name: string,
-  description: string,
-  stargazers_count: number,
-  forks_count: number,
-  language: string,
-  fork: boolean,
+  full_name: string;
+  description: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string;
+  fork: boolean;
 };
 type User = {
-  login: string,
-  avatar_url: string,
+  login: string;
+  avatar_url: string;
 };
 
 function mapDispatchToProps(dispatch) {

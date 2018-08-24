@@ -1,9 +1,8 @@
 // @flow
 
-import type {LoginAction} from '../actions/loginReducer.action';
+import type {LoginAction} from '../types';
+
 type InitialState = {
-  token?: string;
-  userName?: string;
   isLogin: boolean;
   onRequest: boolean;
 };
@@ -15,18 +14,17 @@ let initialState: InitialState = {
 
 function loginReducer(state: InitialState = initialState, action: LoginAction) {
   switch (action.type) {
-    case 'LOGIN_SUCCESS':
+    case 'ACTIONS/AUTH_GITHUB_SUCCED':
       return {
         ...state,
         isLogin: true,
         token: action.payload.token,
-        userName: action.payload.userName,
+        currentUsers: action.payload.currentUser,
       };
-    case 'LOGIN_REQUEST':
-      return {
-        ...state,
-        onRequest: true,
-      };
+    case 'ACTIONS/AUTH_GITHUB_REQUESTED':
+      return state;
+    case 'ACTIONS/AUTH_GITHUB_FAILED':
+      return {...state, message: action.payload.message};
     default:
       return state;
   }

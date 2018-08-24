@@ -24,8 +24,6 @@ type Props = {
   handleAction: (action: Object) => void;
   token: string;
   isLogin: boolean;
-  userName: string;
-  onRequest: boolean;
 };
 
 type State = {
@@ -45,38 +43,18 @@ export class LoginScreen extends Component<Props, State> {
     loginWidth: 0,
   };
 
-  async componentDidMount() {
-    try {
-      let savedToken: string = await AsyncStorage.getItem(USERTOKEN);
-      // fetch();
-      if (savedToken) {
-        console.log('saved', savedToken);
-        let checkToken: {login: string} = await fetchJSON(
-          'user',
-          'GET',
-          savedToken,
-        );
-        console.log('check', checkToken);
-        if (checkToken.login) {
-          await this.props.handleAction({
-            type: 'LOGIN_SUCCESS',
-            payload: {token: savedToken, userName: checkToken.login},
-          });
-          await this.props.navigation.navigate('GitClient');
-        }
-      }
-    } catch (e) {
-      console.log(e);
+  componentDidMount() {
+    this.props.handleAction({
+      type: 'ACTIONS/AUTH_GITHUB_REQUESTED',
+    });
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.isLogin) {
+      this.props.navigation.navigate('GitClient');
     }
   }
-
-  async componentWillUnmount() {
-    console.log('umount : ', this.props.token);
-    console.log('umount : ', this.props.userName);
-  }
-
   render() {
-    console.log('RENDER');
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
@@ -179,7 +157,7 @@ export class LoginScreen extends Component<Props, State> {
 
   _onLayout(event: Event) {
     const {height, width} = event.nativeEvent.layout;
-    if (width !== this.state.loginWidth) {
+    if (height !== this.state.loginHeight) {
       this.setState({loginHeight: height, loginWidth: width});
     }
   }
@@ -187,25 +165,41 @@ export class LoginScreen extends Component<Props, State> {
   _onNavigationStateChange = async(navState: Object) => {
     const url: string = navState.url;
     let constant = 'code=';
-    if (url.includes(constant) && this.props.onRequest === false) {
-      this.props.handleAction({type: 'LOGIN_REQUEST'});
-      console.log('URL: ', url);
+    if (url.includes(constant)) {
       let code = url.slice(url.indexOf(constant) + 5);
       try {
         let access = await this._createTokenWithCode(code);
         console.log('Token: ', access.access_token);
         console.log('Access: ', access);
         await AsyncStorage.setItem(USERTOKEN, access.access_token);
-
-        let checkToken: {login: string} = await fetchJSON(
-          'user',
-          'GET',
-          access.access_token,
-        );
-        console.log('Check Token: ', checkToken);
-        await this.props.handleAction({
-          type: 'LOGIN_SUCCESS',
-          payload: {token: access.access_token, userName: checkToken.login},
+        let user = await fetchJSON('user', 'GET', access.access_token);
+        let {
+          login,
+          name = '',
+          email = '',
+          follower = 0,
+          private_gists = 0,
+          public_repos = 0,
+          avatar_url = '',
+          followers = 0,
+          following = 0,
+        } = user;
+        let payload = {
+          token: access.access_token,
+          currentUser: {
+            userName: login,
+            name: name,
+            email: email,
+            avatar: avatar_url,
+            privateGist: private_gists,
+            publicRepos: public_repos,
+            followers,
+            following,
+          },
+        };
+        this.props.handleAction({
+          type: 'ACTIONS/AUTH_GITHUB_SUCCED',
+          payload,
         });
 
         this.props.navigation.navigate('GitClient');
@@ -266,16 +260,20 @@ let styles = {
     fontWeight: 'bold',
   },
 };
-
-function mapStateToProps(state) {
+type StateToPRops = {
+  loginReducer: {
+    token: string;
+    isLogin: boolean;
+  };
+};
+type Dispatch = (action: Object) => void;
+export function mapStateToProps(state: StateToPRops) {
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,
-    userName: state.loginReducer.userName,
-    onRequest: state.loginReducer.onRequest,
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch: Dispatch) {
   return {
     handleAction: (action: Object) => dispatch(action),
   };

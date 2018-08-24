@@ -43,30 +43,17 @@ export class LoginScreen extends Component<Props, State> {
     loginWidth: 0,
   };
 
-  async componentDidMount() {
-    try {
-      let savedToken = await AsyncStorage.getItem(USERTOKEN);
-      // fetch();
-      if (savedToken) {
-        let checkToken = await fetchJSON('user', 'GET', savedToken);
-        console.log('check', checkToken);
-        if (checkToken.login) {
-          await this.props.handleAction({
-            type: 'LOGIN_SUCCESS',
-            payload: {token: savedToken},
-          });
-          await this.props.navigation.navigate('GitClient');
-        }
-      }
-    } catch (e) {
-      console.log(e);
+  componentDidMount() {
+    this.props.handleAction({
+      type: 'ACTIONS/AUTH_GITHUB_REQUESTED',
+    });
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.isLogin) {
+      this.props.navigation.navigate('GitClient');
     }
   }
-
-  async componentWillUnmount() {
-    console.log('umount : ', this.props.token);
-  }
-
   render() {
     let iconSize = 110;
     let height = this.state.loginHeight;
@@ -185,10 +172,34 @@ export class LoginScreen extends Component<Props, State> {
         console.log('Token: ', access.access_token);
         console.log('Access: ', access);
         await AsyncStorage.setItem(USERTOKEN, access.access_token);
-
+        let user = await fetchJSON('user', 'GET', access.access_token);
+        let {
+          login,
+          name = '',
+          email = '',
+          follower = 0,
+          private_gists = 0,
+          public_repos = 0,
+          avatar_url = '',
+          followers = 0,
+          following = 0,
+        } = user;
+        let payload = {
+          token: access.access_token,
+          currentUser: {
+            userName: login,
+            name: name,
+            email: email,
+            avatar: avatar_url,
+            privateGist: private_gists,
+            publicRepos: public_repos,
+            followers,
+            following,
+          },
+        };
         this.props.handleAction({
-          type: 'LOGIN_SUCCESS',
-          payload: {token: access.access_token},
+          type: 'ACTIONS/AUTH_GITHUB_SUCCED',
+          payload,
         });
 
         this.props.navigation.navigate('GitClient');

@@ -6,7 +6,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 type ParalaxProps = {
   name: string;
   value: number;
-  onPress?: () => boolean;
+  onPress?: () => void;
 };
 
 export default function ParallaxButtons(props: ParalaxProps) {

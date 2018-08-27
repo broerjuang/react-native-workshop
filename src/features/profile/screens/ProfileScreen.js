@@ -14,14 +14,14 @@ import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import type {ProfileState} from '../reducers/profileReducer';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: *;
   handleAction: (action: Object) => void;
   profileState: ProfileState;
 };
 
 type State = {};
 
-class ProfileScreen extends Component<Props, State> {
+export class ProfileScreen extends Component<Props, State> {
   componentDidMount() {
     this.props.handleAction({type: 'ON_PAGE_MOUNT'});
   }
@@ -86,31 +86,31 @@ class ProfileScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Repositories"
                   value={this.props.profileState.sumRepositories}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => {
+                    this.props.navigation.navigate('RepositoryScreen');
+                  }}
                 />
 
                 <ParallaxButtons
                   name="Stars"
                   value={this.props.profileState.sumStars}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => {
+                    this.props.navigation.navigate('RepositoryScreen');
+                  }}
                 />
                 <ParallaxButtons
                   name="Followers"
                   value={this.props.profileState.sumFollowers}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => {
+                    this.props.navigation.navigate('RepositoryScreen');
+                  }}
                 />
                 <ParallaxButtons
                   name="Following"
                   value={this.props.profileState.sumFollowing}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => {
+                    this.props.navigation.navigate('RepositoryScreen');
+                  }}
                 />
               </View>
             </View>

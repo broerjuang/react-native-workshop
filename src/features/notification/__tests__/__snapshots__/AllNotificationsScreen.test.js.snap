@@ -325,7 +325,18 @@ exports[`AllNotificationsScreen should render AllNotificationsScreen corectly 1`
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={null}
+          style={
+            Object {
+              "borderColor": "black",
+              "flex": 1,
+              "shadowColor": "black",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 1,
+              },
+              "shadowOpacity": 0.2,
+            }
+          }
           testID={undefined}
           tvParallaxProperties={undefined}
         >
@@ -404,7 +415,23 @@ exports[`AllNotificationsScreen should render AllNotificationsScreen corectly 1`
           </View>
         </View>
       </View>
-      <View />
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          You don't have notifications of this type.
+        </Text>
+      </View>
     </View>
   </RCTScrollView>
 </View>

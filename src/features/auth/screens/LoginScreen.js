@@ -24,6 +24,8 @@ type Props = {
   handleAction: (action: Object) => void;
   token: string;
   isLogin: boolean;
+  userName?: string;
+  onRequest?: boolean;
 };
 
 type State = {
@@ -55,6 +57,7 @@ export class LoginScreen extends Component<Props, State> {
     }
   }
   render() {
+    console.log('RENDER');
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
@@ -165,7 +168,9 @@ export class LoginScreen extends Component<Props, State> {
   _onNavigationStateChange = async(navState: Object) => {
     const url: string = navState.url;
     let constant = 'code=';
-    if (url.includes(constant)) {
+    if (url.includes(constant) && this.props.onRequest === false) {
+      this.props.handleAction({type: 'LOGIN_REQUEST'});
+      console.log('URL: ', url);
       let code = url.slice(url.indexOf(constant) + 5);
       try {
         let access = await this._createTokenWithCode(code);
@@ -260,17 +265,21 @@ let styles = {
     fontWeight: 'bold',
   },
 };
-type StateToPRops = {
+type StateToProps = {
   loginReducer: {
     token: string;
     isLogin: boolean;
+    onRequest?: boolean;
+    userName?: string;
   };
 };
 type Dispatch = (action: Object) => void;
-export function mapStateToProps(state: StateToPRops) {
+export function mapStateToProps(state: StateToProps) {
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,
+    userName: state.loginReducer.userName,
+    onRequest: state.loginReducer.onRequest,
   };
 }
 export function mapDispatchToProps(dispatch: Dispatch) {

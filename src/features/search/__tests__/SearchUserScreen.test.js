@@ -7,6 +7,13 @@ describe('container test', () => {
       <SearchUserScreen
         users={['aji', 'deany', 'ari', 'jo', 'astrid']}
         navigation={{navigate: (s) => s}}
+        handleAction={(action) => {
+          return;
+        }}
+        token={'sd'}
+        isLogin={false}
+        userName={''}
+        onRequest={false}
       />,
     );
     let tree = component.toJSON();

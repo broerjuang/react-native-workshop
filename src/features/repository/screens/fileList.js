@@ -32,7 +32,7 @@ type State = {
 
 let {width} = Dimensions.get('window');
 
-class fileList extends Component<Props, State> {
+export class fileList extends Component<Props, State> {
   state = {
     fullName: '',
     fileList: [],

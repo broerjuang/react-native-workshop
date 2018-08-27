@@ -1,100 +1,225 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Repository screee  should render Repository corectly 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#393e42",
-          "borderBottomColor": "#000",
-          "borderBottomWidth": 1,
-          "borderTopColor": "#000",
-          "borderTopWidth": 1,
-        },
-        false,
-        Object {
-          "backgroundColor": "white",
-          "borderBottomWidth": 0.1,
-          "borderTopWidth": 0.5,
-        },
-      ]
-    }
-  >
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      onClearText={[Function]}
-      placeholder="Type Here..."
-      placeholderTextColor="#E1E4EC"
+<RCTScrollView>
+  <View>
+    <View
       style={
         Array [
           Object {
-            "backgroundColor": "#303337",
-            "borderRadius": 3,
-            "color": "#86939e",
-            "fontSize": 17.5,
-            "height": 30,
-            "margin": 8,
-            "overflow": "hidden",
-            "paddingLeft": 26,
-            "paddingRight": 19,
+            "backgroundColor": "#393e42",
+            "borderBottomColor": "#000",
+            "borderBottomWidth": 1,
+            "borderTopColor": "#000",
+            "borderTopWidth": 1,
           },
           false,
-          false,
-          false,
           Object {
-            "backgroundColor": "#E1E4EC",
-          },
-          undefined,
-          false,
-        ]
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "#909AA3",
-            "fontSize": 16,
-          },
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
-            },
-            Object {
-              "left": 16,
-            },
-            Object {
-              "alignContent": "center",
-            },
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
+            "backgroundColor": "white",
+            "borderBottomWidth": 0.1,
+            "borderTopWidth": 0.5,
           },
         ]
       }
     >
-      
-    </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        onClearText={[Function]}
+        placeholder="Type Here..."
+        placeholderTextColor="#E1E4EC"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#303337",
+              "borderRadius": 3,
+              "color": "#86939e",
+              "fontSize": 17.5,
+              "height": 30,
+              "margin": 8,
+              "overflow": "hidden",
+              "paddingLeft": 26,
+              "paddingRight": 19,
+            },
+            false,
+            false,
+            false,
+            Object {
+              "backgroundColor": "#E1E4EC",
+            },
+            undefined,
+            false,
+          ]
+        }
+        underlineColorAndroid="transparent"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#909AA3",
+              "fontSize": 16,
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "position": "absolute",
+                "top": 15.5,
+              },
+              Object {
+                "left": 16,
+              },
+              Object {
+                "alignContent": "center",
+              },
+            ],
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderWidth": 0.2,
+            "flexDirection": "row",
+            "padding": 6,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 5,
+              "flexDirection": "column",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            
+          </Text>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 15,
+                "marginVertical": 3,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 2,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
   </View>
-  <RCTScrollView>
-    <View />
-  </RCTScrollView>
-</View>
+</RCTScrollView>
 `;

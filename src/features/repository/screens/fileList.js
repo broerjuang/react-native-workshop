@@ -32,7 +32,7 @@ type State = {
 
 let {width} = Dimensions.get('window');
 
-class fileList extends Component<Props, State> {
+export class fileList extends Component<Props, State> {
   state = {
     fullName: '',
     fileList: [],
@@ -221,7 +221,6 @@ class fileList extends Component<Props, State> {
     let isKnown: boolean = getLanguage(fileType);
     return isKnown && !this._isImage(fileType);
   }
-
 }
 
 export default fileList;

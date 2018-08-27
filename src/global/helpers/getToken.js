@@ -1,7 +1,7 @@
 // @flow
-import store from '../createStore';
+import createStore from '../createStore';
 
-function getToken() {
+function getToken(store?: Object = createStore) {
   let {state = ''} = select(store.getState(), 'loginReducer').token;
   return state;
 }

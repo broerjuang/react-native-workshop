@@ -140,6 +140,7 @@ export class RepositoryScreen extends Component<Props, State> {
 function mapStateToProps(state) {
   return {};
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     handleAction: (action: Object) => dispatch(action),

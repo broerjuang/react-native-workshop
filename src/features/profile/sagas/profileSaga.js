@@ -1,13 +1,15 @@
+// @flow
+
 import {put, all, takeLatest, fork, call} from 'redux-saga/effects';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 
 //watcher
-export default function* onPageInit() {
+export default function* onPageInit(): Generator<*, *, *> {
   yield takeLatest('ON_PAGE_MOUNT', fetchDataForPage);
 }
 
 //saga
-export function* fetchDataForPage() {
+export function* fetchDataForPage(): Generator<*, *, *> {
   try {
     yield all([
       fork(requestAndPut, [firstRequest], firstRequestActionCreator),

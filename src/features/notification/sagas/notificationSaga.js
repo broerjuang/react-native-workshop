@@ -10,11 +10,7 @@ function* notificationSaga(): Generator<*, *, *> {
 
 function* fetchNotification(): Generator<*, *, *> {
   try {
-    let unread = yield fetchJSON(
-      `notifications?all=false`,
-      'GET',
-      '9f0ac23922860d7b6a3985f19f364a47cbbda328',
-    );
+    let unread = yield fetchJSON(`notifications?all=false`, 'GET');
     let participating = yield fetchJSON(
       'notifications?participating=true',
       'GET',

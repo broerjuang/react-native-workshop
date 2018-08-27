@@ -26,8 +26,9 @@ export class RepositoryScreen extends Component<Props, State> {
     return (
       <ScrollView>
         <SearchBar
-          onChangeText={(text: string): void => console.log(text)}
-          onClearText={() => console.log('remove')}
+          onChangeText={(text: string): void => this.setState({search: text})}
+          onClearText={() => this.setState({search: ''})}
+          value={this.state.search}
           placeholderTextColor={'#E1E4EC'}
           placeholder={'Type Here...'}
           icon={{
@@ -68,3 +69,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RepositoryScreen);
+

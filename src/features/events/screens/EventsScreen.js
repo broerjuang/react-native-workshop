@@ -7,20 +7,20 @@ import {EventCard} from '../../../components/index';
 import type {NavigationScreenProp} from 'react-navigation';
 
 type Event = {
-  profilePicture: string,
-  username: string,
-  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK',
-  actionTarget: string,
-  repoTarget: string,
-  date: string,
-  comment?: string,
+  profilePicture: string;
+  username: string;
+  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK';
+  actionTarget: string;
+  repoTarget: string;
+  date: string;
+  comment?: string;
 };
 
-type Object = {
-  navigation: NavigationScreenProp<[]>,
+type Props = {
+  navigation: NavigationScreenProp<[]>;
 };
 
-class EventsScreen extends Component<Object> {
+class EventsScreen extends Component<Props, {}> {
   render() {
     let eventList: Array<Event> = [
       {

@@ -3,23 +3,32 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {Icon} from './index';
+import languageColor from '../../global/constants/languageColor';
 
 type Repo = {
-  full_name: string,
-  description: string,
-  stargazers_count: number,
-  forks_count: number,
-  language: string,
-  fork: boolean,
+  full_name: string;
+  description: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string;
+  fork: boolean;
 };
 
 type RepoCardProps = {
-  repo: Repo,
-  onPress: (repo: Repo) => void,
+  repo: Repo;
+  onPress: (repo: Repo) => void;
 };
 
 export default function RepoCard(props: RepoCardProps) {
   const {repo, onPress} = props;
+  const {
+    full_name,
+    description,
+    stargazers_count,
+    forks_count,
+    fork,
+    language,
+  } = repo;
   const {
     list,
     repoTitle,
@@ -27,27 +36,36 @@ export default function RepoCard(props: RepoCardProps) {
     repoIconText,
     repoIconWrapper,
   } = styles;
+  let langColor = languageColor.hasOwnProperty(language)
+    ? languageColor[language]
+    : null;
+  langColor = langColor ? langColor : '#000000';
   return (
     <TouchableOpacity style={list} onPress={onPress}>
       <View style={{width: '85%'}}>
-        <Text style={repoTitle}>{repo.full_name}</Text>
-        {repo.description !== '' ? <Text>{repo.description}</Text> : null}
+        <Text style={repoTitle}>{full_name}</Text>
+        {description !== '' ? <Text>{description}</Text> : null}
         <View style={repoIconListWrapper}>
           <View style={repoIconWrapper}>
             <Icon name="md-star" size={16} color="grey" type="IONICONS" />
-            <Text style={repoIconText}>{repo.stargazers_count}</Text>
+            <Text style={repoIconText}>{stargazers_count}</Text>
           </View>
           <View style={repoIconWrapper}>
             <Icon name="repo-forked" size={16} color="grey" type="OCTICONS" />
-            <Text style={repoIconText}>{repo.forks_count}</Text>
+            <Text style={repoIconText}>{forks_count}</Text>
           </View>
           <View style={repoIconWrapper}>
-            <Icon name="circle" size={16} color="#f9e03b" type="FONTAWESOME" />
-            <Text style={repoIconText}>{repo.language}</Text>
+            <Icon
+              name="circle"
+              size={16}
+              color={langColor}
+              type="FONTAWESOME"
+            />
+            <Text style={repoIconText}>{language}</Text>
           </View>
         </View>
       </View>
-      {repo.fork ? (
+      {fork ? (
         <Icon name="repo-forked" size={32} color="grey" type="OCTICONS" />
       ) : (
         <Icon name="repo" size={32} color="grey" type="OCTICONS" />
@@ -82,6 +100,6 @@ const styles = StyleSheet.create({
   },
   repoIconText: {
     fontSize: 12,
-    marginLeft: 6,
+    marginLeft: 2,
   },
 });

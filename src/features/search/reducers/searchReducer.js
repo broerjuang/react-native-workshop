@@ -1,27 +1,27 @@
 // @flow
 
 type Action = {
-  type: string,
-  payload?: any,
+  type: string;
+  payload?: any;
 };
 
 type Repo = {
-  fullName: string,
-  description: string,
-  starsCount: number,
-  forksCount: number,
-  language: string,
-  fork: boolean,
+  fullName: string;
+  description: string;
+  starsCount: number;
+  forksCount: number;
+  language: string;
+  fork: boolean;
 };
 type User = {
-  login: string,
-  avatar_url: string,
+  login: string;
+  avatar_url: string;
 };
 
 type State = {
-  searchKey: string,
-  repos: Array<Repo>,
-  users: Array<User>,
+  searchKey: string;
+  repos: Array<Repo>;
+  users: Array<User>;
 };
 
 let initialState: State = {
@@ -43,6 +43,9 @@ export default function searchReducer(
     }
     case 'SEARCH_USERS': {
       return {...state, users: action.payload};
+    }
+    case 'CLEAR_SEARCH': {
+      return {...state, users: [], repos: []};
     }
     default:
       return state;

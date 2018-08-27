@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import {Icon} from '../../../global/core-ui/index';
 import type {NavigationScreenProp} from 'react-navigation';
@@ -10,17 +10,17 @@ import fetchJSON from '../../../global/helpers/fetchJSON';
 import {connect} from 'react-redux';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>,
-  handleClearSearch: () => {},
-  handleSearchRepo: (repos: Array<Repo>) => {},
-  handleSearchUser: (users: Array<User>) => {},
+  navigation: NavigationScreenProp<[]>;
+  handleClearSearch: () => {};
+  handleSearchRepo: (repos: Array<Repo>) => {};
+  handleSearchUser: (users: Array<User>) => {};
 };
 
 type State = {
-  textInput: string,
-  searchInput: string,
-  selectedIndex: number,
-  showClear: boolean,
+  textInput: string;
+  searchInput: string;
+  selectedIndex: number;
+  showClear: boolean;
 };
 
 class SearchTab extends Component<Props, State> {
@@ -123,20 +123,20 @@ class SearchTab extends Component<Props, State> {
       if (this.state.selectedIndex === 0) {
         // Search Repo
         let {items} = await fetchJSON(
-          'search/repositories?q=${searchInput}',
-          'POST',
+          `search/repositories?q=${searchInput}`,
+          'GET',
         );
         this.props.handleSearchRepo(items);
       } else {
         // Search User
-        let {items} = await fetchJSON('search/users?q=${searchInput}', 'POST');
+        let {items} = await fetchJSON(`search/users?q=${searchInput}`, 'GET');
         this.props.handleSearchUser(items);
       }
     }
   };
 }
 
-const styles = StyleSheet.create({
+const styles = {
   inputContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   inputText: {height: 40, width: '90%', backgroundColor: '#efefef'},
-});
+};
 
 function mapStateToProps(state) {
   return {
@@ -157,16 +157,16 @@ function mapStateToProps(state) {
 }
 
 type Repo = {
-  full_name: string,
-  description: string,
-  stargazers_count: number,
-  forks_count: number,
-  language: string,
-  fork: boolean,
+  full_name: string;
+  description: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string;
+  fork: boolean;
 };
 type User = {
-  login: string,
-  avatar_url: string,
+  login: string;
+  avatar_url: string;
 };
 
 function mapDispatchToProps(dispatch) {
@@ -175,10 +175,7 @@ function mapDispatchToProps(dispatch) {
       dispatch({type: 'SEARCH_REPOS', payload: repos}),
     handleSearchUser: (users: Array<User>) =>
       dispatch({type: 'SEARCH_USERS', payload: users}),
-    handleClearSearch: () => {
-      dispatch({type: 'SEARCH_REPOS', payload: []});
-      dispatch({type: 'SEARCH_USERS', payload: []});
-    },
+    handleClearSearch: () => dispatch({type: 'CLEAR_SEARCH'}),
   };
 }
 

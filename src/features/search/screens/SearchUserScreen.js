@@ -1,34 +1,28 @@
 // @flow
 
-import React, {Component} from 'react';
-import {
-  Text,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import React from 'react';
+import {Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {Icon, RowWith3Column} from '../../../global/core-ui/index';
 import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
 
 type User = {
-  login: string,
-  avatar_url: string,
+  login: string;
+  avatar_url: string;
 };
 
-type Object = {
-  navigation: NavigationScreenProp<[]>,
-  users: Array<User>,
+type Props = {
+  navigation: NavigationScreenProp<[]>;
+  users: Array<User>;
 };
 
-function SearchUserScreen(props: Object) {
+export function SearchUserScreen(props: Props) {
   const {list} = styles;
   let {users} = props;
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-      {users.map((user, index) => {
+      {users.map((user: User, index) => {
         return (
           <TouchableOpacity
             key={index}
@@ -59,15 +53,20 @@ function SearchUserScreen(props: Object) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = {
   list: {
     borderTopWidth: 1,
     borderColor: '#d6d4d4',
     paddingVertical: 6,
   },
-});
+};
 
-function mapStateToProps(state) {
+type State = {
+  searchReducer: {
+    users: Array<User>;
+  };
+};
+function mapStateToProps(state: State) {
   return {
     users: state.searchReducer.users,
   };

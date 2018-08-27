@@ -8,12 +8,8 @@ import {
 
 import {LoginScreen} from './features/auth/screens';
 import {EventsScreen, EventDetail} from './features/events/screens';
-import {
-  AllNotificationsScreen,
-  ParticipatingScreen,
-} from './features/notification/screens';
 
-import UnreadScreen from './containers/UnreadScreen.container';
+import AllNotificationsScreen from './features/notification/screens/AllNotificationsScreen';
 
 import {
   SearchRepositoryScreen,
@@ -23,8 +19,8 @@ import {ProfileScreen, SettingScreen} from './features/profile/screens';
 import {
   RepositoryScreen,
   RepositoryDetailScreen,
+  RepositoryFileListScreen,
 } from './features/repository/screens/index';
-import TabBarButtonGroup from './features/notification/assets/tabBarButtonGroup';
 
 import SearchTab from './features/search/assets/SearchTab';
 import renderIcon from './features/search/assets/renderIcon';
@@ -35,6 +31,9 @@ let Repository = createStackNavigator({
   },
   RepositoryDetailScreen: {
     screen: RepositoryDetailScreen,
+  },
+  RepositoryFileListScreen: {
+    screen: RepositoryFileListScreen,
   },
 });
 
@@ -85,62 +84,30 @@ let Profile = createStackNavigator(
   },
 );
 
-let UnreadNotification = createStackNavigator(
-  {
-    Unread: {
-      screen: UnreadScreen,
-    },
-    ...sharedScreens,
-  },
-  {
-    navigationOptions: {
-      header: null,
-    },
-  },
-);
-
 let AllNotification = createStackNavigator(
   {
     AllNotificationsScreen: {
       screen: AllNotificationsScreen,
     },
-    ...sharedScreens,
   },
   {
     navigationOptions: {
       header: null,
+      tabBarVisible: false,
     },
   },
 );
-
-let ParticipatingNotification = createStackNavigator(
-  {
-    Participating: {
-      screen: ParticipatingScreen,
-    },
-    ...sharedScreens,
-  },
-  {
-    navigationOptions: {
-      header: null,
-    },
-  },
-);
-
 let Notification = createMaterialTopTabNavigator(
   {
-    Unread: {
-      screen: UnreadNotification,
-    },
-    Participating: {
-      screen: ParticipatingNotification,
-    },
     All: {
       screen: AllNotification,
     },
   },
   {
-    tabBarComponent: TabBarButtonGroup,
+    navigationOptions: {
+      header: null,
+      tabBarVisible: false,
+    },
   },
 );
 

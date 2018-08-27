@@ -81,7 +81,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         />
@@ -108,7 +108,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         />
@@ -135,7 +135,7 @@ exports[`RepoCard should render RepoCard for forked repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         >
@@ -240,7 +240,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         />
@@ -267,7 +267,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         />
@@ -294,7 +294,7 @@ exports[`RepoCard should render RepoCard for repo corectly 1`] = `
           style={
             Object {
               "fontSize": 12,
-              "marginLeft": 6,
+              "marginLeft": 2,
             }
           }
         >

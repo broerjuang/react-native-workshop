@@ -1,489 +1,225 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Repository screee  should render Repository corectly 1`] = `
-<View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#393e42",
-          "borderBottomColor": "#000",
-          "borderBottomWidth": 1,
-          "borderTopColor": "#000",
-          "borderTopWidth": 1,
-        },
-        false,
-        Object {
-          "backgroundColor": "white",
-          "borderBottomWidth": 0.1,
-          "borderTopWidth": 0.5,
-        },
-      ]
-    }
-  >
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      onClearText={[Function]}
-      placeholder="Type Here..."
-      placeholderTextColor="#E1E4EC"
+<RCTScrollView>
+  <View>
+    <View
       style={
         Array [
           Object {
-            "backgroundColor": "#303337",
-            "borderRadius": 3,
-            "color": "#86939e",
-            "fontSize": 17.5,
-            "height": 30,
-            "margin": 8,
-            "overflow": "hidden",
-            "paddingLeft": 26,
-            "paddingRight": 19,
+            "backgroundColor": "#393e42",
+            "borderBottomColor": "#000",
+            "borderBottomWidth": 1,
+            "borderTopColor": "#000",
+            "borderTopWidth": 1,
           },
-          false,
-          false,
           false,
           Object {
-            "backgroundColor": "#E1E4EC",
+            "backgroundColor": "white",
+            "borderBottomWidth": 0.1,
+            "borderTopWidth": 0.5,
           },
-          undefined,
-          false,
         ]
       }
-      underlineColorAndroid="transparent"
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "#909AA3",
-            "fontSize": 16,
-          },
+    >
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        onClearText={[Function]}
+        placeholder="Type Here..."
+        placeholderTextColor="#E1E4EC"
+        style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "position": "absolute",
-              "top": 15.5,
+              "backgroundColor": "#303337",
+              "borderRadius": 3,
+              "color": "#86939e",
+              "fontSize": 17.5,
+              "height": 30,
+              "margin": 8,
+              "overflow": "hidden",
+              "paddingLeft": 26,
+              "paddingRight": 19,
             },
+            false,
+            false,
+            false,
             Object {
-              "left": 16,
+              "backgroundColor": "#E1E4EC",
             },
-            Object {
-              "alignContent": "center",
-            },
-          ],
-          Object {
-            "fontFamily": "Material Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
-  </View>
-  <View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "white",
-          "borderWidth": 0.2,
-          "flexDirection": "row",
-          "padding": 6,
+            undefined,
+            false,
+          ]
         }
-      }
-    >
+        underlineColorAndroid="transparent"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#909AA3",
+              "fontSize": 16,
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "position": "absolute",
+                "top": 15.5,
+              },
+              Object {
+                "left": 16,
+              },
+              Object {
+                "alignContent": "center",
+              },
+            ],
+            Object {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View>
       <View
         style={
           Object {
-            "flex": 5,
-            "flexDirection": "column",
+            "backgroundColor": "white",
+            "borderWidth": 0.2,
+            "flexDirection": "row",
+            "padding": 6,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 12,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          react-navigation
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Advance react native state management
-        </Text>
         <View
           style={
             Object {
-              "flexDirection": "row",
-              "marginRight": 15,
-              "marginVertical": 3,
+              "flex": 5,
+              "flexDirection": "column",
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
+                "fontSize": 12,
+                "fontWeight": "bold",
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              2
-            </Text>
-          </View>
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            
+          </Text>
           <View
             style={
               Object {
-                "alignItems": "center",
                 "flexDirection": "row",
-                "marginHorizontal": 5,
+                "marginRight": 15,
+                "marginVertical": 3,
               }
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
               }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
             >
-              Java Script
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                0
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginHorizontal": 5,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              >
+                
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 2,
-            "justifyContent": "center",
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        />
-      </View>
-    </View>
-  </View>
-  <View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "white",
-          "borderWidth": 0.2,
-          "flexDirection": "row",
-          "padding": 6,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flex": 5,
-            "flexDirection": "column",
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 12,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          Kodefox Tax
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Kodefox daily task
-        </Text>
         <View
           style={
             Object {
-              "flexDirection": "row",
-              "marginRight": 15,
-              "marginVertical": 3,
+              "alignItems": "center",
+              "flex": 2,
+              "justifyContent": "center",
             }
           }
         >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              2
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              Java Script
-            </Text>
-          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 2,
-            "justifyContent": "center",
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        />
       </View>
     </View>
   </View>
-  <View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "white",
-          "borderWidth": 0.2,
-          "flexDirection": "row",
-          "padding": 6,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flex": 5,
-            "flexDirection": "column",
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 12,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          reason
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Advance react native state management
-        </Text>
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "marginRight": 15,
-              "marginVertical": 3,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              2
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "marginHorizontal": 5,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            >
-              Ocaml
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 2,
-            "justifyContent": "center",
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        />
-      </View>
-    </View>
-  </View>
-</View>
+</RCTScrollView>
 `;

@@ -1,29 +1,30 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
+import {connect} from 'react-redux';
 import RepoComponent from '../../../components/Repo';
 import {SearchBar} from 'react-native-elements';
+import type {RepositoryState} from '../reducers/repositoryReducer';
 
 type Props = {
-  total_count: number;
-  incomplete_results: boolean;
-  items: Array<Items>;
+  handleAction: (action: Object) => void;
+  // total_count: number;
+  //incomplete_results: boolean;
+  repositoryState: RepositoryState;
 };
-type Items = {
-  id: number;
-  repo_name: string;
-  description: string;
-  star: number;
-  forked: number;
-  language: string;
-  repoType: string;
-};
-class RepositoryScreen extends Component<Props, {}> {
+
+type State = {};
+
+export class RepositoryScreen extends Component<Props, State> {
+  componentDidMount() {
+    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+  }
+
   render() {
-    let {items = []} = this.props;
+    let {repositoryList = []} = this.props.repositoryState;
     return (
-      <View>
+      <ScrollView>
         <SearchBar
           onChangeText={(text: string): void => console.log(text)}
           onClearText={() => console.log('remove')}
@@ -42,16 +43,28 @@ class RepositoryScreen extends Component<Props, {}> {
             borderTopWidth: 0.5,
           }}
         />
-        {items.map((item, key) => {
+        {repositoryList.map((item, key) => {
           return (
             <View key={key}>
               <RepoComponent {...item} />
             </View>
           );
         })}
-      </View>
+      </ScrollView>
     );
   }
 }
 
-export default RepositoryScreen;
+function mapStateToProps(state) {
+  return {
+    repositoryState: state.repositoryReducer,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleAction: (action: Object) => dispatch(action),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RepositoryScreen);

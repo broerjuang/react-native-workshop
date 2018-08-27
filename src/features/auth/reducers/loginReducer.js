@@ -5,10 +5,13 @@ import type {LoginAction} from '../types';
 type InitialState = {
   isLogin: boolean;
   onRequest: boolean;
+  userName: string;
 };
 
 let initialState: InitialState = {
   isLogin: false,
+  onRequest: false,
+  userName: '',
   onRequest: false,
 };
 

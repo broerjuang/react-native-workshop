@@ -32,7 +32,7 @@ type State = {
 
 let {width} = Dimensions.get('window');
 
-class fileList extends Component<Props, State> {
+export class fileList extends Component<Props, State> {
   state = {
     fullName: '',
     fileList: [],
@@ -191,6 +191,44 @@ class fileList extends Component<Props, State> {
     return highlightedCode;
   };
 
+  _imageRender = (uri: string) => {
+    if (!this.state.imageWidth) {
+      this._getImageSize(uri);
+    }
+    return (
+      <Image
+        style={{
+          width: this.state.imageWidth ? this.state.imageWidth : width,
+          height: this.state.imageHeight ? this.state.imageHeight : 400,
+          resizeMode: 'contain',
+        }}
+        source={{
+          uri,
+        }}
+      />
+    );
+  };
+
+  _codeRender = (content: string, language: string) => {
+    let codeString: string = Buffer.from(content, 'base64').toString('ascii');
+    let highlightedCode = (
+      <SyntaxHighlighter
+        language={language}
+        style={{
+          ...GithubStyle,
+          hljs: {
+            background: 'white',
+          },
+        }}
+        CodeTag={Text}
+      >
+        {codeString}
+      </SyntaxHighlighter>
+    );
+
+    return highlightedCode;
+  };
+
   _unknownRender = (content: string) => {
     let text: string = Buffer.from(content, 'base64').toString('ascii');
 
@@ -221,7 +259,6 @@ class fileList extends Component<Props, State> {
     let isKnown: boolean = getLanguage(fileType);
     return isKnown && !this._isImage(fileType);
   }
-
 }
 
 export default fileList;

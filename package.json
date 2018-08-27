@@ -15,7 +15,8 @@
     "react-native-scripts": "1.14.0",
     "react-redux": "^5.0.7",
     "react-test-renderer": "^16.4.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-mock-store": "^1.5.3"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -40,7 +41,10 @@
         "lines": 80,
         "statements": -10
       }
-    }
+    },
+    "setupFiles": [
+      "./test/env.js"
+    ]
   },
   "dependencies": {
     "@types/node-fetch": "^2.1.2",
@@ -50,6 +54,7 @@
     "enzyme-adapter-react-16.3": "^1.0.0",
     "expo": "^26.0.1",
     "install": "^0.12.1",
+    "isomorphic-fetch": "^2.2.1",
     "lowlight": "^1.10.0",
     "npm": "^6.4.0",
     "react": "16.3.1",

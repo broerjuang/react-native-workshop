@@ -8,7 +8,8 @@ type Data = {
 
 it('should fetch API', async(done) => {
   try {
-    let data: Data = await fetchJSON < Data > ('', 'GET', '');
+    let data: Data = await fetchJSON('', 'GET', '');
+    console.log('DATA: ', data);
     let {message} = data;
     expect(message).toEqual('Bad credentials');
     done();

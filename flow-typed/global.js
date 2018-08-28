@@ -20,7 +20,6 @@ declare type Route = {
 type ObjectOf<T> = {[key: string]: T};
 
 declare type JSONData =
-  | null
   | string
   | number
   | boolean

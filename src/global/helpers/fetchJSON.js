@@ -4,16 +4,18 @@ import {rootAPI} from '../env';
 
 type Method = 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'POST';
 
-function fetchJSON(
+async function fetchJSON<T>(
   endpoint: string,
   method: Method,
   token: string = getToken(),
-): Promise<*> {
+): Promise<T> {
   let headers = {
     method: method,
     headers: {Authorization: `token ${token}`},
   };
-  return fetch(rootAPI + endpoint, headers).then((res: Response) => res.json());
+  let data: {json: () => T} = await fetch(rootAPI + endpoint, headers);
+  let json: T = await data.json();
+  return json;
 }
 
 export default fetchJSON;

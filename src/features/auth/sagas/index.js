@@ -3,7 +3,7 @@ import {put, takeLatest} from 'redux-saga/effects';
 import {AsyncStorage} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
-import fetchJSON from '../api/fetchJson';
+import fetchJSON from '../../../global/helpers/fetchJSON';
 
 function* authLogin(): Iterable<any> {
   yield takeLatest('ACTIONS/AUTH_GITHUB_REQUESTED', fetchUser);
@@ -27,24 +27,24 @@ function* fetchUser(): Iterable<any> {
       let user: ?CurrentUsers = yield fetchJSON('user', 'GET', hasToken);
       if (user && user.login) {
         let {
-          login,
+          login: userName,
           name = '',
           email = '',
-          private_gists = 0,
-          public_repos = 0,
-          avatar_url = '',
+          private_gists: privateGist = 0,
+          public_repos: publicRepos = 0,
+          avatar_url: avatar = '',
           followers = 0,
           following = 0,
         } = user;
         let payload = {
           token: hasToken,
           currentUser: {
-            userName: login,
-            name: name,
-            email: email,
-            avatar: avatar_url,
-            privateGist: private_gists,
-            publicRepos: public_repos,
+            userName,
+            name,
+            email,
+            avatar,
+            privateGist,
+            publicRepos,
             followers,
             following,
           },

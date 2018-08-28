@@ -6,12 +6,14 @@ type InitialState = {
   isLogin: boolean;
   onRequest: boolean;
   userName: string;
+  token: string;
 };
 
 let initialState: InitialState = {
   isLogin: false,
   onRequest: false,
   userName: '',
+  token: '',
 };
 
 function loginReducer(state: InitialState = initialState, action: LoginAction) {

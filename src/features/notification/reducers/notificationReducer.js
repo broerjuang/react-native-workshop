@@ -2,7 +2,7 @@
 import type {NotificationAction} from '../actions/notificationReducer.action';
 
 export type NotificationDataType = {
-  id: number;
+  id: string;
   reposID: number;
   reposFullName: string;
   reposOwner: string;
@@ -13,7 +13,7 @@ export type NotificationDataType = {
   isUnread: boolean;
 };
 export type NotificationState = {
-  id: number;
+  id: string;
   reposID: number;
   reposFullName: string;
   reposOwner: string;
@@ -22,12 +22,12 @@ export type NotificationState = {
   subjectURL: string;
   subjectType: string;
   isUnread: boolean;
-  unreadNotificationData?: Array<NotificationDataType>;
-  participatingNotificationData?: Array<NotificationDataType>;
-  allNotificationData?: Array<NotificationDataType>;
+  unreadNotificationData: Array<NotificationDataType>;
+  participatingNotificationData: Array<NotificationDataType>;
+  allNotificationData: Array<NotificationDataType>;
 };
 let initialState: NotificationState = {
-  id: -1,
+  id: '-1',
   reposID: -1,
   reposFullName: '',
   reposOwner: '',
@@ -36,6 +36,7 @@ let initialState: NotificationState = {
   subjectURL: '',
   subjectType: '',
   isUnread: false,
+  isLoading: false,
   unreadNotificationData: [],
   participatingNotificationData: [],
   allNotificationData: [],
@@ -46,80 +47,48 @@ function notificationReducer(
   action: NotificationAction,
 ) {
   switch (action.type) {
-    case 'GET_UNREAD_NOTIFICATION':
-      let unreadNotifications = [];
-
-      for (let item of action.payload) {
-        let newNotif = {
-          id: item.id,
-          reposID: item.repository.id,
-          reposFullName: item.repository.full_name,
-          reposOwner: item.repository.owner.login,
-          reposAvatar: item.repository.owner.avatar_url,
-          subjectTitle: item.subject.title,
-          subjectURL: item.subject.url,
-          subjectType: item.subject.type,
-          isUnread: item.unread,
-        };
-        unreadNotifications.push(newNotif);
-      }
-
+    case 'NOTIFICATION_REQUESTED':
       return {
         ...state,
-        unreadNotificationData: unreadNotifications,
       };
-    case 'GET_PARTICIPATING_NOTIFICATION':
-      let participatingNotifications = [];
-      for (let item of action.payload) {
-        let newNotif = {
-          id: item.id,
-          reposID: item.repository.id,
-          reposFullName: item.repository.full_name,
-          reposOwner: item.repository.owner.login,
-          reposAvatar: item.repository.owner.avatar_url,
-          subjectTitle: item.subject.title,
-          subjectURL: item.subject.url,
-          subjectType: item.subject.type,
-          isUnread: item.unread,
-        };
-        participatingNotifications.push(newNotif);
-      }
-
+    case 'GET_UNREAD_NOTIFICATION_SUCCESS':
       return {
         ...state,
-        participatingNotificationData: participatingNotifications,
+        unreadNotificationData: action.payload.unreadNotificationData,
       };
-
-    case 'GET_ALL_NOTIFICATION':
-      let allNotifications = [];
-      for (let item of action.payload) {
-        let newNotif = {
-          id: item.id,
-          reposID: item.repository.id,
-          reposFullName: item.repository.full_name,
-          reposOwner: item.repository.owner.login,
-          reposAvatar: item.repository.owner.avatar_url,
-          subjectTitle: item.subject.title,
-          subjectURL: item.subject.url,
-          subjectType: item.subject.type,
-          isUnread: item.unread,
-        };
-        allNotifications.push(newNotif);
-      }
+    case 'GET_PARTICIPATING_NOTIFICATION_SUCCESS':
       return {
         ...state,
-        allNotificationData: allNotifications,
+        participatingNotificationData:
+          action.payload.participatingNotificationData,
+      };
+    case 'GET_ALL_NOTIFICATION_SUCCESS':
+      return {
+        ...state,
+        allNotificationData: action.payload.allNotificationData,
       };
     case 'MARK_AS_READ':
-      console.log('marked as read!', action.payload);
+      let filteredUnreadNotification;
+      let payload = action.payload.markedNotification;
+      console.log(`ID ${payload} marked as read!`);
+      state.unreadNotificationData.map((item) => {
+        if (item.id === payload) {
+          filteredUnreadNotification = state.unreadNotificationData.filter(
+            (data) => data !== item,
+          );
+        }
+      });
       return {
         ...state,
+        unreadNotificationData: filteredUnreadNotification,
       };
     case 'MARK_ALL_AS_READ':
+      // eslint-disable-next-line no-console
       console.log('marked all as read!');
       return {
         ...state,
       };
+
     default:
       return state;
   }

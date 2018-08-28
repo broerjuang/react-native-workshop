@@ -4,8 +4,6 @@ import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
 import {EventCard} from '../../../components/index';
 import fetchJSON from '../../../global/helpers/fetchJSON';
-
-import type {NavigationScreenProp} from 'react-navigation';
 import type {Event} from '../types/Event';
 
 import {connect} from 'react-redux';
@@ -31,15 +29,17 @@ export class EventsScreen extends Component<Props> {
     let {events} = this.props;
     return (
       <ScrollView>
-        {events.map((event, index) => {
-          return (
-            <EventCard
-              key={index}
-              event={event}
-              navigateScreen={this._navigateScreen}
-            />
-          );
-        })}
+        {events.length
+          ? events.map((event, index) => {
+            return (
+              <EventCard
+                key={index}
+                event={event}
+                navigateScreen={this._navigateScreen}
+              />
+            );
+          })
+          : null}
       </ScrollView>
     );
   }
@@ -58,7 +58,7 @@ export class EventsScreen extends Component<Props> {
 
 export function mapStateToProps(state: Object) {
   return {
-    userName: state.loginReducer.userName,
+    userName: state.loginReducer.currentUsers.userName,
     events: state.eventsReducer.events,
   };
 }

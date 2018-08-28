@@ -7,7 +7,7 @@ import {
   mapStateToProps,
   mapDispatchToProps,
 } from '../screens/EventsScreen';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16.3';
 import {EventCard} from '../../../components/index';
 
 configure({adapter: new Adapter()});
@@ -29,7 +29,7 @@ describe('EventsScreen', () => {
   it('should map state to props correctly', () => {
     let state = {
       loginReducer: {
-        userName: '',
+        currentUsers: {userName: ''},
       },
       eventsReducer: {
         events: [],

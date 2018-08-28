@@ -3,7 +3,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import {shallow, configure} from 'enzyme';
 import renderer from 'react-test-renderer';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16.3';
 import {EventContent, TypeToContent} from '../index';
 import type {Event} from '../../features/events/types/Event';
 

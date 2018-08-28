@@ -163,7 +163,7 @@ type TypeToContentProps = {
   navigateScreen: (type: 'REPO' | 'USER', props: Object) => void;
 };
 
-function TypeToContent(props: TypeToContentProps) {
+export function TypeToContent(props: TypeToContentProps) {
   let {
     actor,
     description,

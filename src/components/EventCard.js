@@ -35,7 +35,7 @@ function EventCard(props: EventCardProps) {
   );
 }
 
-function renderIconType(event: Event) {
+export function renderIconType(event: Event) {
   let type: string = event.type;
   if (event.type === 'IssuesEvent') {
     if (event.payload.action === 'closed') {

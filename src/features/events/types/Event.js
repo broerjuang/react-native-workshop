@@ -184,7 +184,7 @@ type PullRequestEvent = {
 type PullRequestReviewEvent = {
   type: 'PullRequestReviewEvent';
   actor: {
-    login: string;
+    login: string;  
     avatar_url: string;
   };
   repo: {

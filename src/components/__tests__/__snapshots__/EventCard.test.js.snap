@@ -908,7 +908,7 @@ exports[`EventCard should render Icon according to Type correctly 1`] = `
         "avatar_url": "",
         "login": "astridtamara",
       },
-      "created_at": "2018-08-28T03:10:31.119Z",
+      "created_at": "1d",
       "payload": Object {
         "ref": "test",
       },

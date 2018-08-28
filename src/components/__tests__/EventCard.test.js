@@ -82,7 +82,6 @@ describe('EventCard', () => {
   });
 
   it('should render Icon according to Type correctly', () => {
-    let now = new Date().toISOString();
     let event: Event = {
       type: 'PushEvent',
       actor: {
@@ -96,7 +95,7 @@ describe('EventCard', () => {
       payload: {
         ref: 'test',
       },
-      created_at: now,
+      created_at: '1d',
     };
     let component = renderer.create(<renderIconType event={event} />);
     let tree = component.toJSON();

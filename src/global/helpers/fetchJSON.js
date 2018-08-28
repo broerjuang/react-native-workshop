@@ -15,12 +15,7 @@ async function fetchJSON<T>(
   };
   let data: {json: () => T} = await fetch(rootAPI + endpoint, headers);
   let json: T = await data.json();
-  if (json == null) {
-    throw new Error('Data NULL');
-  } else {
-    console.log(json);
-    return json;
-  }
+  return json;
 }
 
 export default fetchJSON;

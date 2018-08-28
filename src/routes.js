@@ -22,6 +22,8 @@ import {
   RepositoryFileListScreen,
 } from './features/repository/screens/index';
 
+import FollowersScreen from './features/followers/screens/FollowersScreen';
+import FollowingScreen from './features/following/screens/FollowingScreen';
 import SearchTab from './features/search/assets/SearchTab';
 import renderIcon from './features/search/assets/renderIcon';
 
@@ -62,6 +64,30 @@ let Setting = createStackNavigator({
   },
 });
 
+let Followers = createStackNavigator({
+  Followers: {
+    screen: FollowersScreen,
+  },
+
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#272727',
+      },
+      headerTintColor: 'white',
+    },
+  },
+
+  ...sharedScreens,
+});
+
+let Following = createStackNavigator({
+  Following: {
+    screen: FollowingScreen,
+  },
+});
+
 let Profile = createStackNavigator(
   {
     Profile: {
@@ -76,6 +102,12 @@ let Profile = createStackNavigator(
     },
     RepositoryDetailScreen: {
       screen: RepositoryDetailScreen,
+    },
+    Followers: {
+      screen: Followers,
+    },
+    Following: {
+      screen: Following,
     },
     ...sharedScreens,
   },

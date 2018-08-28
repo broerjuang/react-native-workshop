@@ -21,11 +21,11 @@ import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
   navigation: *;
-  handleAction: (action: Object) => void;
-  token: string;
-  isLogin: boolean;
-  userName?: string;
-  onRequest?: boolean;
+  +handleAction: (action: Object) => void;
+  +token: string;
+  +isLogin: boolean;
+  +userName?: string;
+  +onRequest?: boolean;
 };
 
 type State = {

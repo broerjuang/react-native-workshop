@@ -101,16 +101,12 @@ class ProfileScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Followers"
                   value={this.props.profileState.sumFollowers}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => this.props.navigation.navigate('Followers')}
                 />
                 <ParallaxButtons
                   name="Following"
                   value={this.props.profileState.sumFollowing}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => this.props.navigation.navigate('Following')}
                 />
               </View>
             </View>
@@ -251,4 +247,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ProfileScreen);

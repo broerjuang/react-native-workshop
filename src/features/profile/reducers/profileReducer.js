@@ -38,6 +38,7 @@ function profileReducer(
 ) {
   switch (action.type) {
     case 'PROFILE_SUCCESS':
+      console.log(action.payload.name, 'from profile');
       return {
         ...state,
         userLogin: action.payload.login,

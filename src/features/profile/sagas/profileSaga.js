@@ -29,10 +29,12 @@ const firstRequest = () => {
   return fetchJSON('user', 'GET');
 };
 
-const firstRequestActionCreator = (data) => ({
-  type: 'PROFILE_SUCCESS',
-  payload: data,
-});
+const firstRequestActionCreator = (data) => {
+  return {
+    type: 'PROFILE_SUCCESS',
+    payload: data,
+  };
+};
 
 const secondRequest = () => {
   return fetchJSON('user/orgs', 'GET');

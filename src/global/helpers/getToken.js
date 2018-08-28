@@ -2,8 +2,7 @@
 import createStore from '../createStore';
 
 function getToken(store?: Object = createStore) {
-  let {state = ''} = select(store.getState(), 'loginReducer').token;
-  return state;
+  return store.getState().loginReducer.token;
 }
 
 function select(state: Object, key: string) {

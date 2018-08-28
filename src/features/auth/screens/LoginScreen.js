@@ -179,25 +179,25 @@ export class LoginScreen extends Component<Props, State> {
         await AsyncStorage.setItem(USERTOKEN, access.access_token);
         let user = await fetchJSON('user', 'GET', access.access_token);
         let {
-          login,
+          login: userName = '',
           name = '',
           email = '',
           follower = 0,
-          private_gists = 0,
-          public_repos = 0,
-          avatar_url = '',
+          private_gists: privateGist = 0,
+          public_repos: publicRepos = 0,
+          avatar_url: avatar = '',
           followers = 0,
           following = 0,
         } = user;
         let payload = {
           token: access.access_token,
           currentUser: {
-            userName: login,
-            name: name,
-            email: email,
-            avatar: avatar_url,
-            privateGist: private_gists,
-            publicRepos: public_repos,
+            userName,
+            name,
+            email,
+            avatar,
+            privateGist,
+            publicRepos,
             followers,
             following,
           },

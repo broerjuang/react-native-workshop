@@ -117,7 +117,7 @@ export class AllNotificationsScreen extends Component<Props, State> {
       notificationDataForMap = this.props.allNotificationData;
     }
 
-    const {} = this.state;
+    // const {} = this.state;
 
     const {mainContainer} = styles;
     const buttons = ['Unread', 'Participating', 'All'];
@@ -200,7 +200,6 @@ function mapDispatchToProps(dispatch) {
       dispatch({type: 'MARK_AS_READ', payload: selectedNotificationID}),
   };
 }
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

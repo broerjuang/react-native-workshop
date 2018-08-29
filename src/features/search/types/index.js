@@ -3,10 +3,22 @@
 export type Action =
   | {
       type: 'SEARCH_REPOS';
-      payload: {repos: Array<Repo>};
+      payload: {
+        searchInput: string;
+      };
     }
   | {
       type: 'SEARCH_USERS';
+      payload: {
+        searchInput: string;
+      };
+    }
+  | {
+      type: 'SEARCH_REPO_SUCCESS';
+      payload: {repos: Array<Repo>};
+    }
+  | {
+      type: 'SEARCH_USER_SUCCESS';
       payload: {users: Array<User>};
     }
   | {

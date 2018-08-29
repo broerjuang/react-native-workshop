@@ -11,10 +11,10 @@ export default function searchReducer(
   action: Action,
 ) {
   switch (action.type) {
-    case 'SEARCH_REPOS': {
+    case 'SEARCH_REPO_SUCCESS': {
       return {...state, repos: action.payload.repos};
     }
-    case 'SEARCH_USERS': {
+    case 'SEARCH_USER_SUCCESS': {
       return {...state, users: action.payload.users};
     }
     case 'CLEAR_SEARCH': {

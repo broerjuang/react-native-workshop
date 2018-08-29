@@ -9,7 +9,7 @@ describe('container test', () => {
       users: [],
     };
     let action: Action = {
-      type: 'SEARCH_REPOS',
+      type: 'SEARCH_REPO_SUCCESS',
       payload: {
         repos: [
           {
@@ -26,10 +26,10 @@ describe('container test', () => {
 
     expect(searchReducer(initialState, action).repos).toEqual([
       {
-        fullName: 'aji',
+        full_name: 'aji',
         description: 'string',
-        starsCount: 2,
-        forksCount: 2,
+        stargazers_count: 2,
+        forks_count: 2,
         language: 'string',
         fork: true,
       },

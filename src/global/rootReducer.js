@@ -7,6 +7,7 @@ import profileReducer from '../features/profile/reducers/profileReducer';
 import searchReducer from '../features/search/reducers/searchReducer';
 import followingReducer from '../features/following/reducers/followingReducer';
 import followersReducer from '../features/followers/reducers/followersReducer';
+import userReducer from '../features/user/reducers/userReducer';
 
 export default combineReducers({
   loginReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
   profileReducer,
   followingReducer,
   followersReducer,
+  userReducer,
 });

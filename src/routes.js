@@ -26,6 +26,7 @@ import FollowersScreen from './features/followers/screens/FollowersScreen';
 import FollowingScreen from './features/following/screens/FollowingScreen';
 import SearchTab from './features/search/assets/SearchTab';
 import renderIcon from './features/search/assets/renderIcon';
+import UserScreen from './features/user/screens/UserScreen';
 
 let Repository = createStackNavigator({
   RepositoryScreen: {
@@ -69,8 +70,8 @@ let Followers = createStackNavigator({
     screen: FollowersScreen,
   },
 
-  ProfileScreen: {
-    screen: ProfileScreen,
+  UserScreen: {
+    screen: UserScreen,
     navigationOptions: {
       headerStyle: {
         backgroundColor: '#272727',
@@ -78,13 +79,20 @@ let Followers = createStackNavigator({
       headerTintColor: 'white',
     },
   },
-
-  ...sharedScreens,
 });
 
 let Following = createStackNavigator({
   Following: {
     screen: FollowingScreen,
+  },
+  UserScreen: {
+    screen: UserScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#272727',
+      },
+      headerTintColor: 'white',
+    },
   },
 });
 

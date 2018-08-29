@@ -9,7 +9,6 @@ function* followersSaga(): Generator<*, *, *> {
 function* fetchFollowers(): Generator<*, *, *> {
   try {
     let followers = yield fetchJSON(`user/followers`, 'GET');
-
     yield put({
       type: 'GET_FOLLOWERS_SUCCESS',
       payload: {

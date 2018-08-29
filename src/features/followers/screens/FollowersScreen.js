@@ -6,7 +6,6 @@ import {SearchBar} from 'react-native-elements';
 import Icon from '../../../global/core-ui/Icon';
 import {connect} from 'react-redux';
 import {ListItem} from 'react-native-elements';
-import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
   navigation: Object;
@@ -53,12 +52,10 @@ export class FollowersScreen extends Component<Props, State> {
   }
 
   async navigateToProfile(item: Object) {
-    let followerProfile = await fetchJSON(`users/${item.login}`, `GET`);
-    console.log(followerProfile.name, 'from followers');
-    this.props.navigation.navigate('ProfileScreen');
+    this.props.navigation.navigate('UserScreen');
     this.props.handleAction({
-      type: 'PROFILE_SUCCESS',
-      payload: followerProfile,
+      type: 'ON_USER_MOUNT',
+      payload: item.login,
     });
   }
 
@@ -115,7 +112,6 @@ export class FollowersScreen extends Component<Props, State> {
 
 function mapStateToProps(state) {
   return {
-    userName: state.loginReducer.userName,
     followersData: state.followersReducer.followersData,
   };
 }

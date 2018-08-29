@@ -1,13 +1,12 @@
 // @flow
 
-import type {ProfileAction} from '../actions/profileReducer.action';
-
+import type {UserAction} from '../actions/userReducer.action';
 export type Organizations = {
   name: string;
   url: string;
 };
 
-export type ProfileState = {
+export type UserState = {
   userLogin: string;
   userFullName: string;
   userPicture?: string;
@@ -20,7 +19,7 @@ export type ProfileState = {
   organizations?: Array<Organizations>;
 };
 
-export const initialState: ProfileState = {
+export const initialState: UserState = {
   userLogin: '',
   userFullName: '',
   sumRepositories: 0,
@@ -32,12 +31,9 @@ export const initialState: ProfileState = {
   organizations: [],
 };
 
-function profileReducer(
-  state: ProfileState = initialState,
-  action: ProfileAction,
-) {
+function userReducer(state: UserState = initialState, action: UserAction) {
   switch (action.type) {
-    case 'PROFILE_SUCCESS':
+    case 'USER_SUCCESS':
       return {
         ...state,
         userLogin: action.payload.login,
@@ -77,4 +73,4 @@ function profileReducer(
   }
 }
 
-export default profileReducer;
+export default userReducer;

@@ -17,6 +17,7 @@ type State = {
   search: string;
   followingList: Array<*>;
 };
+
 export class FollowingScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerLeft: (
@@ -39,6 +40,7 @@ export class FollowingScreen extends Component<Props, State> {
       <Text style={{fontSize: 24, fontWeight: 'bold'}}>Following</Text>
     ),
   });
+
   state = {
     items: [],
     search: '',
@@ -47,6 +49,14 @@ export class FollowingScreen extends Component<Props, State> {
 
   componentDidMount() {
     this.props.handleAction({type: 'FOLLOWING_REQUESTED'});
+  }
+
+  async navigateToProfile(item: Object) {
+    this.props.navigation.navigate('UserScreen');
+    this.props.handleAction({
+      type: 'ON_USER_MOUNT',
+      payload: item.login,
+    });
   }
 
   render() {
@@ -91,6 +101,7 @@ export class FollowingScreen extends Component<Props, State> {
               avatar={{uri: item.avatar_url}}
               key={item.id}
               title={item.login}
+              onPress={() => this.navigateToProfile(item)}
             />
           ))}
         </ScrollView>
@@ -101,7 +112,6 @@ export class FollowingScreen extends Component<Props, State> {
 
 function mapStateToProps(state) {
   return {
-    userName: state.loginReducer.userName,
     followingData: state.followingReducer.followingData,
   };
 }

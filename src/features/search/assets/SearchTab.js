@@ -5,6 +5,7 @@ import {View, TextInput, TouchableOpacity} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import {Icon} from '../../../global/core-ui/index';
 import type {NavigationScreenProp} from 'react-navigation';
+import type {Repo, User} from '../types/index';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 
 import {connect} from 'react-redux';
@@ -150,36 +151,14 @@ const styles = {
   inputText: {height: 40, width: '90%', backgroundColor: '#efefef'},
 };
 
-function mapStateToProps(state) {
-  return {
-    searchKey: state.searchReducer.searchKey,
-  };
-}
-
-type Repo = {
-  full_name: string;
-  description: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  fork: boolean;
-};
-type User = {
-  login: string;
-  avatar_url: string;
-};
-
 function mapDispatchToProps(dispatch) {
   return {
     handleSearchRepo: (repos: Array<Repo>) =>
-      dispatch({type: 'SEARCH_REPOS', payload: repos}),
+      dispatch({type: 'SEARCH_REPOS', payload: {repos}}),
     handleSearchUser: (users: Array<User>) =>
-      dispatch({type: 'SEARCH_USERS', payload: users}),
+      dispatch({type: 'SEARCH_USERS', payload: {users}}),
     handleClearSearch: () => dispatch({type: 'CLEAR_SEARCH'}),
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SearchTab);
+export default connect(mapDispatchToProps)(SearchTab);

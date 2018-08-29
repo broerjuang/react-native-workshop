@@ -5,15 +5,7 @@ import {RepoCard} from '../../../global/core-ui/index';
 import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
-
-type Repo = {
-  full_name: string;
-  description: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  fork: boolean;
-};
+import type {Repo} from '../types/index';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;

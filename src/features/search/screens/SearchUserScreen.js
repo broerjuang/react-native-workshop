@@ -62,7 +62,8 @@ type State = {
     users: Array<User>;
   };
 };
-function mapStateToProps(state: State) {
+
+export function mapStateToProps(state: State) {
   return {
     users: state.searchReducer.users,
   };

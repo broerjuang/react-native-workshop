@@ -1,11 +1,15 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
-import {SearchUserScreen, mapStateToProps} from '../screens/SearchUserScreen';
-describe('SearchUserScreen Test', () => {
-  it('should render SearchUserScreen correctly', () => {
+import {
+  SearchRepositoryScreen,
+  mapStateToProps,
+} from '../screens/SearchRepositoryScreen';
+
+describe('SearchRepositoryScreen Test', () => {
+  it('should render SearchRepositoryScreen correctly', () => {
     let component = renderer.create(
-      <SearchUserScreen
-        users={['aji', 'deany', 'ari', 'jo', 'astrid']}
+      <SearchRepositoryScreen
+        repos={['aji', 'deany', 'ari', 'jo', 'astrid']}
         navigation={{navigate: (s) => s}}
       />,
     );
@@ -16,11 +20,10 @@ describe('SearchUserScreen Test', () => {
   it('should mapStateToProps correctly', () => {
     let state = {
       searchReducer: {
-        users: ['aji', 'deany', 'ari', 'jo', 'astrid'],
+        repos: ['aji', 'deany', 'ari', 'jo', 'astrid'],
       },
     };
     let result = mapStateToProps(state);
     expect(result).toEqual(state.searchReducer);
   });
-  
 });

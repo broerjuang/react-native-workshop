@@ -1,8 +1,8 @@
 //@flow
-import searchReducer from '../reducers/searchReducer.js';
+import searchReducer from '../reducers/searchReducer';
 import type {Action, State} from '../types/index';
 
-describe('container test', () => {
+describe('searchReducer Test', () => {
   it('should equal return reducer correctly', () => {
     let initialState: State = {
       repos: [],
@@ -34,5 +34,31 @@ describe('container test', () => {
         fork: true,
       },
     ]);
+
+    action = {
+      type: 'SEARCH_USER_SUCCESS',
+      payload: {
+        users: [
+          {
+            login: 'aji',
+            avatar_url: 'aji.png',
+          },
+        ],
+      },
+    };
+
+    expect(searchReducer(initialState, action).users).toEqual([
+      {
+        login: 'aji',
+        avatar_url: 'aji.png',
+      },
+    ]);
+
+    action = {
+      type: 'CLEAR_SEARCH',
+    };
+
+    expect(searchReducer(initialState, action).repos).toEqual([]);
+    expect(searchReducer(initialState, action).users).toEqual([]);
   });
 });

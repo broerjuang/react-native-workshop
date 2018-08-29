@@ -22,7 +22,7 @@ type State = {
   showClear: boolean;
 };
 
-class SearchTab extends Component<Props, State> {
+export class SearchTab extends Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -141,13 +141,13 @@ const styles = {
   inputText: {height: 40, width: '90%', backgroundColor: '#efefef'},
 };
 
-function mapStateToProps(state) {
+export function mapStateToProps(state: Object) {
   return {
     state,
   };
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch: Function) {
   return {
     handleSearchRepo: (searchInput: string) =>
       dispatch({type: 'SEARCH_REPOS', payload: {searchInput}}),

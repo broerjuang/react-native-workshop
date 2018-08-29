@@ -147,28 +147,28 @@ let GitClient = createBottomTabNavigator(
     Events: {
       screen: Events,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'home', size: 32, tintColor}),
       },
     },
     Notification: {
       screen: Notification,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'bell', size: 32, tintColor}),
       },
     },
     Search: {
       screen: SearchStack,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'magnify', size: 32, tintColor}),
       },
     },
     Profile: {
       screen: Profile,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'account', size: 32, tintColor}),
       },
     },

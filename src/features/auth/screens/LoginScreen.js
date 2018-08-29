@@ -58,6 +58,9 @@ export class LoginScreen extends Component<Props, State> {
   }
   render() {
     console.log('RENDER');
+    AsyncStorage.getItem('currentUser').then((res) =>
+      console.log('get item current user', res),
+    );
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
@@ -202,11 +205,11 @@ export class LoginScreen extends Component<Props, State> {
             following,
           },
         };
+        AsyncStorage.setItem('currentUser', JSON.stringify(payload));
         this.props.handleAction({
           type: 'ACTIONS/AUTH_GITHUB_SUCCED',
           payload,
         });
-
         this.props.navigation.navigate('GitClient');
       } catch (e) {
         console.log(e);

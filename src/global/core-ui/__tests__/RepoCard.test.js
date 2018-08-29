@@ -1,14 +1,15 @@
+//@flow
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {RepoCard} from '../index';
-
+import type {Repo} from '../RepoCard';
 describe('RepoCard', () => {
   it('should render RepoCard for repo corectly', () => {
-    let repo = {
-      fullName: 'astridtamara/bootcamp',
+    let repo: Repo = {
+      full_name: 'astridtamara/bootcamp',
       description: 'KodeFox Bootcamp',
-      starsCount: 0,
-      forksCount: 1,
+      stargazers_count: 0,
+      forks_count: 1,
       language: 'JavaScript',
       fork: false,
     };
@@ -22,10 +23,10 @@ describe('RepoCard', () => {
 
   it('should render RepoCard for forked repo corectly', () => {
     let repo = {
-      fullName: 'astridtamara/kfbootcamp',
+      full_name: 'astridtamara/kfbootcamp',
       description: '',
-      starsCount: 0,
-      forksCount: 0,
+      stargazers_count: 0,
+      forks_count: 0,
       language: 'JavaScript',
       fork: true,
     };

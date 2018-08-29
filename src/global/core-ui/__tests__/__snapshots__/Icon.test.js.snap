@@ -1,6 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon should render Icon corectly 1`] = `
+exports[`Icon should render correctly should render ENTYPO corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render EVIL_ICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render FEATHER corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render FONTAWESOME corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render FOUNDATION corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render IONICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render MATERIAL_COMMUNITY_ICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render MATERIAL_ICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render OCTICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render SIMPLE_LINE_ICONS corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`Icon should render correctly should render ZOCIAL corectly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}

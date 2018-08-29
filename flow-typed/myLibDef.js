@@ -13,3 +13,38 @@ declare type ReactTestRenderer = {
   getInstance(): null | ReactTestInstance;
   root: ReactTestInstance;
 };
+
+declare type NavigationNavigateAction = {|
+  type: 'Navigation/NAVIGATE';
+  routeName: string;
+  params?: NavigationParams;
+
+  // The action to run inside the sub-router
+  action?: NavigationNavigateAction;
+
+  key?: string;
+|};
+
+declare type NavigationParams = {
+  [key: string]: mixed;
+};
+
+declare type NavigationProp<T> = {
+  state: {
+    params: T;
+  };
+  getParam: (paramName: string, fallback?: any) => any;
+  goBack: (routeKey?: ?string) => boolean;
+  navigate: (
+    routeName: | string
+      | {
+          routeName: string;
+          params?: NavigationParams;
+          action?: NavigationNavigateAction;
+          key?: string;
+        },
+    params?: NavigationParams,
+    action?: NavigationNavigateAction,
+  ) => boolean;
+  setParams: (newParams: NavigationParams) => boolean;
+};

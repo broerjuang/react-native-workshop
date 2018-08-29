@@ -4,6 +4,7 @@ import {View} from 'react-native';
 
 type Props = {
   children?: Array<React$Element<*>>;
+  [string]: string;
 };
 
 export function NotificationList(props: Props) {

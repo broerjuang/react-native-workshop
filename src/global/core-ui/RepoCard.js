@@ -1,11 +1,11 @@
 //@flow
 
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {Icon} from './index';
 import languageColor from '../../global/constants/languageColor';
 
-type Repo = {
+export type Repo = {
   full_name: string;
   description: string;
   stargazers_count: number;
@@ -22,10 +22,10 @@ type RepoCardProps = {
 export default function RepoCard(props: RepoCardProps) {
   const {repo, onPress} = props;
   const {
-    full_name,
+    full_name: fullName,
     description,
-    stargazers_count,
-    forks_count,
+    stargazers_count: stargazersCount,
+    forks_count: forksCount,
     fork,
     language,
   } = repo;
@@ -38,21 +38,21 @@ export default function RepoCard(props: RepoCardProps) {
   } = styles;
   let langColor = languageColor.hasOwnProperty(language)
     ? languageColor[language]
-    : null;
+    : '#000000';
   langColor = langColor ? langColor : '#000000';
   return (
     <TouchableOpacity style={list} onPress={onPress}>
       <View style={{width: '85%'}}>
-        <Text style={repoTitle}>{full_name}</Text>
+        <Text style={repoTitle}>{fullName}</Text>
         {description !== '' ? <Text>{description}</Text> : null}
         <View style={repoIconListWrapper}>
           <View style={repoIconWrapper}>
             <Icon name="md-star" size={16} color="grey" type="IONICONS" />
-            <Text style={repoIconText}>{stargazers_count}</Text>
+            <Text style={repoIconText}>{stargazersCount}</Text>
           </View>
           <View style={repoIconWrapper}>
             <Icon name="repo-forked" size={16} color="grey" type="OCTICONS" />
-            <Text style={repoIconText}>{forks_count}</Text>
+            <Text style={repoIconText}>{forksCount}</Text>
           </View>
           <View style={repoIconWrapper}>
             <Icon
@@ -74,7 +74,7 @@ export default function RepoCard(props: RepoCardProps) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = {
   list: {
     display: 'flex',
     flexDirection: 'row',
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginLeft: 2,
   },
-});
+};

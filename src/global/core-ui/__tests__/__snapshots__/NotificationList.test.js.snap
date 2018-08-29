@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render Icon corectly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "margin": 10,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
+      },
+      "shadowOpacity": 0.2,
+    }
+  }
+/>
+`;

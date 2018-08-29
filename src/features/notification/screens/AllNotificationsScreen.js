@@ -1,13 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {
-  View,
-  // StyleSheet,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {View, ScrollView, Text, TouchableOpacity} from 'react-native';
 import {Avatar, ButtonGroup} from 'react-native-elements';
 import {SafeAreaView} from 'react-navigation';
 import {connect} from 'react-redux';
@@ -123,7 +117,6 @@ export class AllNotificationsScreen extends Component<Props, State> {
     return (
       <View style={mainContainer}>
         <SafeAreaView />
-
         <ButtonGroup
           buttons={buttons}
           onPress={this.updateIndex.bind(this)}

@@ -94,9 +94,7 @@ class ProfileScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Stars"
                   value={this.props.profileState.sumStars}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  onPress={() => this.props.navigation.navigate('Stars')}
                 />
                 <ParallaxButtons
                   name="Followers"

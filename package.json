@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.1.2",
+    "bezier": "^0.1.0",
     "buffer": "^5.2.0",
     "class-autobind": "^0.1.4",
     "enzyme": "^3.4.4",

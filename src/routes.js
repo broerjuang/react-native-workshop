@@ -30,6 +30,7 @@ import SearchTab from './features/search/assets/SearchTab';
 import renderIcon from './features/search/assets/renderIcon';
 import UserScreen from './features/user/screens/UserScreen';
 
+import SplashScreen from './features/splash/screen';
 let Repository = createStackNavigator({
   RepositoryScreen: {
     screen: RepositoryScreen,
@@ -237,9 +238,13 @@ let GitClient = createBottomTabNavigator(
 );
 
 let RootNavigation = createSwitchNavigator({
+  SplashScreen: {
+    screen: SplashScreen,
+  },
   LoginScreen: {
     screen: LoginScreen,
   },
+
   GitClient: {
     screen: GitClient,
   },

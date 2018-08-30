@@ -19,8 +19,14 @@ import {Buffer} from 'buffer';
 import {getLanguage} from 'lowlight';
 import type {FetchFile} from '../types';
 
+type NavProp = {
+  path: string;
+  fullName: string;
+  name: string;
+};
+
 type Props = {
-  navigation: *;
+  navigation: NavigationProp<NavProp>;
 };
 type State = {
   fullName: string;
@@ -30,7 +36,7 @@ type State = {
   imageHeight?: number;
 };
 
-let {width} = Dimensions.get('window');
+let {width}: {width: number} = Dimensions.get('window');
 
 export class fileList extends Component<Props, State> {
   state = {
@@ -38,35 +44,35 @@ export class fileList extends Component<Props, State> {
     fileList: [],
     path: '',
   };
-  static navigationOptions = (options: *) => ({
-    headerLeft: (
-      <View style={{paddingLeft: 10}}>
-        <TouchableOpacity
-          onPress={() => {
-            options.navigation.goBack(null);
-          }}
-        >
-          <Icon
-            name={'arrow-back'}
-            size={30}
-            color={'black'}
-            type={'MATERIAL_ICONS'}
-          />
-        </TouchableOpacity>
-      </View>
-    ),
-    headerTitle: (
-      <Text style={{fontSize: 24, fontWeight: 'bold'}}>
-        {options.navigation.state.params.name || 'Code'}
-      </Text>
-    ),
-  });
+  static navigationOptions = (options: *) => {
+    return {
+      headerLeft: (
+        <View style={{paddingLeft: 10}}>
+          <TouchableOpacity
+            onPress={() => {
+              options.navigation.goBack(null);
+            }}
+          >
+            <Icon
+              name={'arrow-back'}
+              size={30}
+              color={'black'}
+              type={'MATERIAL_ICONS'}
+            />
+          </TouchableOpacity>
+        </View>
+      ),
+      headerTitle: (
+        <Text style={{fontSize: 24, fontWeight: 'bold'}}>
+          {options.navigation.state.params['name'] || 'Code'}
+        </Text>
+      ),
+    };
+  };
   async componentDidMount() {
     let {fullName, path = ''} = this.props.navigation.state.params;
     let url = `repos/${fullName}/contents/${path}`;
-    console.log('path: ', url);
     let fileList = await fetchJSON(url, 'GET');
-    console.log(fileList);
     this.setState({fullName, path, fileList});
   }
   render() {
@@ -92,7 +98,6 @@ export class fileList extends Component<Props, State> {
     );
   }
   _rowRender = (data: FetchFile) => {
-    console.log('Row Render', data);
     let {type, name, path, sha} = data;
     type = type === 'dir' ? 'file-directory' : 'file';
     let onClickPath = `${path}/`;
@@ -130,7 +135,6 @@ export class fileList extends Component<Props, State> {
     let {name, download_url: uri, content} = fileList;
     let type = name.split('.').pop();
     let isKnownLanguage = this._isKnownLanguage(type);
-    console.log('LANGUAGE: ', isKnownLanguage);
     if (this._isImage(type)) {
       return this._imageRender(uri);
     } else if (isKnownLanguage) {

@@ -2,6 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {RepositoryDetailScreen} from '../RepositoryDetailScreen';
+import navigation from '../../../../global/helpers/navigationTestHelper';
 let datas = {
   // total_count: 2570,
   // incomplete_results: false,
@@ -34,15 +35,9 @@ let datas = {
   //     repoType: 'forke',
   //   },
   // ],
-  navigation: {
-    navigate: (...a) => true,
-    goBack: (...a) => true,
-    state: {
-      params: {
-        fullName: 'broerjuang/react-native-workshop',
-      },
-    },
-  },
+  navigation: navigation({
+    fullName: '',
+  }),
 };
 describe('Repository screee ', () => {
   it('should render Repository corectly', () => {

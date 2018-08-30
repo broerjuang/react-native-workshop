@@ -10,14 +10,25 @@ import {
   Octicons,
   MaterialIcons,
   MaterialCommunityIcons,
+  SimpleLineIcons,
+  Zocial,
 } from '@expo/vector-icons';
 
 type IconProps = {
-  name: string,
-  size: number,
-  color: string,
-  type: 'ENTYPO' | 'EVIL_ICONS' | 'FEATHER' | 'FONTAWESOME' | 'FOUNDATION' | 'IONICONS' | 'OCTICONS'
-    | 'MATERIAL_ICONS' | 'MATERIAL_COMMUNITY_ICONS',
+  name: string;
+  size: number;
+  color: string;
+  type: | 'ENTYPO'
+    | 'EVIL_ICONS'
+    | 'FEATHER'
+    | 'FONTAWESOME'
+    | 'FOUNDATION'
+    | 'IONICONS'
+    | 'OCTICONS'
+    | 'MATERIAL_ICONS'
+    | 'MATERIAL_COMMUNITY_ICONS'
+    | 'SIMPLE_LINE_ICONS'
+    | 'ZOCIAL';
 };
 
 function Icon(props: IconProps) {
@@ -41,8 +52,10 @@ function Icon(props: IconProps) {
       return <MaterialIcons name={name} size={size} color={color} />;
     case 'MATERIAL_COMMUNITY_ICONS':
       return <MaterialCommunityIcons name={name} size={size} color={color} />;
-    default:
-      return null;
+    case 'SIMPLE_LINE_ICONS':
+      return <SimpleLineIcons name={name} size={size} color={color} />;
+    case 'ZOCIAL':
+      return <Zocial name={name} size={size} color={color} />;
   }
 }
 

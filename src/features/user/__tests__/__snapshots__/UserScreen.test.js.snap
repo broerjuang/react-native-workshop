@@ -530,8 +530,13 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
                     "borderBottomColor": "grey",
                     "borderBottomWidth": 2,
                     "flex": 1,
+<<<<<<< HEAD
                     "paddingBottom": 8,
                     "paddingTop": 8,
+=======
+                    "paddingBottom": 15,
+                    "paddingTop": 15,
+>>>>>>> 528f1ffa0c56db4f18163f71fc20770ffeae95e8
                   }
                 }
               >
@@ -661,8 +666,13 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
                     "borderBottomColor": "grey",
                     "borderBottomWidth": 2,
                     "flex": 1,
+<<<<<<< HEAD
                     "paddingBottom": 8,
                     "paddingTop": 8,
+=======
+                    "paddingBottom": 15,
+                    "paddingTop": 15,
+>>>>>>> 528f1ffa0c56db4f18163f71fc20770ffeae95e8
                   }
                 }
               >
@@ -797,8 +807,13 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
                     "borderBottomColor": "grey",
                     "borderBottomWidth": 2,
                     "flex": 1,
+<<<<<<< HEAD
                     "paddingBottom": 8,
                     "paddingTop": 8,
+=======
+                    "paddingBottom": 15,
+                    "paddingTop": 15,
+>>>>>>> 528f1ffa0c56db4f18163f71fc20770ffeae95e8
                   }
                 }
               />
@@ -892,7 +907,43 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
             "width": 30,
           }
         }
+<<<<<<< HEAD
       />
+=======
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+>>>>>>> 528f1ffa0c56db4f18163f71fc20770ffeae95e8
     </View>
   </View>
 </RCTSafeAreaView>

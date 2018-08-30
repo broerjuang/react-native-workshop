@@ -89,12 +89,12 @@ export class RepositoryDetailScreen extends Component<Props, State> {
     let langView = () => {
       return language ? (
         <View style={styleParallax.containerLanguage}>
-          <Icon
+          {/* <Icon
             name="circle"
-            color={langColor}
+            // color={langColor}
             size={12}
             type={'FONTAWESOME'}
-          />
+          /> */}
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>
             {language}
           </Text>

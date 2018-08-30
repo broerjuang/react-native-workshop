@@ -1,7 +1,7 @@
 //@flow
 import {fork} from 'redux-saga/effects';
 
-import authSaga from '../features/auth/sagas';
+import authSaga from '../features/splash/sagas';
 import profilesaga from '../features/profile/sagas/profileSaga';
 import followersSaga from '../features/followers/sagas/followersSaga';
 import followingSaga from '../features/following/sagas/followingSaga';

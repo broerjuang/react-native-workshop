@@ -20,7 +20,7 @@ import {clientID, clientSecret, authorizationURI} from '../../../global/env';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
-  navigation: *;
+  navigation: {navigate: (routes: string) => boolean};
   +handleAction: (action: Object) => void;
   +token: string;
   +isLogin: boolean;
@@ -44,23 +44,12 @@ export class LoginScreen extends Component<Props, State> {
     loginHeight: 0,
     loginWidth: 0,
   };
-
-  componentDidMount() {
-    this.props.handleAction({
-      type: 'ACTIONS/AUTH_GITHUB_REQUESTED',
-    });
-  }
-
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate() {
     if (this.props.isLogin) {
       this.props.navigation.navigate('GitClient');
     }
   }
   render() {
-    console.log('RENDER');
-    AsyncStorage.getItem('currentUser').then((res) =>
-      console.log('get item current user', res),
-    );
     let iconSize = 110;
     let height = this.state.loginHeight;
     let width = this.state.loginWidth;
@@ -173,12 +162,9 @@ export class LoginScreen extends Component<Props, State> {
     let constant = 'code=';
     if (url.includes(constant) && this.props.onRequest === false) {
       this.props.handleAction({type: 'LOGIN_REQUEST'});
-      console.log('URL: ', url);
       let code = url.slice(url.indexOf(constant) + 5);
       try {
         let access = await this._createTokenWithCode(code);
-        console.log('Token: ', access.access_token);
-        console.log('Access: ', access);
         await AsyncStorage.setItem(USERTOKEN, access.access_token);
         let user = await fetchJSON('user', 'GET', access.access_token);
         let {
@@ -214,7 +200,6 @@ export class LoginScreen extends Component<Props, State> {
       } catch (e) {
         console.log(e);
       }
-    } else {
     }
   };
 
@@ -278,6 +263,7 @@ type StateToProps = {
 };
 type Dispatch = (action: Object) => void;
 export function mapStateToProps(state: StateToProps) {
+  console.log('mapstatelogin');
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,

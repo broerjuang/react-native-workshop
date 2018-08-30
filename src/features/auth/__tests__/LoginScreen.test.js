@@ -37,7 +37,7 @@ describe('container test', () => {
   it('should render LoginScreen corectly', () => {
     let component = renderer.create(
       <LoginScreen
-        navigation={{navigate: (s) => s}}
+        navigation={{navigate: (s) => true}}
         handleAction={(action) => {
           return;
         }}

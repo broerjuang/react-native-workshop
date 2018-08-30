@@ -83,17 +83,19 @@ export class RepositoryDetailScreen extends Component<Props, State> {
     let {language} = this.state;
     let repoType = this.state.fork ? 'repo-forked' : 'repo';
     let langColor = languageColor.hasOwnProperty(language)
-      ? languageColor[language] ? languageColor[language] : '#000000'
+      ? languageColor[language]
+        ? languageColor[language]
+        : '#000000'
       : '#000000';
     let langView = () => {
       return language ? (
         <View style={styleParallax.containerLanguage}>
-          {/* <Icon
+          <Icon
             name="circle"
-            // color={langColor}
+            color={langColor}
             size={12}
             type={'FONTAWESOME'}
-          /> */}
+          />
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>
             {language}
           </Text>

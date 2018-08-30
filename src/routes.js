@@ -21,6 +21,8 @@ import {
   RepositoryDetailScreen,
   RepositoryFileListScreen,
 } from './features/repository/screens/index';
+import StarScreen from './features/star/screens/StarScreen';
+import StarDetailScreen from './features/star/screens/StarDetailScreen';
 
 import FollowersScreen from './features/followers/screens/FollowersScreen';
 import FollowingScreen from './features/following/screens/FollowingScreen';
@@ -96,6 +98,15 @@ let Following = createStackNavigator({
   },
 });
 
+let Stars = createStackNavigator({
+  Stars: {
+    screen: StarScreen,
+  },
+  StarDetail: {
+    screen: StarDetailScreen,
+  },
+});
+
 let Profile = createStackNavigator(
   {
     Profile: {
@@ -116,6 +127,9 @@ let Profile = createStackNavigator(
     },
     Following: {
       screen: Following,
+    },
+    Stars: {
+      screen: Stars,
     },
     ...sharedScreens,
   },

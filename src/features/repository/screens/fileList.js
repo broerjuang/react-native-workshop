@@ -101,7 +101,7 @@ export class fileList extends Component<Props, State> {
         left={
           <Icon type={'OCTICONS'} size={32} name={type} color={'#D3D3D3'} />
         }
-        content={<Text style={{fontSize: 32}}>{name}</Text>}
+        content={<Text style={{fontSize: 18}}>{name}</Text>}
         right={
           <Icon
             type={'MATERIAL_ICONS'}

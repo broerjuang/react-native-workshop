@@ -27,6 +27,19 @@ class ProfileScreen extends Component<Props, State> {
   }
 
   render() {
+    let {
+      userLogin,
+      userFullName,
+      userPicture,
+      sumRepositories,
+      sumStars,
+      sumFollowers,
+      sumFollowing,
+      biography,
+      website,
+      organizations,
+    } = this.props.profileState;
+
     return (
       <SafeAreaView style={{flex: 1}}>
         <ParallaxScrollView
@@ -38,9 +51,7 @@ class ProfileScreen extends Component<Props, State> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}>
-                {this.props.profileState.userLogin}
-              </Text>
+              <Text style={styleParallax.txtStickyHeader}>{userLogin}</Text>
             </View>
           )}
           renderFixedHeader={() => (
@@ -68,24 +79,20 @@ class ProfileScreen extends Component<Props, State> {
                 <Image
                   style={styleParallax.imgProfilePicture}
                   source={{
-                    uri: this.props.profileState.userPicture,
+                    uri: userPicture,
                   }}
                 />
               </View>
               <View style={styleParallax.containerFullName}>
-                <Text style={styleParallax.txtFullName}>
-                  {this.props.profileState.userFullName}
-                </Text>
+                <Text style={styleParallax.txtFullName}>{userFullName}</Text>
               </View>
               <View style={styleParallax.containerUsername}>
-                <Text style={styleParallax.txtUsername}>
-                  {this.props.profileState.userLogin}
-                </Text>
+                <Text style={styleParallax.txtUsername}>{userLogin}</Text>
               </View>
               <View style={styleParallax.containerButton}>
                 <ParallaxButtons
                   name="Repositories"
-                  value={this.props.profileState.sumRepositories}
+                  value={sumRepositories}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
@@ -93,21 +100,19 @@ class ProfileScreen extends Component<Props, State> {
 
                 <ParallaxButtons
                   name="Stars"
-                  value={this.props.profileState.sumStars}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  value={sumStars}
+                  onPress={() => this.props.navigation.navigate('Stars')}
                 />
                 <ParallaxButtons
                   name="Followers"
-                  value={this.props.profileState.sumFollowers}
+                  value={sumFollowers}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
                 />
                 <ParallaxButtons
                   name="Following"
-                  value={this.props.profileState.sumFollowing}
+                  value={sumFollowing}
                   onPress={() =>
                     this.props.navigation.navigate('RepositoryScreen')
                   }
@@ -120,8 +125,8 @@ class ProfileScreen extends Component<Props, State> {
             <DetailsGroup disabled={true} name="Bio">
               <RowWith3Column
                 content={
-                  this.props.profileState.biography !== null ? (
-                    <Text> {this.props.profileState.biography}</Text>
+                  biography !== null ? (
+                    <Text> {biography}</Text>
                   ) : (
                     <Text>No Biography Found</Text>
                   )
@@ -140,8 +145,8 @@ class ProfileScreen extends Component<Props, State> {
                   />
                 }
                 content={
-                  this.props.profileState.website !== '' ? (
-                    <Text> {this.props.profileState.website}</Text>
+                  website !== '' ? (
+                    <Text> {website}</Text>
                   ) : (
                     <Text> No Website Found</Text>
                   )
@@ -149,8 +154,8 @@ class ProfileScreen extends Component<Props, State> {
               />
             </DetailsGroup>
             <DetailsGroup name="Organizations">
-              {this.props.profileState.organizations ? (
-                this.props.profileState.organizations.map((orgRow, i) => {
+              {organizations ? (
+                organizations.map((orgRow, i) => {
                   return (
                     <RowWith3Column
                       key={i}

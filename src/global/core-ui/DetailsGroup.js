@@ -48,8 +48,8 @@ const styles = {
   },
   containerProfileDetailsBody: {
     flex: 1,
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: 8,
+    paddingBottom: 8,
     borderBottomWidth: 2,
     borderBottomColor: 'grey',
   },

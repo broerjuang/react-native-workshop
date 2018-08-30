@@ -11,9 +11,6 @@ import {connect} from 'react-redux';
 import type {Repo, RepoFromAPI} from '../types';
 
 type Props = {
-  // total_count: number;
-  // incomplete_results: boolean;
-  // items: Array<Items>;
   navigation: Object;
   handleAction: (action: Object) => void;
 };
@@ -21,7 +18,7 @@ type State = {
   items: Array<Repo>;
   search: string;
 };
-export class RepositoryScreen extends Component<Props, State> {
+export class StarScreen extends Component<Props, State> {
   static navigationOptions = (options: *) => ({
     headerLeft: (
       <View style={{paddingLeft: 10}}>
@@ -40,7 +37,9 @@ export class RepositoryScreen extends Component<Props, State> {
       </View>
     ),
     headerTitle: (
-      <Text style={{fontSize: 24, fontWeight: 'bold'}}>Repositories</Text>
+      <Text style={{fontSize: 24, fontWeight: 'bold'}}>
+        Starred Repositories
+      </Text>
     ),
   });
   state = {
@@ -53,11 +52,11 @@ export class RepositoryScreen extends Component<Props, State> {
       if (this.props.navigation.state.params.username != null) {
         url = `users/${
           this.props.navigation.state.params.username
-        }/repos?sort=created`;
+        }/starred?sort=created`;
       }
     }
     if (url === '') {
-      url = 'user/repos?affiliation=owner&sort=created';
+      url = 'user/starred?affiliation=owner&sort=created';
     }
     let repoList: Array<RepoFromAPI> = await fetchJSON(url, 'GET');
     let repos = [];
@@ -87,7 +86,7 @@ export class RepositoryScreen extends Component<Props, State> {
         stargazersCount: stargazers_count,
       });
     });
-    this.props.handleAction({type: 'REPOSITORY_LIST_SUCCESS', data: repos});
+    this.props.handleAction({type: 'STAR_LIST_SUCCESS', data: repos});
     this.setState({items: repos});
   }
   render() {
@@ -147,4 +146,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RepositoryScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(StarScreen);

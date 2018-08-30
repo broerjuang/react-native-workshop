@@ -29,7 +29,6 @@ export const initialState: ProfileState = {
   sumFollowing: 0,
   biography: '',
   website: '',
-  organizations: [],
 };
 
 function profileReducer(
@@ -46,19 +45,25 @@ function profileReducer(
         sumRepositories: action.payload.public_repos,
         sumFollowers: action.payload.followers,
         sumFollowing: action.payload.following,
-        sumStars: 0,
+        sumStars: state.sumStars,
         biography: action.payload.bio,
         website: action.payload.blog,
       };
     case 'ORGANIZATION_SUCCESS':
       let orgData: Array<Organizations> = [];
-      for (let i = 0; i < action.payload.length; i++) {
-        let breakData: Organizations = {
-          name: action.payload[i].login,
-          url: action.payload[i].url,
-        };
-        orgData.push(breakData);
+
+      if (action.payload.length === 0) {
+        orgData.push({name: 'No organizations found', url: ''});
+      } else {
+        for (let i = 0; i < action.payload.length; i++) {
+          let breakData: Organizations = {
+            name: action.payload[i].login,
+            url: action.payload[i].url,
+          };
+          orgData.push(breakData);
+        }
       }
+
       return {
         ...state,
         organizations: orgData,

@@ -97,6 +97,7 @@ export class FollowersScreen extends Component<Props, State> {
         <ScrollView>
           {showItems.map((item) => (
             <ListItem
+              containerStyle={{backgroundColor: 'white'}}
               roundAvatar
               avatar={{uri: item.avatar_url}}
               key={item.id}

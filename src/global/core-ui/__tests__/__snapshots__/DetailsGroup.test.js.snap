@@ -38,8 +38,8 @@ exports[`Icon should render Icon corectly 1`] = `
         "borderBottomColor": "grey",
         "borderBottomWidth": 2,
         "flex": 1,
-        "paddingBottom": 15,
-        "paddingTop": 15,
+        "paddingBottom": 8,
+        "paddingTop": 8,
       }
     }
   >

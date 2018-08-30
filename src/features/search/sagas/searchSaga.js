@@ -10,28 +10,36 @@ export default function* searchWatcher(): Generator<*, *, *> {
 }
 
 //saga
-export function* fetchSearchRepo(action: Action): Generator<*, *, *> {
-  if (action.type !== 'SEARCH_REPOS') {
-    return;
-  }
-  try {
-    const {items} = yield call(searchRepos, action.payload.searchInput);
-    yield put({type: 'SEARCH_REPO_SUCCESS', payload: {repos: items}});
-  } catch (e) {
-    yield put({type: 'SEARCH_ERROR', payload: {message: e}});
+export function* fetchSearchRepo(
+  action: Action | typeof undefined,
+): Generator<*, *, *> {
+  if (action) {
+    if (action.type !== 'SEARCH_REPOS') {
+      return;
+    }
+    try {
+      const {items} = yield call(searchRepos, action.payload.searchInput);
+      yield put({type: 'SEARCH_REPO_SUCCESS', payload: {repos: items}});
+    } catch (e) {
+      yield put({type: 'SEARCH_ERROR', payload: {message: e}});
+    }
   }
 }
 
 //saga
-export function* fetchSearchUser(action: Action): Generator<*, *, *> {
-  if (action.type !== 'SEARCH_USERS') {
-    return;
-  }
-  try {
-    const {items} = yield call(searchUsers, action.payload.searchInput);
-    yield put({type: 'SEARCH_USER_SUCCESS', payload: {users: items}});
-  } catch (e) {
-    yield put({type: 'SEARCH_ERROR', payload: {message: e}});
+export function* fetchSearchUser(
+  action: Action | typeof undefined,
+): Generator<*, *, *> {
+  if (action) {
+    if (action.type !== 'SEARCH_USERS') {
+      return;
+    }
+    try {
+      const {items} = yield call(searchUsers, action.payload.searchInput);
+      yield put({type: 'SEARCH_USER_SUCCESS', payload: {users: items}});
+    } catch (e) {
+      yield put({type: 'SEARCH_ERROR', payload: {message: e}});
+    }
   }
 }
 

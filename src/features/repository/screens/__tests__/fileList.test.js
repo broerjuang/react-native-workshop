@@ -2,6 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {fileList as FileList} from '../fileList';
+import mockNavigation from '../../../../global/helpers/navigationTestHelper';
 let datas = {
   // total_count: 2570,
   // incomplete_results: false,
@@ -34,17 +35,11 @@ let datas = {
   //     repoType: 'forke',
   //   },
   // ],
-  navigation: {
-    navigate: (...a) => true,
-    goBack: (...a) => true,
-    state: {
-      params: {
-        fullName: 'broerjuang/react-native-workshop',
-        path: '',
-        name: '',
-      },
-    },
-  },
+  navigation: mockNavigation({
+    fullName: 'broerjuang/react-native-workshop',
+    path: '',
+    name: '',
+  }),
 };
 describe('FileList screen', () => {
   it('should render FileList corectly', () => {

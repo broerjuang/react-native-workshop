@@ -1,4 +1,6 @@
-export default {
+// @flow
+
+let color: {[string]: string | null} = {
   '1C Enterprise': '#814CCC',
   ABAP: '#E8274B',
   ActionScript: '#882B0F',
@@ -358,3 +360,5 @@ export default {
   Zephir: '#118f9e',
   Zimpl: null,
 };
+
+export default color;

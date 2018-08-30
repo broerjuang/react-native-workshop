@@ -8,7 +8,6 @@ function* userSaga(): Generator<*, *, *> {
 
 function* fetchUserData(item: *): Generator<*, *, *> {
   try {
-    console.log(item.payload);
     let followerProfile = yield fetchJSON(`users/${item.payload}`, `GET`);
 
     yield put({
@@ -16,7 +15,6 @@ function* fetchUserData(item: *): Generator<*, *, *> {
       payload: followerProfile,
     });
   } catch (error) {
-    //eslint-disable-next-line no-console
     console.log(error);
   }
 }

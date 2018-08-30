@@ -1,10 +1,5 @@
 // @flow
 
-type Organizations = {
-  name: string;
-  url: string;
-};
-
 export type UserAction =
   | {
       type: 'USER_SUCCESS';

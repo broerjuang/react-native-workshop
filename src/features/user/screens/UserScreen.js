@@ -1,19 +1,16 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
-// import {createStore, applyMiddleware} from 'redux';
-
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import type {UserState} from '../reducers/userReducer';
 
 type Props = {
-  navigation: Object;
   handleAction: (action: Object) => void;
   userState: UserState;
 };
@@ -49,13 +46,7 @@ export class UserScreen extends Component<Props, State> {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-            >
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Setting')}
-              >
-                <MaterialIcons name="settings" size={30} color="white" />
-              </TouchableOpacity>
-            </View>
+            />
           )}
           renderForeground={() => (
             <View style={styleParallax.containerForeground}>
@@ -81,27 +72,19 @@ export class UserScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Repositories"
                   value={this.props.userState.sumRepositories}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
                 />
 
                 <ParallaxButtons
                   name="Stars"
                   value={this.props.userState.sumStars}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
                 />
                 <ParallaxButtons
                   name="Followers"
                   value={this.props.userState.sumFollowers}
-                  onPress={() => this.props.navigation.navigate('Followers')}
                 />
                 <ParallaxButtons
                   name="Following"
                   value={this.props.userState.sumFollowing}
-                  onPress={() => this.props.navigation.navigate('Following')}
                 />
               </View>
             </View>
@@ -185,7 +168,6 @@ const styleParallax = {
     height: 80,
   },
   containerProfilePicture: {
-    // flex: 1,
     height: 100,
     alignItems: 'center',
   },
@@ -194,13 +176,11 @@ const styleParallax = {
     height: 90,
   },
   containerFullName: {
-    // flex: 1,
     height: 30,
     justifyContent: 'center',
     alignItems: 'center',
   },
   containerUsername: {
-    // flex: 1,
     height: 20,
     justifyContent: 'center',
     alignItems: 'center',

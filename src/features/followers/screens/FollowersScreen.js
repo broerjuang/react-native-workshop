@@ -110,7 +110,7 @@ export class FollowersScreen extends Component<Props, State> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: Object) {
   return {
     followersData: state.followersReducer.followersData,
   };

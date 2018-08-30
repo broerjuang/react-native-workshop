@@ -1,45 +1,24 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image} from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
-// import {createStore, applyMiddleware} from 'redux';
-
-import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
-import type {ProfileState} from '../reducers/profileReducer';
+import type {UserState} from '../reducers/userReducer';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>;
   handleAction: (action: Object) => void;
-  profileState: ProfileState;
+  userState: UserState;
 };
 
 type State = {};
 
-class ProfileScreen extends Component<Props, State> {
-  componentDidMount() {
-    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
-  }
-
+export class UserScreen extends Component<Props, State> {
   render() {
-    let {
-      userLogin,
-      userFullName,
-      userPicture,
-      sumRepositories,
-      sumStars,
-      sumFollowers,
-      sumFollowing,
-      biography,
-      website,
-      organizations,
-    } = this.props.profileState;
-
     return (
       <SafeAreaView style={{flex: 1}}>
         <ParallaxScrollView
@@ -51,7 +30,9 @@ class ProfileScreen extends Component<Props, State> {
           contentContainerStyle={styleParallax.contentStyle}
           renderStickyHeader={() => (
             <View style={styleParallax.stickyHeader}>
-              <Text style={styleParallax.txtStickyHeader}>{userLogin}</Text>
+              <Text style={styleParallax.txtStickyHeader}>
+                {this.props.userState.userLogin}
+              </Text>
             </View>
           )}
           renderFixedHeader={() => (
@@ -65,13 +46,7 @@ class ProfileScreen extends Component<Props, State> {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-            >
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Setting')}
-              >
-                <MaterialIcons name="settings" size={30} color="white" />
-              </TouchableOpacity>
-            </View>
+            />
           )}
           renderForeground={() => (
             <View style={styleParallax.containerForeground}>
@@ -79,39 +54,37 @@ class ProfileScreen extends Component<Props, State> {
                 <Image
                   style={styleParallax.imgProfilePicture}
                   source={{
-                    uri: userPicture,
+                    uri: this.props.userState.userPicture,
                   }}
                 />
               </View>
               <View style={styleParallax.containerFullName}>
-                <Text style={styleParallax.txtFullName}>{userFullName}</Text>
+                <Text style={styleParallax.txtFullName}>
+                  {this.props.userState.userFullName}
+                </Text>
               </View>
               <View style={styleParallax.containerUsername}>
-                <Text style={styleParallax.txtUsername}>{userLogin}</Text>
+                <Text style={styleParallax.txtUsername}>
+                  {this.props.userState.userLogin}
+                </Text>
               </View>
               <View style={styleParallax.containerButton}>
                 <ParallaxButtons
                   name="Repositories"
-                  value={sumRepositories}
-                  onPress={() =>
-                    this.props.navigation.navigate('RepositoryScreen')
-                  }
+                  value={this.props.userState.sumRepositories}
                 />
 
                 <ParallaxButtons
                   name="Stars"
-                  value={sumStars}
-                  onPress={() => this.props.navigation.navigate('Stars')}
+                  value={this.props.userState.sumStars}
                 />
                 <ParallaxButtons
                   name="Followers"
-                  value={sumFollowers}
-                  onPress={() => this.props.navigation.navigate('Followers')}
+                  value={this.props.userState.sumFollowers}
                 />
                 <ParallaxButtons
                   name="Following"
-                  value={sumFollowing}
-                  onPress={() => this.props.navigation.navigate('Following')}
+                  value={this.props.userState.sumFollowing}
                 />
               </View>
             </View>
@@ -121,8 +94,8 @@ class ProfileScreen extends Component<Props, State> {
             <DetailsGroup disabled={true} name="Bio">
               <RowWith3Column
                 content={
-                  biography !== null ? (
-                    <Text> {biography}</Text>
+                  this.props.userState.biography !== null ? (
+                    <Text> {this.props.userState.biography}</Text>
                   ) : (
                     <Text>No Biography Found</Text>
                   )
@@ -141,8 +114,8 @@ class ProfileScreen extends Component<Props, State> {
                   />
                 }
                 content={
-                  website !== '' ? (
-                    <Text> {website}</Text>
+                  this.props.userState.website !== '' ? (
+                    <Text> {this.props.userState.website}</Text>
                   ) : (
                     <Text> No Website Found</Text>
                   )
@@ -150,8 +123,8 @@ class ProfileScreen extends Component<Props, State> {
               />
             </DetailsGroup>
             <DetailsGroup name="Organizations">
-              {organizations ? (
-                organizations.map((orgRow, i) => {
+              {this.props.userState.organizations ? (
+                this.props.userState.organizations.map((orgRow, i) => {
                   return (
                     <RowWith3Column
                       key={i}
@@ -195,7 +168,6 @@ const styleParallax = {
     height: 80,
   },
   containerProfilePicture: {
-    // flex: 1,
     height: 100,
     alignItems: 'center',
   },
@@ -204,13 +176,11 @@ const styleParallax = {
     height: 90,
   },
   containerFullName: {
-    // flex: 1,
     height: 30,
     justifyContent: 'center',
     alignItems: 'center',
   },
   containerUsername: {
-    // flex: 1,
     height: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -242,7 +212,7 @@ const styleParallax = {
 
 function mapStateToProps(state) {
   return {
-    profileState: state.profileReducer,
+    userState: state.userReducer,
   };
 }
 
@@ -255,4 +225,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ProfileScreen);
+)(UserScreen);

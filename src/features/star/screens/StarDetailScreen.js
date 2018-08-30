@@ -83,7 +83,9 @@ export class RepositoryDetailScreen extends Component<Props, State> {
     let {language} = this.state;
     let repoType = this.state.fork ? 'repo-forked' : 'repo';
     let langColor = languageColor.hasOwnProperty(language)
-      ? languageColor[language] ? languageColor[language] : '#000000'
+      ? languageColor[language]
+        ? languageColor[language]
+        : '#000000'
       : '#000000';
     let langView = () => {
       return language ? (

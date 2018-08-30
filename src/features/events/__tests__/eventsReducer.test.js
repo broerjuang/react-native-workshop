@@ -2,12 +2,12 @@
 import eventsReducer from '../reducers/eventsReducer';
 
 describe('EventsReducer', () => {
-  it('should dispatch FETCH_EVENTS', () => {
+  it('should dispatch FETCH_EVENTS_SUCCESS', () => {
     let now = new Date().toISOString();
     let newState = eventsReducer(
       {events: []},
       {
-        type: 'FETCH_EVENTS',
+        type: 'FETCH_EVENTS_SUCCESS',
         payload: {
           events: [
             {

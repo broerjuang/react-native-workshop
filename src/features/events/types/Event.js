@@ -184,7 +184,7 @@ type PullRequestEvent = {
 type PullRequestReviewEvent = {
   type: 'PullRequestReviewEvent';
   actor: {
-    login: string;  
+    login: string;
     avatar_url: string;
   };
   repo: {
@@ -284,3 +284,17 @@ export type Event =
   | PushEvent
   | ReleaseEvent
   | WatchEvent;
+
+export type Action =
+  | {
+      type: 'FETCH_EVENTS';
+      payload: {
+        username: string;
+      };
+    }
+  | {
+      type: 'FETCH_EVENTS_SUCCESS';
+      payload: {
+        events: Array<Event>;
+      };
+    };

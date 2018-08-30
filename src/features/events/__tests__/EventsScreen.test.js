@@ -8,7 +8,6 @@ import {
   mapDispatchToProps,
 } from '../screens/EventsScreen';
 import Adapter from 'enzyme-adapter-react-16.3';
-import {EventCard} from '../../../components/index';
 
 configure({adapter: new Adapter()});
 
@@ -41,10 +40,10 @@ describe('EventsScreen', () => {
 
   it('should map dispatch to prop correctly', () => {
     const dispatch = jest.fn();
-    mapDispatchToProps(dispatch).handleFetchEvents([]);
+    mapDispatchToProps(dispatch).handleFetchEvents('astridtamara');
     expect(dispatch.mock.calls[0][0]).toEqual({
       type: 'FETCH_EVENTS',
-      payload: {events: []},
+      payload: {username: 'astridtamara'},
     });
   });
 

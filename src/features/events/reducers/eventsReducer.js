@@ -1,12 +1,5 @@
 // @flow
-import type {Event} from '../types/Event';
-
-type Action = {
-  type: string;
-  payload: {
-    events: Array<Event>;
-  };
-};
+import type {Action, Event} from '../types/Event';
 
 type State = {
   events: Array<Event>;
@@ -21,7 +14,7 @@ export default function eventsReducer(
   action: Action,
 ) {
   switch (action.type) {
-    case 'FETCH_EVENTS': {
+    case 'FETCH_EVENTS_SUCCESS': {
       return {...state, events: action.payload.events};
     }
     default:

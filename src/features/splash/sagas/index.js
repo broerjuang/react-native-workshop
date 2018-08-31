@@ -50,6 +50,11 @@ function* fetchUser(): Iterable<any> {
         };
         yield put({type: 'ACTIONS/AUTH_GITHUB_SUCCED', payload});
         yield AsyncStorage.setItem('currentUser', JSON.stringify(payload));
+      } else {
+        yield put({
+          type: 'ACTIONS/AUTH_GITHUB_FAILED',
+          payload: {message: 'token has been expired'},
+        });
       }
     } else {
       yield put({

@@ -51,12 +51,18 @@ export class FollowersScreen extends Component<Props, State> {
     this.props.handleAction({type: 'FOLLOWERS_REQUESTED'});
   }
 
-  async navigateToProfile(item: Object) {
-    this.props.navigation.navigate('UserScreen');
-    this.props.handleAction({
-      type: 'ON_USER_MOUNT',
-      payload: item.login,
+  navigateToProfile(item: Object) {
+    this.props.navigation.navigate({
+      routeName: 'Profile',
+      params: {
+        userLogin: item.login,
+      },
+      key: item.id,
     });
+    // this.props.handleAction({
+    //   type: 'ON_USER_MOUNT',
+    //   payload: item.login,
+    // });
   }
 
   render() {

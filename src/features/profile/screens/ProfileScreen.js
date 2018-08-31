@@ -7,14 +7,17 @@ import {connect} from 'react-redux';
 import {MaterialIcons} from '@expo/vector-icons';
 // import {createStore, applyMiddleware} from 'redux';
 
-import type {NavigationScreenProp} from 'react-navigation';
+// import type {NavigationScreenProp} from 'react-navigation';
 import DetailsGroup from '../../../global/core-ui/DetailsGroup';
 import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import type {ProfileState} from '../reducers/profileReducer';
 
+type NavProps = {
+  userLogin: string;
+};
 type Props = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: NavigationProp<NavProps>;
   handleAction: (action: Object) => void;
   profileState: ProfileState;
 };
@@ -23,6 +26,7 @@ type State = {};
 
 class ProfileScreen extends Component<Props, State> {
   componentDidMount() {
+    console.log(this.props.navigation.state.params, 'params');
     this.props.handleAction({type: 'ON_PAGE_MOUNT'});
   }
 

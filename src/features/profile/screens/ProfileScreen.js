@@ -26,22 +26,24 @@ type Props = {
 type State = {};
 
 class ProfileScreen extends Component<Props, State> {
-  // componentDidMount() {
-  // }
-
   async componentDidMount() {
     //let {userLogin = ''} = this.props.navigation.state.params;
-    // console.log(this.props.navigation.state.params, 'params');
-    // this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+    //this.props.handleAction({type: 'ON_PAGE_MOUNT'});
     //Mock Data
-    let userLogin = 'sstur';
-
+    let userLogin = this.props.navigation.getParam('userLogin', '');
     this.props.handleAction({
       type: 'ON_PAGE_MOUNT',
       payload: {userLogin: userLogin},
     });
   }
 
+  async componentDidUpdate() {
+    // this.props.navigation.setParams({userLogin: ''});
+    // this.props.handleAction({
+    //   type: 'ON_PAGE_MOUNT',
+    //   payload: {userLogin: ''},
+    // });
+  }
   render() {
     let {
       userLogin,
@@ -117,17 +119,32 @@ class ProfileScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Stars"
                   value={sumStars}
-                  onPress={() => this.props.navigation.navigate('Stars')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Stars',
+                      key: userLogin,
+                    })
+                  }
                 />
                 <ParallaxButtons
                   name="Followers"
                   value={sumFollowers}
-                  onPress={() => this.props.navigation.navigate('Followers')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Followers',
+                      key: userLogin,
+                    })
+                  }
                 />
                 <ParallaxButtons
                   name="Following"
                   value={sumFollowing}
-                  onPress={() => this.props.navigation.navigate('Following')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Following',
+                      key: userLogin,
+                    })
+                  }
                 />
               </View>
             </View>

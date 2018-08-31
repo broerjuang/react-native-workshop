@@ -15,7 +15,6 @@ export function* fetchDataForPage(action) {
     star: '',
     orgs: '',
   };
-
   if (action.payload.userLogin === '') {
     buildstring.user = 'user';
     buildstring.star = 'user/starred';

@@ -12,7 +12,7 @@ type Props = {
 
 function RowWith3Column(props: Props) {
   let {isTouchable, onPress} = props;
-  isTouchable = typeof isTouchable === undefined ? false : isTouchable;
+  isTouchable = isTouchable === undefined ? false : isTouchable;
 
   let rightContent = React.isValidElement(props.right) ? props.right : null;
 
@@ -22,7 +22,7 @@ function RowWith3Column(props: Props) {
     ? props.content
     : null;
 
-  let containerStyle = props.style ? props.style : [];
+  let containerStyle = props.style !== undefined ? props.style : {};
   return (
     <TouchableOpacity disabled={!isTouchable} onPress={onPress}>
       <View style={[styles.container, containerStyle]}>

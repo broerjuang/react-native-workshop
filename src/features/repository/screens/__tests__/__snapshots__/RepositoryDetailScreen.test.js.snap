@@ -507,7 +507,7 @@ exports[`Repository screee  should render Repository corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >
@@ -642,7 +642,7 @@ exports[`Repository screee  should render Repository corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >
@@ -771,7 +771,7 @@ exports[`Repository screee  should render Repository corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >
@@ -1022,7 +1022,7 @@ exports[`Repository screee  should render Repository corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >
@@ -1261,7 +1261,7 @@ exports[`Repository screee  should render Repository corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >

@@ -77,8 +77,6 @@ function renderIconAction(action: string) {
       );
     case 'FORK':
       return <Icon name="repo-forked" size={24} color="grey" type="OCTICONS" />;
-    default:
-      return null;
   }
 }
 

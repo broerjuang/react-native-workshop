@@ -13,11 +13,12 @@ import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import type {ProfileState} from '../reducers/profileReducer';
 
-type NavProps = {
+type NavProp = {
   userLogin: string;
 };
+
 type Props = {
-  navigation: NavigationProp<NavProps>;
+  navigation: NavigationProp<NavProp>;
   handleAction: (action: Object) => void;
   profileState: ProfileState;
 };
@@ -25,9 +26,17 @@ type Props = {
 type State = {};
 
 class ProfileScreen extends Component<Props, State> {
-  componentDidMount() {
-    console.log(this.props.navigation.state.params, 'params');
-    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+  async componentDidMount() {
+    //let {userLogin = ''} = this.props.navigation.state.params;
+    // console.log(this.props.navigation.state.params, 'params');
+    // this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+    //Mock Data
+    let userLogin = 'sstur';
+
+    this.props.handleAction({
+      type: 'ON_PAGE_MOUNT',
+      payload: {userLogin: userLogin},
+    });
   }
 
   render() {
@@ -256,7 +265,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

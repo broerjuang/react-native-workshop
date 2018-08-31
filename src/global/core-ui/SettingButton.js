@@ -7,17 +7,18 @@ import {MaterialIcons} from '@expo/vector-icons';
 type SettingButtonProps = {
   name: string;
   color?: string;
+  onPress?: () => void;
 };
 
 export default function SettingButton(props: SettingButtonProps) {
   let textColor = styles.txtColorDefault;
-
+  let {onPress = () => null} = props;
   if (props.color === 'red') {
     textColor = styles.txtColorRed;
   }
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.buttonSetting}>
         <Text style={textColor}>{props.name}</Text>
         <MaterialIcons

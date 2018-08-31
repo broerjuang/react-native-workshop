@@ -2,13 +2,17 @@
 
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-
+import {connect} from 'react-redux';
 import type {NavigationScreenProp} from 'react-navigation';
 import SettingButton from '../../../global/core-ui/SettingButton';
 
-type Props = {};
+type Props = {
+  isLogin: boolean;
+  onSignOut: () => void;
+  navigation: {navigate: (routes: string) => boolean};
+};
 
-class SettingScreen extends Component<Props> {
+export class SettingScreen extends Component<Props> {
   static navigationOptions = ({
     navigation,
   }: {
@@ -23,6 +27,11 @@ class SettingScreen extends Component<Props> {
       </View>
     ),
   });
+  componentDidUpdate() {
+    if (!this.props.isLogin) {
+      this.props.navigation.navigate('LoginScreen');
+    }
+  }
   render() {
     return (
       <View style={{paddingTop: 40, flex: 1, backgroundColor: 'white'}}>
@@ -35,7 +44,11 @@ class SettingScreen extends Component<Props> {
           <View style={styles.containerBorder} />
           <SettingButton name="Make a donation" />
           <View style={styles.containerBorder} />
-          <SettingButton name="Sign Out" color="red" />
+          <SettingButton
+            name="Sign Out"
+            color="red"
+            onPress={() => this.props.onSignOut()}
+          />
         </View>
       </View>
     );
@@ -61,4 +74,23 @@ const styles = {
     opacity: 0.5,
   },
 };
-export default SettingScreen;
+type StateToProps = {
+  loginReducer: {
+    isLogin: boolean;
+  };
+};
+type Dispatch = (action: Object) => void;
+export function mapStateToProps(state: StateToProps) {
+  return {
+    isLogin: state.loginReducer.isLogin,
+  };
+}
+export function mapDispatchToProps(dispatch: Dispatch) {
+  return {
+    onSignOut: () => dispatch({type: 'ACTIONS/AUTH_GITHUB_SIGNOUT_REQUESTED'}),
+  };
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SettingScreen);

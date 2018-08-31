@@ -8,7 +8,7 @@ function* signOutWatcher(): Iterable<*> {
 }
 function* signOut(): Iterable<*> {
   try {
-    yield AsyncStorage.multiRemove(['currentUser', USERTOKEN]);
+    yield AsyncStorage.multiRemove([USERTOKEN, 'currentUser']);
     yield put({
       type: 'ACTIONS/AUTH_GITHUB_SIGNOUT_SUCCED',
       payload: {message: 'sign out succed'},

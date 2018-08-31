@@ -4,7 +4,6 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {Octicons, MaterialIcons} from '@expo/vector-icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import {SafeAreaView} from 'react-navigation';
-import type {NavigationScreenProp} from 'react-navigation';
 import languageColor from '../../../global/constants/languageColor';
 import Icon from '../../../global/core-ui/Icon';
 import fetchJSON from '../../../global/helpers/fetchJSON';
@@ -84,8 +83,9 @@ export class RepositoryDetailScreen extends Component<Props, State> {
     let repoType = this.state.fork ? 'repo-forked' : 'repo';
     let langColor = languageColor.hasOwnProperty(language)
       ? languageColor[language]
+        ? languageColor[language]
+        : '#000000'
       : '#000000';
-    langColor = langColor ? langColor : '#000000';
     let langView = () => {
       return language ? (
         <View style={styleParallax.containerLanguage}>

@@ -21,9 +21,14 @@ import {
   RepositoryDetailScreen,
   RepositoryFileListScreen,
 } from './features/repository/screens/index';
+import StarScreen from './features/star/screens/StarScreen';
+import StarDetailScreen from './features/star/screens/StarDetailScreen';
 
+import FollowersScreen from './features/followers/screens/FollowersScreen';
+import FollowingScreen from './features/following/screens/FollowingScreen';
 import SearchTab from './features/search/assets/SearchTab';
 import renderIcon from './features/search/assets/renderIcon';
+import UserScreen from './features/user/screens/UserScreen';
 
 let Repository = createStackNavigator({
   RepositoryScreen: {
@@ -62,6 +67,46 @@ let Setting = createStackNavigator({
   },
 });
 
+let Followers = createStackNavigator({
+  Followers: {
+    screen: FollowersScreen,
+  },
+
+  UserScreen: {
+    screen: UserScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#272727',
+      },
+      headerTintColor: 'white',
+    },
+  },
+});
+
+let Following = createStackNavigator({
+  Following: {
+    screen: FollowingScreen,
+  },
+  UserScreen: {
+    screen: UserScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#272727',
+      },
+      headerTintColor: 'white',
+    },
+  },
+});
+
+let Stars = createStackNavigator({
+  Stars: {
+    screen: StarScreen,
+  },
+  StarDetail: {
+    screen: StarDetailScreen,
+  },
+});
+
 let Profile = createStackNavigator(
   {
     Profile: {
@@ -76,6 +121,15 @@ let Profile = createStackNavigator(
     },
     RepositoryDetailScreen: {
       screen: RepositoryDetailScreen,
+    },
+    Followers: {
+      screen: Followers,
+    },
+    Following: {
+      screen: Following,
+    },
+    Stars: {
+      screen: Stars,
     },
     ...sharedScreens,
   },
@@ -147,28 +201,28 @@ let GitClient = createBottomTabNavigator(
     Events: {
       screen: Events,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'home', size: 32, tintColor}),
       },
     },
     Notification: {
       screen: Notification,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'bell', size: 32, tintColor}),
       },
     },
     Search: {
       screen: SearchStack,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'magnify', size: 32, tintColor}),
       },
     },
     Profile: {
       screen: Profile,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) =>
+        tabBarIcon: ({tintColor}: {tintColor: string}) =>
           renderIcon({name: 'account', size: 32, tintColor}),
       },
     },

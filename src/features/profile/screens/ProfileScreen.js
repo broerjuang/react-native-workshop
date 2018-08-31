@@ -26,6 +26,9 @@ type Props = {
 type State = {};
 
 class ProfileScreen extends Component<Props, State> {
+  // componentDidMount() {
+  // }
+
   async componentDidMount() {
     //let {userLogin = ''} = this.props.navigation.state.params;
     // console.log(this.props.navigation.state.params, 'params');

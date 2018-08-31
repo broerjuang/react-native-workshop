@@ -25,7 +25,11 @@ function loginReducer(state: InitialState = initialState, action: LoginAction) {
         token: action.payload.token,
         currentUsers: action.payload.currentUser,
       };
-    case 'ACTIONS/AUTH_GITHUB_REQUESTED':
+    case 'ACTIONS/AUTH_GITHUB_SIGNOUT_SUCCED':
+      console.log(action.payload);
+      return {...state, isLogin: !state.isLogin};
+    case 'ACTIONS/AUTH_GITHUB_REQUESTED' ||
+      'ACTIONS/AUTH_GITHUB_SIGNOUT_REQUESTED':
       return state;
     case 'ACTIONS/AUTH_GITHUB_FAILED':
       return {...state, message: action.payload.message};

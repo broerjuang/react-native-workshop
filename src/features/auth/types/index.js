@@ -14,4 +14,8 @@ export type LoginAction =
   | {
       type: 'ACTIONS/AUTH_GITHUB_FAILED';
       payload: {message: string};
+    }
+  | {
+      type: 'ACTIONS/AUTH_GITHUB_SIGNOUT_SUCCED';
+      payload: {message: string};
     };

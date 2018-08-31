@@ -161,7 +161,6 @@ export class LoginScreen extends Component<Props, State> {
     const url: string = navState.url;
     let constant = 'code=';
     if (url.includes(constant) && this.props.onRequest === false) {
-      this.props.handleAction({type: 'LOGIN_REQUEST'});
       let code = url.slice(url.indexOf(constant) + 5);
       try {
         let access = await this._createTokenWithCode(code);
@@ -191,7 +190,7 @@ export class LoginScreen extends Component<Props, State> {
             following,
           },
         };
-        AsyncStorage.setItem('currentUser', JSON.stringify(payload));
+        await AsyncStorage.setItem('currentUser', JSON.stringify(payload));
         this.props.handleAction({
           type: 'ACTIONS/AUTH_GITHUB_SUCCED',
           payload,
@@ -263,7 +262,6 @@ type StateToProps = {
 };
 type Dispatch = (action: Object) => void;
 export function mapStateToProps(state: StateToProps) {
-  console.log('mapstatelogin');
   return {
     token: state.loginReducer.token,
     isLogin: state.loginReducer.isLogin,

@@ -9,7 +9,12 @@ export default function* searchWatcher(): Generator<*, *, *> {
 }
 
 //saga
-export function* fetchEventsSaga(action: Action): Generator<*, *, *> {
+export function* fetchEventsSaga(
+  action: Action | typeof undefined,
+): Generator<*, *, *> {
+  if (action === undefined) {
+    return;
+  }
   if (action.type !== 'FETCH_EVENTS') {
     return;
   }

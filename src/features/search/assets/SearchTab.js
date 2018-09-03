@@ -5,15 +5,14 @@ import {View, TextInput, TouchableOpacity} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import {Icon} from '../../../global/core-ui/index';
 import type {NavigationScreenProp} from 'react-navigation';
-import fetchJSON from '../../../global/helpers/fetchJSON';
 
 import {connect} from 'react-redux';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
   handleClearSearch: () => {};
-  handleSearchRepo: (repos: Array<Repo>) => {};
-  handleSearchUser: (users: Array<User>) => {};
+  handleSearchRepo: (searchInput: string) => {};
+  handleSearchUser: (searchInput: string) => {};
 };
 
 type State = {
@@ -23,7 +22,7 @@ type State = {
   showClear: boolean;
 };
 
-class SearchTab extends Component<Props, State> {
+export class SearchTab extends Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -87,8 +86,13 @@ class SearchTab extends Component<Props, State> {
 
   updateIndex = (selectedIndex: number) => {
     this.setState({selectedIndex}, () => {
+      let {searchInput} = this.state;
       let screen = selectedIndex === 0 ? 'Repositories' : 'Users';
-      this.doSearch();
+      if (selectedIndex === 0) {
+        this.props.handleSearchRepo(searchInput);
+      } else {
+        this.props.handleSearchUser(searchInput);
+      }
       this.props.navigation.navigate(screen);
     });
   };
@@ -113,26 +117,13 @@ class SearchTab extends Component<Props, State> {
 
   changeSearch = () => {
     this.setState({searchInput: this.state.textInput}, () => {
-      this.doSearch();
-    });
-  };
-
-  doSearch = async() => {
-    let {searchInput} = this.state;
-    if (searchInput.trim() !== '') {
-      if (this.state.selectedIndex === 0) {
-        // Search Repo
-        let {items} = await fetchJSON(
-          `search/repositories?q=${searchInput}`,
-          'GET',
-        );
-        this.props.handleSearchRepo(items);
+      let {selectedIndex, searchInput} = this.state;
+      if (selectedIndex === 0) {
+        this.props.handleSearchRepo(searchInput);
       } else {
-        // Search User
-        let {items} = await fetchJSON(`search/users?q=${searchInput}`, 'GET');
-        this.props.handleSearchUser(items);
+        this.props.handleSearchUser(searchInput);
       }
-    }
+    });
   };
 }
 
@@ -150,31 +141,18 @@ const styles = {
   inputText: {height: 40, width: '90%', backgroundColor: '#efefef'},
 };
 
-function mapStateToProps(state) {
+export function mapStateToProps(state: Object) {
   return {
-    searchKey: state.searchReducer.searchKey,
+    state,
   };
 }
 
-type Repo = {
-  full_name: string;
-  description: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  fork: boolean;
-};
-type User = {
-  login: string;
-  avatar_url: string;
-};
-
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch: Function) {
   return {
-    handleSearchRepo: (repos: Array<Repo>) =>
-      dispatch({type: 'SEARCH_REPOS', payload: repos}),
-    handleSearchUser: (users: Array<User>) =>
-      dispatch({type: 'SEARCH_USERS', payload: users}),
+    handleSearchRepo: (searchInput: string) =>
+      dispatch({type: 'SEARCH_REPOS', payload: {searchInput}}),
+    handleSearchUser: (searchInput: string) =>
+      dispatch({type: 'SEARCH_USERS', payload: {searchInput}}),
     handleClearSearch: () => dispatch({type: 'CLEAR_SEARCH'}),
   };
 }

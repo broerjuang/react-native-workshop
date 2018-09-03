@@ -5,43 +5,38 @@ import {RepoCard} from '../../../global/core-ui/index';
 import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
-
-type Repo = {
-  full_name: string;
-  description: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  fork: boolean;
-};
+import type {Repo} from '../types/index';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
   repos: Array<Repo>;
 };
 
-function SearchRepositoryScreen(props: Props) {
+export function SearchRepositoryScreen(props: Props) {
   let {repos, navigation} = props;
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
-      {repos
-        ? repos.map((repo, index) => {
-          return (
-            <RepoCard
-              key={index}
-              repo={repo}
-              onPress={() => {
-                navigation.navigate('RepositoryDetailScreen');
-              }}
-            />
-          );
-        })
-        : null}
+      {repos.map((repo, index) => {
+        return (
+          <RepoCard
+            key={index}
+            repo={repo}
+            onPress={() => {
+              navigation.navigate('RepositoryDetailScreen');
+            }}
+          />
+        );
+      })}
     </ScrollView>
   );
 }
 
-function mapStateToProps(state) {
+type State = {
+  searchReducer: {
+    repos: Array<Repo>;
+  };
+};
+export function mapStateToProps(state: State) {
   return {
     repos: state.searchReducer.repos,
   };

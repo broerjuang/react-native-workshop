@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`container test should render LoginScreen corectly 1`] = `
+exports[`SearchUserScreen Test should render SearchUserScreen correctly 1`] = `
 <RCTScrollView
   style={
     Object {

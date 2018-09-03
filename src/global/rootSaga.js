@@ -9,6 +9,7 @@ import followingSaga from '../features/following/sagas/followingSaga';
 import userSaga from '../features/user/sagas/userSaga';
 import starSaga from '../features/star/sagas/starSaga';
 import eventSaga from '../features/events/sagas/eventSaga';
+import searchSaga from '../features/search/sagas/searchSaga';
 
 export default function* rootSaga(): Iterable<*> {
   yield fork(authSaga);
@@ -18,4 +19,6 @@ export default function* rootSaga(): Iterable<*> {
   yield fork(followingSaga);
   yield fork(userSaga);
   yield fork(eventSaga);
+  yield fork(starSaga);
+  yield fork(searchSaga);
 }

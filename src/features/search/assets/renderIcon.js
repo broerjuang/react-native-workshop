@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 type IconProps = {
-  name: string,
-  size: number,
-  tintColor: string,
+  name: string;
+  size: number;
+  tintColor: string;
 };
 
 function renderIcon(props: IconProps) {

@@ -3,7 +3,7 @@ import navigation from '../navigationTestHelper';
 
 it('should make mockNavigation with {}', () => {
   // Initialize mockstore with empty state
-  let data = navigation({});
+  let data = navigation();
 
   expect(data.state.params).toEqual({});
   expect(data.getParam('')).toEqual(undefined);

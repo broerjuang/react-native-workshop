@@ -577,7 +577,7 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >
@@ -707,7 +707,7 @@ exports[`UserScreen should render UserScreen corectly 1`] = `
                             "flexDirection": "row",
                             "justifyContent": "center",
                           },
-                          Array [],
+                          Object {},
                         ]
                       }
                     >

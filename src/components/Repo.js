@@ -5,7 +5,7 @@ import {FontAwesome, Octicons, Entypo} from '@expo/vector-icons';
 import {DARK_GREY} from '../global/constants/colors';
 import languageColor from '../global/constants/languageColor';
 
-type Repo = {
+export type Repo = {
   description: string;
   fork: boolean;
   forks: number;
@@ -31,13 +31,11 @@ function repoComponent(props: Repo) {
     : null;
   langColor = langColor ? langColor : '#000000';
   let langView = () => {
-    return language ? (
+    return (
       <View style={styles.logoAndText}>
         <FontAwesome name="circle" color={langColor} style={{marginRight: 2}} />
         <Text>{language}</Text>
       </View>
-    ) : (
-      <View style={styles.logoAndText} />
     );
   };
   return (

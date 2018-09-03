@@ -72,7 +72,7 @@ exports[`container test should render LoginScreen corectly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "center",
               },
-              Array [],
+              Object {},
             ]
           }
         >
@@ -197,7 +197,7 @@ exports[`container test should render LoginScreen corectly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "center",
               },
-              Array [],
+              Object {},
             ]
           }
         >
@@ -322,7 +322,7 @@ exports[`container test should render LoginScreen corectly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "center",
               },
-              Array [],
+              Object {},
             ]
           }
         >
@@ -447,7 +447,7 @@ exports[`container test should render LoginScreen corectly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "center",
               },
-              Array [],
+              Object {},
             ]
           }
         >
@@ -572,7 +572,7 @@ exports[`container test should render LoginScreen corectly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "center",
               },
-              Array [],
+              Object {},
             ]
           }
         >

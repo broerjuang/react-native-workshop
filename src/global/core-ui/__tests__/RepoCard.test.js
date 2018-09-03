@@ -37,4 +37,37 @@ describe('RepoCard', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render RepoCard for null langColor', () => {
+    let repo = {
+      full_name: 'astridtamara/kfbootcamp',
+      description: '',
+      stargazers_count: 0,
+      forks_count: 0,
+      language: 'Alpine Abuild',
+      fork: true,
+    };
+
+    let component = renderer.create(
+      <RepoCard repo={repo} onPress={() => {}} />,
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render RepoCard for unknown language', () => {
+    let repo = {
+      full_name: 'astridtamara/kfbootcamp',
+      description: '',
+      stargazers_count: 0,
+      forks_count: 0,
+      language: '----',
+      fork: true,
+    };
+
+    let component = renderer.create(
+      <RepoCard repo={repo} onPress={() => {}} />,
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -22,4 +22,18 @@ describe('testing for  login reducer', () => {
       token: '1231241482hhsabdba',
     });
   });
+  it('should return message and login false ', () => {
+    const action = {
+      type: 'ACTIONS/AUTH_GITHUB_FAILED',
+      payload: {
+        currentUser: {login: 'aji', email: 'ajilantang@gmail.com'},
+        token: '1231241482hhsabdba',
+      },
+    };
+    const initialState = {isLogin: false};
+    expect(loginReducer(initialState, action)).toEqual({
+      isLogin: false,
+      message: undefined,
+    });
+  });
 });

@@ -4,7 +4,7 @@
 
 "@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
-  resolved "http://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
+  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
   dependencies:
     "@babel/highlight" "7.0.0-beta.44"
 
@@ -41,7 +41,11 @@
 
 "@babel/generator@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.44.tgz#c7e67b9b5284afcf69b309b50d7d37f3e5033d42"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.0.0-beta.44.tgz#c7e67b9b5284afcf69b309b50d7d37f3e5033d42"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/types" "7.0.0-beta.44"
     jsesc "^2.5.1"
@@ -114,7 +118,11 @@
 
 "@babel/helper-function-name@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.44.tgz#e18552aaae2231100a6e485e03854bc3532d44dd"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.44.tgz#e18552aaae2231100a6e485e03854bc3532d44dd"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/helper-get-function-arity" "7.0.0-beta.44"
     "@babel/template" "7.0.0-beta.44"
@@ -138,7 +146,11 @@
 
 "@babel/helper-get-function-arity@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.44.tgz#d03ca6dd2b9f7b0b1e6b32c56c72836140db3a15"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.44.tgz#d03ca6dd2b9f7b0b1e6b32c56c72836140db3a15"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/types" "7.0.0-beta.44"
 
@@ -221,7 +233,11 @@
 
 "@babel/helper-split-export-declaration@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/types" "7.0.0-beta.44"
 
@@ -256,7 +272,11 @@
 
 "@babel/highlight@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/highlight/-/highlight-7.0.0-beta.44.tgz#18c94ce543916a80553edcdcf681890b200747d5"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/highlight/-/highlight-7.0.0-beta.44.tgz#18c94ce543916a80553edcdcf681890b200747d5"
+>>>>>>> Add yarn.lock
   dependencies:
     chalk "^2.0.0"
     esutils "^2.0.2"
@@ -493,7 +513,11 @@
 
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/code-frame" "7.0.0-beta.44"
     "@babel/types" "7.0.0-beta.44"
@@ -519,7 +543,11 @@
 
 "@babel/traverse@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/traverse/-/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/code-frame" "7.0.0-beta.44"
     "@babel/generator" "7.0.0-beta.44"
@@ -563,7 +591,11 @@
 
 "@babel/types@7.0.0-beta.44":
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@babel/types/-/types-7.0.0-beta.44.tgz#6b1b164591f77dec0a0342aca995f2d046b3a757"
+=======
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.44.tgz#6b1b164591f77dec0a0342aca995f2d046b3a757"
+>>>>>>> Add yarn.lock
   dependencies:
     esutils "^2.0.2"
     lodash "^4.2.0"
@@ -702,7 +734,11 @@
 
 "@expo/vector-icons@^6.3.1":
   version "6.3.1"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/@expo/vector-icons/-/vector-icons-6.3.1.tgz#ffb97cc2343e4a330b44ce3063ee7c8571a6a50d"
+=======
+  resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-6.3.1.tgz#ffb97cc2343e4a330b44ce3063ee7c8571a6a50d"
+>>>>>>> Add yarn.lock
   dependencies:
     lodash "^4.17.4"
     react-native-vector-icons "4.5.0"
@@ -741,8 +777,13 @@
     "@types/node" "*"
 
 "@types/node@*":
+<<<<<<< HEAD
   version "10.9.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
+=======
+  version "10.9.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.3.tgz#85f288502503ade0b3bfc049fe1777b05d0327d5"
+>>>>>>> Add yarn.lock
 
 "@types/prop-types@*":
   version "15.5.5"
@@ -757,13 +798,22 @@
     "@types/react" "*"
 
 "@types/react@*":
+<<<<<<< HEAD
   version "16.4.13"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.13.tgz#1385f5dc3486aa493849a32ccce626a817543e28"
+=======
+  version "16.4.12"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.12.tgz#c554005770b06c7cbcd6b0b19721e180deab7a02"
+>>>>>>> Add yarn.lock
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+<<<<<<< HEAD
 JSONStream@^1.3.4:
+=======
+JSONStream@^1.3.3, JSONStream@^1.3.4:
+>>>>>>> Add yarn.lock
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.4.tgz#615bb2adb0cd34c8f4c447b5f6512fa1d8f16a2e"
   dependencies:
@@ -1436,6 +1486,7 @@ babel-plugin-react-transform@^3.0.0:
 
 babel-plugin-syntax-async-functions@^6.5.0, babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
 
 babel-plugin-syntax-class-properties@^6.5.0, babel-plugin-syntax-class-properties@^6.8.0:
@@ -1469,6 +1520,41 @@ babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.5.0, babel-plugin-sy
 babel-plugin-syntax-object-rest-spread@^6.13.0, babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
   resolved "http://registry.npmjs.org/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+=======
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
+
+babel-plugin-syntax-class-properties@^6.5.0, babel-plugin-syntax-class-properties@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de"
+
+babel-plugin-syntax-decorators@^6.1.18:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-decorators/-/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
+
+babel-plugin-syntax-dynamic-import@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
+
+babel-plugin-syntax-exponentiation-operator@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
+babel-plugin-syntax-export-extensions@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-export-extensions/-/babel-plugin-syntax-export-extensions-6.13.0.tgz#70a1484f0f9089a4e84ad44bac353c95b9b12721"
+
+babel-plugin-syntax-flow@^6.18.0, babel-plugin-syntax-flow@^6.5.0, babel-plugin-syntax-flow@^6.8.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
+
+babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.5.0, babel-plugin-syntax-jsx@^6.8.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
+
+babel-plugin-syntax-object-rest-spread@^6.13.0, babel-plugin-syntax-object-rest-spread@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+>>>>>>> Add yarn.lock
 
 babel-plugin-syntax-trailing-function-commas@^6.20.0, babel-plugin-syntax-trailing-function-commas@^6.5.0, babel-plugin-syntax-trailing-function-commas@^6.8.0:
   version "6.22.0"
@@ -1476,7 +1562,11 @@ babel-plugin-syntax-trailing-function-commas@^6.20.0, babel-plugin-syntax-traili
 
 babel-plugin-transform-async-to-generator@6.16.0:
   version "6.16.0"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.16.0.tgz#19ec36cb1486b59f9f468adfa42ce13908ca2999"
+=======
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.16.0.tgz#19ec36cb1486b59f9f468adfa42ce13908ca2999"
+>>>>>>> Add yarn.lock
   dependencies:
     babel-helper-remap-async-to-generator "^6.16.0"
     babel-plugin-syntax-async-functions "^6.8.0"
@@ -2018,7 +2108,11 @@ babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26
 
 babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
+=======
+  resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
+>>>>>>> Add yarn.lock
 
 babylon@^6.18.0:
   version "6.18.0"
@@ -2080,6 +2174,7 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+<<<<<<< HEAD
 bezier@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/bezier/-/bezier-0.1.0.tgz#fad143502b21e378a3181ffe50baac97ad24909e"
@@ -2087,6 +2182,11 @@ bezier@^0.1.0:
 big-integer@^1.6.7:
   version "1.6.35"
   resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.35.tgz#e093c3a50f63fb6bda0b5511c9425f1befcba74d"
+=======
+big-integer@^1.6.7:
+  version "1.6.34"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.34.tgz#701affc8f0d73c490930a6b482dc23ed6ffc7484"
+>>>>>>> Add yarn.lock
 
 bin-links@^1.1.2:
   version "1.1.2"
@@ -2244,8 +2344,13 @@ buffer-from@^1.0.0:
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
 buffer@^5.2.0:
+<<<<<<< HEAD
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.1.tgz#dd57fa0f109ac59c602479044dca7b8b3d0b71d6"
+=======
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.0.tgz#53cf98241100099e9eeae20ee6d51d21b16e541e"
+>>>>>>> Add yarn.lock
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
@@ -2288,7 +2393,11 @@ cacache@^10.0.4:
     unique-filename "^1.1.0"
     y18n "^4.0.0"
 
+<<<<<<< HEAD
 cacache@^11.0.1, cacache@^11.0.2, cacache@^11.2.0:
+=======
+cacache@^11.0.1, cacache@^11.0.2, cacache@^11.1.0:
+>>>>>>> Add yarn.lock
   version "11.2.0"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.2.0.tgz#617bdc0b02844af56310e411c0878941d5739965"
   dependencies:
@@ -2365,8 +2474,13 @@ capture-exit@^1.2.0:
     rsvp "^3.3.3"
 
 capture-stack-trace@^1.0.0:
+<<<<<<< HEAD
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
+=======
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
+>>>>>>> Add yarn.lock
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2468,7 +2582,11 @@ chownr@^1.0.1, chownr@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
+<<<<<<< HEAD
 ci-info@^1.3.0, ci-info@^1.4.0:
+=======
+ci-info@^1.3.0:
+>>>>>>> Add yarn.lock
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-1.4.0.tgz#4841d53cad49f11b827b648ebde27a6e189b412f"
 
@@ -2478,10 +2596,13 @@ cidr-regex@^2.0.8:
   dependencies:
     ip-regex "^2.1.0"
 
+<<<<<<< HEAD
 circular-json-es6@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/circular-json-es6/-/circular-json-es6-2.0.2.tgz#e4f4a093e49fb4b6aba1157365746112a78bd344"
 
+=======
+>>>>>>> Add yarn.lock
 circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
@@ -2680,8 +2801,13 @@ commondir@^1.0.1:
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
 compare-versions@^3.1.0:
+<<<<<<< HEAD
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.4.0.tgz#e0747df5c9cb7f054d6d3dc3e1dbc444f9e92b26"
+=======
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.3.1.tgz#1ede3172b713c15f7c7beb98cb74d2d82576dad3"
+>>>>>>> Add yarn.lock
 
 component-emitter@^1.2.0, component-emitter@^1.2.1:
   version "1.2.1"
@@ -2854,7 +2980,11 @@ crypto-random-string@^1.0.0:
 
 crypto-token@^1.0.1:
   version "1.0.1"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/crypto-token/-/crypto-token-1.0.1.tgz#27c6482faf3b63c2f5da11577f8304346fe797a5"
+=======
+  resolved "https://registry.yarnpkg.com/crypto-token/-/crypto-token-1.0.1.tgz#27c6482faf3b63c2f5da11577f8304346fe797a5"
+>>>>>>> Add yarn.lock
 
 css-color-names@~0.0.3:
   version "0.0.4"
@@ -2909,10 +3039,13 @@ data-urls@^1.0.0:
     whatwg-mimetype "^2.1.0"
     whatwg-url "^7.0.0"
 
+<<<<<<< HEAD
 date-fns@^1.29.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
+=======
+>>>>>>> Add yarn.lock
 debug@2, debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.2, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2925,7 +3058,11 @@ debug@3.1.0, debug@^3.1.0:
   dependencies:
     ms "2.0.0"
 
+<<<<<<< HEAD
 debuglog@*, debuglog@^1.0.1:
+=======
+debuglog@^1.0.1:
+>>>>>>> Add yarn.lock
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -2951,12 +3088,15 @@ deep-diff@0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.4.tgz#aac5c39952236abe5f037a2349060ba01b00ae48"
 
+<<<<<<< HEAD
 deep-equal-ident@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/deep-equal-ident/-/deep-equal-ident-1.1.1.tgz#06f4b89e53710cd6cea4a7781c7a956642de8dc9"
   dependencies:
     lodash.isequal "^3.0"
 
+=======
+>>>>>>> Add yarn.lock
 deep-extend@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
@@ -3231,8 +3371,13 @@ envinfo@^3.0.0:
     which "^1.2.14"
 
 enzyme-adapter-react-16.3@^1.0.0:
+<<<<<<< HEAD
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16.3/-/enzyme-adapter-react-16.3-1.1.1.tgz#650483eea3207e0a825968447948a7d6bde8da6d"
+=======
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16.3/-/enzyme-adapter-react-16.3-1.1.0.tgz#e4c71c85eecb84e75078cb20c32b90c7754bca18"
+>>>>>>> Add yarn.lock
   dependencies:
     enzyme-adapter-utils "^1.6.0"
     function.prototype.name "^1.1.0"
@@ -3244,13 +3389,19 @@ enzyme-adapter-react-16.3@^1.0.0:
     react-test-renderer "~16.3.0-0"
 
 enzyme-adapter-utils@^1.6.0:
+<<<<<<< HEAD
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/enzyme-adapter-utils/-/enzyme-adapter-utils-1.6.1.tgz#f19acb8b23ddd21b2de99506b181e46138368f2a"
+=======
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-utils/-/enzyme-adapter-utils-1.6.0.tgz#c59a3f311769fc4087489bff3ee98d8397682c75"
+>>>>>>> Add yarn.lock
   dependencies:
     function.prototype.name "^1.1.0"
     object.assign "^4.1.0"
     prop-types "^15.6.2"
 
+<<<<<<< HEAD
 enzyme-matchers@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/enzyme-matchers/-/enzyme-matchers-6.0.4.tgz#0a4d8303a064a00289e03d8c992277c291074bbc"
@@ -3264,6 +3415,8 @@ enzyme-to-json@^3.3.0:
   dependencies:
     lodash "^4.17.4"
 
+=======
+>>>>>>> Add yarn.lock
 enzyme@^3.4.4:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.5.0.tgz#fd452a698fd1352c737b641dd3a64e079f42d9d5"
@@ -3417,7 +3570,11 @@ eslint-visitor-keys@^1.0.0:
 
 eslint@4.19.1:
   version "4.19.1"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
+=======
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
+>>>>>>> Add yarn.lock
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -3675,7 +3832,11 @@ extend@3, extend@^3.0.0, extend@~3.0.2:
 
 external-editor@^2.0.1, external-editor@^2.0.4, external-editor@^2.1.0:
   version "2.2.0"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/external-editor/-/external-editor-2.2.0.tgz#045511cfd8d133f3846673d1047c154e214ad3d5"
+=======
+  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-2.2.0.tgz#045511cfd8d133f3846673d1047c154e214ad3d5"
+>>>>>>> Add yarn.lock
   dependencies:
     chardet "^0.4.0"
     iconv-lite "^0.4.17"
@@ -3773,7 +3934,11 @@ fbjs@^0.8.0, fbjs@^0.8.14, fbjs@^0.8.16, fbjs@^0.8.4, fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
+<<<<<<< HEAD
 figgy-pudding@^3.0.0, figgy-pudding@^3.1.0, figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
+=======
+figgy-pudding@^3.0.0, figgy-pudding@^3.1.0, figgy-pudding@^3.2.0, figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
+>>>>>>> Add yarn.lock
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
 
@@ -3918,7 +4083,11 @@ flow-bin@^0.76.0:
 
 flow-coverage-report@^0.5.0:
   version "0.5.0"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/flow-coverage-report/-/flow-coverage-report-0.5.0.tgz#adbcecb5bf9a068d3d66f8881b0d7b96cb82c5f2"
+=======
+  resolved "https://registry.yarnpkg.com/flow-coverage-report/-/flow-coverage-report-0.5.0.tgz#adbcecb5bf9a068d3d66f8881b0d7b96cb82c5f2"
+>>>>>>> Add yarn.lock
   dependencies:
     array.prototype.find "2.0.4"
     babel-runtime "6.23.0"
@@ -4298,7 +4467,11 @@ good-listener@^1.2.2:
 
 got@^6.7.1:
   version "6.7.1"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
+=======
+  resolved "https://registry.yarnpkg.com/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
+>>>>>>> Add yarn.lock
   dependencies:
     create-error-class "^3.0.0"
     duplexer3 "^0.1.4"
@@ -4606,7 +4779,11 @@ import-local@^1.0.0:
     pkg-dir "^2.0.0"
     resolve-cwd "^2.0.0"
 
+<<<<<<< HEAD
 imurmurhash@*, imurmurhash@^0.1.4:
+=======
+imurmurhash@^0.1.4:
+>>>>>>> Add yarn.lock
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -5218,12 +5395,15 @@ jest-docblock@^22.4.0, jest-docblock@^22.4.3:
   dependencies:
     detect-newline "^2.1.0"
 
+<<<<<<< HEAD
 jest-environment-enzyme@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/jest-environment-enzyme/-/jest-environment-enzyme-6.0.4.tgz#1576bec170bb9025e82579bf63fadbf1aeabe944"
   dependencies:
     jest-environment-jsdom "^22.4.1"
 
+=======
+>>>>>>> Add yarn.lock
 jest-environment-jsdom@^22.4.1:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-22.4.3.tgz#d67daa4155e33516aecdd35afd82d4abf0fa8a1e"
@@ -5239,6 +5419,7 @@ jest-environment-node@^22.4.1:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
 
+<<<<<<< HEAD
 jest-enzyme@^6.0.3:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/jest-enzyme/-/jest-enzyme-6.0.4.tgz#8dcbab186c41170fdbc2aba5137f74f799e2a578"
@@ -5247,6 +5428,8 @@ jest-enzyme@^6.0.3:
     enzyme-to-json "^3.3.0"
     jest-environment-enzyme "^6.0.4"
 
+=======
+>>>>>>> Add yarn.lock
 jest-expo@~26.0.0:
   version "26.0.0"
   resolved "https://registry.yarnpkg.com/jest-expo/-/jest-expo-26.0.0.tgz#a20f0e2d1ccb445814982e5fdc9bfcddb5c13ee3"
@@ -5702,7 +5885,11 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+<<<<<<< HEAD
 libcipm@^2.0.2:
+=======
+libcipm@^2.0.1:
+>>>>>>> Add yarn.lock
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/libcipm/-/libcipm-2.0.2.tgz#4f38c2b37acf2ec156936cef1cbf74636568fc7b"
   dependencies:
@@ -5799,6 +5986,7 @@ lodash-es@^4.17.5, lodash-es@^4.2.1:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
+<<<<<<< HEAD
 lodash._baseindexof@*:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
@@ -5811,6 +5999,8 @@ lodash._baseisequal@^3.0.0:
     lodash.istypedarray "^3.0.0"
     lodash.keys "^3.0.0"
 
+=======
+>>>>>>> Add yarn.lock
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -5818,6 +6008,7 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
+<<<<<<< HEAD
 lodash._bindcallback@*, lodash._bindcallback@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
@@ -5832,14 +6023,19 @@ lodash._createcache@*:
   dependencies:
     lodash._getnative "^3.0.0"
 
+=======
+>>>>>>> Add yarn.lock
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
 
+<<<<<<< HEAD
 lodash._getnative@*, lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
+=======
+>>>>>>> Add yarn.lock
 lodash._root@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._root/-/lodash._root-3.0.1.tgz#fba1c4524c19ee9a5f8136b4609f017cf4ded692"
@@ -5856,6 +6052,7 @@ lodash.flattendeep@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
 
+<<<<<<< HEAD
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -5864,10 +6061,13 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+=======
+>>>>>>> Add yarn.lock
 lodash.isempty@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
 
+<<<<<<< HEAD
 lodash.isequal@^3.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-3.0.4.tgz#1c35eb3b6ef0cd1ff51743e3ea3cf7fdffdacb64"
@@ -5875,6 +6075,8 @@ lodash.isequal@^3.0:
     lodash._baseisequal "^3.0.0"
     lodash._bindcallback "^3.0.0"
 
+=======
+>>>>>>> Add yarn.lock
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
@@ -5883,6 +6085,7 @@ lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
 
+<<<<<<< HEAD
 lodash.istypedarray@^3.0.0:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/lodash.istypedarray/-/lodash.istypedarray-3.0.6.tgz#c9a477498607501d8e8494d283b87c39281cef62"
@@ -5895,6 +6098,8 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+=======
+>>>>>>> Add yarn.lock
 lodash.map@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
@@ -5919,10 +6124,13 @@ lodash.padstart@^4.1.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.padstart/-/lodash.padstart-4.6.1.tgz#d2e3eebff0d9d39ad50f5cbd1b52a7bce6bb611b"
 
+<<<<<<< HEAD
 lodash.restparam@*:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
+=======
+>>>>>>> Add yarn.lock
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -6181,39 +6389,63 @@ metro-babylon7@0.30.2:
 
 metro-cache@0.30.2:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro-cache/-/metro-cache-0.30.2.tgz#1fb1ff92d3d8c596fd8cddc1635a9cb1c26e4cba"
+=======
+  resolved "https://registry.yarnpkg.com/metro-cache/-/metro-cache-0.30.2.tgz#1fb1ff92d3d8c596fd8cddc1635a9cb1c26e4cba"
+>>>>>>> Add yarn.lock
   dependencies:
     jest-serializer "^22.4.0"
     mkdirp "^0.5.1"
 
 metro-core@0.30.2, metro-core@^0.30.0:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro-core/-/metro-core-0.30.2.tgz#380ae13cceee29e5be166df7acca9f1daa19fd7e"
+=======
+  resolved "https://registry.yarnpkg.com/metro-core/-/metro-core-0.30.2.tgz#380ae13cceee29e5be166df7acca9f1daa19fd7e"
+>>>>>>> Add yarn.lock
   dependencies:
     lodash.throttle "^4.1.1"
     wordwrap "^1.0.0"
 
 metro-minify-uglify@0.30.2:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro-minify-uglify/-/metro-minify-uglify-0.30.2.tgz#7299a0376ad6340e9acf415912d54b5309702040"
+=======
+  resolved "https://registry.yarnpkg.com/metro-minify-uglify/-/metro-minify-uglify-0.30.2.tgz#7299a0376ad6340e9acf415912d54b5309702040"
+>>>>>>> Add yarn.lock
   dependencies:
     uglify-es "^3.1.9"
 
 metro-resolver@0.30.2:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro-resolver/-/metro-resolver-0.30.2.tgz#c26847e59cdc6a8ab1fb4b92d765165ec06946dd"
+=======
+  resolved "https://registry.yarnpkg.com/metro-resolver/-/metro-resolver-0.30.2.tgz#c26847e59cdc6a8ab1fb4b92d765165ec06946dd"
+>>>>>>> Add yarn.lock
   dependencies:
     absolute-path "^0.0.0"
 
 metro-source-map@0.30.2:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro-source-map/-/metro-source-map-0.30.2.tgz#4ac056642a2c521d974d42a617c8731d094365bb"
+=======
+  resolved "https://registry.yarnpkg.com/metro-source-map/-/metro-source-map-0.30.2.tgz#4ac056642a2c521d974d42a617c8731d094365bb"
+>>>>>>> Add yarn.lock
   dependencies:
     source-map "^0.5.6"
 
 metro@^0.30.0:
   version "0.30.2"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/metro/-/metro-0.30.2.tgz#e722e0eb106530f6d5bcf8de1f50353a0732cfb3"
+=======
+  resolved "https://registry.yarnpkg.com/metro/-/metro-0.30.2.tgz#e722e0eb106530f6d5bcf8de1f50353a0732cfb3"
+>>>>>>> Add yarn.lock
   dependencies:
     "@babel/core" "^7.0.0-beta"
     "@babel/generator" "^7.0.0-beta"
@@ -6381,6 +6613,7 @@ min-document@^2.19.0:
 
 minimist@0.0.8:
   version "0.0.8"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@1.2.0, minimist@^1.1.1, minimist@^1.2.0:
@@ -6390,6 +6623,17 @@ minimist@1.2.0, minimist@^1.1.1, minimist@^1.2.0:
 minimist@~0.0.1:
   version "0.0.10"
   resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+=======
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+
+minimist@1.2.0, minimist@^1.1.1, minimist@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+
+minimist@~0.0.1:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+>>>>>>> Add yarn.lock
 
 minipass@^2.2.1, minipass@^2.3.3:
   version "2.3.4"
@@ -6578,7 +6822,11 @@ node-fetch-npm@^2.0.2:
 
 node-fetch@1.6.3:
   version "1.6.3"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/node-fetch/-/node-fetch-1.6.3.tgz#dc234edd6489982d58e8f0db4f695029abcd8c04"
+=======
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.6.3.tgz#dc234edd6489982d58e8f0db4f695029abcd8c04"
+>>>>>>> Add yarn.lock
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
@@ -6703,7 +6951,11 @@ npm-install-checks@~3.0.0:
   dependencies:
     semver "^2.3.0 || 3.x || 4 || 5"
 
+<<<<<<< HEAD
 npm-lifecycle@^2.0.3, npm-lifecycle@^2.1.0:
+=======
+npm-lifecycle@^2.0.3:
+>>>>>>> Add yarn.lock
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/npm-lifecycle/-/npm-lifecycle-2.1.0.tgz#1eda2eedb82db929e3a0c50341ab0aad140ed569"
   dependencies:
@@ -6729,7 +6981,11 @@ npm-logical-tree@^1.2.1:
     semver "^5.5.0"
     validate-npm-package-name "^3.0.0"
 
+<<<<<<< HEAD
 npm-packlist@^1.1.10, npm-packlist@^1.1.11, npm-packlist@^1.1.6:
+=======
+npm-packlist@^1.1.10, npm-packlist@^1.1.6, npm-packlist@~1.1.10:
+>>>>>>> Add yarn.lock
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.1.11.tgz#84e8c683cbe7867d34b1d357d893ce29e28a02de"
   dependencies:
@@ -6750,7 +7006,11 @@ npm-profile@^3.0.2:
     aproba "^1.1.2 || 2"
     make-fetch-happen "^2.5.0 || 3 || 4"
 
+<<<<<<< HEAD
 npm-registry-client@^8.6.0:
+=======
+npm-registry-client@^8.5.1:
+>>>>>>> Add yarn.lock
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/npm-registry-client/-/npm-registry-client-8.6.0.tgz#7f1529f91450732e89f8518e0f21459deea3e4c4"
   dependencies:
@@ -6801,10 +7061,17 @@ npm-user-validate@~1.0.0:
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-1.0.0.tgz#8ceca0f5cea04d4e93519ef72d0557a75122e951"
 
 npm@^6.4.0:
+<<<<<<< HEAD
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/npm/-/npm-6.4.1.tgz#4f39f9337b557a28faed4a771d5c8802d6b4288b"
   dependencies:
     JSONStream "^1.3.4"
+=======
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-6.4.0.tgz#82a5a8151488d424958339561b4c0fccd33dd3e4"
+  dependencies:
+    JSONStream "^1.3.3"
+>>>>>>> Add yarn.lock
     abbrev "~1.1.1"
     ansicolors "~0.3.2"
     ansistyles "~0.1.3"
@@ -6813,10 +7080,16 @@ npm@^6.4.0:
     bin-links "^1.1.2"
     bluebird "~3.5.1"
     byte-size "^4.0.3"
+<<<<<<< HEAD
     cacache "^11.2.0"
     call-limit "~1.1.0"
     chownr "~1.0.1"
     ci-info "^1.4.0"
+=======
+    cacache "^11.1.0"
+    call-limit "~1.1.0"
+    chownr "~1.0.1"
+>>>>>>> Add yarn.lock
     cli-columns "^3.1.2"
     cli-table3 "^0.5.0"
     cmd-shim "~2.0.2"
@@ -6826,7 +7099,11 @@ npm@^6.4.0:
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
     editor "~1.0.0"
+<<<<<<< HEAD
     figgy-pudding "^3.4.1"
+=======
+    figgy-pudding "^3.2.0"
+>>>>>>> Add yarn.lock
     find-npm-prefix "^1.0.2"
     fs-vacuum "~1.2.10"
     fs-write-stream-atomic "~1.0.10"
@@ -6843,7 +7120,11 @@ npm@^6.4.0:
     is-cidr "^2.0.6"
     json-parse-better-errors "^1.0.2"
     lazy-property "~1.0.0"
+<<<<<<< HEAD
     libcipm "^2.0.2"
+=======
+    libcipm "^2.0.1"
+>>>>>>> Add yarn.lock
     libnpmhook "^4.0.1"
     libnpx "^10.2.0"
     lock-verify "^2.0.2"
@@ -6864,17 +7145,30 @@ npm@^6.4.0:
     npm-audit-report "^1.3.1"
     npm-cache-filename "~1.0.2"
     npm-install-checks "~3.0.0"
+<<<<<<< HEAD
     npm-lifecycle "^2.1.0"
     npm-package-arg "^6.1.0"
     npm-packlist "^1.1.11"
     npm-pick-manifest "^2.1.0"
     npm-profile "^3.0.2"
     npm-registry-client "^8.6.0"
+=======
+    npm-lifecycle "^2.0.3"
+    npm-package-arg "^6.1.0"
+    npm-packlist "~1.1.10"
+    npm-pick-manifest "^2.1.0"
+    npm-profile "^3.0.2"
+    npm-registry-client "^8.5.1"
+>>>>>>> Add yarn.lock
     npm-registry-fetch "^1.1.0"
     npm-user-validate "~1.0.0"
     npmlog "~4.1.2"
     once "~1.4.0"
+<<<<<<< HEAD
     opener "^1.5.0"
+=======
+    opener "~1.4.3"
+>>>>>>> Add yarn.lock
     osenv "^0.1.5"
     pacote "^8.1.6"
     path-is-inside "~1.0.2"
@@ -6888,7 +7182,11 @@ npm@^6.4.0:
     read-package-json "^2.0.13"
     read-package-tree "^5.2.1"
     readable-stream "^2.3.6"
+<<<<<<< HEAD
     request "^2.88.0"
+=======
+    request "^2.87.0"
+>>>>>>> Add yarn.lock
     retry "^0.12.0"
     rimraf "~2.6.2"
     safe-buffer "^5.1.2"
@@ -6942,8 +7240,13 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
 nwsapi@^2.0.7:
+<<<<<<< HEAD
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.0.9.tgz#77ac0cdfdcad52b6a1151a84e73254edc33ed016"
+=======
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.0.8.tgz#e3603579b7e162b3dbedae4fb24e46f771d8fa24"
+>>>>>>> Add yarn.lock
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -7059,9 +7362,15 @@ opencollective@^1.0.3:
     node-fetch "1.6.3"
     opn "4.0.2"
 
+<<<<<<< HEAD
 opener@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
+=======
+opener@~1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/opener/-/opener-1.4.3.tgz#5c6da2c5d7e5831e8ffa3964950f8d6674ac90b8"
+>>>>>>> Add yarn.lock
 
 opn@4.0.2, opn@^4.0.2:
   version "4.0.2"
@@ -8120,7 +8429,11 @@ react@15.5.4:
 
 react@16.3.1:
   version "16.3.1"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/react/-/react-16.3.1.tgz#4a2da433d471251c69b6033ada30e2ed1202cfd8"
+=======
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.1.tgz#4a2da433d471251c69b6033ada30e2ed1202cfd8"
+>>>>>>> Add yarn.lock
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -8240,7 +8553,11 @@ readable-stream@1.1.x, readable-stream@~1.1.10:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
+<<<<<<< HEAD
 readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+=======
+readdir-scoped-modules@^1.0.0:
+>>>>>>> Add yarn.lock
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   dependencies:
@@ -8424,7 +8741,11 @@ request-promise-native@^1.0.5:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
+<<<<<<< HEAD
 request@^2.74.0, request@^2.81.0, request@^2.83.0, request@^2.87.0, request@^2.88.0:
+=======
+request@^2.74.0, request@^2.81.0, request@^2.83.0, request@^2.87.0:
+>>>>>>> Add yarn.lock
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -8599,8 +8920,13 @@ rx@^4.1.0:
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
 rxjs@^5.5.2:
+<<<<<<< HEAD
   version "5.5.12"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.12.tgz#6fa61b8a77c3d793dbaf270bee2f43f652d741cc"
+=======
+  version "5.5.11"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.11.tgz#f733027ca43e3bec6b994473be4ab98ad43ced87"
+>>>>>>> Add yarn.lock
   dependencies:
     symbol-observable "1.0.1"
 
@@ -9815,7 +10141,11 @@ worker-farm@^1.6.0:
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
+<<<<<<< HEAD
   resolved "http://registry.npmjs.org/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85"
+=======
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85"
+>>>>>>> Add yarn.lock
   dependencies:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"

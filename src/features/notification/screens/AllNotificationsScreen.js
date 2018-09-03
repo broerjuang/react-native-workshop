@@ -1,33 +1,21 @@
 // @flow
 
 import React, {Component} from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {View, ScrollView, Text, TouchableOpacity} from 'react-native';
+import {Avatar, ButtonGroup} from 'react-native-elements';
+import {SafeAreaView} from 'react-navigation';
+import {connect} from 'react-redux';
 import Button from '../../../global/core-ui/Button';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import {Ionicons, Octicons} from '@expo/vector-icons';
-import {Avatar} from 'react-native-elements';
-import {NotificationList} from '../../../global/core-ui/NotificationList';
-
-import type {NotificationDataType} from '../reducers/notificationReducer';
-
-import {ButtonGroup} from 'react-native-elements';
-import {SafeAreaView} from 'react-navigation';
-import {connect} from 'react-redux';
-import fetchJSON from '../../../global/helpers/fetchJSON';
 
 type Props = {
   markAsRead: (selectedNotificationID: number) => void;
   markAllAsRead: () => void;
   handleAction: (action: Object) => void;
-  allNotificationData: *;
-  unreadNotificationData: *;
-  participatingNotificationData: *;
+  allNotificationData: Array<*>;
+  unreadNotificationData: Array<*>;
+  participatingNotificationData: Array<*>;
 };
 
 type NotifListType = {
@@ -46,9 +34,7 @@ type State = {
   unreadNotifList: Array<NotifListType>;
   readNotifList: Array<NotifListType>;
   participatingNotifList: Array<NotifListType>;
-  getNotifList: Array<NotifListType>;
   selectedIndex: number;
-  endpoint: string;
 };
 
 export class AllNotificationsScreen extends Component<Props, State> {
@@ -57,47 +43,10 @@ export class AllNotificationsScreen extends Component<Props, State> {
     readNotifList: [],
     participatingNotifList: [],
     selectedIndex: 0,
-    endpoint: '',
-    getNotifList: [],
   };
 
   async componentDidMount() {
-    await this._getNotifications();
-  }
-
-  async _getNotifications() {
-    try {
-      let notificationState = await fetchJSON('notifications', 'GET');
-      this.props.handleAction({
-        type: 'GET_UNREAD_NOTIFICATION',
-        payload: notificationState,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-
-    try {
-      let notificationState = await fetchJSON(
-        'notifications?participating=true',
-        'GET',
-      );
-      this.props.handleAction({
-        type: 'GET_PARTICIPATING_NOTIFICATION',
-        payload: notificationState,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-
-    try {
-      let notificationState = await fetchJSON('notifications?all=true', 'GET');
-      this.props.handleAction({
-        type: 'GET_ALL_NOTIFICATION',
-        payload: notificationState,
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    this.props.handleAction({type: 'NOTIFICATION_REQUESTED'});
   }
 
   updateIndex(selectedIndex: number) {
@@ -105,7 +54,7 @@ export class AllNotificationsScreen extends Component<Props, State> {
   }
 
   render() {
-    let notificationDataForMap: Array<NotificationDataType> = [];
+    let notificationDataForMap: Array<*> = [];
 
     if (this.state.selectedIndex === 0) {
       notificationDataForMap = this.props.unreadNotificationData;
@@ -117,10 +66,53 @@ export class AllNotificationsScreen extends Component<Props, State> {
       notificationDataForMap = this.props.allNotificationData;
     }
 
-    // const {} = this.state;
+    var temporaryStoreForData = {};
 
-    const {mainContainer} = styles;
+    notificationDataForMap.forEach((item) => {
+      if (
+        typeof temporaryStoreForData[item.repository.full_name] === 'undefined'
+      ) {
+        temporaryStoreForData[item.repository.full_name] = [];
+      }
+      temporaryStoreForData[item.repository.full_name].push({
+        id: item.id,
+        subjectTitle: item.subject.title,
+        subjectURL: item.subject.url,
+        subjectType: item.subject.type,
+        isUnread: item.unread,
+        reposFullName: item.repository.full_name,
+        reposAvatar: item.repository.owner.avatar_url,
+      });
+    });
+
+    var newData = [];
+
+    for (var reposID in temporaryStoreForData) {
+      if (reposID) {
+        newData.push({
+          reposFullName: reposID,
+          notifications: [],
+        });
+
+        var lastItem = newData.length - 1;
+
+        temporaryStoreForData[reposID].forEach((item) => {
+          newData[lastItem].notifications.push(item);
+        });
+      }
+    }
+
     const buttons = ['Unread', 'Participating', 'All'];
+
+    let showNotificationList;
+
+    if (notificationDataForMap.length === 0) {
+      showNotificationList = (
+        <Text style={noNotificationStyle}>
+          {`You don't have notifications of this type.`}
+        </Text>
+      );
+    }
 
     return (
       <View style={mainContainer}>
@@ -132,45 +124,82 @@ export class AllNotificationsScreen extends Component<Props, State> {
         />
 
         <ScrollView>
-          <Button
-            backgroundColor={'#F1F1F1'}
-            title={'MARK ALL AS READ'}
-            underlayColor={'#E7E7E7'}
-            onPress={this.props.markAllAsRead}
-          />
+          {this.state.selectedIndex === 0 ? (
+            <Button
+              style={{
+                flex: 1,
+                shadowOffset: {width: 1, height: 1},
+                shadowColor: 'black',
+                shadowOpacity: 0.2,
+                borderColor: 'black',
+              }}
+              backgroundColor={'#F1F1F1'}
+              title={'MARK ALL AS READ'}
+              underlayColor={'#E7E7E7'}
+              onPress={this.props.markAllAsRead}
+            />
+          ) : (
+            ''
+          )}
+
           <View>
-            {notificationDataForMap.map((item, i) => (
-              <NotificationList key={i}>
+            {newData.map((item, i) => (
+              <View style={mainList} key={i}>
                 <RowWith3Column
                   style={{backgroundColor: '#F1F1F1'}}
                   left={
-                    <Avatar small rounded source={{uri: item.reposAvatar}} />
+                    <Avatar
+                      small
+                      rounded
+                      source={{uri: item.notifications[0].reposAvatar}}
+                    />
                   }
                   content={<Text>{item.reposFullName}</Text>}
                 />
-                <RowWith3Column
-                  left={
-                    item.subjectType === 'PullRequest' ? (
-                      <Octicons
-                        name="git-pull-request"
-                        size={25}
-                        type="OCTICONS"
-                      />
-                    ) : (
-                      <Octicons name="issue-opened" size={25} type="OCTICONS" />
-                    )
-                  }
-                  content={<Text>{item.subjectTitle}</Text>}
-                  right={
-                    <TouchableOpacity
-                      onPress={() => this.props.markAsRead(item.id)}
-                    >
-                      <Ionicons name="ios-checkmark" size={50} color="black" />
-                    </TouchableOpacity>
-                  }
-                />
-              </NotificationList>
+
+                {item.notifications.map((notif, i) => (
+                  <RowWith3Column
+                    style={{
+                      borderBottomColor: '#F1F1F1',
+                      borderBottomWidth: 2,
+                    }}
+                    key={i}
+                    left={
+                      notif.subjectType === 'PullRequest' ? (
+                        <Octicons
+                          name="git-pull-request"
+                          size={25}
+                          type="OCTICONS"
+                        />
+                      ) : (
+                        <Octicons
+                          name="issue-opened"
+                          size={25}
+                          type="OCTICONS"
+                        />
+                      )
+                    }
+                    content={<Text>{notif.subjectTitle}</Text>}
+                    right={
+                      notif.isUnread ? (
+                        <TouchableOpacity
+                          onPress={() => this.props.markAsRead(notif.id)}
+                        >
+                          <Ionicons
+                            name="ios-checkmark"
+                            size={50}
+                            color="black"
+                          />
+                        </TouchableOpacity>
+                      ) : (
+                        ''
+                      )
+                    }
+                  />
+                ))}
+              </View>
             ))}
+            {showNotificationList}
           </View>
         </ScrollView>
       </View>
@@ -178,11 +207,24 @@ export class AllNotificationsScreen extends Component<Props, State> {
   }
 }
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-  },
-});
+const mainContainer = {
+  flex: 1,
+};
+
+const mainList = {
+  flex: 1,
+  margin: 10,
+  shadowOffset: {width: 1, height: 1},
+  shadowColor: 'black',
+  shadowOpacity: 0.2,
+};
+
+const noNotificationStyle = {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'row',
+};
 
 function mapStateToProps(state) {
   return {
@@ -192,14 +234,24 @@ function mapStateToProps(state) {
     allNotificationData: state.notificationReducer.allNotificationData,
   };
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     handleAction: (action: Object) => dispatch(action),
-    markAllAsRead: () => ({type: 'MARK_ALL_AS_READ'}),
-    markAsRead: (selectedNotificationID) =>
-      dispatch({type: 'MARK_AS_READ', payload: selectedNotificationID}),
+    markAllAsRead: () => {
+      dispatch({
+        type: 'MARK_ALL_NOTIFICATIONS_AS_READ',
+      });
+    },
+    markAsRead: (selectedNotificationID: string) => {
+      return dispatch({
+        type: 'MARK_NOTIFICATION_AS_READ',
+        payload: selectedNotificationID,
+      });
+    },
   };
 }
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

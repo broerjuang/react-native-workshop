@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon should render EventContent corectly 1`] = `
+exports[`EventContent should render EventContent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  Type is not recognized
+</Text>
+`;
+
+exports[`EventContent should render EventContent of CommitCommentEvent corectly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -20,23 +30,7 @@ exports[`Icon should render EventContent corectly 1`] = `
     zzzcielo
      
   </Text>
-  commented on issue
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    onPress={[Function]}
-    style={
-      Object {
-        "fontWeight": "bold",
-      }
-    }
-  >
-     
-    Parallax Header Bug
-     
-  </Text>
-  at
+  commented on commit 
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -62,7 +56,812 @@ exports[`Icon should render EventContent corectly 1`] = `
       }
     }
   >
-    1d
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of CreateEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  created
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of DeleteEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  deleted
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of ForkEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  forked
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      astridtamara/bootcamp
+       
+    </Text>
+    at 
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    Test
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of GollumEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  created the wiki of
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of IssueCommentEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  commented on issue
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Parallax Header bug
+       
+    </Text>
+    at
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of IssuesEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  opened issue
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Test
+       
+    </Text>
+    at
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of MemberEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  opened
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Test
+       
+    </Text>
+    at 
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of PublicEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  made public
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of PullRequestEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  opened pull request
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Test
+       
+    </Text>
+    at
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of PullRequestReviewCommentEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  commented on pull request
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       
+      Test
+       
+    </Text>
+    at
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of PullRequestReviewEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  Type is not recognized
+</Text>
+`;
+
+exports[`EventContent should render EventContent of PushEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  pushed to
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of ReleaseEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  published at
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
+  </Text>
+</Text>
+`;
+
+exports[`EventContent should render EventContent of WatchEvent corectly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    zzzcielo
+     
+  </Text>
+  test watching
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    astridtamara/bootcamp
+     
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "grey",
+      }
+    }
+  >
+    0 seconds
   </Text>
 </Text>
 `;

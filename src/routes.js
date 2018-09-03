@@ -7,7 +7,7 @@ import {
 } from 'react-navigation';
 
 import {LoginScreen} from './features/auth/screens';
-import {EventsScreen, EventDetail} from './features/events/screens';
+import {EventsScreen} from './features/events/screens';
 
 import AllNotificationsScreen from './features/notification/screens/AllNotificationsScreen';
 
@@ -43,9 +43,6 @@ let Repository = createStackNavigator({
 });
 
 let sharedScreens = {
-  EventDetail: {
-    screen: EventDetail,
-  },
   Repository: {
     screen: Repository,
   },

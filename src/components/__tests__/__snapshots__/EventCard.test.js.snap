@@ -566,7 +566,7 @@ exports[`EventCard should render EventCard with comment correctly 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          Array [],
+          Object {},
         ]
       }
     >

@@ -1,7 +1,863 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventsScreen should render EventsScreen correctly 1`] = `
-<RCTScrollView>
-  <View />
-</RCTScrollView>
-`;
+exports[`container test should render LoginScreen corectly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#d6d4d4",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {},
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 16,
+                "height": 32,
+                "width": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "padding": 10,
+              "width": "70%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              zzzcielo
+               
+            </Text>
+            commented on issue
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              Parallax Header Bug
+               
+            </Text>
+            at
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              astridtamara/bootcamp
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              1d
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={3}
+      style={
+        Object {
+          "color": "grey",
+          "fontWeight": "bold",
+          "padding": 12,
+          "paddingTop": 0,
+        }
+      }
+    >
+      [Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time. 
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#d6d4d4",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {},
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 16,
+                "height": 32,
+                "width": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "padding": 10,
+              "width": "70%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              astridtamara
+               
+            </Text>
+            opened issue
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              kodefox/kfstart
+               
+            </Text>
+            at
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              astridtamara/bootcamp
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              2d
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#d6d4d4",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {},
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 16,
+                "height": 32,
+                "width": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "padding": 10,
+              "width": "70%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              zzzcielo
+               
+            </Text>
+            commented on pull request
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              Quick bug fix
+               
+            </Text>
+            at
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              astridtamara/bootcamp
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              4d
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={3}
+      style={
+        Object {
+          "color": "grey",
+          "fontWeight": "bold",
+          "padding": 12,
+          "paddingTop": 0,
+        }
+      }
+    >
+      The bug is bugging me a lot. Good job fixing it in such short time. 
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#d6d4d4",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {},
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 16,
+                "height": 32,
+                "width": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "padding": 10,
+              "width": "70%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              astridtamara
+               
+            </Text>
+            opened pull request
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              kodefox/kfstart
+               
+            </Text>
+            at
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              astridtamara/bootcamp
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              6d
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#d6d4d4",
+        "borderWidth": 0.5,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            Object {},
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 16,
+                "height": 32,
+                "width": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "padding": 10,
+              "width": "70%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              astridtamara
+               
+            </Text>
+            forked
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              kodefox/kfstart
+               
+            </Text>
+            at
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+               
+              astridtamara/bootcamp
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              6d
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": "15%",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+

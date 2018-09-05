@@ -14,7 +14,7 @@ type Props = {
   onPress: (params?: mixed) => void;
 };
 const Button = (props: Props) => {
-  let {styles = {}, onPress = () => null, title = '', ...otherProps} = props;
+  let {styles = {}, onPress, title, ...otherProps} = props;
   let {
     backgroundColor = DARK_GREY,
     borderRadius = 3,

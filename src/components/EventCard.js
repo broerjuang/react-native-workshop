@@ -35,6 +35,36 @@ function EventCard(props: EventCardProps) {
   );
 }
 
+function renderIconAction(action: string) {
+  switch (action) {
+    case 'COMMENT_PR':
+      return (
+        <Icon
+          name="comment-discussion"
+          size={24}
+          color="grey"
+          type="OCTICONS"
+        />
+      );
+    case 'COMMENT_ISSUE':
+      return (
+        <Icon
+          name="comment-discussion"
+          size={24}
+          color="grey"
+          type="OCTICONS"
+        />
+      );
+    case 'PR':
+      return (
+        <Icon name="git-pull-request" size={24} color="grey" type="OCTICONS" />
+      );
+    case 'ISSUE':
+      return (
+        <Icon name="issue-opened" size={24} color="grey" type="OCTICONS" />
+      );
+    case 'FORK':
+      return <Icon name="repo-forked" size={24} color="grey" type="OCTICONS" />;
 export function renderIconType(event: Event) {
   let type: string = event.type;
   if (event.type === 'IssuesEvent') {

@@ -124,7 +124,7 @@ export class fileList extends Component<Props, State> {
               path: onClickPath,
               name,
             },
-            key: onClickPath,
+            key: sha,
           });
         }}
         key={sha}

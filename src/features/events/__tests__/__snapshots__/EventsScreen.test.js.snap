@@ -860,4 +860,4 @@ exports[`container test should render LoginScreen corectly 1`] = `
     </View>
   </View>
 </View>
-`;
+

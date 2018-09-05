@@ -1,103 +1,69 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import {EventCard} from '../../../components/index';
+import type {Event} from '../types/Event';
 
-import type {NavigationScreenProp} from 'react-navigation';
-
-type Event = {
-  profilePicture: string;
-  username: string;
-  action: 'COMMENT_PR' | 'COMMENT_ISSUE' | 'PR' | 'ISSUE' | 'FORK';
-  actionTarget: string;
-  repoTarget: string;
-  date: string;
-  comment?: string;
-};
+import {connect} from 'react-redux';
 
 type Props = {
-  navigation: NavigationScreenProp<[]>;
+  navigation: {navigate: (page: string, props: Object) => {}};
+  events: Array<Event>;
+  userName: string;
+  handleFetchEvents: (username: string) => void;
 };
 
-class EventsScreen extends Component<Props, {}> {
+export class EventsScreen extends Component<Props> {
+  async componentDidMount() {
+    let username: string = this.props.userName;
+    this.props.handleFetchEvents(username);
+  }
+
   render() {
-    let eventList: Array<Event> = [
-      {
-        profilePicture:
-          'http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg',
-        username: 'zzzcielo',
-        action: 'COMMENT_ISSUE',
-        actionTarget: 'Parallax Header Bug',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '1d',
-        comment:
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time.' +
-          '[Test Long Comment] The bug is bugging me a lot. Good job fixing it in such short time. ',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'ISSUE',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '2d',
-      },
-      {
-        profilePicture:
-          'http://www.grosse.is-a-geek.com/robopics/roborovski01_1024.jpg',
-        username: 'zzzcielo',
-        action: 'COMMENT_PR',
-        actionTarget: 'Quick bug fix',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '4d',
-        comment:
-          'The bug is bugging me a lot. Good job fixing it in such short time. ',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'PR',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '6d',
-      },
-      {
-        profilePicture:
-          'https://d2kwjcq8j5htsz.cloudfront.net/2016/08/16153058/hamster-health-center-2.jpg',
-        username: 'astridtamara',
-        action: 'FORK',
-        actionTarget: 'kodefox/kfstart',
-        repoTarget: 'astridtamara/bootcamp',
-        date: '6d',
-      },
-    ];
+    let {events} = this.props;
     return (
-      <View>
-        {eventList.map((event, index) => {
+      <ScrollView>
+        {events.map((event, index) => {
           return (
             <EventCard
               key={index}
               event={event}
-              openRepo={() => this._openRepo(event.repoTarget)}
-              openUser={() => this._openUser(event.username)}
+              navigateScreen={this._navigateScreen}
             />
           );
         })}
-      </View>
+      </ScrollView>
     );
   }
 
-  _openRepo = (repo: string) => {
-    this.props.navigation.navigate('RepositoryDetailScreen');
-  };
-  _openUser = (user: string) => {
-    this.props.navigation.navigate('UserScreen');
+  _navigateScreen = (type: 'REPO' | 'USER', props: Object) => {
+    switch (type) {
+      case 'REPO':
+        this.props.navigation.navigate('RepositoryDetailScreen', props);
+        break;
+      case 'USER':
+        this.props.navigation.navigate('ProfileScreen', props);
+        break;
+    }
   };
 }
 
-export default EventsScreen;
+export function mapStateToProps(state: Object) {
+  return {
+    userName: state.loginReducer.currentUsers.userName,
+    events: state.eventsReducer.events,
+  };
+}
+
+export function mapDispatchToProps(dispatch: Function) {
+  return {
+    handleFetchEvents: (username: string) =>
+      dispatch({type: 'FETCH_EVENTS', payload: {username}}),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(EventsScreen);

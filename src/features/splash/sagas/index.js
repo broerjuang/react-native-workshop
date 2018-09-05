@@ -1,7 +1,6 @@
 //@flow
 import {put, takeLatest} from 'redux-saga/effects';
 import {AsyncStorage} from 'react-native';
-import {NavigationActions} from 'react-navigation';
 import {USERTOKEN} from './../../../global/constants/asyncStorage';
 import fetchJSON from '../../../global/helpers/fetchJSON';
 
@@ -49,15 +48,14 @@ function* fetchUser(): Iterable<any> {
             following,
           },
         };
-        // yield put(NavigationActions.navigate({routeName: 'GitClient'}));
         yield put({type: 'ACTIONS/AUTH_GITHUB_SUCCED', payload});
         yield AsyncStorage.setItem('currentUser', JSON.stringify(payload));
       }
     } else {
-      // yield put(NavigationActions.navigate({routeName: ''}));
-      // let token = yield call(authenticateWithGithubAsync);
-      // yield put({type: 'ACTIONS/AUTH_GITHUB_SUCCED', payload: {hasToken}});
-      // yield AsyncStorage.setItem(USERTOKEN, hasToken);
+      yield put({
+        type: 'ACTIONS/AUTH_GITHUB_FAILED',
+        payload: {message: 'token has been expired'},
+      });
     }
   } catch (e) {
     yield put({type: 'ACTIONS/AUTH_GITHUB_FAILED', payload: {message: e}});

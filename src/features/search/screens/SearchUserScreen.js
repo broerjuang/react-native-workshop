@@ -6,11 +6,7 @@ import {Icon, RowWith3Column} from '../../../global/core-ui/index';
 import {connect} from 'react-redux';
 
 import type {NavigationScreenProp} from 'react-navigation';
-
-type User = {
-  login: string;
-  avatar_url: string;
-};
+import type {User} from '../types/index';
 
 type Props = {
   navigation: NavigationScreenProp<[]>;
@@ -66,7 +62,8 @@ type State = {
     users: Array<User>;
   };
 };
-function mapStateToProps(state: State) {
+
+export function mapStateToProps(state: State) {
   return {
     users: state.searchReducer.users,
   };

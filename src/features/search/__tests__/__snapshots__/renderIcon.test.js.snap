@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderIcon test should render icon correctly 1`] = `
+<renderIcon
+  name="home"
+  size={32}
+  tintColor="#000"
+/>
+`;

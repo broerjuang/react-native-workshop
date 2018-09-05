@@ -13,11 +13,12 @@ import ParallaxButtons from '../../../global/core-ui/ParallaxButtons';
 import RowWith3Column from '../../../global/core-ui/RowWith3Column';
 import type {ProfileState} from '../reducers/profileReducer';
 
-type NavProps = {
+type NavProp = {
   userLogin: string;
 };
+
 type Props = {
-  navigation: NavigationProp<NavProps>;
+  navigation: NavigationProp<NavProp>;
   handleAction: (action: Object) => void;
   profileState: ProfileState;
 };
@@ -25,11 +26,24 @@ type Props = {
 type State = {};
 
 class ProfileScreen extends Component<Props, State> {
-  componentDidMount() {
-    console.log(this.props.navigation.state.params, 'params');
-    this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+  async componentDidMount() {
+    //let {userLogin = ''} = this.props.navigation.state.params;
+    //this.props.handleAction({type: 'ON_PAGE_MOUNT'});
+    //Mock Data
+    let userLogin = this.props.navigation.getParam('userLogin', '');
+    this.props.handleAction({
+      type: 'ON_PAGE_MOUNT',
+      payload: {userLogin: userLogin},
+    });
   }
 
+  async componentDidUpdate() {
+    // this.props.navigation.setParams({userLogin: ''});
+    // this.props.handleAction({
+    //   type: 'ON_PAGE_MOUNT',
+    //   payload: {userLogin: ''},
+    // });
+  }
   render() {
     let {
       userLogin,
@@ -105,17 +119,32 @@ class ProfileScreen extends Component<Props, State> {
                 <ParallaxButtons
                   name="Stars"
                   value={sumStars}
-                  onPress={() => this.props.navigation.navigate('Stars')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Stars',
+                      key: userLogin,
+                    })
+                  }
                 />
                 <ParallaxButtons
                   name="Followers"
                   value={sumFollowers}
-                  onPress={() => this.props.navigation.navigate('Followers')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Followers',
+                      key: userLogin,
+                    })
+                  }
                 />
                 <ParallaxButtons
                   name="Following"
                   value={sumFollowing}
-                  onPress={() => this.props.navigation.navigate('Following')}
+                  onPress={() =>
+                    this.props.navigation.navigate({
+                      routeName: 'Following',
+                      key: userLogin,
+                    })
+                  }
                 />
               </View>
             </View>
@@ -256,7 +285,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
